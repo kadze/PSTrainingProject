@@ -1,0 +1,306 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		AD7CEAD21BB36C9300F2D042 /* main.c in Sources */ = {isa = PBXBuildFile; fileRef = AD7CEAD11BB36C9300F2D042 /* main.c */; };
+		AD7CEAE71BB42A2400F2D042 /* PSMethodReturnTest.c in Sources */ = {isa = PBXBuildFile; fileRef = AD7CEAE61BB42A2400F2D042 /* PSMethodReturnTest.c */; settings = {ASSET_TAGS = (); }; };
+		AD90C22B1BB455BE00800D14 /* PSDataType.c in Sources */ = {isa = PBXBuildFile; fileRef = AD90C2291BB455BE00800D14 /* PSDataType.c */; settings = {ASSET_TAGS = (); }; };
+		AD90C22E1BB4564E00800D14 /* PSMethodReturn.c in Sources */ = {isa = PBXBuildFile; fileRef = AD90C22C1BB4564E00800D14 /* PSMethodReturn.c */; settings = {ASSET_TAGS = (); }; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		AD7CEACC1BB36C9300F2D042 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		AD7CEACE1BB36C9300F2D042 /* PSTrainingProject */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = PSTrainingProject; sourceTree = BUILT_PRODUCTS_DIR; };
+		AD7CEAD11BB36C9300F2D042 /* main.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = main.c; sourceTree = "<group>"; };
+		AD7CEADD1BB3826900F2D042 /* PSDataTypeTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PSDataTypeTest.h; path = PSDataTypeTest/PSDataTypeTest.h; sourceTree = "<group>"; };
+		AD7CEAE51BB429E600F2D042 /* PSMethodReturnTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PSMethodReturnTest.h; path = PSMethodReturnTest/PSMethodReturnTest.h; sourceTree = "<group>"; };
+		AD7CEAE61BB42A2400F2D042 /* PSMethodReturnTest.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = PSMethodReturnTest.c; path = PSMethodReturnTest/PSMethodReturnTest.c; sourceTree = "<group>"; };
+		AD90C2291BB455BE00800D14 /* PSDataType.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = PSDataType.c; path = PSDataType/PSDataType.c; sourceTree = "<group>"; };
+		AD90C22A1BB455BE00800D14 /* PSDataType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PSDataType.h; path = PSDataType/PSDataType.h; sourceTree = "<group>"; };
+		AD90C22C1BB4564E00800D14 /* PSMethodReturn.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = PSMethodReturn.c; path = PSMethodReturn/PSMethodReturn.c; sourceTree = "<group>"; };
+		AD90C22D1BB4564E00800D14 /* PSMethodReturn.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PSMethodReturn.h; path = PSMethodReturn/PSMethodReturn.h; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		AD7CEACB1BB36C9300F2D042 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		AD7CEAC51BB36C9300F2D042 = {
+			isa = PBXGroup;
+			children = (
+				AD7CEACF1BB36C9300F2D042 /* Products */,
+				AD7CEAD01BB36C9300F2D042 /* PSTrainingProject */,
+				AD7CEADA1BB37CC600F2D042 /* Test */,
+			);
+			sourceTree = "<group>";
+		};
+		AD7CEACF1BB36C9300F2D042 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				AD7CEACE1BB36C9300F2D042 /* PSTrainingProject */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		AD7CEAD01BB36C9300F2D042 /* PSTrainingProject */ = {
+			isa = PBXGroup;
+			children = (
+				AD7CEAD11BB36C9300F2D042 /* main.c */,
+				AD7CEAD81BB36CF700F2D042 /* PSDataType */,
+				AD7CEAD91BB36D2700F2D042 /* PSMethodReturn */,
+			);
+			path = PSTrainingProject;
+			sourceTree = "<group>";
+		};
+		AD7CEAD81BB36CF700F2D042 /* PSDataType */ = {
+			isa = PBXGroup;
+			children = (
+				AD90C2291BB455BE00800D14 /* PSDataType.c */,
+				AD90C22A1BB455BE00800D14 /* PSDataType.h */,
+			);
+			name = PSDataType;
+			path = ..;
+			sourceTree = "<group>";
+		};
+		AD7CEAD91BB36D2700F2D042 /* PSMethodReturn */ = {
+			isa = PBXGroup;
+			children = (
+				AD90C22C1BB4564E00800D14 /* PSMethodReturn.c */,
+				AD90C22D1BB4564E00800D14 /* PSMethodReturn.h */,
+			);
+			name = PSMethodReturn;
+			path = ..;
+			sourceTree = "<group>";
+		};
+		AD7CEADA1BB37CC600F2D042 /* Test */ = {
+			isa = PBXGroup;
+			children = (
+				AD7CEADB1BB37D8F00F2D042 /* PSDataTypeTest */,
+				AD7CEADC1BB37DC400F2D042 /* PSMethodReturnTest */,
+			);
+			name = Test;
+			sourceTree = "<group>";
+		};
+		AD7CEADB1BB37D8F00F2D042 /* PSDataTypeTest */ = {
+			isa = PBXGroup;
+			children = (
+				AD7CEADD1BB3826900F2D042 /* PSDataTypeTest.h */,
+			);
+			name = PSDataTypeTest;
+			sourceTree = "<group>";
+		};
+		AD7CEADC1BB37DC400F2D042 /* PSMethodReturnTest */ = {
+			isa = PBXGroup;
+			children = (
+				AD7CEAE51BB429E600F2D042 /* PSMethodReturnTest.h */,
+				AD7CEAE61BB42A2400F2D042 /* PSMethodReturnTest.c */,
+			);
+			name = PSMethodReturnTest;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		AD7CEACD1BB36C9300F2D042 /* PSTrainingProject */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AD7CEAD51BB36C9300F2D042 /* Build configuration list for PBXNativeTarget "PSTrainingProject" */;
+			buildPhases = (
+				AD7CEACA1BB36C9300F2D042 /* Sources */,
+				AD7CEACB1BB36C9300F2D042 /* Frameworks */,
+				AD7CEACC1BB36C9300F2D042 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = PSTrainingProject;
+			productName = PSTrainingProject;
+			productReference = AD7CEACE1BB36C9300F2D042 /* PSTrainingProject */;
+			productType = "com.apple.product-type.tool";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		AD7CEAC61BB36C9300F2D042 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = PS;
+				LastUpgradeCheck = 0700;
+				ORGANIZATIONNAME = "Сергей";
+				TargetAttributes = {
+					AD7CEACD1BB36C9300F2D042 = {
+						CreatedOnToolsVersion = 7.0;
+					};
+				};
+			};
+			buildConfigurationList = AD7CEAC91BB36C9300F2D042 /* Build configuration list for PBXProject "PSTrainingProject" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = AD7CEAC51BB36C9300F2D042;
+			productRefGroup = AD7CEACF1BB36C9300F2D042 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				AD7CEACD1BB36C9300F2D042 /* PSTrainingProject */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		AD7CEACA1BB36C9300F2D042 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AD7CEAE71BB42A2400F2D042 /* PSMethodReturnTest.c in Sources */,
+				AD90C22E1BB4564E00800D14 /* PSMethodReturn.c in Sources */,
+				AD7CEAD21BB36C9300F2D042 /* main.c in Sources */,
+				AD90C22B1BB455BE00800D14 /* PSDataType.c in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		AD7CEAD31BB36C9300F2D042 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		AD7CEAD41BB36C9300F2D042 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		AD7CEAD61BB36C9300F2D042 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		AD7CEAD71BB36C9300F2D042 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		AD7CEAC91BB36C9300F2D042 /* Build configuration list for PBXProject "PSTrainingProject" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AD7CEAD31BB36C9300F2D042 /* Debug */,
+				AD7CEAD41BB36C9300F2D042 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AD7CEAD51BB36C9300F2D042 /* Build configuration list for PBXNativeTarget "PSTrainingProject" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AD7CEAD61BB36C9300F2D042 /* Debug */,
+				AD7CEAD71BB36C9300F2D042 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = AD7CEAC61BB36C9300F2D042 /* Project object */;
+}

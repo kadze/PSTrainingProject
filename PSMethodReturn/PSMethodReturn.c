@@ -6,18 +6,25 @@
 //  Copyright © 2015 Сергей. All rights reserved.
 //
 
+#include <stdio.h>
 #include "PSMethodReturn.h"
-#include "PSMethodReturnTest.h"
+
+const int PSParameterUndefined = 0;
+const int PSParameterMom = 3;
+const int PSParameterDad = 5;
+const int PSNumberOfInspections = 1000;
 
 void PSCheckParameters(void) {
-    for (int namber = PSParameterUndefined; namber < PSNumberOfInspections; namber++) {
+    for (int namber = PSParameterUndefined; namber <= PSNumberOfInspections; namber++) {
         int currentNamber = namber;
         
         // Print current counter value
         printf("namber = %d ", currentNamber);
         
         // Run function with current namber value in parameters
-        if (PSParameterUndefined != namber) {
+        if (PSParameterUndefined == namber) {
+            printf("\n");
+        } else {
             if (PSParameterUndefined == namber % PSParameterMom) {
                 printf("Мама");
             }

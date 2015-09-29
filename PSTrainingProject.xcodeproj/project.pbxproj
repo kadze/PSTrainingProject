@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		AD7CEAD21BB36C9300F2D042 /* main.c in Sources */ = {isa = PBXBuildFile; fileRef = AD7CEAD11BB36C9300F2D042 /* main.c */; };
-		AD7CEAE71BB42A2400F2D042 /* PSMethodReturnTest.c in Sources */ = {isa = PBXBuildFile; fileRef = AD7CEAE61BB42A2400F2D042 /* PSMethodReturnTest.c */; settings = {ASSET_TAGS = (); }; };
 		AD90C22B1BB455BE00800D14 /* PSDataType.c in Sources */ = {isa = PBXBuildFile; fileRef = AD90C2291BB455BE00800D14 /* PSDataType.c */; settings = {ASSET_TAGS = (); }; };
 		AD90C22E1BB4564E00800D14 /* PSMethodReturn.c in Sources */ = {isa = PBXBuildFile; fileRef = AD90C22C1BB4564E00800D14 /* PSMethodReturn.c */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
@@ -28,13 +27,10 @@
 /* Begin PBXFileReference section */
 		AD7CEACE1BB36C9300F2D042 /* PSTrainingProject */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = PSTrainingProject; sourceTree = BUILT_PRODUCTS_DIR; };
 		AD7CEAD11BB36C9300F2D042 /* main.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = main.c; sourceTree = "<group>"; };
-		AD7CEADD1BB3826900F2D042 /* PSDataTypeTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PSDataTypeTest.h; path = PSDataTypeTest/PSDataTypeTest.h; sourceTree = "<group>"; };
-		AD7CEAE51BB429E600F2D042 /* PSMethodReturnTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PSMethodReturnTest.h; path = PSMethodReturnTest/PSMethodReturnTest.h; sourceTree = "<group>"; };
-		AD7CEAE61BB42A2400F2D042 /* PSMethodReturnTest.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = PSMethodReturnTest.c; path = PSMethodReturnTest/PSMethodReturnTest.c; sourceTree = "<group>"; };
-		AD90C2291BB455BE00800D14 /* PSDataType.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = PSDataType.c; path = PSDataType/PSDataType.c; sourceTree = "<group>"; };
-		AD90C22A1BB455BE00800D14 /* PSDataType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PSDataType.h; path = PSDataType/PSDataType.h; sourceTree = "<group>"; };
-		AD90C22C1BB4564E00800D14 /* PSMethodReturn.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = PSMethodReturn.c; path = PSMethodReturn/PSMethodReturn.c; sourceTree = "<group>"; };
-		AD90C22D1BB4564E00800D14 /* PSMethodReturn.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PSMethodReturn.h; path = PSMethodReturn/PSMethodReturn.h; sourceTree = "<group>"; };
+		AD90C2291BB455BE00800D14 /* PSDataType.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = PSDataType.c; sourceTree = "<group>"; };
+		AD90C22A1BB455BE00800D14 /* PSDataType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSDataType.h; sourceTree = "<group>"; };
+		AD90C22C1BB4564E00800D14 /* PSMethodReturn.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = PSMethodReturn.c; sourceTree = "<group>"; };
+		AD90C22D1BB4564E00800D14 /* PSMethodReturn.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSMethodReturn.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,7 +78,7 @@
 				AD90C22A1BB455BE00800D14 /* PSDataType.h */,
 			);
 			name = PSDataType;
-			path = ..;
+			path = ../PSDataType;
 			sourceTree = "<group>";
 		};
 		AD7CEAD91BB36D2700F2D042 /* PSMethodReturn */ = {
@@ -92,33 +88,22 @@
 				AD90C22D1BB4564E00800D14 /* PSMethodReturn.h */,
 			);
 			name = PSMethodReturn;
-			path = ..;
+			path = ../PSMethodReturn;
 			sourceTree = "<group>";
 		};
 		AD7CEADA1BB37CC600F2D042 /* Test */ = {
 			isa = PBXGroup;
 			children = (
-				AD7CEADB1BB37D8F00F2D042 /* PSDataTypeTest */,
 				AD7CEADC1BB37DC400F2D042 /* PSMethodReturnTest */,
 			);
-			name = Test;
-			sourceTree = "<group>";
-		};
-		AD7CEADB1BB37D8F00F2D042 /* PSDataTypeTest */ = {
-			isa = PBXGroup;
-			children = (
-				AD7CEADD1BB3826900F2D042 /* PSDataTypeTest.h */,
-			);
-			name = PSDataTypeTest;
+			path = Test;
 			sourceTree = "<group>";
 		};
 		AD7CEADC1BB37DC400F2D042 /* PSMethodReturnTest */ = {
 			isa = PBXGroup;
 			children = (
-				AD7CEAE51BB429E600F2D042 /* PSMethodReturnTest.h */,
-				AD7CEAE61BB42A2400F2D042 /* PSMethodReturnTest.c */,
 			);
-			name = PSMethodReturnTest;
+			path = PSMethodReturnTest;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -178,7 +163,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AD7CEAE71BB42A2400F2D042 /* PSMethodReturnTest.c in Sources */,
 				AD90C22E1BB4564E00800D14 /* PSMethodReturn.c in Sources */,
 				AD7CEAD21BB36C9300F2D042 /* main.c in Sources */,
 				AD90C22B1BB455BE00800D14 /* PSDataType.c in Sources */,

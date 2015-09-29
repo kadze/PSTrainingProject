@@ -9,13 +9,6 @@
 #ifndef PSMethodReturn_h
 #define PSMethodReturn_h
 
-#include <stdio.h>
-
-const int PSParameterUndefined = 0;
-const int PSParameterMom = 3;
-const int PSParameterDad = 5;
-const int PSNumberOfInspections = 1000;
-
 extern
     void PSCheckParameters(void);
 

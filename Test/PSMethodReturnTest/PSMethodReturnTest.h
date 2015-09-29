@@ -9,8 +9,6 @@
 #ifndef PSMethodReturnTest_h
 #define PSMethodReturnTest_h
 
-#include <stdio.h>
-
 extern
     void PSCheckParametersTest(void);
 

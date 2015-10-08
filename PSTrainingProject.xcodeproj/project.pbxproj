@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AD21515C1BC6B8010057F3A6 /* PSHuman.c in Sources */ = {isa = PBXBuildFile; fileRef = AD21515B1BC6B8010057F3A6 /* PSHuman.c */; settings = {ASSET_TAGS = (); }; };
 		AD7CEAD21BB36C9300F2D042 /* main.c in Sources */ = {isa = PBXBuildFile; fileRef = AD7CEAD11BB36C9300F2D042 /* main.c */; };
 		AD90C22B1BB455BE00800D14 /* PSDataType.c in Sources */ = {isa = PBXBuildFile; fileRef = AD90C2291BB455BE00800D14 /* PSDataType.c */; settings = {ASSET_TAGS = (); }; };
 		AD90C22E1BB4564E00800D14 /* PSMethodReturn.c in Sources */ = {isa = PBXBuildFile; fileRef = AD90C22C1BB4564E00800D14 /* PSMethodReturn.c */; settings = {ASSET_TAGS = (); }; };
@@ -25,6 +26,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		AD21515B1BC6B8010057F3A6 /* PSHuman.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = PSHuman.c; path = PSHuman/PSHuman.c; sourceTree = "<group>"; };
+		AD4337D51BC2FDC700C450D7 /* PSHuman.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PSHuman.h; path = PSHuman/PSHuman.h; sourceTree = "<group>"; };
 		AD7CEACE1BB36C9300F2D042 /* PSTrainingProject */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = PSTrainingProject; sourceTree = BUILT_PRODUCTS_DIR; };
 		AD7CEAD11BB36C9300F2D042 /* main.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = main.c; sourceTree = "<group>"; };
 		AD90C2291BB455BE00800D14 /* PSDataType.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = PSDataType.c; sourceTree = "<group>"; };
@@ -44,6 +47,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		AD4337D31BC2FD3900C450D7 /* PSHuman */ = {
+			isa = PBXGroup;
+			children = (
+				AD21515B1BC6B8010057F3A6 /* PSHuman.c */,
+				AD4337D51BC2FDC700C450D7 /* PSHuman.h */,
+			);
+			name = PSHuman;
+			sourceTree = "<group>";
+		};
 		AD7CEAC51BB36C9300F2D042 = {
 			isa = PBXGroup;
 			children = (
@@ -67,6 +79,7 @@
 				AD7CEAD11BB36C9300F2D042 /* main.c */,
 				AD7CEAD81BB36CF700F2D042 /* PSDataType */,
 				AD7CEAD91BB36D2700F2D042 /* PSMethodReturn */,
+				AD4337D31BC2FD3900C450D7 /* PSHuman */,
 			);
 			path = PSTrainingProject;
 			sourceTree = "<group>";
@@ -77,8 +90,7 @@
 				AD90C2291BB455BE00800D14 /* PSDataType.c */,
 				AD90C22A1BB455BE00800D14 /* PSDataType.h */,
 			);
-			name = PSDataType;
-			path = ../PSDataType;
+			path = PSDataType;
 			sourceTree = "<group>";
 		};
 		AD7CEAD91BB36D2700F2D042 /* PSMethodReturn */ = {
@@ -87,8 +99,7 @@
 				AD90C22C1BB4564E00800D14 /* PSMethodReturn.c */,
 				AD90C22D1BB4564E00800D14 /* PSMethodReturn.h */,
 			);
-			name = PSMethodReturn;
-			path = ../PSMethodReturn;
+			path = PSMethodReturn;
 			sourceTree = "<group>";
 		};
 		AD7CEADA1BB37CC600F2D042 /* Test */ = {
@@ -165,6 +176,7 @@
 			files = (
 				AD90C22E1BB4564E00800D14 /* PSMethodReturn.c in Sources */,
 				AD7CEAD21BB36C9300F2D042 /* main.c in Sources */,
+				AD21515C1BC6B8010057F3A6 /* PSHuman.c in Sources */,
 				AD90C22B1BB455BE00800D14 /* PSDataType.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

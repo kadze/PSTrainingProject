@@ -9,7 +9,10 @@
 #ifndef PSMethodReturn_h
 #define PSMethodReturn_h
 
-extern
-    void PSCheckParameters(void);
+extern void PSCheckParameters(void);
+
+#define PSPrintPerens(type, value) \
+printf("Size Of: " #type " = %lu\n", sizeof(type));
+
 
 #endif /* PSMethodReturn_h */

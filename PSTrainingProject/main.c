@@ -9,16 +9,20 @@
 #include <stdio.h>
 #include "PSDataType.h"
 #include "PSMethodReturn.h"
+//#include "PSHuman.h"
 
 int main(int argc, const char * argv[]) {
-    // insert code here...
-    printf("Hello, World!\n");
+//    // insert code here...
+//    printf("Hello, World!\n");
+//
+//    // Print size of data types
+//    PSDataTypes();
+//    
+//     Method return an integer
+//    PSCheckParameters();
+//
+    // Data Human
 
-    // Print size of data types
-    PSDataTypes();
     
-    // Method return an integer
-    PSCheckParameters();
-    
-    return 0;
+    //return 0;
 }

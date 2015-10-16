@@ -9,68 +9,48 @@
 #ifndef PSHuman_h
 #define PSHuman_h
 
-#pragma mark -
-#pragma mark Private Decloration
-
-const int PSChildrenCount = 20;
-
-#pragma mark -
-#pragma mark Public Decloration
-
-typedef enum {
-    PSHumanGenderMale,
-    PSHumanGenderFemale
-} PSHumanGender;
-
 typedef struct PSHuman PSHuman;
-
-struct PSHuman {
-    char *_name;
-    PSHuman *_partner;
-    PSHuman *_father;
-    PSHuman *_mather;
-    PSHuman *_children[PSChildrenCount];
-    PSHumanGender _gender;
-    int _age;
-};
 
 extern
 PSHuman *PSHumanCreate(void);
 
 extern
-void PSHumanDeallocate(PSHuman *human);
+void PSHumanDeallocate(PSHuman *object);
 
 extern
-char *PSHumanName(PSHuman *human);
+char *PSHumanName(PSHuman *object);
 
 extern
-void PSHumanSetName(PSHuman *human, char *_name);
+void PSHumanSetName(PSHuman *object, char *_name);
 
 extern
-int PSHumanAge(PSHuman *human);
+int PSHumanAge(PSHuman *object);
 
 extern
-void PSHumanSetAge(PSHuman *human, int *_age);
+void PSHumanSetAge(PSHuman *object, int *_age);
 
 extern
-int PSHumanChildrenCount(PSHuman *human);
+int PSHumanChildrenCount(PSHuman *object);
 
 extern
-PSHuman *PSHumanPartnet(PSHuman *human);
+PSHuman *PSHumanPartner(PSHuman *object);
 
 extern
-void PSHumanSetPartnet(PSHuman *human, PSHuman *_partner);
+void PSHumanSetPartner(PSHuman *object, PSHuman *_partner);
 
 extern
-PSHuman *PSHumanFather(PSHuman *human);
+PSHuman *PSHumanFather(PSHuman *object);
 
 extern
-void PSHumanSetFather(PSHuman *human, PSHuman *_father);
+void PSHumanSetFather(PSHuman *object, PSHuman *_father);
 
 extern
-PSHuman *PSHumanMother(PSHuman *human);
+PSHuman *PSHumanMother(PSHuman *object);
 
 extern
-void PSHumanSetMother(PSHuman *human, PSHuman *_Mother);
+void PSHumanSetMother(PSHuman *object, PSHuman *_Mother);
+
+extern
+PSHuman *PSHumanGender(PSHuman *object);
 
 #endif /* PSHuman_h */

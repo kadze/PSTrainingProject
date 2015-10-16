@@ -7,33 +7,39 @@
 //
 
 #include <stdio.h>
-#include "PSMethodReturn.h"
+#include "PSReturnMomOrDad.h"
+
+#pragma mark -
+#pragma mark Private Declarations
 
 typedef enum {
     PSParameterUndefined,
     PSParameterMom = 3,
-    PSParameterEmpty,
-    PSParameterDad,
-    PSNumberOfInspections = PSParameterDad * PSParameterDad * PSParameterEmpty * (PSParameterDad + PSParameterDad)
+    PSParameterDad = 5,
+    PSNumberOfInspections = 1000
 } PSInputParameters;
+
+#pragma mark -
+#pragma mark Public Inplementations
+
+void PSParentsType(void) {
     
-void PSCheckParameters(void) {
     for (int namber = PSParameterUndefined; namber <= PSNumberOfInspections; namber++) {
         
         // Print current counter value
         printf("namber = %d ", namber);
         
         // Run function with current namber value in parameters
-        if (0 == namber) {
+        if (PSParameterUndefined == namber) {
             printf("\n");
         } else {
-            if (0 == namber % PSParameterMom) {
+            if (PSParameterUndefined == namber % PSParameterMom) {
                 printf("Мама");
             }
-            if (0 == namber % PSParameterDad) {
+            if (PSParameterUndefined == namber % PSParameterDad) {
                 printf("Папа");
             }
-            if (0 != namber) {
+            if (PSParameterUndefined != namber) {
                 printf("\n");
             }
         }

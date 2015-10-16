@@ -7,22 +7,21 @@
 //
 
 #include <stdio.h>
-#include "PSDataType.h"
-#include "PSMethodReturn.h"
-//#include "PSHuman.h"
+#include "PSDataTypeTest.h"
+#include "PSReturnMomOrDad.h"
+#include "PSHuman.h"
 
 int main(int argc, const char * argv[]) {
 //    // insert code here...
 //    printf("Hello, World!\n");
 //
 //    // Print size of data types
-//    PSDataTypes();
-//    
-//     Method return an integer
-//    PSCheckParameters();
+//    PSDataTypesTest();
 //
-    // Data Human
-
+//      Return method an integer type Mom or Dad
+    PSParentsType();
+//
+//     Data Human
     
     //return 0;
 }

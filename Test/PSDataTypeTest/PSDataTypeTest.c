@@ -6,12 +6,16 @@
 //  Copyright © 2015 Сергей. All rights reserved.
 //
 
+#include "PSDataTypeTest.h"
 #include "PSDataType.h"
 
-void PSDataTypes(void) {
+void PSDataTypesTest(void) {
     PSPrintSizeOfDataType(char);
     PSPrintSizeOfDataType(short);
     PSPrintSizeOfDataType(int);
+    PSPrintSizeOfDataType(float);
     PSPrintSizeOfDataType(long);
+    PSPrintSizeOfDataType(double);
     PSPrintSizeOfDataType(long long);
+    PSPrintSizeOfDataType(double long);
 }

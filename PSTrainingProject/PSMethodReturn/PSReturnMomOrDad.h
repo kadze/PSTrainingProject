@@ -6,13 +6,12 @@
 //  Copyright © 2015 Сергей. All rights reserved.
 //
 
-#ifndef PSMethodReturn_h
-#define PSMethodReturn_h
+#ifndef PSPSReturnMomOrDad_h
+#define PSPSReturnMomOrDad_h
 
-extern void PSCheckParameters(void);
+#include <stdio.h>
 
-#define PSPrintPerens(type, value) \
-printf("Size Of: " #type " = %lu\n", sizeof(type));
-
+static
+void PSParentsType(void);
 
 #endif /* PSMethodReturn_h */

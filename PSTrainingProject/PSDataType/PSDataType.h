@@ -11,9 +11,6 @@
 
 #include <stdio.h>
 
-extern
-void PSDataTypes(void);
-
 #define PSPrintSizeOfDataType(type) \
     printf("Size Of: " #type " = %lu\n", sizeof(type));
 

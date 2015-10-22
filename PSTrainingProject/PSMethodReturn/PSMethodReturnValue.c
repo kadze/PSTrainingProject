@@ -7,20 +7,36 @@
 //
 
 #include <stdio.h>
-#include "PSReturnMomOrDad.h"
-
-#pragma mark -
-#pragma mark Private Declarations
-
-typedef enum {
-    PSParameterUndefined,
-    PSParameterMom = 3,
-    PSParameterDad = 5,
-    PSNumberOfInspections = 1000
-} PSInputParameters;
+#include "PSMethodReturnNumber.h"
 
 #pragma mark -
 #pragma mark Public Inplementations
+
+PSMethodReturnNumber PSIntegerOfValue(int value) {
+
+    if (0 != value) {
+        if (0 == value % kPSValueOfMom) {
+            result = kLCHParentTypeMother;
+            printf("Mother");
+        }
+        
+        if (0 == value % kLCHFatherDivisor) {
+            result = (kLCHParentTypeMother == result
+                      ? kLCHParentTypeMotherFather
+                      : kLCHParentTypeFather);
+            
+            printf("Father");
+        }
+        
+        if (kLCHParentTypeUndefined != result) {
+            printf("\n");
+        }
+    }
+    
+    return result;
+}
+
+
 
 void PSParentsType(void) {
     

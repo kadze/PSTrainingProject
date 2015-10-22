@@ -8,19 +8,25 @@
 
 #include <stdio.h>
 #include "PSDataTypeTest.h"
-#include "PSReturnMomOrDad.h"
+#include "PSMethodReturnValueTest.h"
+#include "PSPrintValueOfPrimitiveTypeTest.h"
 #include "PSHuman.h"
 
 int main(int argc, const char * argv[]) {
-//    // insert code here...
 //    printf("Hello, World!\n");
-//
-//    // Print size of data types
+
+// Print size of data types
 //    PSDataTypesTest();
-//
-//      Return method an integer type Mom or Dad
-    PSParentsType();
-//
+
+// Return method an integer type Mom or Dad
+//    PSPMethodReturnValueTest();
+
+// Method to display the console value of any primitive type
+//    PSPrintValueOfPrimitiveTypeTest();
+
+// Structre Data Types
+//    PSDataStructureTest();
+
 //     Data Human
     
     //return 0;

@@ -87,10 +87,10 @@ int PSHumanAge(PSHuman *object) {
     return NULL != object ? object->_age : 0;
 }
 
-void PSHumanSetAge(PSHuman *object, int _age) {
+void PSHumanSetAge(PSHuman *object, int *_age) {
     if (NULL != object) {
         if (age > object->_age && age <= PSAgeMax ? age : PSAgeMax) {
-            object->_age = age;
+            object->_age = *age;
         }
     }
 }

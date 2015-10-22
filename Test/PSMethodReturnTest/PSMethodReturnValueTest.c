@@ -1,57 +1,68 @@
 //
-//  PSMethodReturnNumberTest.c
+//  PSMethodReturnValueTest.c
 //  PSTrainingProject
 //
 //  Created by Сергей on 13.10.15.
 //  Copyright © 2015 Сергей. All rights reserved.
 //
 
-#include "PSMethodReturnNumberTest.h"
-#include "PSMethodReturnNumber.h"
+#include <assert.h>
+#include "PSMethodReturnValueTest.h"
+#include "PSMethodReturnValue.h"
 
 #pragma mark -
 #pragma mark Private Declarations
 
-extern
-void PSCheckParameterMom(void);
+const int kPSNumberOfIterations = 1000;
 
 extern
-void PSCheckParameterDad(void);
+void PSReturnValueMomTest(void);
 
 extern
-void PSCheckParameterMomDad(void);
+void PSReturnValueDadTest(void);
 
-#pragma mark -
-#pragma mark Public Implementations
+extern
+void PSReturnValueMomDadTest(void);
 
-void PSParentsTypeTest(void) {
-    PSCheckParameterMom();
-    PSCheckParameterDad();
-    PSCheckParameterMomDad();
-};
+extern
+void PSCyclicCheck(void);
 
 #pragma mark -
 #pragma mark Private Implementations
 
-//function must return type Mom otherwise program crashes
-void PSCheckParameterMom(void) {
-    int result = PSPerformParentType(3);
+void PSPMethodReturnValueTest(void) {
+    PSReturnValueMomTest();
+    PSReturnValueDadTest();
+    PSReturnValueMomDadTest();
+    PSCyclicCheck();
+};
 
-    assert(result == kLCHParentTypeMother);
+// Function must return value of Mom otherwise crash program
+void PSReturnValueMomTest(void) {
+    int result = PSIntegerOfValue(3);
+    
+    assert(result == kPSValueOfMom);
 }
 
-// LCHCheckParentType function must return kLCHParentTypeFather
-void LCHCheckParentTypeFather(void) {
-    int result = LCHPerformParentType(5);
+// Function must return value of Dad otherwise crash program
+void PSReturnValueDadTest(void) {
+    int result = PSIntegerOfValue(5);
     
-    // If not, program will crash here
-    assert(result == kLCHParentTypeFather);
+    assert(result == kPSValueOfDad);
 }
 
-// LCHCheckParentType function must return kLCHParentTypeMotherFather
-void LCHCheckParentTypeMotherFather(void) {
-    int result = LCHPerformParentType(15);
+// Function must return value of Mom and Dad otherwise crash program
+void PSReturnValueMomDadTest(void) {
+    int result = PSIntegerOfValue(15);
     
-    // If not, program will crash here
-    assert(result == kLCHParentTypeMotherFather);
+    assert(result == kPSValueOfMomDad);
+}
+
+// Cycle in accordance with a predetermined number of iterations
+void PSCyclicCheck(void) {
+    for (int count = 0; count <= kPSNumberOfIterations; count++) {
+        int currentCount = count;
+        printf("number iterations = %d\t", currentCount);
+        PSIntegerOfValue(currentCount);
+    }
 }

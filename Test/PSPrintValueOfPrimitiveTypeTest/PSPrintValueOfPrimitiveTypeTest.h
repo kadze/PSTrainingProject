@@ -11,4 +11,7 @@
 
 #include <stdio.h>
 
+extern
+void PSPrintValueOfPrimitiveTypeTest(void);
+
 #endif /* PSPrintValueOfPrimitiveTypeTest_h */

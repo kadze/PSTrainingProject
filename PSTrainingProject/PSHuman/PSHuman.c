@@ -16,9 +16,6 @@
 #pragma mark Private Decloration
 
 const int PSChildrenCount = 20;
-const int PSBeginningAge  = 1;
-const int PSLegalAge      = 18;
-const int PSAgeMax        = 100;
 
 typedef enum {
     PSHumanGenderMale,
@@ -89,7 +86,7 @@ int PSHumanAge(PSHuman *object) {
 
 void PSHumanSetAge(PSHuman *object, int *_age) {
     if (NULL != object) {
-        if (age > object->_age && age <= PSAgeMax ? age : PSAgeMax) {
+        if (age > object->_age) {
             object->_age = *age;
         }
     }

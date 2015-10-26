@@ -11,26 +11,22 @@
 #include <string.h>
 #include <assert.h>
 #include "PSHuman.h"
+#include "PSObject.h"
 
 #pragma mark -
 #pragma mark Private Decloration
 
-const int PSChildrenCount = 20;
-
-typedef enum {
-    PSHumanGenderMale,
-    PSHumanGenderFemale
-} PSHumanGender;
+static const int PSChildrenCount = 20;
 
 struct PSHuman {
+    PSObject _super;
     char *_name;
     PSHuman *_partner;
     PSHuman *_father;
     PSHuman *_mother;
     PSHuman *_children[PSChildrenCount];
     PSHumanGender _gender;
-    int _age;
-    uint64_t _referenceCount;
+    uint8_t _age;
 };
 
 #pragma mark -
@@ -54,13 +50,12 @@ void PSObjectRelease(PSHuman *object) {
 #pragma mark Public Implementations
             
 PSHuman *PSHumanCreate(void) {
-    PSHuman *object = malloc(sizeof(PSHuman));
-    assert(object != NULL);
-    return object;
+    PSHuman *result = PSObjectCreateOfType(PSHuman);
+    return result;
 };
 
-void PSHumanDeallocate(PSHuman *object) {
-    free(object);
+void PSHumanDeallocate(void *object) {
+    __PSObjectDeallocate(object);
 };
 
 char *PSHumanName(PSHuman *object) {
@@ -84,10 +79,10 @@ int PSHumanAge(PSHuman *object) {
     return NULL != object ? object->_age : 0;
 }
 
-void PSHumanSetAge(PSHuman *object, int *_age) {
+void PSHumanSetAge(PSHuman *object, uint8_t *_age) {
     if (NULL != object) {
         if (age > object->_age) {
-            object->_age = *age;
+            object->_age = age;
         }
     }
 }

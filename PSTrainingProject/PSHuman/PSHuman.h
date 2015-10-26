@@ -11,11 +11,16 @@
 
 typedef struct PSHuman PSHuman;
 
+typedef enum {
+    kPSHumanGenderMale,
+    kPSHumanGenderFemale
+} PSHumanGender;
+
 extern
 PSHuman *PSHumanCreate(void);
 
 extern
-void PSHumanDeallocate(PSHuman *object);
+void PSHumanDeallocate(void *object);
 
 extern
 char *PSHumanName(PSHuman *object);
@@ -27,7 +32,7 @@ extern
 int PSHumanAge(PSHuman *object);
 
 extern
-void PSHumanSetAge(PSHuman *object, int *_age);
+void PSHumanSetAge(PSHuman *object, uint8_t *_age);
 
 extern
 int PSHumanChildrenCount(PSHuman *object);

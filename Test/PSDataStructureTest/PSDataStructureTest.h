@@ -11,6 +11,7 @@
 
 #include <stdio.h>
 #include <stddef.h>
+#include <stdbool.h>
 
 extern
 void PSDataStructureTest(void);

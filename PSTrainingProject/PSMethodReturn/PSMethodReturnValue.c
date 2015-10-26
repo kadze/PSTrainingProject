@@ -13,8 +13,8 @@
 #pragma mark -
 #pragma mark Privat Declarations
 
-const int kPSMultipleMom = 3;
-const int kPSMultipleDad = 5;
+static const int kPSMultipleMom = 3;
+static const int kPSMultipleDad = 5;
 
 #pragma mark -
 #pragma mark Public Inplementations

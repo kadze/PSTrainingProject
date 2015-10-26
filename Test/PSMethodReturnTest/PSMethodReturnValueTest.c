@@ -13,7 +13,7 @@
 #pragma mark -
 #pragma mark Private Declarations
 
-const int kPSNumberOfIterations = 1000;
+static const int kPSNumberOfIterations = 1000;
 
 extern
 void PSReturnValueMomTest(void);

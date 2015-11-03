@@ -20,7 +20,7 @@ extern
 PSHuman *PSHumanCreate(void);
 
 extern
-void PSHumanDeallocate(void *object);
+void __PSHumanDeallocate(void *object);
 
 extern
 char *PSHumanName(PSHuman *object);
@@ -32,7 +32,7 @@ extern
 int PSHumanAge(PSHuman *object);
 
 extern
-void PSHumanSetAge(PSHuman *object, uint8_t *_age);
+void PSHumanSetAge(PSHuman *object, uint8_t age);
 
 extern
 int PSHumanChildrenCount(PSHuman *object);
@@ -53,9 +53,12 @@ extern
 PSHuman *PSHumanMother(PSHuman *object);
 
 extern
-void PSHumanSetMother(PSHuman *object, PSHuman *_Mother);
+void PSHumanSetMother(PSHuman *object, PSHuman *_mother);
 
 extern
-PSHuman *PSHumanGender(PSHuman *object);
+PSHumanGender *PSHumanGetGender(PSHuman *object);
+
+extern
+void PSHumanSetGender(PSHuman *object, PSHumanGender gender);
 
 #endif /* PSHuman_h */

@@ -38,8 +38,8 @@
 		AD1064751BD8B2DA00A38EEE /* PSDataStructure.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PSDataStructure.h; sourceTree = "<group>"; };
 		AD1064761BD901BB00A38EEE /* PSDataStructureTest.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = PSDataStructureTest.c; sourceTree = "<group>"; };
 		AD1064771BD901BB00A38EEE /* PSDataStructureTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSDataStructureTest.h; sourceTree = "<group>"; };
-		AD21515B1BC6B8010057F3A6 /* PSHuman.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = PSHuman.c; path = PSHuman/PSHuman.c; sourceTree = "<group>"; };
-		AD4337D51BC2FDC700C450D7 /* PSHuman.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PSHuman.h; path = PSHuman/PSHuman.h; sourceTree = "<group>"; };
+		AD21515B1BC6B8010057F3A6 /* PSHuman.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = PSHuman.c; sourceTree = "<group>"; };
+		AD4337D51BC2FDC700C450D7 /* PSHuman.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSHuman.h; sourceTree = "<group>"; };
 		AD7CEACE1BB36C9300F2D042 /* PSTrainingProject */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = PSTrainingProject; sourceTree = BUILT_PRODUCTS_DIR; };
 		AD7CEAD11BB36C9300F2D042 /* main.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; name = main.c; path = PSTrainingProject/main.c; sourceTree = "<group>"; };
 		AD90C2291BB455BE00800D14 /* PSDataTypeTest.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = PSDataTypeTest.c; sourceTree = "<group>"; };
@@ -102,7 +102,7 @@
 				AD21515B1BC6B8010057F3A6 /* PSHuman.c */,
 				AD4337D51BC2FDC700C450D7 /* PSHuman.h */,
 			);
-			name = PSHuman;
+			path = PSHuman;
 			sourceTree = "<group>";
 		};
 		AD7CEAC51BB36C9300F2D042 = {
@@ -130,8 +130,8 @@
 				AD7CEAD91BB36D2700F2D042 /* PSMethodReturnNumber */,
 				AD10646D1BD8A3AC00A38EEE /* PSPrintValueOfPrimitiveType */,
 				AD1064731BD8B1ED00A38EEE /* PSDataStructure */,
-				AD4337D31BC2FD3900C450D7 /* PSHuman */,
 				ADA0384E1BDE6B53007539C2 /* PSObject */,
+				AD4337D31BC2FD3900C450D7 /* PSHuman */,
 			);
 			name = Source;
 			path = PSTrainingProject;

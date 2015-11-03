@@ -19,7 +19,7 @@ typedef struct {
     
 } PSObject;
 
-#define PSObjectCreateOfType(type) __PSObjectCreate(sizeof(type))
+#define PSObjectCreateOfType(type) __PSObjectCreate(sizeof(type), __ ##type ##Deallocate)
 
 extern
 void *__PSObjectCreate(size_t size, PSObjectDeallocator deallocator);
@@ -35,6 +35,5 @@ void PSObjectRelease(void *object);
 
 extern
 void *PSObjectRetain(void *object);
-
 
 #endif /* PSObject_h */

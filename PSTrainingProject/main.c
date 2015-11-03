@@ -11,7 +11,6 @@
 #include "PSMethodReturnValueTest.h"
 #include "PSPrintValueOfPrimitiveTypeTest.h"
 #include "PSDataStructureTest.h"
-#include "PSHuman.h"
 
 int main(int argc, const char * argv[]) {
 //    printf("Hello, World!\n");
@@ -23,12 +22,10 @@ int main(int argc, const char * argv[]) {
 //    PSPMethodReturnValueTest();
 
 // Method to display the console value of any primitive type
-    PSPrintValueOfPrimitiveTypeTest();
+//    PSPrintValueOfPrimitiveTypeTest();
 
 // Structre Data Types
 //    PSDataStructureTest();
-
-//     Data Human
     
     //return 0;
 }

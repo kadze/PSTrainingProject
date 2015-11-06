@@ -9,6 +9,8 @@
 #ifndef PSHuman_h
 #define PSHuman_h
 
+#include "PSString.h"
+
 typedef struct PSHuman PSHuman;
 
 typedef enum {
@@ -23,10 +25,10 @@ extern
 void __PSHumanDeallocate(void *object);
 
 extern
-char *PSHumanName(PSHuman *object);
+PSString *PSHumanName(PSHuman *object);
 
 extern
-void PSHumanSetName(PSHuman *object, char *_name);
+void PSHumanSetName(PSHuman *object, PSString *string);
 
 extern
 int PSHumanAge(PSHuman *object);

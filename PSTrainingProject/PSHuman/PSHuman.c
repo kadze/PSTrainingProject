@@ -7,11 +7,13 @@
 //
 
 #include <stdlib.h>
+#include <stdio.h>
 #include <stdbool.h>
 #include <string.h>
 #include <assert.h>
 #include "PSHuman.h"
 #include "PSObject.h"
+#include "PSString.h"
 
 #pragma mark -
 #pragma mark Private Decloration
@@ -30,35 +32,35 @@ struct PSHuman {
 };
 
 #pragma mark -
-#pragma mark Public Implementations
+#pragma mark Initialization & Deallocation
 
 void PSHumanDeallocate(void *object) {
     PSHumanSetName(object, NULL);
     PSHumanSetPartner(object, NULL);
+    PSHumanSetFather(object, NULL);
+    PSHumanSetMother(object, NULL);
     
     __PSObjectDeallocate(object);
 };
 
 PSHuman *PSHumanCreate(void) {
     PSHuman *result = PSObjectCreateOfType(PSHuman);
+    
     return result;
 };
 
-char *PSHumanName(PSHuman *object) {
+#pragma mark -
+#pragma mark Accessors
+
+PSString *PSHumanName(PSHuman *object) {
     return NULL != object ? object->_name : NULL;
 }
 
-void PSHumanSetName(PSHuman *object, char *name) {
-    if (NULL != object) {
-        if (NULL != object->_name) {
-            free(object->_name);
-            object->_name = NULL;
-        }
-        
-        if (name) {
-            object->_name = strdup(name);
-        }
-    }
+void PSHumanSetName(PSHuman *object, PSString *string) {
+    if (NULL != object && object->_name != string) {
+        PSObjectRelease(object->_name);
+        PSObjectRetain(string);
+        object->_name = string;
 }
 
 int PSHumanAge(PSHuman *object) {
@@ -125,3 +127,4 @@ void PSHumanSetGender(PSHuman *object, PSHumanGender gender) {
         object->_gender = gender;
     }
 }
+

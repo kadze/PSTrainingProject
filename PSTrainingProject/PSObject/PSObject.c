@@ -49,7 +49,7 @@ void PSObjectRelease(void *object) {
 
 void *PSObjectRetain(void *object) {
     if (NULL != object) {
-        ((PSObject*)object)->_retainCount++;
+        ((PSObject *)object)->_retainCount++;
     }
     
     return object;

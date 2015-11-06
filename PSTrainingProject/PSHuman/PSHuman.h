@@ -16,7 +16,7 @@ typedef struct PSHuman PSHuman;
 typedef enum {
     kPSHumanGenderMale,
     kPSHumanGenderFemale
-} PSHumanGender;
+} PSHumanGenderType;
 
 extern
 PSHuman *PSHumanCreate(void);
@@ -58,9 +58,9 @@ extern
 void PSHumanSetMother(PSHuman *object, PSHuman *_mother);
 
 extern
-PSHumanGender *PSHumanGetGender(PSHuman *object);
+PSHumanGenderType *PSHumanGetGender(PSHuman *object);
 
 extern
-void PSHumanSetGender(PSHuman *object, PSHumanGender gender);
+void PSHumanSetGender(PSHuman *object, PSHumanGenderType gender);
 
 #endif /* PSHuman_h */

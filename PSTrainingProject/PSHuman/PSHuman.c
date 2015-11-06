@@ -10,7 +10,6 @@
 #include <stdio.h>
 #include <stdbool.h>
 #include <string.h>
-#include <assert.h>
 #include "PSHuman.h"
 #include "PSObject.h"
 #include "PSString.h"
@@ -51,17 +50,6 @@ PSHuman *PSHumanCreate(void) {
 
 #pragma mark -
 #pragma mark Accessors
-
-PSString *PSHumanName(PSHuman *object) {
-    return NULL != object ? object->_name : NULL;
-}
-
-void PSHumanSetName(PSHuman *object, PSString *string) {
-    if (NULL != object && object->_name != string) {
-        PSObjectRelease(object->_name);
-        PSObjectRetain(string);
-        object->_name = string;
-}
 
 int PSHumanAge(PSHuman *object) {
     return NULL != object ? object->_age : 0;
@@ -128,3 +116,14 @@ void PSHumanSetGender(PSHuman *object, PSHumanGender gender) {
     }
 }
 
+PSString *PSHumanName(PSHuman *object) {
+    return NULL != object ? object->_name : NULL;
+}
+
+void PSHumanSetName(PSHuman *object, PSString *string) {
+    if (NULL != object && object->_name != string) {
+        PSObjectRelease(object->_name);
+        PSObjectRetain(string);
+        object->_name = string;
+    }
+}

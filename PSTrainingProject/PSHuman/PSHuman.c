@@ -30,6 +30,12 @@ struct PSHuman {
     uint8_t _age;
 };
 
+extern
+void PSHunanMerry(PSHuman *object);
+
+extern
+void PSHumanDivorce(PSHuman *human, PSHuman *partner);
+
 #pragma mark -
 #pragma mark Initialization & Deallocation
 
@@ -67,7 +73,7 @@ int PSHumanAge(PSHuman *object) {
 }
 
 void PSHumanSetAge(PSHuman *object, uint8_t age) {
-    if (NULL != object && 0 == object->_age) {
+    if (NULL != object) {
         object->_age = age;
     }
 }
@@ -116,7 +122,7 @@ void PSHumanSetMother(PSHuman *object, PSHuman *mother) {
     }
 }
 
-PSHumanGenderType *PSHumanGetGender(PSHuman *object) {
+PSHumanGenderType PSHumanGender(PSHuman *object) {
     return NULL != object ? object->_gender : 0;
 }
 
@@ -125,3 +131,17 @@ void PSHumanSetGender(PSHuman *object, PSHumanGenderType gender) {
         object->_gender = gender;
     }
 }
+
+#pragma mark -
+#pragma mark Public Implementation
+
+void PSHumanDivorce(PSHuman *object, PSHuman *partner) {
+    if (NULL != object && NULL != partner
+                        && PSHumanGender(object) != PSHumanGender(partner)
+                        && partner != PSHumanPartner(object)) {
+        PSObjectRetain(object);
+        
+    }
+};
+
+void PSHunanMerry(PSHuman *object);

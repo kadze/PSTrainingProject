@@ -12,8 +12,11 @@
 		AD1064781BD901BB00A38EEE /* PSDataStructureTest.c in Sources */ = {isa = PBXBuildFile; fileRef = AD1064761BD901BB00A38EEE /* PSDataStructureTest.c */; };
 		AD21515C1BC6B8010057F3A6 /* PSHuman.c in Sources */ = {isa = PBXBuildFile; fileRef = AD21515B1BC6B8010057F3A6 /* PSHuman.c */; };
 		AD7CEAD21BB36C9300F2D042 /* main.c in Sources */ = {isa = PBXBuildFile; fileRef = AD7CEAD11BB36C9300F2D042 /* main.c */; };
+		AD83CB6B1BF3868D00FF6272 /* PSLinkedList.c in Sources */ = {isa = PBXBuildFile; fileRef = AD83CB691BF3868D00FF6272 /* PSLinkedList.c */; };
+		AD83CB6F1BF3958400FF6272 /* PSLinkedListNode.c in Sources */ = {isa = PBXBuildFile; fileRef = AD83CB6D1BF3958400FF6272 /* PSLinkedListNode.c */; };
 		AD90C22B1BB455BE00800D14 /* PSDataTypeTest.c in Sources */ = {isa = PBXBuildFile; fileRef = AD90C2291BB455BE00800D14 /* PSDataTypeTest.c */; };
 		AD90C22E1BB4564E00800D14 /* PSMethodReturnValue.c in Sources */ = {isa = PBXBuildFile; fileRef = AD90C22C1BB4564E00800D14 /* PSMethodReturnValue.c */; };
+		AD9A68D41BF15E18006CCC8C /* PSArray.c in Sources */ = {isa = PBXBuildFile; fileRef = AD9A68D21BF15E18006CCC8C /* PSArray.c */; };
 		ADA038511BDE6BA0007539C2 /* PSObject.c in Sources */ = {isa = PBXBuildFile; fileRef = ADA0384F1BDE6BA0007539C2 /* PSObject.c */; };
 		ADE3ABDD1BEA954900910782 /* PSString.c in Sources */ = {isa = PBXBuildFile; fileRef = ADE3ABDB1BEA954900910782 /* PSString.c */; };
 /* End PBXBuildFile section */
@@ -43,10 +46,16 @@
 		AD4337D51BC2FDC700C450D7 /* PSHuman.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSHuman.h; sourceTree = "<group>"; };
 		AD7CEACE1BB36C9300F2D042 /* PSTrainingProject */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = PSTrainingProject; sourceTree = BUILT_PRODUCTS_DIR; };
 		AD7CEAD11BB36C9300F2D042 /* main.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; name = main.c; path = PSTrainingProject/main.c; sourceTree = "<group>"; };
+		AD83CB691BF3868D00FF6272 /* PSLinkedList.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = PSLinkedList.c; sourceTree = "<group>"; };
+		AD83CB6A1BF3868D00FF6272 /* PSLinkedList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSLinkedList.h; sourceTree = "<group>"; };
+		AD83CB6D1BF3958400FF6272 /* PSLinkedListNode.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = PSLinkedListNode.c; sourceTree = "<group>"; };
+		AD83CB6E1BF3958400FF6272 /* PSLinkedListNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSLinkedListNode.h; sourceTree = "<group>"; };
 		AD90C2291BB455BE00800D14 /* PSDataTypeTest.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = PSDataTypeTest.c; sourceTree = "<group>"; };
 		AD90C22A1BB455BE00800D14 /* PSDataType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSDataType.h; sourceTree = "<group>"; };
 		AD90C22C1BB4564E00800D14 /* PSMethodReturnValue.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = PSMethodReturnValue.c; sourceTree = "<group>"; };
 		AD90C22D1BB4564E00800D14 /* PSMethodReturnValue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSMethodReturnValue.h; sourceTree = "<group>"; };
+		AD9A68D21BF15E18006CCC8C /* PSArray.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = PSArray.c; sourceTree = "<group>"; };
+		AD9A68D31BF15E18006CCC8C /* PSArray.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSArray.h; sourceTree = "<group>"; };
 		AD9E018D1BCBDB41000AED45 /* PSDataTypeTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSDataTypeTest.h; sourceTree = "<group>"; };
 		ADA0384F1BDE6BA0007539C2 /* PSObject.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = PSObject.c; sourceTree = "<group>"; };
 		ADA038501BDE6BA0007539C2 /* PSObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSObject.h; sourceTree = "<group>"; };
@@ -129,13 +138,15 @@
 		AD7CEAD01BB36C9300F2D042 /* Source */ = {
 			isa = PBXGroup;
 			children = (
-				AD7CEAD81BB36CF700F2D042 /* PSDataType */,
-				AD7CEAD91BB36D2700F2D042 /* PSMethodReturnNumber */,
-				AD10646D1BD8A3AC00A38EEE /* PSPrintValueOfPrimitiveType */,
-				AD1064731BD8B1ED00A38EEE /* PSDataStructure */,
+				AD83CB681BF385FA00FF6272 /* PSLinkedList */,
+				AD9A68D11BF15D90006CCC8C /* PSArray */,
 				ADE3ABDA1BEA94CB00910782 /* PSString */,
 				ADA0384E1BDE6B53007539C2 /* PSObject */,
 				AD4337D31BC2FD3900C450D7 /* PSHuman */,
+				AD1064731BD8B1ED00A38EEE /* PSDataStructure */,
+				AD10646D1BD8A3AC00A38EEE /* PSPrintValueOfPrimitiveType */,
+				AD7CEAD91BB36D2700F2D042 /* PSMethodReturnNumber */,
+				AD7CEAD81BB36CF700F2D042 /* PSDataType */,
 			);
 			name = Source;
 			path = PSTrainingProject;
@@ -178,6 +189,34 @@
 			);
 			name = PSMethodReturnNumberTest;
 			path = PSMethodReturnTest;
+			sourceTree = "<group>";
+		};
+		AD83CB681BF385FA00FF6272 /* PSLinkedList */ = {
+			isa = PBXGroup;
+			children = (
+				AD83CB6C1BF3953A00FF6272 /* PSLinkedListNode */,
+				AD83CB691BF3868D00FF6272 /* PSLinkedList.c */,
+				AD83CB6A1BF3868D00FF6272 /* PSLinkedList.h */,
+			);
+			path = PSLinkedList;
+			sourceTree = "<group>";
+		};
+		AD83CB6C1BF3953A00FF6272 /* PSLinkedListNode */ = {
+			isa = PBXGroup;
+			children = (
+				AD83CB6D1BF3958400FF6272 /* PSLinkedListNode.c */,
+				AD83CB6E1BF3958400FF6272 /* PSLinkedListNode.h */,
+			);
+			path = PSLinkedListNode;
+			sourceTree = "<group>";
+		};
+		AD9A68D11BF15D90006CCC8C /* PSArray */ = {
+			isa = PBXGroup;
+			children = (
+				AD9A68D21BF15E18006CCC8C /* PSArray.c */,
+				AD9A68D31BF15E18006CCC8C /* PSArray.h */,
+			);
+			path = PSArray;
 			sourceTree = "<group>";
 		};
 		AD9E018C1BCBD09E000AED45 /* PSDataTypeTest */ = {
@@ -265,7 +304,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AD9A68D41BF15E18006CCC8C /* PSArray.c in Sources */,
 				AD1047041BCC5A8A00A990DB /* PSMethodReturnValueTest.c in Sources */,
+				AD83CB6B1BF3868D00FF6272 /* PSLinkedList.c in Sources */,
+				AD83CB6F1BF3958400FF6272 /* PSLinkedListNode.c in Sources */,
 				AD1064721BD8A7E100A38EEE /* PSPrintValueOfPrimitiveTypeTest.c in Sources */,
 				AD90C22E1BB4564E00800D14 /* PSMethodReturnValue.c in Sources */,
 				ADE3ABDD1BEA954900910782 /* PSString.c in Sources */,

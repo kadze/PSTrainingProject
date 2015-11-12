@@ -58,7 +58,7 @@ extern
 void PSHumanSetMother(PSHuman *object, PSHuman *_mother);
 
 extern
-PSHumanGenderType *PSHumanGetGender(PSHuman *object);
+PSHumanGenderType PSHumanGender(PSHuman *object);
 
 extern
 void PSHumanSetGender(PSHuman *object, PSHumanGenderType gender);

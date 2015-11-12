@@ -30,7 +30,6 @@ void __PSObjectDeallocate(void *object) {
     }
 }
 
-
 uint64_t PSObjectRetainCount(void *object) {
     return object ? ((PSObject *)object)->_retainCount : 0;
 }

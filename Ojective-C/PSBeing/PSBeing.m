@@ -10,4 +10,12 @@
 
 @implementation PSBeing
 
++ (PSBeing *)being {
+    return []
+}
+
+- (void)seyHelo {
+    NSLog(@"Привет!");
+}
+
 @end

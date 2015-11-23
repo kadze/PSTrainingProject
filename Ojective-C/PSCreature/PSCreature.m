@@ -1,32 +1,31 @@
 //
-//  PSBeing.m
+//  PSCreature.m
 //  PSTrainingProject
 //
 //  Created by Сергей on 20.11.15.
 //  Copyright © 2015 Сергей. All rights reserved.
 //
 
-#import "PSBeing.h"
+#import "PSCreature.h"
 
-@implementation PSBeing
+@implementation PSCreature
 
 #pragma mark -
 #pragma mark Class Method
 
-+ (PSBeing *) being{
++ (PSCreature *) creature{
     return [[[self alloc]init]autorelease];
 }
     
-+ (PSBeing *) criateWithName:(NSString *)name age:(NSNumber *)age weight:(NSNumber *)weight {
-    return [[[self alloc] criateWithName:name age:age weight:weight]autorelease];
++ (PSCreature *) createWithName:(NSString *)name gender:(PSCreatureGenderType *)gender ability:(PSCreatureAbility *)ability {
+    return [[[self alloc] criateWithName:name gender:gender ability:ability]autorelease];
 }
 
 #pragma mark -
 #pragma mark Initialization & Deallocations
 
 - (void)dealloc {
-    criateWithName;
-    
+    self.name = nil;
 }
 
 - (instancetype)init {
@@ -34,7 +33,7 @@
     if (self) {
         self.name
         self.gender
-        self.weight
+        self.ability
     }
 }
 
@@ -43,14 +42,6 @@
 
 - (void)seyHelo {
     NSLog(@"Привет!");
-}
-
-- (void)posibilityFight {
-
-}
-
-- (void)posibilityGiveBirthTo {
-
 }
 
 - (void)addChaild {

@@ -14,6 +14,7 @@
 @property (nonatomic, readwrite, copy)  NSString                *name;
 @property (nonatomic, retain)           NSMutableSet            *mutableChildren;
 @property (nonatomic, readwrite)        PSCreatureGenderType    gender;
+@property (nonatomic, readwrite)        PSCreatureAbility       ability;
 
 @end
 
@@ -41,11 +42,11 @@
     self.name = nil;
     self.mutableChildren = nil;
     
-    [super dealloc]
+    [super dealloc];
 }
 
 - (instancetype)init {
-    self = [super init]
+    self = [super init];
     if (self) {
         self.mutableChildren = [[[NSMutableSet alloc]init]autorelease];
     }
@@ -55,12 +56,13 @@
 - (instancetype)initWithName:(NSString *)name
                       gender:(PSCreatureGenderType *)gender
                      ability:(PSCreatureAbility *)ability {
-    self = [self init]
+    self = [self init];
     if (self) {
-        self.name
-        self.gender
-        self.ability
+        self.name = name;
+        self.gender = *(gender);
+        self.ability = *(ability);
     }
+    return self;
 }
 
 #pragma mark -
@@ -80,14 +82,14 @@
     }
 }
 
-- (void)addChaild:(PSCreature *)chaild {
-    if ([chaild isKindOfClass:[self.class]]) {
-        [self.mutableChildren addObject:chaild];
+- (void)addChaild:(PSCreature *)child {
+    if ([child isKindOfClass:[self.class]]) {
+        [self.mutableChildren addObject:child];
     }
 }
 
-- (void)removeChaild:(PSCreature *)chaild {
-     [self.mutableChildren removeObject:chaild];
+- (void)removeChaild:(PSCreature *)child {
+     [self.mutableChildren removeObject:child];
 }
 
 @end

@@ -33,7 +33,7 @@ typedef NS_OPTIONS (NSUInteger, PSCreatureAbility) {
                          gender:(PSCreatureGenderType *)gender
                         ability:(PSCreatureAbility *)ability;
 - (void)seyHelo;
-- (void)ddChaild;
-- (void)removeChaild;
+- (void)ddChild;
+- (void)removeChild;
 
 @end

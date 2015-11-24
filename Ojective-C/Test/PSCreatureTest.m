@@ -12,10 +12,11 @@
 @implementation PSCreatureTest
 
 + (void)PSCreatureTestParameters {
-    PSCreature *creature = [PSCreature createWithName:Bob gender:kPSMale ability:kPSFight];
+    PSCreature *creature = [PSCreature createWithName:@"Bob" gender:kPSMale ability:kPSFight];
         assert(nil != creature);
         assert(PSCreature *gender == kPSMale && PSCreature *ability == kPSFight);
         assert(PSCreature *gender == kPSFemale && PSCreature *ability == kPSBeget);
+    
 }
 
 @end

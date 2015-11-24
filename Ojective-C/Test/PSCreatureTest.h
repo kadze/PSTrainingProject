@@ -7,8 +7,9 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "PSCreature.h"
 
-@interface PSCreatureTest : NSObject
+@interface PSCreatureTest : PSCreature
 
 + (void)PSCreatureTestParameters;
 

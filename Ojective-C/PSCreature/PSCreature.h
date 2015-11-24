@@ -25,13 +25,15 @@ typedef NS_OPTIONS (NSUInteger, PSCreatureAbility) {
 @property (nonatomic, readonly)         PSCreatureGenderType    gender;
 @property (nonatomic, readonly)         PSCreatureAbility       ability;
 @property (nonatomic, readonly)         NSSet                   *children;
-@property (nonatomic, readonly)         uint8_t                 weight;
-@property (nonatomic, readonly)         uint8_t                 age;
+@property (nonatomic, assign)           uint8_t                 weight;
+@property (nonatomic, assign)           uint8_t                 age;
 
 + (PSCreature *) creature;
-+ (PSCreature *) createWithName:(NSString *)name gender:(PSCreatureGenderType *)gender ability:(PSCreatureAbility *)ability;
++ (PSCreature *) createWithName:(NSString *)name
+                         gender:(PSCreatureGenderType *)gender
+                        ability:(PSCreatureAbility *)ability;
 - (void)seyHelo;
-- (void)addChaild;
+- (void)ddChaild;
 - (void)removeChaild;
 
 @end

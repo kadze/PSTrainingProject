@@ -7,6 +7,15 @@
 //
 
 #import "PSCreature.h"
+#import "PSCreatureTest.h"
+
+@interface PSCreature ()
+
+@property (nonatomic, readwrite, copy)  NSString                *name;
+@property (nonatomic, retain)           NSMutableSet            *mutableChildren;
+@property (nonatomic, readwrite)        PSCreatureGenderType    gender;
+
+@end
 
 @implementation PSCreature
 
@@ -14,11 +23,15 @@
 #pragma mark Class Method
 
 + (PSCreature *) creature{
-    return [[[self alloc]init]autorelease];
+    return [self createWithName:(NSString *)nil
+                         gender:(PSCreatureGenderType *)kPSUndefined
+                        ability:(PSCreatureAbility *)kPSUndefined];
 }
     
-+ (PSCreature *) createWithName:(NSString *)name gender:(PSCreatureGenderType *)gender ability:(PSCreatureAbility *)ability {
-    return [[[self alloc] criateWithName:name gender:gender ability:ability]autorelease];
++ (PSCreature *) createWithName:(NSString *)name
+                         gender:(PSCreatureGenderType *)gender
+                        ability:(PSCreatureAbility *)ability {
+    return [[[self alloc] initWithName:name gender:gender ability:ability]autorelease];
 }
 
 #pragma mark -
@@ -26,10 +39,23 @@
 
 - (void)dealloc {
     self.name = nil;
+    self.mutableChildren = nil;
+    
+    [super dealloc]
 }
 
 - (instancetype)init {
     self = [super init]
+    if (self) {
+        self.mutableChildren = [[[NSMutableSet alloc]init]autorelease];
+    }
+    return self;
+}
+
+- (instancetype)initWithName:(NSString *)name
+                      gender:(PSCreatureGenderType *)gender
+                     ability:(PSCreatureAbility *)ability {
+    self = [self init]
     if (self) {
         self.name
         self.gender
@@ -38,18 +64,30 @@
 }
 
 #pragma mark -
-#pragma mark Public Implementations
+#pragma mark Accesors
+
+-(NSSet *)children {
+    return [[_mutableChildren copy]autorelease];
+}
+
+#pragma mark -
+#pragma mark Public Methods
 
 - (void)seyHelo {
     NSLog(@"Привет!");
+    for (PSCreature *chaild in self.mutableChildren) {
+        [chaild seyHelo];
+    }
 }
 
-- (void)addChaild {
-
+- (void)addChaild:(PSCreature *)chaild {
+    if ([chaild isKindOfClass:[self.class]]) {
+        [self.mutableChildren addObject:chaild];
+    }
 }
 
-- (void)removeChaild {
-
+- (void)removeChaild:(PSCreature *)chaild {
+     [self.mutableChildren removeObject:chaild];
 }
 
 @end

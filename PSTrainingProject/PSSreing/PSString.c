@@ -14,7 +14,7 @@
 #pragma mark -
 #pragma mark Initialization & Deallocation
 
-void PSStringDeallocate(void *string) {
+void __PSStringDeallocate(void *string) {
     PSStringSetName(string, NULL);
     
     __PSObjectDeallocate(string);

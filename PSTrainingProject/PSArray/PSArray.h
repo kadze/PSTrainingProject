@@ -10,34 +10,43 @@
 #define PSArray_h
 
 #include <stdio.h>
+#include <stdbool.h>
 #include "PSObject.h"
 
-static const int kPSChildrenCount = 20;
+static const uint64_t kPSArrayLimit = UINT64_MAX;
 
 typedef struct {
     PSObject _supper;
-    void *_array[kPSChildrenCount];
+    void **_data;
+    uint64_t _count;
+    uint64_t _capacity;
 } PSArray;
 
 extern
-void __PSArrayDeallocate(void *array);
+void __PSArrayDeallocate(void *object);
 
 extern
-PSArray *PSArrayCreate(void);
+void *PSArrayCreateCapacity(uint64_t capacity);
 
 extern
 void PSArrayAddObject(PSArray *array, void *object);
 
 extern
-void PSArrayRemoveObjects(PSArray *array);
+uint64_t PSArrayGetCount(PSArray *array);
 
 extern
-void *PSArrayAddElementAtIndex(PSArray *array, uint8_t objectIndex);
+bool PSArrayContainsObject(PSArray *array, void *object);
 
 extern
-void PSArrayRemoveElementAtIndex(PSArray *array, uint8_t objectIndex);
+uint64_t PSArrayGetIndexAtObject(PSArray *array, void *object);
 
 extern
-uint8_t PSArrayObjectsCount(PSArray *array);
+void *PSArrayGetObjectAtIndex(PSArray *array, uint64_t index);
+
+extern
+void *PSArrayRemoveObjectAtIndex(PSArray *array, uint64_t index);
+
+extern
+void PSArrayRemoveAllObjects(PSArray *array);
 
 #endif /* PSArray_h */

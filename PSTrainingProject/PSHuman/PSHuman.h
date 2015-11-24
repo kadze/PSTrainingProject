@@ -22,45 +22,45 @@ extern
 PSHuman *PSHumanCreate(void);
 
 extern
-void __PSHumanDeallocate(void *object);
+void __PSHumanDeallocate(void *human);
 
 extern
-PSString *PSHumanName(PSHuman *object);
+PSString *PSHumanName(PSHuman *human);
 
 extern
-void PSHumanSetName(PSHuman *object, PSString *string);
+void PSHumanSetName(PSHuman *human, PSString *string);
 
 extern
-int PSHumanAge(PSHuman *object);
+int PSHumanAge(PSHuman *human);
 
 extern
-void PSHumanSetAge(PSHuman *object, uint8_t age);
+void PSHumanSetAge(PSHuman *human, uint8_t age);
 
 extern
-int PSHumanChildrenCount(PSHuman *object);
+int PSHumanChildrenCount(PSHuman *human);
 
 extern
-PSHuman *PSHumanPartner(PSHuman *object);
+PSHuman *PSHumanPartner(PSHuman *human);
 
 extern
-void PSHumanSetPartner(PSHuman *object, PSHuman *_partner);
+void PSHumanSetPartner(PSHuman *human, PSHuman *_partner);
 
 extern
-PSHuman *PSHumanFather(PSHuman *object);
+PSHuman *PSHumanFather(PSHuman *human);
 
 extern
-void PSHumanSetFather(PSHuman *object, PSHuman *_father);
+void PSHumanSetFather(PSHuman *human, PSHuman *_father);
 
 extern
-PSHuman *PSHumanMother(PSHuman *object);
+PSHuman *PSHumanMother(PSHuman *human);
 
 extern
-void PSHumanSetMother(PSHuman *object, PSHuman *_mother);
+void PSHumanSetMother(PSHuman *human, PSHuman *_mother);
 
 extern
-PSHumanGenderType PSHumanGender(PSHuman *object);
+PSHumanGenderType PSHumanGender(PSHuman *human);
 
 extern
-void PSHumanSetGender(PSHuman *object, PSHumanGenderType gender);
+void PSHumanSetGender(PSHuman *human, PSHumanGenderType gender);
 
 #endif /* PSHuman_h */

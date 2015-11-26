@@ -22,8 +22,8 @@ typedef NS_OPTIONS (NSUInteger, PSCreatureAbility) {
 @interface PSCreature : NSObject
 
 @property (nonatomic, readonly, copy)   NSString                *name;
-@property (nonatomic, readonly)         PSCreatureGenderType    gender;
-@property (nonatomic, readonly)         PSCreatureAbility       ability;
+@property (nonatomic, readonly)         PSCreatureGenderType    *gender;
+@property (nonatomic, readonly)         PSCreatureAbility       *ability;
 @property (nonatomic, readonly)         NSSet                   *children;
 @property (nonatomic, assign)           uint8_t                 weight;
 @property (nonatomic, assign)           uint8_t                 age;
@@ -33,7 +33,7 @@ typedef NS_OPTIONS (NSUInteger, PSCreatureAbility) {
                          gender:(PSCreatureGenderType *)gender
                         ability:(PSCreatureAbility *)ability;
 - (void)seyHelo;
-- (void)ddChild;
-- (void)removeChild;
+- (void)addChild:(PSCreature *)child ;
+- (void)removeChild:(PSCreature *)child;
 
 @end

@@ -13,8 +13,8 @@
 
 @property (nonatomic, readwrite, copy)  NSString                *name;
 @property (nonatomic, retain)           NSMutableSet            *mutableChildren;
-@property (nonatomic, readwrite)        PSCreatureGenderType    gender;
-@property (nonatomic, readwrite)        PSCreatureAbility       ability;
+@property (nonatomic, readwrite)        PSCreatureGenderType    *gender;
+@property (nonatomic, readwrite)        PSCreatureAbility       *ability;
 
 @end
 
@@ -59,8 +59,8 @@
     self = [self init];
     if (self) {
         self.name = name;
-        self.gender = *(gender);
-        self.ability = *(ability);
+        self.gender = gender;
+        self.ability = ability;
     }
     return self;
 }
@@ -77,19 +77,17 @@
 
 - (void)seyHelo {
     NSLog(@"Привет!");
-    for (PSCreature *chaild in self.mutableChildren) {
-        [chaild seyHelo];
+    for (PSCreature *child in self.mutableChildren) {
+        [child seyHelo];
     }
 }
 
-- (void)addChaild:(PSCreature *)child {
-    if ([child isKindOfClass:[self.class]]) {
-        [self.mutableChildren addObject:child];
-    }
+- (void)addChild:(PSCreature *)child {
+    [self.mutableChildren addObject:child];
 }
 
-- (void)removeChaild:(PSCreature *)child {
-     [self.mutableChildren removeObject:child];
+- (void)removeChild:(PSCreature *)child {
+    [self.mutableChildren removeObject:child];
 }
 
 @end

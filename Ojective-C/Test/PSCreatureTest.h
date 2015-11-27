@@ -9,7 +9,9 @@
 #import <Foundation/Foundation.h>
 #import "PSCreature.h"
 
-@interface PSCreatureTest : PSCreature
+@interface PSCreatureTest : NSObject
+
+@property (nonatomic, retain) NSArray *creatures;
 
 + (void)PSCreatureTestParameters;
 

@@ -23,16 +23,12 @@
 #pragma mark -
 #pragma mark Class Method
 
-+ (PSCreature *) creature{
-    return [self createWithName:(NSString *)nil
-                         gender:(PSCreatureGenderType *)kPSUndefined
-                        ability:(PSCreatureAbility *)kPSUndefined];
-}
-    
 + (PSCreature *) createWithName:(NSString *)name
+                            age:(uint8_t)age
+                         weight:(uint8_t)weight
                          gender:(PSCreatureGenderType *)gender
                         ability:(PSCreatureAbility *)ability {
-    return [[[self alloc] initWithName:name gender:gender ability:ability]autorelease];
+    return [[[self alloc] initWithName:name age:age weight:weight gender:gender ability:ability]autorelease];
 }
 
 #pragma mark -
@@ -54,11 +50,15 @@
 }
 
 - (instancetype)initWithName:(NSString *)name
+                         age:(uint8_t)age
+                      weight:(uint8_t)weight
                       gender:(PSCreatureGenderType *)gender
-                     ability:(PSCreatureAbility *)ability {
+                     ability:(PSCreatureAbility *)ability{
     self = [self init];
     if (self) {
         self.name = name;
+        self.age = age;
+        self.weight = weight;
         self.gender = gender;
         self.ability = ability;
     }
@@ -75,10 +75,10 @@
 #pragma mark -
 #pragma mark Public Methods
 
-- (void)seyHelo {
-    NSLog(@"Привет!");
+- (void)sayHello {
+    NSLog(@"%@ - Привет!", self.name);
     for (PSCreature *child in self.mutableChildren) {
-        [child seyHelo];
+        [child sayHello];
     }
 }
 

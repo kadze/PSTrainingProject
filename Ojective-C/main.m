@@ -14,7 +14,7 @@ int main(int argc, const char * argv[]) {
 //        // insert code here...
 //        NSLog(@"Hello, World!");
 
-        [PSCreatureTest PSCreatureTestParameters];
+        [PSCreatureTest creatureTestParameters];
     
     }
     return 0;

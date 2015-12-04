@@ -9,34 +9,30 @@
 #import "PSCreatureTest.h"
 
 @implementation PSCreatureTest
-@dynamic creatures;
 
-+ (void)PSCreatureTestParameters {
-    @autoreleasepool {
-        PSCreature *creatureFirst = [PSCreature createWithName:@"Elen" age:30 weight:50 gender:kPSFemale ability:kPSBeget];
-            assert(nil != creatureFirst);
++ (void)creatureTestParameters {
+    PSCreature *creatureFirst = [PSCreature creatureWithName:@"Elen" gender:kPSFemale];
+    assert(nil != creatureFirst);
     
-        PSCreature *creatureTwo = [PSCreature createWithName:@"Bob" age:31 weight:70 gender:kPSMale ability:kPSFight];
-            assert(nil != creatureTwo);
-        
-        PSCreature *creatureThree = [PSCreature createWithName:@"Den" age:32 weight:71 gender:kPSMale ability:kPSFight];
-            assert(nil != creatureThree);
-     
-        PSCreature *creatureFour = [PSCreature createWithName:@"Ket" age:33 weight:51 gender:kPSFemale ability:kPSBeget];
-            assert(nil != creatureFour);
-        
-        [creatureFirst addChild: creatureTwo];
-        [creatureFirst addChild: creatureThree];
-        [creatureFirst addChild: creatureFour];
-        
-        NSSet *childrenToCheck = [creatureFirst children];
-            assert(nil != childrenToCheck);
-        
-        [creatureFirst sayHello];
-        
-        NSArray *creatures = [NSArray arrayWithObjects:creatureFirst, creatureTwo, creatureThree, creatureFour, nil];
-        
-    }
+    PSCreature *creatureTwo = [PSCreature creatureWithName:@"Bob" gender:kPSMale];
+    assert(nil != creatureTwo);
+    
+    PSCreature *creatureThree = [PSCreature creatureWithName:@"Den" gender:kPSMale];
+    assert(nil != creatureThree);
+    
+    PSCreature *creatureFour = [PSCreature creatureWithName:@"Ket" gender:kPSFemale];
+    assert(nil != creatureFour);
+    
+    [creatureFirst addChild:creatureTwo];
+    [creatureFirst addChild:creatureThree];
+    [creatureFirst addChild:creatureFour];
+    
+    NSSet *childrens = [creatureFirst children];
+    assert(nil != childrens);
+    
+    [creatureFirst sayHello];
+    
+    NSArray *creatures = @[creatureFirst, creatureTwo, creatureThree, creatureFour];
 }
 
 @end

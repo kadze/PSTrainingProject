@@ -7,14 +7,12 @@
 //
 
 #import "PSCreature.h"
-#import "PSCreatureTest.h"
 
 @interface PSCreature ()
 
 @property (nonatomic, readwrite, copy)  NSString                *name;
+@property (nonatomic, readwrite)        PSCreatureGenderType    gender;
 @property (nonatomic, retain)           NSMutableSet            *mutableChildren;
-@property (nonatomic, readwrite)        PSCreatureGenderType    *gender;
-@property (nonatomic, readwrite)        PSCreatureAbility       *ability;
 
 @end
 
@@ -23,12 +21,8 @@
 #pragma mark -
 #pragma mark Class Method
 
-+ (PSCreature *) createWithName:(NSString *)name
-                            age:(uint8_t)age
-                         weight:(uint8_t)weight
-                         gender:(PSCreatureGenderType *)gender
-                        ability:(PSCreatureAbility *)ability {
-    return [[[self alloc] initWithName:name age:age weight:weight gender:gender ability:ability]autorelease];
++ (PSCreature *)creatureWithName:(NSString *)name gender:(PSCreatureGenderType)gender {
+    return [[[self alloc] initWithName:name gender:gender] autorelease];
 }
 
 #pragma mark -
@@ -44,24 +38,19 @@
 - (instancetype)init {
     self = [super init];
     if (self) {
-        self.mutableChildren = [[[NSMutableSet alloc]init]autorelease];
+        self.mutableChildren = [[[NSMutableSet alloc] init] autorelease];
     }
+    
     return self;
 }
 
-- (instancetype)initWithName:(NSString *)name
-                         age:(uint8_t)age
-                      weight:(uint8_t)weight
-                      gender:(PSCreatureGenderType *)gender
-                     ability:(PSCreatureAbility *)ability{
+- (instancetype)initWithName:(NSString *)name gender:(PSCreatureGenderType)gender{
     self = [self init];
     if (self) {
         self.name = name;
-        self.age = age;
-        self.weight = weight;
         self.gender = gender;
-        self.ability = ability;
     }
+    
     return self;
 }
 
@@ -69,7 +58,7 @@
 #pragma mark Accesors
 
 -(NSSet *)children {
-    return [[_mutableChildren copy]autorelease];
+    return [[_mutableChildren copy] autorelease];
 }
 
 #pragma mark -
@@ -88,6 +77,18 @@
 
 - (void)removeChild:(PSCreature *)child {
     [self.mutableChildren removeObject:child];
+}
+
+- (void)ableToFigth {
+    if (self.gender == kPSMale) {
+        NSLog(@"%@ abel to figth", self.name);
+    }
+}
+
+- (void)ableToBeget {
+    if (self.gender == kPSFemale) {
+        NSLog(@"%@ abel to beget", self.name);
+    }
 }
 
 @end

@@ -15,7 +15,7 @@
 @property (nonatomic, readonly)         NSNumber    *money;
 @property (nonatomic, readonly)         NSSet       *cars;
 
-+ (instancetype)creatureWithDesignation:(NSString *)designation;
++ (instancetype)createWithDesignation:(NSString *)designation;
 - (void)addCar:(PSCar *)car;
 - (void)removeCar:(PSCar *)car;
 

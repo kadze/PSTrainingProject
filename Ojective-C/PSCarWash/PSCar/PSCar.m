@@ -20,7 +20,7 @@
 #pragma mark -
 #pragma mark Class Method
 
-+ (instancetype)creatureWithDesignation:(NSString *)designation {
++ (instancetype)createWithDesignation:(NSString *)designation {
     return [[[self alloc] initWithDesignation:designation] autorelease];
 }
 

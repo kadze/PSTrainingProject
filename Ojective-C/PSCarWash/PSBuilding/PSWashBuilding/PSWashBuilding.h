@@ -7,8 +7,10 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "PSBuilding.h"
+#import "PSRoom.h"
 
-@interface PSWashBuilding : PSBuilding
+@interface PSWashBuilding : PSRoom
+
+@property (nonatomic, readonly) NSArray *cars;
 
 @end

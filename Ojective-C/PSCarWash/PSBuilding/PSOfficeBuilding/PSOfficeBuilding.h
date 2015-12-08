@@ -7,7 +7,10 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "PSRoom.h"
 
-@interface PSOfficeBuilding : NSObject
+@interface PSOfficeBuilding : PSRoom
+
+@property (nonatomic, readonly) NSArray *worcers;
 
 @end

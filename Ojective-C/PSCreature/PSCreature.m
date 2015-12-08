@@ -57,7 +57,7 @@
 #pragma mark -
 #pragma mark Accesors
 
--(NSSet *)children {
+- (NSSet *)children {
     return [[_mutableChildren copy] autorelease];
 }
 

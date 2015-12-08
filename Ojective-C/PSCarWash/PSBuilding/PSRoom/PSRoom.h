@@ -11,4 +11,7 @@
 
 @interface PSRoom : PSBuilding
 
+@property (nonatomic, readonly) NSUInteger  capacity;
+@property (nonatomic, readonly) NSArray     *items;
+
 @end

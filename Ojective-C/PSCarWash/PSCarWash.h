@@ -10,4 +10,11 @@
 
 @interface PSCarWash : NSObject
 
+@property (nonatomic, readonly) NSSet   *workers;
+@property (nonatomic, readonly) NSSet   *rooms;
+
+- (void)addRooms:(NSSet *)rooms;
+- (void)addWorkers:(NSSet *)worker;
+- (void)removeWorkers:(NSSet *)worker;
+
 @end

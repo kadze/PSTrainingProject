@@ -11,9 +11,4 @@
 
 @interface PSDirtyCar : PSCar
 
-@property (nonatomic, readonly) NSSet   *cars;
-
-- (void)addCar:(PSDirtyCar *)car;
-- (void)removeCar:(PSDirtyCar *)car;
-
 @end

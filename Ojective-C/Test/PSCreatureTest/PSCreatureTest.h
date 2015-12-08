@@ -10,8 +10,6 @@
 
 @interface PSCreatureTest : NSObject
 
-@property (nonatomic, retain)   NSArray     *creatures;
-
 + (void)creatureTestParameters;
 
 @end

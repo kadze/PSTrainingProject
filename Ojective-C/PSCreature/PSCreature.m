@@ -21,7 +21,7 @@
 #pragma mark -
 #pragma mark Class Method
 
-+ (PSCreature *)creatureWithName:(NSString *)name gender:(PSCreatureGenderType)gender {
++ (instancetype)creatureWithName:(NSString *)name gender:(PSCreatureGenderType)gender {
     return [[[self alloc] initWithName:name gender:gender] autorelease];
 }
 

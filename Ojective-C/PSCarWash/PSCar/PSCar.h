@@ -8,8 +8,21 @@
 
 #import <Foundation/Foundation.h>
 
+typedef NS_ENUM (NSUInteger, PSCarType) {
+    kPSClean,
+    kPSDirty
+};
+
 @interface PSCar : NSObject
 
-@property (nonatomic, readonly) NSNumber    *money;
+@property (nonatomic, readonly, copy)   NSString    *designation;
+@property (nonatomic, readonly)         PSCarType   type;
+@property (nonatomic, readonly)         NSNumber    *money;
+@property (nonatomic, readonly)         NSSet       *cars;
+
++ (instancetype)creatureWithDesignation:(NSString *)designation;
++ (Class)classForType:(PSCarType)type;
+- (void)addCar:(PSCar *)car;
+- (void)removeCar:(PSCar *)car;
 
 @end

@@ -21,7 +21,7 @@ typedef NS_ENUM (NSUInteger, PSCreatureGenderType) {
 @property (nonatomic, assign)           uint8_t                 age;
 @property (nonatomic, assign)           uint8_t                 weight;
 
-+ (PSCreature *)creatureWithName:(NSString *)name gender:(PSCreatureGenderType)gender;
++ (instancetype)creatureWithName:(NSString *)name gender:(PSCreatureGenderType)gender;
 - (void)sayHello;
 - (void)addChild:(PSCreature *)child ;
 - (void)removeChild:(PSCreature *)child;

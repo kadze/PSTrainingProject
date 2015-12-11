@@ -10,7 +10,18 @@
 		AD1047041BCC5A8A00A990DB /* PSMethodReturnValueTest.c in Sources */ = {isa = PBXBuildFile; fileRef = AD1047021BCC5A8A00A990DB /* PSMethodReturnValueTest.c */; };
 		AD1064721BD8A7E100A38EEE /* PSPrintValueOfPrimitiveTypeTest.c in Sources */ = {isa = PBXBuildFile; fileRef = AD1064701BD8A7E100A38EEE /* PSPrintValueOfPrimitiveTypeTest.c */; };
 		AD1064781BD901BB00A38EEE /* PSDataStructureTest.c in Sources */ = {isa = PBXBuildFile; fileRef = AD1064761BD901BB00A38EEE /* PSDataStructureTest.c */; };
+		AD188A871C15FD75003C8E9C /* PSCarWash.m in Sources */ = {isa = PBXBuildFile; fileRef = AD188A861C15FD75003C8E9C /* PSCarWash.m */; };
+		AD188A8A1C15FDFF003C8E9C /* PSCar.m in Sources */ = {isa = PBXBuildFile; fileRef = AD188A891C15FDFF003C8E9C /* PSCar.m */; };
+		AD188A931C15FECA003C8E9C /* PSWorkers.m in Sources */ = {isa = PBXBuildFile; fileRef = AD188A921C15FECA003C8E9C /* PSWorkers.m */; };
+		AD188A961C15FEE1003C8E9C /* PSDirector.m in Sources */ = {isa = PBXBuildFile; fileRef = AD188A951C15FEE1003C8E9C /* PSDirector.m */; };
+		AD188A991C15FEF6003C8E9C /* PSAccountant.m in Sources */ = {isa = PBXBuildFile; fileRef = AD188A981C15FEF6003C8E9C /* PSAccountant.m */; };
+		AD188A9C1C15FF0F003C8E9C /* PSWosher.m in Sources */ = {isa = PBXBuildFile; fileRef = AD188A9B1C15FF0F003C8E9C /* PSWosher.m */; };
+		AD188A9F1C15FFB7003C8E9C /* PSBuilding.m in Sources */ = {isa = PBXBuildFile; fileRef = AD188A9E1C15FFB7003C8E9C /* PSBuilding.m */; };
+		AD188AA21C15FFD2003C8E9C /* PSRoom.m in Sources */ = {isa = PBXBuildFile; fileRef = AD188AA11C15FFD2003C8E9C /* PSRoom.m */; };
+		AD188AA51C15FFF1003C8E9C /* PSWashBuilding.m in Sources */ = {isa = PBXBuildFile; fileRef = AD188AA41C15FFF1003C8E9C /* PSWashBuilding.m */; };
+		AD188AA81C160006003C8E9C /* PSOfficeBuilding.m in Sources */ = {isa = PBXBuildFile; fileRef = AD188AA71C160006003C8E9C /* PSOfficeBuilding.m */; };
 		AD21515C1BC6B8010057F3A6 /* PSHuman.c in Sources */ = {isa = PBXBuildFile; fileRef = AD21515B1BC6B8010057F3A6 /* PSHuman.c */; };
+		AD5FEBF21BFA3EB100D8C067 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = AD5FEBF11BFA3EB100D8C067 /* main.m */; };
 		AD7CEAD21BB36C9300F2D042 /* main.c in Sources */ = {isa = PBXBuildFile; fileRef = AD7CEAD11BB36C9300F2D042 /* main.c */; };
 		AD83CB6B1BF3868D00FF6272 /* PSLinkedList.c in Sources */ = {isa = PBXBuildFile; fileRef = AD83CB691BF3868D00FF6272 /* PSLinkedList.c */; };
 		AD83CB6F1BF3958400FF6272 /* PSLinkedListNode.c in Sources */ = {isa = PBXBuildFile; fileRef = AD83CB6D1BF3958400FF6272 /* PSLinkedListNode.c */; };
@@ -18,10 +29,23 @@
 		AD90C22E1BB4564E00800D14 /* PSMethodReturnValue.c in Sources */ = {isa = PBXBuildFile; fileRef = AD90C22C1BB4564E00800D14 /* PSMethodReturnValue.c */; };
 		AD9A68D41BF15E18006CCC8C /* PSArray.c in Sources */ = {isa = PBXBuildFile; fileRef = AD9A68D21BF15E18006CCC8C /* PSArray.c */; };
 		ADA038511BDE6BA0007539C2 /* PSObject.c in Sources */ = {isa = PBXBuildFile; fileRef = ADA0384F1BDE6BA0007539C2 /* PSObject.c */; };
+		ADAA6CD61BFF5050002A4A27 /* PSCreature.m in Sources */ = {isa = PBXBuildFile; fileRef = ADAA6CD51BFF5050002A4A27 /* PSCreature.m */; };
+		ADCE03DC1C16756F00555686 /* PSCreatureTest.m in Sources */ = {isa = PBXBuildFile; fileRef = ADCE03DB1C16756F00555686 /* PSCreatureTest.m */; };
+		ADCE03E01C16787A00555686 /* PSCarWashTest.m in Sources */ = {isa = PBXBuildFile; fileRef = ADCE03DF1C16787A00555686 /* PSCarWashTest.m */; };
+		ADD0841D1C19D1830081F60C /* PSMoney.m in Sources */ = {isa = PBXBuildFile; fileRef = ADD0841C1C19D1830081F60C /* PSMoney.m */; };
 		ADE3ABDD1BEA954900910782 /* PSString.c in Sources */ = {isa = PBXBuildFile; fileRef = ADE3ABDB1BEA954900910782 /* PSString.c */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
+		AD5FEBED1BFA3EB100D8C067 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
 		AD7CEACC1BB36C9300F2D042 /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -42,10 +66,32 @@
 		AD1064751BD8B2DA00A38EEE /* PSDataStructure.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PSDataStructure.h; sourceTree = "<group>"; };
 		AD1064761BD901BB00A38EEE /* PSDataStructureTest.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = PSDataStructureTest.c; sourceTree = "<group>"; };
 		AD1064771BD901BB00A38EEE /* PSDataStructureTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSDataStructureTest.h; sourceTree = "<group>"; };
+		AD188A851C15FD75003C8E9C /* PSCarWash.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSCarWash.h; sourceTree = "<group>"; };
+		AD188A861C15FD75003C8E9C /* PSCarWash.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSCarWash.m; sourceTree = "<group>"; };
+		AD188A881C15FDFF003C8E9C /* PSCar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSCar.h; sourceTree = "<group>"; };
+		AD188A891C15FDFF003C8E9C /* PSCar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSCar.m; sourceTree = "<group>"; };
+		AD188A911C15FECA003C8E9C /* PSWorkers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSWorkers.h; sourceTree = "<group>"; };
+		AD188A921C15FECA003C8E9C /* PSWorkers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSWorkers.m; sourceTree = "<group>"; };
+		AD188A941C15FEE1003C8E9C /* PSDirector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSDirector.h; sourceTree = "<group>"; };
+		AD188A951C15FEE1003C8E9C /* PSDirector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSDirector.m; sourceTree = "<group>"; };
+		AD188A971C15FEF6003C8E9C /* PSAccountant.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSAccountant.h; sourceTree = "<group>"; };
+		AD188A981C15FEF6003C8E9C /* PSAccountant.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSAccountant.m; sourceTree = "<group>"; };
+		AD188A9A1C15FF0F003C8E9C /* PSWosher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSWosher.h; sourceTree = "<group>"; };
+		AD188A9B1C15FF0F003C8E9C /* PSWosher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSWosher.m; sourceTree = "<group>"; };
+		AD188A9D1C15FFB7003C8E9C /* PSBuilding.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSBuilding.h; sourceTree = "<group>"; };
+		AD188A9E1C15FFB7003C8E9C /* PSBuilding.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSBuilding.m; sourceTree = "<group>"; };
+		AD188AA01C15FFD2003C8E9C /* PSRoom.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSRoom.h; sourceTree = "<group>"; };
+		AD188AA11C15FFD2003C8E9C /* PSRoom.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSRoom.m; sourceTree = "<group>"; };
+		AD188AA31C15FFF1003C8E9C /* PSWashBuilding.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSWashBuilding.h; sourceTree = "<group>"; };
+		AD188AA41C15FFF1003C8E9C /* PSWashBuilding.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSWashBuilding.m; sourceTree = "<group>"; };
+		AD188AA61C160006003C8E9C /* PSOfficeBuilding.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSOfficeBuilding.h; sourceTree = "<group>"; };
+		AD188AA71C160006003C8E9C /* PSOfficeBuilding.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSOfficeBuilding.m; sourceTree = "<group>"; };
 		AD21515B1BC6B8010057F3A6 /* PSHuman.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = PSHuman.c; sourceTree = "<group>"; };
 		AD4337D51BC2FDC700C450D7 /* PSHuman.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSHuman.h; sourceTree = "<group>"; };
+		AD5FEBEF1BFA3EB100D8C067 /* Ojective-C */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "Ojective-C"; sourceTree = BUILT_PRODUCTS_DIR; };
+		AD5FEBF11BFA3EB100D8C067 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		AD7CEACE1BB36C9300F2D042 /* PSTrainingProject */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = PSTrainingProject; sourceTree = BUILT_PRODUCTS_DIR; };
-		AD7CEAD11BB36C9300F2D042 /* main.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; name = main.c; path = PSTrainingProject/main.c; sourceTree = "<group>"; };
+		AD7CEAD11BB36C9300F2D042 /* main.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = main.c; sourceTree = "<group>"; };
 		AD83CB691BF3868D00FF6272 /* PSLinkedList.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = PSLinkedList.c; sourceTree = "<group>"; };
 		AD83CB6A1BF3868D00FF6272 /* PSLinkedList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSLinkedList.h; sourceTree = "<group>"; };
 		AD83CB6D1BF3958400FF6272 /* PSLinkedListNode.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = PSLinkedListNode.c; sourceTree = "<group>"; };
@@ -59,11 +105,26 @@
 		AD9E018D1BCBDB41000AED45 /* PSDataTypeTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSDataTypeTest.h; sourceTree = "<group>"; };
 		ADA0384F1BDE6BA0007539C2 /* PSObject.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = PSObject.c; sourceTree = "<group>"; };
 		ADA038501BDE6BA0007539C2 /* PSObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSObject.h; sourceTree = "<group>"; };
+		ADAA6CD41BFF5050002A4A27 /* PSCreature.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSCreature.h; sourceTree = "<group>"; };
+		ADAA6CD51BFF5050002A4A27 /* PSCreature.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSCreature.m; sourceTree = "<group>"; };
+		ADCE03DA1C16756F00555686 /* PSCreatureTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSCreatureTest.h; sourceTree = "<group>"; };
+		ADCE03DB1C16756F00555686 /* PSCreatureTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSCreatureTest.m; sourceTree = "<group>"; };
+		ADCE03DE1C16787A00555686 /* PSCarWashTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSCarWashTest.h; sourceTree = "<group>"; };
+		ADCE03DF1C16787A00555686 /* PSCarWashTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSCarWashTest.m; sourceTree = "<group>"; };
+		ADD0841B1C19D1830081F60C /* PSMoney.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSMoney.h; sourceTree = "<group>"; };
+		ADD0841C1C19D1830081F60C /* PSMoney.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSMoney.m; sourceTree = "<group>"; };
 		ADE3ABDB1BEA954900910782 /* PSString.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = PSString.c; sourceTree = "<group>"; };
 		ADE3ABDC1BEA954900910782 /* PSString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSString.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		AD5FEBEC1BFA3EB100D8C067 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		AD7CEACB1BB36C9300F2D042 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -108,6 +169,124 @@
 			path = PSDataStructureTest;
 			sourceTree = "<group>";
 		};
+		AD171F731BFCEC14001F456B /* PSCreature */ = {
+			isa = PBXGroup;
+			children = (
+				ADAA6CD41BFF5050002A4A27 /* PSCreature.h */,
+				ADAA6CD51BFF5050002A4A27 /* PSCreature.m */,
+			);
+			path = PSCreature;
+			sourceTree = "<group>";
+		};
+		AD188A761C15F44D003C8E9C /* PSCarWash */ = {
+			isa = PBXGroup;
+			children = (
+				AD188A841C15FCB6003C8E9C /* PSMoney */,
+				AD188A7F1C15FB04003C8E9C /* PSCar */,
+				AD188A7B1C15F9DB003C8E9C /* PSWorkers */,
+				AD188A791C15F4F7003C8E9C /* PSBuilding */,
+				AD188A851C15FD75003C8E9C /* PSCarWash.h */,
+				AD188A861C15FD75003C8E9C /* PSCarWash.m */,
+			);
+			path = PSCarWash;
+			sourceTree = "<group>";
+		};
+		AD188A771C15F48E003C8E9C /* PSWashBuilding */ = {
+			isa = PBXGroup;
+			children = (
+				AD188AA31C15FFF1003C8E9C /* PSWashBuilding.h */,
+				AD188AA41C15FFF1003C8E9C /* PSWashBuilding.m */,
+			);
+			path = PSWashBuilding;
+			sourceTree = "<group>";
+		};
+		AD188A781C15F4CC003C8E9C /* PSOfficeBuilding */ = {
+			isa = PBXGroup;
+			children = (
+				AD188AA61C160006003C8E9C /* PSOfficeBuilding.h */,
+				AD188AA71C160006003C8E9C /* PSOfficeBuilding.m */,
+			);
+			path = PSOfficeBuilding;
+			sourceTree = "<group>";
+		};
+		AD188A791C15F4F7003C8E9C /* PSBuilding */ = {
+			isa = PBXGroup;
+			children = (
+				AD188A7A1C15F726003C8E9C /* PSRoom */,
+				AD188A771C15F48E003C8E9C /* PSWashBuilding */,
+				AD188A781C15F4CC003C8E9C /* PSOfficeBuilding */,
+				AD188A9D1C15FFB7003C8E9C /* PSBuilding.h */,
+				AD188A9E1C15FFB7003C8E9C /* PSBuilding.m */,
+			);
+			path = PSBuilding;
+			sourceTree = "<group>";
+		};
+		AD188A7A1C15F726003C8E9C /* PSRoom */ = {
+			isa = PBXGroup;
+			children = (
+				AD188AA01C15FFD2003C8E9C /* PSRoom.h */,
+				AD188AA11C15FFD2003C8E9C /* PSRoom.m */,
+			);
+			path = PSRoom;
+			sourceTree = "<group>";
+		};
+		AD188A7B1C15F9DB003C8E9C /* PSWorkers */ = {
+			isa = PBXGroup;
+			children = (
+				AD188A7E1C15FABE003C8E9C /* PSWosher */,
+				AD188A7D1C15FA8F003C8E9C /* PSAccountant */,
+				AD188A7C1C15FA34003C8E9C /* PSDirector */,
+				AD188A911C15FECA003C8E9C /* PSWorkers.h */,
+				AD188A921C15FECA003C8E9C /* PSWorkers.m */,
+			);
+			path = PSWorkers;
+			sourceTree = "<group>";
+		};
+		AD188A7C1C15FA34003C8E9C /* PSDirector */ = {
+			isa = PBXGroup;
+			children = (
+				AD188A941C15FEE1003C8E9C /* PSDirector.h */,
+				AD188A951C15FEE1003C8E9C /* PSDirector.m */,
+			);
+			path = PSDirector;
+			sourceTree = "<group>";
+		};
+		AD188A7D1C15FA8F003C8E9C /* PSAccountant */ = {
+			isa = PBXGroup;
+			children = (
+				AD188A971C15FEF6003C8E9C /* PSAccountant.h */,
+				AD188A981C15FEF6003C8E9C /* PSAccountant.m */,
+			);
+			path = PSAccountant;
+			sourceTree = "<group>";
+		};
+		AD188A7E1C15FABE003C8E9C /* PSWosher */ = {
+			isa = PBXGroup;
+			children = (
+				AD188A9A1C15FF0F003C8E9C /* PSWosher.h */,
+				AD188A9B1C15FF0F003C8E9C /* PSWosher.m */,
+			);
+			path = PSWosher;
+			sourceTree = "<group>";
+		};
+		AD188A7F1C15FB04003C8E9C /* PSCar */ = {
+			isa = PBXGroup;
+			children = (
+				AD188A881C15FDFF003C8E9C /* PSCar.h */,
+				AD188A891C15FDFF003C8E9C /* PSCar.m */,
+			);
+			path = PSCar;
+			sourceTree = "<group>";
+		};
+		AD188A841C15FCB6003C8E9C /* PSMoney */ = {
+			isa = PBXGroup;
+			children = (
+				ADD0841B1C19D1830081F60C /* PSMoney.h */,
+				ADD0841C1C19D1830081F60C /* PSMoney.m */,
+			);
+			path = PSMoney;
+			sourceTree = "<group>";
+		};
 		AD4337D31BC2FD3900C450D7 /* PSHuman */ = {
 			isa = PBXGroup;
 			children = (
@@ -117,11 +296,22 @@
 			path = PSHuman;
 			sourceTree = "<group>";
 		};
+		AD5FEBF01BFA3EB100D8C067 /* Ojective-C */ = {
+			isa = PBXGroup;
+			children = (
+				AD188A761C15F44D003C8E9C /* PSCarWash */,
+				AD171F731BFCEC14001F456B /* PSCreature */,
+				ADAA6CD71BFF5CA3002A4A27 /* Test */,
+				AD5FEBF11BFA3EB100D8C067 /* main.m */,
+			);
+			path = "Ojective-C";
+			sourceTree = "<group>";
+		};
 		AD7CEAC51BB36C9300F2D042 = {
 			isa = PBXGroup;
 			children = (
 				AD7CEACF1BB36C9300F2D042 /* Products */,
-				AD7CEAD11BB36C9300F2D042 /* main.c */,
+				AD5FEBF01BFA3EB100D8C067 /* Ojective-C */,
 				AD7CEAD01BB36C9300F2D042 /* Source */,
 				AD7CEADA1BB37CC600F2D042 /* Test */,
 			);
@@ -131,6 +321,7 @@
 			isa = PBXGroup;
 			children = (
 				AD7CEACE1BB36C9300F2D042 /* PSTrainingProject */,
+				AD5FEBEF1BFA3EB100D8C067 /* Ojective-C */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -138,6 +329,7 @@
 		AD7CEAD01BB36C9300F2D042 /* Source */ = {
 			isa = PBXGroup;
 			children = (
+				AD7CEAD11BB36C9300F2D042 /* main.c */,
 				AD83CB681BF385FA00FF6272 /* PSLinkedList */,
 				AD9A68D11BF15D90006CCC8C /* PSArray */,
 				ADE3ABDA1BEA94CB00910782 /* PSString */,
@@ -237,19 +429,62 @@
 			path = PSObject;
 			sourceTree = "<group>";
 		};
+		ADAA6CD71BFF5CA3002A4A27 /* Test */ = {
+			isa = PBXGroup;
+			children = (
+				ADCE03DD1C16783F00555686 /* PSCarWashTest */,
+				ADCE03D91C16734C00555686 /* PSCreatureTest */,
+			);
+			path = Test;
+			sourceTree = "<group>";
+		};
+		ADCE03D91C16734C00555686 /* PSCreatureTest */ = {
+			isa = PBXGroup;
+			children = (
+				ADCE03DA1C16756F00555686 /* PSCreatureTest.h */,
+				ADCE03DB1C16756F00555686 /* PSCreatureTest.m */,
+			);
+			path = PSCreatureTest;
+			sourceTree = "<group>";
+		};
+		ADCE03DD1C16783F00555686 /* PSCarWashTest */ = {
+			isa = PBXGroup;
+			children = (
+				ADCE03DE1C16787A00555686 /* PSCarWashTest.h */,
+				ADCE03DF1C16787A00555686 /* PSCarWashTest.m */,
+			);
+			path = PSCarWashTest;
+			sourceTree = "<group>";
+		};
 		ADE3ABDA1BEA94CB00910782 /* PSString */ = {
 			isa = PBXGroup;
 			children = (
 				ADE3ABDB1BEA954900910782 /* PSString.c */,
 				ADE3ABDC1BEA954900910782 /* PSString.h */,
 			);
-			name = PSString;
-			path = PSSreing;
+			path = PSString;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		AD5FEBEE1BFA3EB100D8C067 /* Ojective-C */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AD5FEBF51BFA3EB100D8C067 /* Build configuration list for PBXNativeTarget "Ojective-C" */;
+			buildPhases = (
+				AD5FEBEB1BFA3EB100D8C067 /* Sources */,
+				AD5FEBEC1BFA3EB100D8C067 /* Frameworks */,
+				AD5FEBED1BFA3EB100D8C067 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Ojective-C";
+			productName = "Ojective-C";
+			productReference = AD5FEBEF1BFA3EB100D8C067 /* Ojective-C */;
+			productType = "com.apple.product-type.tool";
+		};
 		AD7CEACD1BB36C9300F2D042 /* PSTrainingProject */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = AD7CEAD51BB36C9300F2D042 /* Build configuration list for PBXNativeTarget "PSTrainingProject" */;
@@ -277,6 +512,9 @@
 				LastUpgradeCheck = 0700;
 				ORGANIZATIONNAME = "Сергей";
 				TargetAttributes = {
+					AD5FEBEE1BFA3EB100D8C067 = {
+						CreatedOnToolsVersion = 7.1.1;
+					};
 					AD7CEACD1BB36C9300F2D042 = {
 						CreatedOnToolsVersion = 7.0;
 					};
@@ -295,11 +533,34 @@
 			projectRoot = "";
 			targets = (
 				AD7CEACD1BB36C9300F2D042 /* PSTrainingProject */,
+				AD5FEBEE1BFA3EB100D8C067 /* Ojective-C */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXSourcesBuildPhase section */
+		AD5FEBEB1BFA3EB100D8C067 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ADAA6CD61BFF5050002A4A27 /* PSCreature.m in Sources */,
+				AD188A9C1C15FF0F003C8E9C /* PSWosher.m in Sources */,
+				AD188A991C15FEF6003C8E9C /* PSAccountant.m in Sources */,
+				AD188A9F1C15FFB7003C8E9C /* PSBuilding.m in Sources */,
+				ADD0841D1C19D1830081F60C /* PSMoney.m in Sources */,
+				AD188AA51C15FFF1003C8E9C /* PSWashBuilding.m in Sources */,
+				AD188A871C15FD75003C8E9C /* PSCarWash.m in Sources */,
+				ADCE03E01C16787A00555686 /* PSCarWashTest.m in Sources */,
+				AD188A961C15FEE1003C8E9C /* PSDirector.m in Sources */,
+				ADCE03DC1C16756F00555686 /* PSCreatureTest.m in Sources */,
+				AD5FEBF21BFA3EB100D8C067 /* main.m in Sources */,
+				AD188AA81C160006003C8E9C /* PSOfficeBuilding.m in Sources */,
+				AD188A931C15FECA003C8E9C /* PSWorkers.m in Sources */,
+				AD188AA21C15FFD2003C8E9C /* PSRoom.m in Sources */,
+				AD188A8A1C15FDFF003C8E9C /* PSCar.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		AD7CEACA1BB36C9300F2D042 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -322,6 +583,26 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
+		AD5FEBF31BFA3EB100D8C067 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_ARC = NO;
+				CODE_SIGN_IDENTITY = "-";
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		AD5FEBF41BFA3EB100D8C067 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_ARC = NO;
+				CODE_SIGN_IDENTITY = "-";
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
 		AD7CEAD31BB36C9300F2D042 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -416,6 +697,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		AD5FEBF51BFA3EB100D8C067 /* Build configuration list for PBXNativeTarget "Ojective-C" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AD5FEBF31BFA3EB100D8C067 /* Debug */,
+				AD5FEBF41BFA3EB100D8C067 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		AD7CEAC91BB36C9300F2D042 /* Build configuration list for PBXProject "PSTrainingProject" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

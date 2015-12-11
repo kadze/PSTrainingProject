@@ -4,6 +4,11 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>Ojective-C.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>1</integer>
+		</dict>
 		<key>PSTrainingProject.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
@@ -12,6 +17,11 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
+		<key>AD5FEBEE1BFA3EB100D8C067</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>AD7CEACD1BB36C9300F2D042</key>
 		<dict>
 			<key>primary</key>

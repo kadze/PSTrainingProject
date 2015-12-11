@@ -10,8 +10,7 @@
 
 @interface PSCar ()
 
-@property (nonatomic, readwrite, copy)  NSString        *designation;
-@property (nonatomic, retain)           NSMutableSet    *mutableCars;
+@property (nonatomic, readwrite, copy)  NSString    *designation;
 
 @end
 
@@ -29,18 +28,8 @@
 
 - (void)dealloc {
     self.designation = nil;
-    self.mutableCars = nil;
     
     [super dealloc];
-}
-
-- (instancetype)init {
-    self = [super init];
-    if (self) {
-        self.mutableCars = [[[NSMutableSet alloc] init] autorelease];
-    }
-    
-    return self;
 }
 
 - (instancetype)initWithDesignation:(NSString *)designation {
@@ -50,24 +39,6 @@
     }
     
     return self;
-}
-
-#pragma mark -
-#pragma mark Accesors
-
-- (NSSet *)cars {
-    return [[_mutableCars copy] autorelease];
-}
-
-#pragma mark -
-#pragma mark Public Methods
-
-- (void)addCar:(PSCar *)car {
-    [self.mutableCars addObject:car];
-}
-
-- (void)removeCar:(PSCar *)car {
-    [self.mutableCars removeObject:car];
 }
 
 @end

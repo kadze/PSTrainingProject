@@ -13,8 +13,8 @@
 @property (nonatomic, readonly) NSSet   *workers;
 @property (nonatomic, readonly) NSSet   *rooms;
 
-- (void)addRooms:(NSSet *)rooms;
-- (void)addWorkers:(NSSet *)worker;
-- (void)removeWorkers:(NSSet *)worker;
+- (void)addRoom:(NSSet *)room;
+- (void)addWorker:(NSSet *)worker;
+- (void)removeWorker:(NSSet *)worker;
 
 @end

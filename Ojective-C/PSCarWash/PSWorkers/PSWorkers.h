@@ -10,4 +10,10 @@
 
 @interface PSWorkers : NSObject
 
+@property (nonatomic, readonly, copy)   NSString    *name;
+@property (nonatomic, readonly)         NSString    *position;
+@property (nonatomic, readonly)         NSSet       *value;
+
++ (instancetype)workesWithName:(NSString *)name;
+
 @end

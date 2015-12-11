@@ -8,6 +8,18 @@
 
 #import "PSWorkers.h"
 
+@interface PSWorkers ()
+
+@property (nonatomic, readwrite, copy)  NSString        *name;
+@property (nonatomic, readwrite, copy)  NSString        *position;
+@property (nonatomic, readwrite)        NSMutableSet    *mutableValue;
+
+@end
+
 @implementation PSWorkers
+
++ (instancetype)workesWithName:(NSString *)name {
+    return [[[self alloc] initWithName:name] autorelease];
+}
 
 @end

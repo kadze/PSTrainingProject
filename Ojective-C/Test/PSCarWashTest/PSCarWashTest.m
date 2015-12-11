@@ -7,7 +7,15 @@
 //
 
 #import "PSCarWashTest.h"
+#import "PSCar.h"
 
 @implementation PSCarWashTest
+
++ (void)createCar {
+    PSCar *carOne = [PSCar createWithDesignation:@"Hyndai"];
+    [carOne clean:NO];
+    assert(carOne);
+    
+}
 
 @end

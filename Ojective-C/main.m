@@ -8,15 +8,16 @@
 
 #import <Foundation/Foundation.h>
 #import "PSCreatureTest.h"
+#import "PSCarWashTest.h"
 
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
 //        // insert code here...
 //        NSLog(@"Hello, World!");
 
-//        [PSCreatureTest creatureTestParameters];
+        [PSCreatureTest creatureTestParameters];
         
-
+//        [PSCarWashTest createCar];
     
     }
     return 0;

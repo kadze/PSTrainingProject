@@ -23,7 +23,7 @@ typedef NS_ENUM (NSUInteger, PSCreatureGenderType) {
 
 + (instancetype)creatureWithName:(NSString *)name gender:(PSCreatureGenderType)gender;
 - (void)sayHello;
-- (void)addChild:(PSCreature *)child ;
+- (void)addChild:(PSCreature *)child;
 - (void)removeChild:(PSCreature *)child;
 - (void)ableToFigth;
 - (void)ableToBeget;

@@ -15,33 +15,33 @@
     PSCreature *creatureFirst = [PSCreature creatureWithName:@"Elen" gender:kPSFemale];
     [creatureFirst setWeight:30];
     [creatureFirst setWeight:50];
-    assert(nil != creatureFirst);
+    assert(creatureFirst);
     
     PSCreature *creatureTwo = [PSCreature creatureWithName:@"Bob" gender:kPSMale];
     [creatureTwo setAge:10];
     [creatureTwo setWeight:22];
-    assert(nil != creatureTwo);
+    assert(creatureTwo);
     [creatureFirst addChild:creatureTwo];
     
     PSCreature *creatureThree = [PSCreature creatureWithName:@"Den" gender:kPSMale];
     [creatureThree setAge:9];
     [creatureThree setWeight:18];
-    assert(nil != creatureThree);
+    assert(creatureThree);
     [creatureFirst addChild:creatureThree];
     
     PSCreature *creatureFour = [PSCreature creatureWithName:@"Ket" gender:kPSFemale];
     [creatureFour setAge:8];
     [creatureFour setWeight:14];
-    assert(nil != creatureFour);
+    assert(creatureFour);
     [creatureFirst addChild:creatureFour];
     
     NSSet *childrens = [creatureFirst children];
-    assert(nil != childrens);
+    assert(childrens);
     
     [creatureFirst sayHello];
     
     NSArray *creatures = @[creatureFirst, creatureTwo, creatureThree, creatureFour];
-    assert(nil != creatures);
+    assert(creatures);
 }
 
 @end

@@ -10,8 +10,8 @@
 
 @interface PSCarWash ()
 
-@property (nonatomic, retain)           NSMutableSet            *mutableRoom;
-@property (nonatomic, retain)           NSMutableSet            *mutableWorker;
+@property (nonatomic, retain)   NSMutableSet    *mutableBuilding;
+@property (nonatomic, retain)   NSMutableSet    *mutableWorker;
 
 @end
 
@@ -21,7 +21,7 @@
 #pragma mark Initialization & Deallocations
 
 - (void)dealloc {
-    self.mutableRoom = nil;
+    self.mutableBuilding = nil;
     self.mutableWorker = nil;
     
     [super dealloc];
@@ -30,7 +30,7 @@
 - (instancetype)init {
     self = [super init];
     if (self) {
-        self.mutableRoom = [[[NSMutableSet alloc] init] autorelease];
+        self.mutableBuilding = [[[NSMutableSet alloc] init] autorelease];
         self.mutableWorker = [[[NSMutableSet alloc] init] autorelease];
     }
     
@@ -40,8 +40,8 @@
 #pragma mark -
 #pragma mark Accesors
 
-- (NSSet *)rooms {
-    return [[_mutableRoom copy] autorelease];
+- (NSSet *)buildings {
+    return [[_mutableBuilding copy] autorelease];
 }
 
 - (NSSet *)workers {
@@ -52,16 +52,16 @@
 #pragma mark Public Methods
 
 
-- (void)addRoom:(NSSet *)room {
-
+- (void)addBuilding:(PSCarWash *)building {
+    [self.mutableBuilding addObject:building];
 }
 
-- (void)addWorker:(NSSet *)worker {
-
+- (void)addWorker:(PSCarWash *)worker {
+    [self.mutableWorker addObject:worker];
 }
 
-- (void)removeWorker:(NSSet *)worker {
-
+- (void)removeWorker:(PSCarWash *)worker {
+    [self.mutableWorker removeObject:worker];
 }
 
 @end

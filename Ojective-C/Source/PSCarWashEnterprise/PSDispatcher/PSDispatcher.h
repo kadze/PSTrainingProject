@@ -8,6 +8,14 @@
 
 #import <Foundation/Foundation.h>
 
-@interface PSDispatcher : NSObject
+#import "PSObserverProtocol.h"
+
+@class PSWorkers;
+
+@interface PSDispatcher : NSObject <PSObserverProtocol>
+
+- (void)addProcessingObject:(id)object;
+- (void)addHandler:(PSWorkers *)handler;
+- (void)removeHandler:(PSWorkers *)handler;
 
 @end

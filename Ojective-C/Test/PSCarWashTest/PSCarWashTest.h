@@ -7,10 +7,9 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "PSCar.h"
 
 @interface PSCarWashTest : NSObject
 
-+ (void)createCar;
++ (void)carWashEnterpriseTest;
 
 @end

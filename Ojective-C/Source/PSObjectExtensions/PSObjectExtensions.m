@@ -8,6 +8,10 @@
 
 #import "PSObjectExtensions.h"
 
-@implementation PSObjectExtensions
+@implementation NSObject (PSObjectExtensions)
+
++ (instancetype)object {
+    return [[[self alloc] init] autorelease];
+}
 
 @end

@@ -12,4 +12,16 @@
 // Include any system framework and library headers here that should be included in all compilation units.
 // You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
 
+#import "PSAccountant.h"
+#import "PSCar.h"
+#import "PSDirector.h"
+#import "PSDispatcher.h"
+#import "PSMoneyProtocol.h"
+#import "PSObjectExtensions.h"
+#import "PSObservableObject.h"
+#import "PSObserverProtocol.h"
+#import "PSQueue.h"
+#import "PSWasher.h"
+#import "PSWorkers.h"
+
 #endif /* PrefixHeaderCarWash_pch */

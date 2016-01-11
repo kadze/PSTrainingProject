@@ -15,8 +15,8 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "AD7CEACD1BB36C9300F2D042"
-               BuildableName = "PSTrainingProject"
-               BlueprintName = "PSTrainingProject"
+               BuildableName = "Lenguage C"
+               BlueprintName = "Lenguage C"
                ReferencedContainer = "container:PSTrainingProject.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -33,8 +33,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "AD7CEACD1BB36C9300F2D042"
-            BuildableName = "PSTrainingProject"
-            BlueprintName = "PSTrainingProject"
+            BuildableName = "Lenguage C"
+            BlueprintName = "Lenguage C"
             ReferencedContainer = "container:PSTrainingProject.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -56,8 +56,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "AD7CEACD1BB36C9300F2D042"
-            BuildableName = "PSTrainingProject"
-            BlueprintName = "PSTrainingProject"
+            BuildableName = "Lenguage C"
+            BlueprintName = "Lenguage C"
             ReferencedContainer = "container:PSTrainingProject.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
@@ -75,8 +75,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "AD7CEACD1BB36C9300F2D042"
-            BuildableName = "PSTrainingProject"
-            BlueprintName = "PSTrainingProject"
+            BuildableName = "Lenguage C"
+            BlueprintName = "Lenguage C"
             ReferencedContainer = "container:PSTrainingProject.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>

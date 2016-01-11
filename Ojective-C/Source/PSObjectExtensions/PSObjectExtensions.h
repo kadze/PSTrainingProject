@@ -8,6 +8,8 @@
 
 #import <Foundation/Foundation.h>
 
-@interface PSObjectExtensions : NSObject
+@interface NSObject (PSObjectExtensions)
+
++ (instancetype)object;
 
 @end

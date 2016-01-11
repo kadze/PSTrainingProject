@@ -126,7 +126,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PSTrainingProject/PSMethodReturn/PSReturnMomOrDad.c"
@@ -142,7 +142,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PSTrainingProject/PSMethodReturn/PSReturnMomOrDad.c"
@@ -153,22 +153,6 @@
             endingLineNumber = "16"
             landmarkName = "ParentType()"
             landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Ojective-C/Test/PSCarWashTest/PSCarWashTest.m"
-            timestampString = "471296775.282567"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "15"
-            endingLineNumber = "15"
-            landmarkName = "+createCar"
-            landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

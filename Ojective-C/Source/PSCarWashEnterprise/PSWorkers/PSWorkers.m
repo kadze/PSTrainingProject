@@ -10,31 +10,15 @@
 
 @interface PSWorkers ()
 @property (nonatomic, assign)   PSWorkersState  state;
-@property (nonatomic, retain)   NSMutableSet    *mutableWorkers;
 
 @end
 
 @implementation PSWorkers
 
-@dynamic workers;
-
 @synthesize money = _money;
 
 #pragma mark -
-#pragma mark Class methods
-
-+ (PSWorkers *)pool {
-    return [self object];
-}
-
-#pragma mark -
 #pragma mark Initializations and Deallocations
-
-- (void)dealloc {
-    self.mutableWorkers = nil;
-    
-    [super dealloc];
-}
 
 - (instancetype)init {
     return [self initWithMoney:0 salary:0];
@@ -47,7 +31,6 @@
         self.money = money;
         self.salary = salary;
         self.state = kPSWorkerBusy;
-        self.mutableWorkers = [NSMutableSet set];
     }
     
     return self;
@@ -55,12 +38,6 @@
 
 #pragma mark -
 #pragma mark Accessors
-
-- (NSSet *)employees {
-    @synchronized(_mutableWorkers) {
-        return [[_mutableWorkers copy] autorelease];
-    }
-}
 
 - (void)setState:(PSWorkersState)state {
     if (_state != state) {
@@ -72,69 +49,6 @@
 
 #pragma mark -
 #pragma mark Public Methods
-
-- (void)addWorker:(PSWorkers *)worker {
-    @synchronized (_mutableWorkers) {
-        [_mutableWorkers addObject:worker];
-    }
-}
-
-- (void)removeWorker:(PSWorkers *)worker {
-    @synchronized (_mutableWorkers) {
-        [_mutableWorkers removeObject:worker];
-    }
-}
-
-- (id)freeWorker {
-    __block PSWorkers *freeWorker = nil;
-    
-    @synchronized (_mutableWorkers) {
-        [_mutableWorkers enumerateObjectsUsingBlock:^(PSWorkers *worker, BOOL *stop) {
-            if (kPSWorkerFree == worker.state) {
-                freeWorker = worker;
-                *stop = YES;
-            }
-        }];
-    }
-    
-    return freeWorker;
-}
-
-- (id)freeWorkerWithClass:(Class)class {
-    __block PSWorkers *freeWorker = nil;
-    
-    @synchronized (_mutableWorkers) {
-        [_mutableWorkers enumerateObjectsUsingBlock:^(PSWorkers *worker, BOOL *stop) {
-            if ([worker isMemberOfClass:class] && kPSWorkerFree == worker.state) {
-                freeWorker = worker;
-                *stop = YES;
-            }
-        }];
-    }
-    
-    return freeWorker;
-}
-
-- (NSSet *)freeWorkersWithClass:(Class)class {
-    NSPredicate *predicate = [NSPredicate predicateWithBlock:^BOOL(PSWorkers *worker, NSDictionary *bindings) {
-        return ([worker isMemberOfClass:class]
-                && worker.state == kPSWorkerFree);
-    }];
-    
-    return [self.workers filteredSetUsingPredicate:predicate];
-}
-
-- (BOOL)containsWorker:(PSWorkers *)worker {
-    @synchronized (_mutableWorkers) {
-        return [self.mutableWorkers containsObject:worker];
-    }
-}
-
-- (NSUInteger)count {
-    @synchronized (_mutableWorkers) {
-        return [self.mutableWorkers count];
-    }
-}
 
 - (void)workerMayBeFree {
     self.state = kPSWorkerFree;
@@ -149,9 +63,9 @@
 }
 
 - (void)workWithObject:(id<PSMoneyProtocol>)object {
-    
+    [self doesNotRecognizeSelector:_cmd];
 }
-
+    
 - (void)performWorkWithObject:(PSWorkers *)object {
     NSLog(@"self = %@ object = %@", self, object);
     

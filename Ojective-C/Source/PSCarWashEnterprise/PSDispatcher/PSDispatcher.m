@@ -8,10 +8,11 @@
 
 #import "PSDispatcher.h"
 #import "PSQueue.h"
+#import "PSWorkersPool.h"
 
 @interface PSDispatcher ()
-@property (nonatomic, retain)   PSQueue     *processingObjects;
-@property (nonatomic, retain)   PSWorkers   *mutableHandlers;
+@property (nonatomic, retain)   PSQueue         *processingObjects;
+@property (nonatomic, retain)   PSWorkersPool   *mutableHandlers;
 
 - (void)processTheObject:(id)object withHandler:(PSWorkers *)handler;
 
@@ -35,7 +36,7 @@
     
     if (self) {
         self.processingObjects = [PSQueue queue];
-        self.mutableHandlers = [PSWorkers pool];
+        self.mutableHandlers = [PSWorkersPool pool];
     }
     
     return self;

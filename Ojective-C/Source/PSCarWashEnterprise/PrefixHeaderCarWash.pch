@@ -23,5 +23,6 @@
 #import "PSQueue.h"
 #import "PSWasher.h"
 #import "PSWorkers.h"
+#import "PSWorkersPool.h"
 
 #endif /* PrefixHeaderCarWash_pch */

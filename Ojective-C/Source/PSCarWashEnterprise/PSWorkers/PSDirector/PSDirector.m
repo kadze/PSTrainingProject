@@ -35,7 +35,7 @@
 #pragma mark Private
 
 - (void)profit {
-    usleep(arc4random_uniform(10 * 1000));
+//    usleep(arc4random_uniform(10 * 1000));
     
     NSLog(@"Directors money = %d", self.money);
 }

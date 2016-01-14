@@ -8,12 +8,14 @@
 
 #import "PSCarWashEnterprise.h"
 
+const static NSUInteger kPSPrice = 1;
+
 @interface PSCarWashEnterprise ()
-@property (nonatomic, retain)   PSQueue     *cars;
-@property (nonatomic, retain)   PSWorkers   *worckers;
-@property (nonatomic, retain)   PSDispatcher *washerDispatcher;
-@property (nonatomic, retain)   PSDispatcher *accountantDispatcher;
-@property (nonatomic, retain)   PSDispatcher *directorDispatcher;
+@property (nonatomic, retain)   PSQueue         *cars;
+@property (nonatomic, retain)   PSWorkersPool   *worckers;
+@property (nonatomic, retain)   PSDispatcher    *washerDispatcher;
+@property (nonatomic, retain)   PSDispatcher    *accountantDispatcher;
+@property (nonatomic, retain)   PSDispatcher    *directorDispatcher;
 
 - (void)hireDirectors;
 - (void)hireAccountants;
@@ -46,7 +48,7 @@
 #pragma mark -
 #pragma mark Public Methods
 
-- (void)takeTheCars:(NSArray *)cars {
+- (void)takeCars:(NSArray *)cars {
     [self hireStaff];
     
     PSDispatcher *washerDispatcher = self.washerDispatcher;
@@ -74,25 +76,17 @@
 }
 
 - (void)hireAccountants {
-    PSDispatcher *accountantDispatcher = self.accountantDispatcher;
-    NSUInteger accountantsCount = arc4random_uniform(24) + 1;
+    [self.accountantDispatcher addHandler:[PSAccountant object]];
     
-    for (NSUInteger index = 0; index < accountantsCount; index++) {
-        PSAccountant *accountant = [PSAccountant object];
-        
-        [accountant addObserver:self];
-        [accountantDispatcher addHandler:accountant];
-    }
-    
-    NSLog(@"Hired %lu accountants", accountantsCount);
+    NSLog(@"Hired 1 accountants");
 }
 
 - (void)hireWashers {
     PSDispatcher *washerDispatcher = self.washerDispatcher;
-    NSUInteger washersCount = arc4random_uniform(49) + 1;
+    NSUInteger washersCount = arc4random_uniform(10);
     
     for (NSUInteger index = 0; index < washersCount; index++) {
-        PSWasher *washer = [[PSWasher alloc] initWithPrice:100];
+        PSWasher *washer = [[PSWasher alloc] initWithPrice:kPSPrice];
         
         [washer addObserver:self];
         [washerDispatcher addHandler:washer];
@@ -102,7 +96,7 @@
 }
 
 #pragma mark -
-#pragma mark PSObserver
+#pragma mark PSObserverProtocol
 
 - (void)PSWorckersDidPerformWorkWithObject:(id<PSMoneyProtocol>)object {
     if ([object isKindOfClass:[PSWasher class]]) {

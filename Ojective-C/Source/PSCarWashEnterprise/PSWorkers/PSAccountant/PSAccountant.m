@@ -29,7 +29,8 @@
 #pragma mark Private
 
 - (void)count {
-    usleep(arc4random_uniform(10));
+//    usleep(arc4random_uniform(10));
+    NSLog(@"Accountant money = %d", self.money);
 }
 
 @end

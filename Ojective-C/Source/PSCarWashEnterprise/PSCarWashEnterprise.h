@@ -11,8 +11,6 @@
 
 @interface PSCarWashEnterprise : NSObject <PSObserverProtocol>
 
-- (void)hireStaff;
-
-- (void)takeTheCars:(NSArray *)cars;
+- (void)takeCars:(NSArray *)cars;
 
 @end

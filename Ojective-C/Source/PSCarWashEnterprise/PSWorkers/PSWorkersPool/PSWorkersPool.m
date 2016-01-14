@@ -72,7 +72,7 @@
     
     @synchronized (_mutableWorkers) {
         [_mutableWorkers enumerateObjectsUsingBlock:^(PSWorkers *worker, BOOL *stop) {
-            if (kPSWorkerFree == worker.state) {
+            if (kPSWorkerDidBecomeFree == worker.state) {
                 freeWorker = worker;
                 *stop = YES;
             }
@@ -87,7 +87,7 @@
     
     @synchronized (_mutableWorkers) {
         [_mutableWorkers enumerateObjectsUsingBlock:^(PSWorkers *worker, BOOL *stop) {
-            if ([worker isMemberOfClass:class] && kPSWorkerFree == worker.state) {
+            if ([worker isMemberOfClass:class] && kPSWorkerDidBecomeFree == worker.state) {
                 freeWorker = worker;
                 *stop = YES;
             }
@@ -100,7 +100,7 @@
 - (NSSet *)freeWorkersWithClass:(Class)class {
     NSPredicate *predicate = [NSPredicate predicateWithBlock:^BOOL(PSWorkers *worker, NSDictionary *bindings) {
         return ([worker isMemberOfClass:class]
-                && worker.state == kPSWorkerFree);
+                && worker.state == kPSWorkerDidBecomeFree);
     }];
     
     return [self.workers filteredSetUsingPredicate:predicate];

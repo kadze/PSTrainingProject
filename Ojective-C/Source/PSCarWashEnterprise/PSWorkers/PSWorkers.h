@@ -13,9 +13,9 @@
 #import "PSObserverProtocol.h"
 
 typedef NS_ENUM (NSUInteger, PSWorkersState) {
-    kPSWorkerFree,
-    kPSWorkerBusy,
-    kPSWorkerPerformedWork
+    kPSWorkerDidBecomeFree,
+    kPSWorkerDidBecomeBusy,
+    kPSWorkerDidPerformWorkWithObject
 };
 
 @interface PSWorkers : PSObservableObject <PSMoneyProtocol, PSObserverProtocol>

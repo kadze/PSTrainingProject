@@ -31,6 +31,9 @@ const static NSUInteger kPSPrice = 1;
 - (void)dealloc {
     self.cars = nil;
     self.worckers = nil;
+    self.washerDispatcher = nil;
+    self.accountantDispatcher = nil;
+    self.directorDispatcher = nil;
     
     [super dealloc];
 }
@@ -40,6 +43,10 @@ const static NSUInteger kPSPrice = 1;
     
     if (self) {
         self.cars = [PSQueue queue];
+        self.worckers = [PSWorkersPool pool];
+        self.washerDispatcher = [PSDispatcher object];
+        self.accountantDispatcher = [PSDispatcher object];
+        self.directorDispatcher = [PSDispatcher object];
     }
     
     return self;

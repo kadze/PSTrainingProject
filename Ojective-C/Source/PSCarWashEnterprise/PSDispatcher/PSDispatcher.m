@@ -49,7 +49,7 @@
     PSWorkers *freeHandler = [self.mutableHandlers freeWorker];
     
     @synchronized(freeHandler) {
-        if (nil != freeHandler && kPSWorkerFree == freeHandler.state) {
+        if (nil != freeHandler && kPSWorkerDidBecomeFree == freeHandler.state) {
             [self processTheObject:object withHandler:freeHandler];
         } else {
             [self.processingObjects enqueueObject:object];
@@ -66,7 +66,7 @@
 
 - (void)removeHandler:(PSWorkers *)handler {
     @synchronized(handler) {
-        if (kPSWorkerFree == handler.state) {
+        if (kPSWorkerDidBecomeFree == handler.state) {
             [handler removeObserver:self];
             [self.mutableHandlers removeWorker:handler];
         }
@@ -78,7 +78,7 @@
 
 - (void)processTheObject:(id)object withHandler:(PSWorkers *)handler {
     @synchronized(handler) {
-        if (kPSWorkerFree == handler.state) {
+        if (kPSWorkerDidBecomeFree == handler.state) {
             [handler performWorkWithObject:object];
         }
     }
@@ -87,11 +87,11 @@
 #pragma mark -
 #pragma mark PSObserverProtocol
 
-- (void)PSWorkerFree:(PSWorkers *)workers {
+- (void)PSWorkerDidBecomeFree:(PSWorkers *)worker {
     PSQueue *processingObjects = self.processingObjects;
     
     if (![processingObjects isEmpty]) {
-        [self processTheObject:[processingObjects dequeueObject] withHandler:workers];
+        [self processTheObject:[processingObjects dequeueObject] withHandler:worker];
     }
 }
 

@@ -30,7 +30,7 @@
     if (self) {
         self.money = money;
         self.salary = salary;
-        self.state = kPSWorkerBusy;
+        self.state = kPSWorkerDidBecomeBusy;
     }
     
     return self;
@@ -51,15 +51,15 @@
 #pragma mark Public Methods
 
 - (void)workerMayBeFree {
-    self.state = kPSWorkerFree;
+    self.state = kPSWorkerDidBecomeFree;
 }
 
 - (void)workerStartWork {
-    self.state = kPSWorkerBusy;
+    self.state = kPSWorkerDidBecomeBusy;
 }
 
 - (void)workerFinishWork {
-    self.state = kPSWorkerPerformedWork;
+    self.state = kPSWorkerDidPerformWorkWithObject;
 }
 
 - (void)workWithObject:(id<PSMoneyProtocol>)object {
@@ -86,9 +86,9 @@
 }
 
 - (NSString *)selectorForState:(PSWorkersState)state {
-    NSDictionary *selectors = @{@(kPSWorkerFree) : NSStringFromSelector(@selector(PSWorkerFree:)),
-                                @(kPSWorkerBusy) : NSStringFromSelector(@selector(PSWorkerBusy:)),
-                                @(kPSWorkerPerformedWork) : NSStringFromSelector(@selector(PSWorkerPerformedWork:))};
+    NSDictionary *selectors = @{@(kPSWorkerDidBecomeFree) : NSStringFromSelector(@selector(PSWorkerDidBecomeFree:)),
+                                @(kPSWorkerDidBecomeBusy) : NSStringFromSelector(@selector(PSWorkerDidBecomeBusy:)),
+                                @(kPSWorkerDidPerformWorkWithObject) : NSStringFromSelector(@selector(PSWorkerDidPerformWorkWithObject:))};
     
     return selectors[@(state)];
 }

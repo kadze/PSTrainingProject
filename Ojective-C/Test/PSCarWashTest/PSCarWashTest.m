@@ -17,7 +17,7 @@
     NSMutableArray *cars = [NSMutableArray array];
     PSCarWashEnterprise *carwash = [PSCarWashEnterprise object];
     
-    for (NSUInteger index = 1; index <= 5000; index++) {
+    for (NSUInteger index = 1; index <= 50; index++) {
         PSCar *car = [[[PSCar alloc] initWithMoney:10] autorelease];
         [cars addObject:car];
 //        NSLog(@"%lu cars did wash", index);

@@ -17,7 +17,7 @@ int main(int argc, const char * argv[]) {
 
 //        [PSCreatureTest creatureTestParameters];
         
-//        [PSCarWashTest carWashEnterpriseTest];
+        [PSCarWashTest carWashEnterpriseTest];
     
     }
     

@@ -9,12 +9,6 @@
 #import "PSAccountant.h"
 #import "PSWasher.h"
 
-@interface PSAccountant ()
-
-- (void)count;
-
-@end
-
 @implementation PSAccountant
 
 #pragma mark -
@@ -29,7 +23,6 @@
 #pragma mark Private
 
 - (void)count {
-//    usleep(arc4random_uniform(10));
     NSLog(@"Accountant money = %d", self.money);
 }
 

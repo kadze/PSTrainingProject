@@ -9,12 +9,6 @@
 #import "PSWasher.h"
 #import "PSCar.h"
 
-@interface PSWasher ()
-
-- (void)washCar:(PSCar *)car;
-
-@end
-
 @implementation PSWasher
 
 #pragma mark -
@@ -38,15 +32,10 @@
     [self washCar:car];
 }
 
-- (void)performWorkWithObjectOnMainThread:(PSWorkers *)object {
-    [self workerFinishWork];
-}
-
 #pragma mark -
 #pragma mark Private
 
 - (void)washCar:(PSCar *)car {
-    usleep(arc4random_uniform(100));
     car.clean = YES;
 }
 

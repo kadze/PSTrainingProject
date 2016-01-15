@@ -10,7 +10,7 @@
 
 @implementation NSObject (PSObjectExtensions)
 
-+ (id)object {
++ (instancetype)object {
     return [[[self alloc] init] autorelease];
 }
 

@@ -7,33 +7,23 @@
 //
 
 #import "PSCarWashEnterprise.h"
+#import "PrefixHeaderCarWash.pch"
 
 const static NSUInteger kPSPrice = 1;
 
 @interface PSCarWashEnterprise ()
-@property (nonatomic, retain)   PSQueue         *cars;
-@property (nonatomic, retain)   PSWorkersPool   *worckers;
-@property (nonatomic, retain)   PSDispatcher    *washerDispatcher;
-@property (nonatomic, retain)   PSDispatcher    *accountantDispatcher;
-@property (nonatomic, retain)   PSDispatcher    *directorDispatcher;
-
-- (void)hireDirectors;
-- (void)hireAccountants;
-- (void)hireWashers;
+@property (nonatomic, readwrite, retain)    NSMutableSet    *mutableWorkers;
 
 @end
 
 @implementation PSCarWashEnterprise
+@dynamic workers;
 
 #pragma mark -
 #pragma mark Initializations and Deallocations
 
 - (void)dealloc {
-    self.cars = nil;
-    self.worckers = nil;
-    self.washerDispatcher = nil;
-    self.accountantDispatcher = nil;
-    self.directorDispatcher = nil;
+    self.mutableWorkers = nil;
     
     [super dealloc];
 }
@@ -42,74 +32,45 @@ const static NSUInteger kPSPrice = 1;
     self = [super init];
     
     if (self) {
-        self.cars = [PSQueue queue];
-        self.worckers = [PSWorkersPool pool];
-        self.washerDispatcher = [PSDispatcher object];
-        self.accountantDispatcher = [PSDispatcher object];
-        self.directorDispatcher = [PSDispatcher object];
+        self.mutableWorkers = [NSMutableSet set];
     }
     
     return self;
 }
 
 #pragma mark -
+#pragma mark Accessors
+
+- (NSSet *)workers {
+    return [[self.mutableWorkers copy] autorelease];
+}
+
+#pragma mark -
 #pragma mark Public Methods
 
-- (void)takeCars:(NSArray *)cars {
-    [self hireStaff];
+- (void)hireAnWorker:(PSWorkers *)worker {
+    [self.mutableWorkers addObject:worker];
+}
+
+- (void)fireAnEmployee:(PSWorkers *)worker {
+    [self.mutableWorkers removeObject:worker];
+}
+
+- (void)performWorkWithCar:(PSCar *)car {
+    PSWasher *washer = nil;
+    PSAccountant *accountant = nil;
+    PSDirector *director = nil;
     
-    PSDispatcher *washerDispatcher = self.washerDispatcher;
-    
+    if (car) {
+        [washer workWithObject:car];
+        [accountant workWithObject:washer];
+        [director workWithObject:accountant];
+    }
+}
+
+- (void)performWorkWithCars:(NSSet *)cars {
     for (PSCar *car in cars) {
-        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-            [washerDispatcher addProcessingObject:car];
-        });
-    }
-}
-
-#pragma mark -
-#pragma mark Private Methods
-
-- (void)hireStaff {
-    [self hireDirectors];
-    [self hireAccountants];
-    [self hireWashers];
-}
-
-- (void)hireDirectors {
-    [self.directorDispatcher addHandler:[PSDirector object]];
-    
-    NSLog(@"Hired 1 director");
-}
-
-- (void)hireAccountants {
-    [self.accountantDispatcher addHandler:[PSAccountant object]];
-    
-    NSLog(@"Hired 1 accountants");
-}
-
-- (void)hireWashers {
-    PSDispatcher *washerDispatcher = self.washerDispatcher;
-    NSUInteger washersCount = arc4random_uniform(10);
-    
-    for (NSUInteger index = 0; index < washersCount; index++) {
-        PSWasher *washer = [[PSWasher alloc] initWithPrice:kPSPrice];
-        
-        [washer addObserver:self];
-        [washerDispatcher addHandler:washer];
-    }
-    
-    NSLog (@"Hired %lu washers", washersCount);
-}
-
-#pragma mark -
-#pragma mark PSObserverProtocol
-
-- (void)PSWorckersDidPerformWorkWithObject:(id<PSMoneyProtocol>)object {
-    if ([object isKindOfClass:[PSWasher class]]) {
-        [self.accountantDispatcher addProcessingObject:object];
-    } else if ([object isKindOfClass:[PSAccountant class]]) {
-        [self.directorDispatcher addProcessingObject:object];
+        [self performWorkWithCar:car];
     }
 }
 

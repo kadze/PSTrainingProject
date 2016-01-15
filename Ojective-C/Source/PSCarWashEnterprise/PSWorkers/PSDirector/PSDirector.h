@@ -8,7 +8,10 @@
 
 #import <Foundation/Foundation.h>
 #import "PSWorkers.h"
+#import "PSAccountant.h"
 
 @interface PSDirector : PSWorkers
+
+- (void)workWithObject:(PSAccountant *)accountant;
 
 @end

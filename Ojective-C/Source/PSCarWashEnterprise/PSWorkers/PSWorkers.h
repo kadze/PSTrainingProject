@@ -9,27 +9,16 @@
 #import <Foundation/Foundation.h>
 
 #import "PSMoneyProtocol.h"
-#import "PSObservableObject.h"
-#import "PSObserverProtocol.h"
 
-typedef NS_ENUM (NSUInteger, PSWorkersState) {
-    kPSWorkerDidBecomeFree,
-    kPSWorkerDidBecomeBusy,
-    kPSWorkerDidPerformWorkWithObject
-};
-
-@interface PSWorkers : PSObservableObject <PSMoneyProtocol, PSObserverProtocol>
-@property (nonatomic, assign, readonly) PSWorkersState  state;
+@interface PSWorkers : NSObject <PSMoneyProtocol>
 @property (nonatomic, assign)           uint8_t         salary;
+@property (nonatomic, assign)           uint8_t         experience;
 
-- (instancetype)initWithMoney:(uint8_t)money salary:(uint8_t)salary;
++ (instancetype)worker;
++ (instancetype)workerWithSalary:(uint8_t)salary experience:(uint8_t)experience;
 
-- (void)workerMayBeFree;
-- (void)workerStartWork;
-- (void)workerFinishWork;
+- (instancetype)initWithSalary:(uint8_t)salary experience:(uint8_t)experience;
 
 - (void)performWorkWithObject:(id<PSMoneyProtocol>)object;
-
-- (NSString *)selectorForState:(PSWorkersState)state;
 
 @end

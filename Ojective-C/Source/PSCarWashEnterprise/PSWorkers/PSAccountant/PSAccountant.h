@@ -8,7 +8,10 @@
 
 #import <Foundation/Foundation.h>
 #import "PSWorkers.h"
+#import "PSWasher.h"
 
 @interface PSAccountant : PSWorkers
+
+- (void)workWithObject:(PSWasher *)washer;
 
 @end

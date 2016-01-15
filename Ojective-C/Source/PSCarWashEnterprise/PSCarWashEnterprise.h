@@ -7,10 +7,8 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "PrefixHeaderCarWash.pch"
 
-@interface PSCarWashEnterprise : NSObject <PSObserverProtocol>
-
-- (void)takeCars:(NSArray *)cars;
+@interface PSCarWashEnterprise : NSObject
+@property (nonatomic, readonly) NSSet   *workers;
 
 @end

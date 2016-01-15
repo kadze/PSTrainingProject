@@ -10,6 +10,6 @@
 
 @interface NSObject (PSObjectExtensions)
 
-+ (id)object;
++ (instancetype)object;
 
 @end

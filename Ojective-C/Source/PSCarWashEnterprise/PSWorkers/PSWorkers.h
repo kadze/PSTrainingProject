@@ -7,7 +7,6 @@
 //
 
 #import <Foundation/Foundation.h>
-
 #import "PSMoneyProtocol.h"
 
 @interface PSWorkers : NSObject <PSMoneyProtocol>
@@ -18,7 +17,5 @@
 + (instancetype)workerWithSalary:(uint8_t)salary experience:(uint8_t)experience;
 
 - (instancetype)initWithSalary:(uint8_t)salary experience:(uint8_t)experience;
-
-- (void)performWorkWithObject:(id<PSMoneyProtocol>)object;
 
 @end

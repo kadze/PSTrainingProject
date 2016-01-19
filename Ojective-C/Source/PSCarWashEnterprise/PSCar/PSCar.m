@@ -7,7 +7,6 @@
 //
 
 #import "PSCar.h"
-#import "PSWorkers.h"
 
 @implementation PSCar
 

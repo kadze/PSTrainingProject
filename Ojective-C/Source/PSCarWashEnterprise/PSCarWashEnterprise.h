@@ -11,4 +11,7 @@
 @interface PSCarWashEnterprise : NSObject
 @property (nonatomic, readonly) NSSet   *workers;
 
+- (void)hireAnWorker:(PSWorkers *)worker;
+- (void)fireAnWorker:(PSWorkers *)worker;
+
 @end

@@ -15,14 +15,14 @@
 #import "PSAccountant.h"
 #import "PSCar.h"
 #import "PSDirector.h"
-#import "PSDispatcher.h"
+//#import "PSDispatcher.h"
 #import "PSMoneyProtocol.h"
 #import "PSObjectExtensions.h"
 #import "PSObservableObject.h"
-#import "PSObserverProtocol.h"
+//#import "PSObserverProtocol.h"
 #import "PSQueue.h"
 #import "PSWasher.h"
 #import "PSWorkers.h"
-#import "PSWorkersPool.h"
+//#import "PSWorkersPool.h"
 
 #endif /* PrefixHeaderCarWash_pch */

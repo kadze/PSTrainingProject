@@ -7,29 +7,19 @@
 //
 
 #import "PSWasher.h"
-#import "PSCar.h"
+
+const static NSUInteger kPSPrice = 10;
 
 @implementation PSWasher
-
-#pragma mark -
-#pragma mark Initializations and Deallocations
-
-- (instancetype)initWithPrice:(uint8_t)price {
-    self = [super init];
-    
-    if (self) {
-        self.price = price;
-    }
-    
-    return self;
-}
 
 #pragma mark -
 #pragma mark Public
 
 - (void)workWithObject:(PSCar *)car {
-    [self takeMoney:self.price fromMoneyKeeper:car];
-    [self washCar:car];
+    if (car.money >= kPSPrice) {
+        [self takeMoney:kPSPrice fromMoneyKeeper:car];
+        [self washCar:car];
+    }
 }
 
 #pragma mark -

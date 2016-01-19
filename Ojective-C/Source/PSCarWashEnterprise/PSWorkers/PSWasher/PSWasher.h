@@ -11,9 +11,6 @@
 #import "PSCar.h"
 
 @interface PSWasher : PSWorkers
-@property (nonatomic, assign) uint8_t price;
-
-- (instancetype)initWithPrice:(uint8_t)price;
 
 - (void)workWithObject:(PSCar *)car;
 

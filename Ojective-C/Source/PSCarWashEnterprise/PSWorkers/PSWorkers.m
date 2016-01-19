@@ -37,18 +37,6 @@
 }
 
 #pragma mark -
-#pragma mark Public Methods
-
-- (void)workWithObject:(id<PSMoneyProtocol>)object {
-
-}
-    
-- (void)performWorkWithObject:(PSWorkers *)object {
-    NSLog(@"self = %@ object = %@", self, object);
-    [self workWithObject:object];
-}
-
-#pragma mark -
 #pragma mark Money Protocol
 
 - (void)takeMoney:(uint8_t)money fromMoneyKeeper:(id <PSMoneyProtocol>)moneyKeeper {

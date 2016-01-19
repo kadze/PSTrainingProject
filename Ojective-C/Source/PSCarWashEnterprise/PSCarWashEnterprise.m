@@ -9,8 +9,6 @@
 #import "PSCarWashEnterprise.h"
 #import "PrefixHeaderCarWash.pch"
 
-const static NSUInteger kPSPrice = 1;
-
 @interface PSCarWashEnterprise ()
 @property (nonatomic, readwrite, retain)    NSMutableSet    *mutableWorkers;
 
@@ -52,20 +50,20 @@ const static NSUInteger kPSPrice = 1;
     [self.mutableWorkers addObject:worker];
 }
 
-- (void)fireAnEmployee:(PSWorkers *)worker {
+- (void)fireAnWorker:(PSWorkers *)worker {
     [self.mutableWorkers removeObject:worker];
 }
 
 - (void)performWorkWithCar:(PSCar *)car {
-    PSWasher *washer = nil;
-    PSAccountant *accountant = nil;
-    PSDirector *director = nil;
+//    PSWasher *washer = [PSWasher worker];
+//    PSAccountant *accountant = [PSAccountant worker];
+//    PSDirector *director = [PSDirector worker];
     
-    if (car) {
-        [washer workWithObject:car];
-        [accountant workWithObject:washer];
-        [director workWithObject:accountant];
-    }
+//    if (car) {
+//        [washer workWithObject:car];
+//        [accountant workWithObject:washer];
+//        [director workWithObject:accountant];
+//    }
 }
 
 - (void)performWorkWithCars:(NSSet *)cars {

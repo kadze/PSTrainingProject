@@ -7,7 +7,6 @@
 //
 
 #import "PSAccountant.h"
-#import "PSWasher.h"
 
 @implementation PSAccountant
 

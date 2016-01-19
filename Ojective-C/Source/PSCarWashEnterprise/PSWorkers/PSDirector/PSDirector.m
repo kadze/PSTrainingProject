@@ -7,7 +7,6 @@
 //
 
 #import "PSDirector.h"
-#import "PSAccountant.h"
 
 @implementation PSDirector
 

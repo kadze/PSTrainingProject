@@ -7,6 +7,7 @@
 //
 
 #import "PSWasher.h"
+#import "PSCar.h"
 
 const static NSUInteger kPSPrice = 10;
 
@@ -16,10 +17,8 @@ const static NSUInteger kPSPrice = 10;
 #pragma mark Public
 
 - (void)workWithObject:(PSCar *)car {
-    if (car.money >= kPSPrice) {
-        [self takeMoney:kPSPrice fromMoneyKeeper:car];
-        [self washCar:car];
-    }
+    [self takeMoney:kPSPrice fromMoneyKeeper:car];
+    [self washCar:car];
 }
 
 #pragma mark -

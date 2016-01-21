@@ -6,7 +6,7 @@
 //  Copyright © 2015 Сергей. All rights reserved.
 //
 
-#import "PSObjectExtensions.h"
+#import "NSObject+PSObjectExtensions.h"
 
 @implementation NSObject (PSObjectExtensions)
 

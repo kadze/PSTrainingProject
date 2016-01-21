@@ -10,9 +10,9 @@
 
 @protocol PSMoneyProtocol <NSObject>
 
-@property (nonatomic, assign)   uint32_t    money;
+@property (nonatomic, assign)   NSUInteger  money;
 
-- (void)takeMoney:(uint8_t)money fromMoneyKeeper:(id)moneyKeeper;
-- (void)giveMoney:(uint8_t)money toMoneyKeeper:(id)moneyKeeper;
+- (void)takeMoney:(NSUInteger)money fromMoneyKeeper:(id)moneyKeeper;
+- (void)giveMoney:(NSUInteger)money toMoneyKeeper:(id)moneyKeeper;
 
 @end

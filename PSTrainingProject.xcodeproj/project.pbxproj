@@ -12,7 +12,7 @@
 		AD1064781BD901BB00A38EEE /* PSDataStructureTest.c in Sources */ = {isa = PBXBuildFile; fileRef = AD1064761BD901BB00A38EEE /* PSDataStructureTest.c */; };
 		AD188A871C15FD75003C8E9C /* PSCarWashEnterprise.m in Sources */ = {isa = PBXBuildFile; fileRef = AD188A861C15FD75003C8E9C /* PSCarWashEnterprise.m */; };
 		AD188A8A1C15FDFF003C8E9C /* PSCar.m in Sources */ = {isa = PBXBuildFile; fileRef = AD188A891C15FDFF003C8E9C /* PSCar.m */; };
-		AD188A931C15FECA003C8E9C /* PSWorkers.m in Sources */ = {isa = PBXBuildFile; fileRef = AD188A921C15FECA003C8E9C /* PSWorkers.m */; };
+		AD188A931C15FECA003C8E9C /* PSWorker.m in Sources */ = {isa = PBXBuildFile; fileRef = AD188A921C15FECA003C8E9C /* PSWorker.m */; };
 		AD188A961C15FEE1003C8E9C /* PSDirector.m in Sources */ = {isa = PBXBuildFile; fileRef = AD188A951C15FEE1003C8E9C /* PSDirector.m */; };
 		AD188A991C15FEF6003C8E9C /* PSAccountant.m in Sources */ = {isa = PBXBuildFile; fileRef = AD188A981C15FEF6003C8E9C /* PSAccountant.m */; };
 		AD188A9C1C15FF0F003C8E9C /* PSWasher.m in Sources */ = {isa = PBXBuildFile; fileRef = AD188A9B1C15FF0F003C8E9C /* PSWasher.m */; };
@@ -31,7 +31,7 @@
 		ADCE03DC1C16756F00555686 /* PSCreatureTest.m in Sources */ = {isa = PBXBuildFile; fileRef = ADCE03DB1C16756F00555686 /* PSCreatureTest.m */; };
 		ADCE03E01C16787A00555686 /* PSCarWashTest.m in Sources */ = {isa = PBXBuildFile; fileRef = ADCE03DF1C16787A00555686 /* PSCarWashTest.m */; };
 		ADE3ABDD1BEA954900910782 /* PSString.c in Sources */ = {isa = PBXBuildFile; fileRef = ADE3ABDB1BEA954900910782 /* PSString.c */; };
-		ADFA42221C3167B9000430D7 /* PSObjectExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = ADFA42211C3167B9000430D7 /* PSObjectExtensions.m */; };
+		ADFA42221C3167B9000430D7 /* NSObject+PSObjectExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = ADFA42211C3167B9000430D7 /* NSObject+PSObjectExtensions.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -68,8 +68,8 @@
 		AD188A861C15FD75003C8E9C /* PSCarWashEnterprise.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSCarWashEnterprise.m; sourceTree = "<group>"; };
 		AD188A881C15FDFF003C8E9C /* PSCar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSCar.h; sourceTree = "<group>"; };
 		AD188A891C15FDFF003C8E9C /* PSCar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSCar.m; sourceTree = "<group>"; };
-		AD188A911C15FECA003C8E9C /* PSWorkers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSWorkers.h; sourceTree = "<group>"; };
-		AD188A921C15FECA003C8E9C /* PSWorkers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSWorkers.m; sourceTree = "<group>"; };
+		AD188A911C15FECA003C8E9C /* PSWorker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSWorker.h; sourceTree = "<group>"; };
+		AD188A921C15FECA003C8E9C /* PSWorker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSWorker.m; sourceTree = "<group>"; };
 		AD188A941C15FEE1003C8E9C /* PSDirector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSDirector.h; sourceTree = "<group>"; };
 		AD188A951C15FEE1003C8E9C /* PSDirector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSDirector.m; sourceTree = "<group>"; };
 		AD188A971C15FEF6003C8E9C /* PSAccountant.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSAccountant.h; sourceTree = "<group>"; };
@@ -103,15 +103,16 @@
 		ADA038501BDE6BA0007539C2 /* PSObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSObject.h; sourceTree = "<group>"; };
 		ADAA6CD41BFF5050002A4A27 /* PSCreature.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSCreature.h; sourceTree = "<group>"; };
 		ADAA6CD51BFF5050002A4A27 /* PSCreature.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSCreature.m; sourceTree = "<group>"; };
+		ADAC6A5A1C4E67B000DAB99D /* PSObserverProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSObserverProtocol.h; sourceTree = "<group>"; };
 		ADCE03DA1C16756F00555686 /* PSCreatureTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSCreatureTest.h; sourceTree = "<group>"; };
 		ADCE03DB1C16756F00555686 /* PSCreatureTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSCreatureTest.m; sourceTree = "<group>"; };
 		ADCE03DE1C16787A00555686 /* PSCarWashTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSCarWashTest.h; sourceTree = "<group>"; };
 		ADCE03DF1C16787A00555686 /* PSCarWashTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSCarWashTest.m; sourceTree = "<group>"; };
 		ADE3ABDB1BEA954900910782 /* PSString.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = PSString.c; path = "Language C/Source/PSSreing/PSString.c"; sourceTree = "<group>"; };
 		ADE3ABDC1BEA954900910782 /* PSString.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = PSString.c; path = "Language C/Source/PSSreing/PSString.c"; sourceTree = "<group>"; };
-		ADECB22F1C2C69EA00B1A869 /* PrefixHeaderCarWash.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrefixHeaderCarWash.pch; sourceTree = "<group>"; };
-		ADFA42201C3167B9000430D7 /* PSObjectExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSObjectExtensions.h; sourceTree = "<group>"; };
-		ADFA42211C3167B9000430D7 /* PSObjectExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSObjectExtensions.m; sourceTree = "<group>"; };
+		ADECB22F1C2C69EA00B1A869 /* PrefixHeader.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
+		ADFA42201C3167B9000430D7 /* NSObject+PSObjectExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+PSObjectExtensions.h"; sourceTree = "<group>"; };
+		ADFA42211C3167B9000430D7 /* NSObject+PSObjectExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+PSObjectExtensions.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -183,7 +184,6 @@
 				AD188A7B1C15F9DB003C8E9C /* PSWorkers */,
 				AD188A851C15FD75003C8E9C /* PSCarWashEnterprise.h */,
 				AD188A861C15FD75003C8E9C /* PSCarWashEnterprise.m */,
-				ADECB22F1C2C69EA00B1A869 /* PrefixHeaderCarWash.pch */,
 			);
 			path = PSCarWashEnterprise;
 			sourceTree = "<group>";
@@ -194,8 +194,8 @@
 				AD188A7E1C15FABE003C8E9C /* PSWasher */,
 				AD188A7D1C15FA8F003C8E9C /* PSAccountant */,
 				AD188A7C1C15FA34003C8E9C /* PSDirector */,
-				AD188A911C15FECA003C8E9C /* PSWorkers.h */,
-				AD188A921C15FECA003C8E9C /* PSWorkers.m */,
+				AD188A911C15FECA003C8E9C /* PSWorker.h */,
+				AD188A921C15FECA003C8E9C /* PSWorker.m */,
 			);
 			path = PSWorkers;
 			sourceTree = "<group>";
@@ -239,6 +239,7 @@
 		AD29E58A1C282C2600964872 /* PSProtocols */ = {
 			isa = PBXGroup;
 			children = (
+				ADAC6A5A1C4E67B000DAB99D /* PSObserverProtocol.h */,
 				AD29E58B1C28313F00964872 /* PSMoneyProtocol.h */,
 			);
 			path = PSProtocols;
@@ -392,6 +393,7 @@
 				AD188A761C15F44D003C8E9C /* PSCarWashEnterprise */,
 				AD171F731BFCEC14001F456B /* PSCreature */,
 				AD5FEBF11BFA3EB100D8C067 /* main.m */,
+				ADECB22F1C2C69EA00B1A869 /* PrefixHeader.pch */,
 			);
 			path = Source;
 			sourceTree = "<group>";
@@ -462,8 +464,8 @@
 		ADFA421F1C31638C000430D7 /* NSObject+PSObjectExtensions */ = {
 			isa = PBXGroup;
 			children = (
-				ADFA42201C3167B9000430D7 /* PSObjectExtensions.h */,
-				ADFA42211C3167B9000430D7 /* PSObjectExtensions.m */,
+				ADFA42201C3167B9000430D7 /* NSObject+PSObjectExtensions.h */,
+				ADFA42211C3167B9000430D7 /* NSObject+PSObjectExtensions.m */,
 			);
 			path = "NSObject+PSObjectExtensions";
 			sourceTree = "<group>";
@@ -547,7 +549,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				ADAA6CD61BFF5050002A4A27 /* PSCreature.m in Sources */,
-				ADFA42221C3167B9000430D7 /* PSObjectExtensions.m in Sources */,
+				ADFA42221C3167B9000430D7 /* NSObject+PSObjectExtensions.m in Sources */,
 				AD188A9C1C15FF0F003C8E9C /* PSWasher.m in Sources */,
 				AD188A991C15FEF6003C8E9C /* PSAccountant.m in Sources */,
 				AD188A871C15FD75003C8E9C /* PSCarWashEnterprise.m in Sources */,
@@ -557,7 +559,7 @@
 				AD188A961C15FEE1003C8E9C /* PSDirector.m in Sources */,
 				ADCE03DC1C16756F00555686 /* PSCreatureTest.m in Sources */,
 				AD5FEBF21BFA3EB100D8C067 /* main.m in Sources */,
-				AD188A931C15FECA003C8E9C /* PSWorkers.m in Sources */,
+				AD188A931C15FECA003C8E9C /* PSWorker.m in Sources */,
 				AD188A8A1C15FDFF003C8E9C /* PSCar.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -589,7 +591,7 @@
 			buildSettings = {
 				CLANG_ENABLE_OBJC_ARC = NO;
 				CODE_SIGN_IDENTITY = "-";
-				GCC_PREFIX_HEADER = "/Users/serg-bob/Documents/My project/PSTrainingProject/Ojective-C/Source/PSCarWashEnterprise/PrefixHeaderCarWash.pch";
+				GCC_PREFIX_HEADER = "/Users/serg-bob/Documents/My project/PSTrainingProject/Ojective-C/Source/PrefixHeader.pch";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -599,7 +601,7 @@
 			buildSettings = {
 				CLANG_ENABLE_OBJC_ARC = NO;
 				CODE_SIGN_IDENTITY = "-";
-				GCC_PREFIX_HEADER = "/Users/serg-bob/Documents/My project/PSTrainingProject/Ojective-C/Source/PSCarWashEnterprise/PrefixHeaderCarWash.pch";
+				GCC_PREFIX_HEADER = "/Users/serg-bob/Documents/My project/PSTrainingProject/Ojective-C/Source/PrefixHeader.pch";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;

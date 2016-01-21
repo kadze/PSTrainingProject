@@ -7,6 +7,7 @@
 //
 
 #import "PSDirector.h"
+#import "PSAccountant.h"
 
 @implementation PSDirector
 
@@ -22,7 +23,7 @@
 #pragma mark Private
 
 - (void)profit {
-    NSLog(@"Directors money = %d", self.money);
+    NSLog(@"Directors money = %lu", self.money);
 }
 
 @end

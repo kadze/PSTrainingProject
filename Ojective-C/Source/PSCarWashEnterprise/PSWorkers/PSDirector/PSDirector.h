@@ -7,11 +7,9 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "PSWorkers.h"
-#import "PSAccountant.h"
+#import "PSWorker.h"
 
-@interface PSDirector : PSWorkers
 
-- (void)workWithObject:(PSAccountant *)accountant;
+@interface PSDirector : PSWorker
 
 @end

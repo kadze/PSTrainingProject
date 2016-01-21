@@ -9,7 +9,7 @@
 #import "PSObservableObject.h"
 
 @interface PSObservableObject ()
-@property (nonatomic, retain)   NSHashTable     *observersHashTable;
+@property (nonatomic, retain)   NSHashTable *observersHashTable;
 
 @end
 
@@ -62,21 +62,11 @@
     return [self.observersHashTable containsObject:observer];
 }
 
-- (void)notifyObserversOnMainThreadWithSelector:(NSString *)selector {
-    if ([NSThread isMainThread]) {
-        [self notifyObserversWithSelector:selector];
-    } else {
-        dispatch_async(dispatch_get_main_queue(), ^{
-            [self notifyObserversWithSelector:selector];
-        });
-    }
-}
-
-- (void)notifyObserversWithSelector:(NSString *)selector {
+- (void)notifyObserversWithSelector:(id)selector {
     [self notifyObserversWithSelector:selector withObject:self];
 }
 
-- (void)notifyObserversWithSelector:(NSString *)selector withObject:(id)object {
+- (void)notifyObserversWithSelector:(id)selector withObject:(id)object {
     SEL trueSelector = NSSelectorFromString(selector);
     for (id observer in self.observersHashTable) {
         if ([observer respondsToSelector:trueSelector]) {

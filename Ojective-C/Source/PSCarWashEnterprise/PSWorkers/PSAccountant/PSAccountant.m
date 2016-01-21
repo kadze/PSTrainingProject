@@ -7,6 +7,7 @@
 //
 
 #import "PSAccountant.h"
+#import "PSWasher.h"
 
 @implementation PSAccountant
 
@@ -22,7 +23,7 @@
 #pragma mark Private
 
 - (void)count {
-    NSLog(@"Accountant money = %d", self.money);
+    NSLog(@"Accountant money = %lu", self.money);
 }
 
 @end

@@ -12,6 +12,6 @@
 @interface PSCar : NSObject <PSMoneyProtocol>
 @property (nonatomic, assign, getter=isClean)   BOOL    clean;
 
-- (instancetype)initWithMoney:(uint8_t)money;
+- (instancetype)initWithMoney:(NSUInteger)money;
 
 @end

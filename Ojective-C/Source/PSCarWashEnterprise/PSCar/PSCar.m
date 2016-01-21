@@ -19,7 +19,7 @@
     return [self initWithMoney:0];
 }
 
-- (instancetype)initWithMoney:(uint8_t)money {
+- (instancetype)initWithMoney:(NSUInteger)money {
     self = [super init];
     
     if (self) {
@@ -32,12 +32,12 @@
 #pragma mark -
 #pragma mark Money Protocol
 
-- (void)takeMoney:(uint8_t)money fromMoneyKeeper:(id <PSMoneyProtocol>)moneyKeeper {
+- (void)takeMoney:(NSUInteger)money fromMoneyKeeper:(id <PSMoneyProtocol>)moneyKeeper {
     self.money += money;
     moneyKeeper.money -= money;
 }
 
-- (void)giveMoney:(uint8_t)money toMoneyKeeper:(id <PSMoneyProtocol>)moneyKeeper {
+- (void)giveMoney:(NSUInteger)money toMoneyKeeper:(id <PSMoneyProtocol>)moneyKeeper {
     self.money -= money;
     moneyKeeper.money += money;
 }

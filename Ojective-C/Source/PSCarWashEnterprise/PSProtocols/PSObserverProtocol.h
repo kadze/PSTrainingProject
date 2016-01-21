@@ -9,13 +9,14 @@
 #import <Foundation/Foundation.h>
 #import "PSMoneyProtocol.h"
 
-@class PSWorkers;
+@class PSWorker;
 
 @protocol PSObserverProtocol <NSObject>
 
 @optional
-- (void)PSWorkerDidBecomeFree:(PSWorkers *)worker;
-- (void)PSWorkerDidBecomeBusy:(PSWorkers *)worker;
+- (void)PSWorkerDidBecomeFree:(PSWorker *)worker;
+- (void)PSWorkerDidBecomeBusy:(PSWorker *)worker;
+
 - (void)PSWorkerDidPerformWorkWithObject:(id<PSMoneyProtocol>)object;
 
 @end

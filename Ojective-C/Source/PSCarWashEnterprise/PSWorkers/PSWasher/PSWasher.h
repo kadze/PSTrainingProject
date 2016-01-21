@@ -7,11 +7,8 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "PSWorkers.h"
-#import "PSCar.h"
+#import "PSWorker.h"
 
-@interface PSWasher : PSWorkers
-
-- (void)workWithObject:(PSCar *)car;
+@interface PSWasher : PSWorker
 
 @end

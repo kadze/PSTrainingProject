@@ -7,11 +7,12 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "PSWorker.h"
+#import "PSCar.h"
 
 @interface PSCarWashEnterprise : NSObject
-@property (nonatomic, readonly) NSSet   *workers;
+@property (nonatomic, readonly) NSArray *workers;
 
-- (void)hireAnWorker:(PSWorkers *)worker;
-- (void)fireAnWorker:(PSWorkers *)worker;
+- (void)washCar:(PSCar *)car;
 
 @end

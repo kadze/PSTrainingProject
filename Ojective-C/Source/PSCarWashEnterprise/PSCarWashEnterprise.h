@@ -11,7 +11,6 @@
 #import "PSCar.h"
 
 @interface PSCarWashEnterprise : NSObject
-@property (nonatomic, readonly) NSArray *workers;
 
 - (void)washCar:(PSCar *)car;
 

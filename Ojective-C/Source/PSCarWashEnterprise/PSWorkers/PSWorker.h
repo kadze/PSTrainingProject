@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "PSMoneyProtocol.h"
 #import "PSObserverProtocol.h"
+#import "PSObservableObject.h"
 
 typedef NS_ENUM (NSUInteger, PSWorkersState) {
     kPSWorkerDidBecomeFree,
@@ -16,7 +17,7 @@ typedef NS_ENUM (NSUInteger, PSWorkersState) {
     kPSWorkerDidPerformWorkWithObject
 };
 
-@interface PSWorker : NSObject <PSMoneyProtocol, PSObserverProtocol>
+@interface PSWorker : PSObservableObject <PSMoneyProtocol, PSObserverProtocol>
 @property (nonatomic, assign)           NSUInteger      salary;
 @property (nonatomic, assign)           NSUInteger      experience;
 @property (nonatomic, assign, readonly) PSWorkersState  state;

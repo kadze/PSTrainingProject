@@ -17,7 +17,7 @@
 #import "PSWasher.h"
 #import "PSWorker.h"
 
-const static NSUInteger kPSUpperBoundWashersCount = 50;
+//const static NSUInteger kPSUpperBoundWashersCount = 50;
 
 @interface PSCarWashEnterprise ()
 @property (nonatomic, readwrite, retain)    NSMutableArray    *mutableWorkers;
@@ -39,7 +39,6 @@ const static NSUInteger kPSUpperBoundWashersCount = 50;
 
 - (void)dealloc {
     self.mutableWorkers = nil;
-    [self fireWorker];
     
     [super dealloc];
 }
@@ -78,16 +77,16 @@ const static NSUInteger kPSUpperBoundWashersCount = 50;
 - (void)hireWorker {
     PSDirector *director = [PSDirector object];
     PSAccountant *accountant = [PSAccountant object];
+    PSWasher *washer = [PSWasher object];
     
-    NSUInteger washersCount = arc4random_uniform(kPSUpperBoundWashersCount);
-    [self addWorkers:[PSWasher objectsWithCount:washersCount] withObservers:@[accountant, self]];
+    [self addWorker:washer withObservers:@[accountant, self]];
     
-    [self addWorker:accountant withObservers:@[self, director]];
+    [self addWorker:accountant withObservers:@[director, self]];
     [self addWorker:director withObservers:nil];
 }
 
 - (void)addWorkers:(NSArray *)workers withObservers:(NSArray *)observers {
-    for(PSWorker *worker in workers) {
+    for (PSWorker *worker in workers) {
         [self addWorker:worker withObservers:observers];
     }
 }
@@ -96,19 +95,24 @@ const static NSUInteger kPSUpperBoundWashersCount = 50;
     for (id observer in observers) {
         [worker addObserver:observer];
     }
+    
     [self.mutableWorkers addObject:worker];
 }
 
 - (void)fireWorker {
     id workers = self.mutableWorkers;
     for (PSWorker *worker in workers) {
-        [self.mutableWorkers removeObject:worker];
+        for (id observer in worker.observersSet) {
+            [worker removeObserver:observer];
+        }
+        
+        [workers removeObject:worker];
     }
 }
 
 - (id)freeWorkerOfClass:(Class)Class {
     for (PSWorker *worker in self.mutableWorkers) {
-        if ([worker isMemberOfClass:Class] && worker.state == kPSWorkerDidBecomeFree) {
+        if (worker.state == kPSWorkerDidBecomeFree) {
             return worker;
         }
     }

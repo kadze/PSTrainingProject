@@ -62,11 +62,11 @@
     return [self.observersHashTable containsObject:observer];
 }
 
-- (void)notifyObserversWithSelector:(id)selector {
+- (void)notifyObserversWithSelector:(NSString *)selector {
     [self notifyObserversWithSelector:selector withObject:self];
 }
 
-- (void)notifyObserversWithSelector:(id)selector withObject:(id)object {
+- (void)notifyObserversWithSelector:(NSString *)selector withObject:(id)object {
     SEL trueSelector = NSSelectorFromString(selector);
     for (id observer in self.observersHashTable) {
         if ([observer respondsToSelector:trueSelector]) {

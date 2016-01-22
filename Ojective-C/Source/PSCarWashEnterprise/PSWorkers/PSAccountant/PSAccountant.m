@@ -16,6 +16,7 @@
 
 - (void)workWithObject:(PSWasher *)washer {
     [self takeMoney:washer.money fromMoneyKeeper:washer];
+     NSLog(@"Washer money = %lu", washer.money);
     [self count];
 }
 

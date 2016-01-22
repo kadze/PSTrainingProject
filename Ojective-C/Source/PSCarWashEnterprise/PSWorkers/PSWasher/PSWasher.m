@@ -19,6 +19,7 @@ const static NSUInteger kPSPrice = 10;
 - (void)workWithObject:(PSCar *)car {
     [self takeMoney:kPSPrice fromMoneyKeeper:car];
     [self washCar:car];
+    NSLog(@"Washer money = %lu", self.money);
 }
 
 #pragma mark -
@@ -26,6 +27,7 @@ const static NSUInteger kPSPrice = 10;
 
 - (void)washCar:(PSCar *)car {
     car.clean = YES;
+    NSLog(@"Is car clean: %@ Money is: %lu", (car.isClean) ? @"YES" : @"NO", car.money);
 }
 
 @end

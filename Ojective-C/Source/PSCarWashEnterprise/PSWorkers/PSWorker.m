@@ -58,19 +58,21 @@
 #pragma mark Public Methods
 
 - (void)workWithObject:(id)object {
-    
+     [self doesNotRecognizeSelector:_cmd];
 }
 
 - (void)performWorkWithObject:(id<PSMoneyProtocol>)object {
-    [self doesNotRecognizeSelector:_cmd];
+    self.state = kPSWorkerDidBecomeBusy;
+    [self workWithObject:object];
+    self.state = kPSWorkerDidPerformWorkWithObject;
 }
 
-- (SEL)selectorForState:(PSWorkersState)state {
+- (NSString *)selectorForState:(PSWorkersState)state {
     NSDictionary *selectors = @{@(kPSWorkerDidBecomeFree) : NSStringFromSelector(@selector(PSWorkerDidBecomeFree:)),
                                 @(kPSWorkerDidBecomeBusy) : NSStringFromSelector(@selector(PSWorkerDidBecomeBusy:)),
                                 @(kPSWorkerDidPerformWorkWithObject) : NSStringFromSelector(@selector(PSWorkerDidPerformWorkWithObject:))};
     
-    return NSSelectorFromString(selectors[@(state)]);
+    return selectors[@(state)];
 }
 
 #pragma mark -
@@ -92,5 +94,7 @@
 - (void)PSWorkerDidPerformWorkWithObject:(id<PSMoneyProtocol>)object {
     [self performWorkWithObject:object];
 }
+
+
 
 @end

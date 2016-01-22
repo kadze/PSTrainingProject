@@ -17,10 +17,11 @@
     
     NSLog(@"Enterprise is: %@", carwash);
     
-    for (NSUInteger index; index <= 5; index++) {
+    for (NSUInteger index = 1; index <= 2; index++) {
         PSCar *car = [[[PSCar alloc] initWithMoney:10] autorelease];
         [cars addObject:car];
         NSLog(@"Is car clean: %@ Money is: %lu", (car.isClean) ? @"YES" : @"NO", car.money);
+        [carwash washCar:car];
     }
 }
 

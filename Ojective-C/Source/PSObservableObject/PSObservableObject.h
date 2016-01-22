@@ -16,7 +16,7 @@
 - (void)removeObservers;
 - (BOOL)containsObserver:(id)observer;
 
-- (void)notifyObserversWithSelector:(id)selector;
-- (void)notifyObserversWithSelector:(id)selector withObject:(id)object;
+- (void)notifyObserversWithSelector:(NSString *)selector;
+- (void)notifyObserversWithSelector:(NSString *)selector withObject:(id)object;
 
 @end

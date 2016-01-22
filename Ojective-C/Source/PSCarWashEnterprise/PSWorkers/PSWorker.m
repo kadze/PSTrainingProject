@@ -64,15 +64,24 @@
 - (void)performWorkWithObject:(id<PSMoneyProtocol>)object {
     self.state = kPSWorkerDidBecomeBusy;
     [self workWithObject:object];
+    [self finishProcessing];
+    [self finishPerformWork];
+}
+
+- (void)finishProcessing {
     self.state = kPSWorkerDidPerformWorkWithObject;
 }
 
-- (NSString *)selectorForState:(PSWorkersState)state {
+- (void)finishPerformWork {
+    [self setState:kPSWorkerDidBecomeFree];
+}
+
+- (SEL)selectorForState:(PSWorkersState)state {
     NSDictionary *selectors = @{@(kPSWorkerDidBecomeFree) : NSStringFromSelector(@selector(PSWorkerDidBecomeFree:)),
                                 @(kPSWorkerDidBecomeBusy) : NSStringFromSelector(@selector(PSWorkerDidBecomeBusy:)),
                                 @(kPSWorkerDidPerformWorkWithObject) : NSStringFromSelector(@selector(PSWorkerDidPerformWorkWithObject:))};
     
-    return selectors[@(state)];
+    return NSSelectorFromString(selectors[@(state)]);
 }
 
 #pragma mark -

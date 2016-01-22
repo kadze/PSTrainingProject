@@ -17,7 +17,7 @@
 #import "PSWasher.h"
 #import "PSWorker.h"
 
-//const static NSUInteger kPSUpperBoundWashersCount = 50;
+const static NSUInteger kPSWashersCount = 20;
 
 @interface PSCarWashEnterprise ()
 @property (nonatomic, readwrite, retain)    NSMutableArray    *mutableWorkers;
@@ -77,10 +77,8 @@
 - (void)hireWorker {
     PSDirector *director = [PSDirector object];
     PSAccountant *accountant = [PSAccountant object];
-    PSWasher *washer = [PSWasher object];
     
-    [self addWorker:washer withObservers:@[accountant, self]];
-    
+    [self addWorkers:[PSWasher objectsWithCount:kPSWashersCount] withObservers:@[accountant, self]];
     [self addWorker:accountant withObservers:@[director, self]];
     [self addWorker:director withObservers:nil];
 }

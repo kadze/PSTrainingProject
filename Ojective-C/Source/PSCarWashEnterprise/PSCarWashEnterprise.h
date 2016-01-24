@@ -12,6 +12,6 @@
 
 @interface PSCarWashEnterprise : NSObject
 
-- (void)washCar:(PSCar *)car;
+- (void)washCars:(NSArray *)car;
 
 @end

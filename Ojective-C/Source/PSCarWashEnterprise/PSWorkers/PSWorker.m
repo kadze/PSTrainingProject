@@ -7,7 +7,6 @@
 //
 
 #import "PSWorker.h"
-#import "PSObservableObject.h"
 
 @interface PSWorker ()
 @property (nonatomic, assign)   PSWorkersState  state;
@@ -58,6 +57,7 @@
 #pragma mark Public Methods
 
 - (void)workWithObject:(id)object {
+    sleep(1);
      [self doesNotRecognizeSelector:_cmd];
 }
 
@@ -88,13 +88,21 @@
 #pragma mark Money Protocol
 
 - (void)takeMoney:(NSUInteger)money fromMoneyKeeper:(id <PSMoneyProtocol>)moneyKeeper {
-    self.money += money;
-    moneyKeeper.money -= money;
+    [self takeMoney:money];
+    [moneyKeeper giveMoney:money];
 }
 
 - (void)giveMoney:(NSUInteger)money toMoneyKeeper:(id <PSMoneyProtocol>)moneyKeeper {
-    self.money -= money;
-    moneyKeeper.money += money;
+    [self giveMoney:money];
+    [moneyKeeper takeMoney:money];
+}
+
+- (void)takeMoney:(NSUInteger)money {
+    self.money += _money;
+}
+
+- (void)giveMoney:(NSUInteger)money {
+    self.money -= _money;
 }
 
 #pragma mark -
@@ -103,7 +111,5 @@
 - (void)PSWorkerDidPerformWorkWithObject:(id<PSMoneyProtocol>)object {
     [self performWorkWithObject:object];
 }
-
-
 
 @end

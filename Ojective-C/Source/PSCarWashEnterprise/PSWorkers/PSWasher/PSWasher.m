@@ -19,7 +19,6 @@ const static NSUInteger kPSPrice = 10;
 - (void)workWithObject:(PSCar *)car {
     [self takeMoney:kPSPrice fromMoneyKeeper:car];
     [self washCar:car];
-    NSLog(@"Washer money = %lu", self.money);
 }
 
 #pragma mark -

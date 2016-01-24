@@ -11,16 +11,15 @@
 #import "PSCar.h"
 #import "PSDirector.h"
 #import "PSMoneyProtocol.h"
-#import "PSObservableObject.h"
 #import "PSObserverProtocol.h"
-#import "PSQueue.h"
 #import "PSWasher.h"
 #import "PSWorker.h"
 
-const static NSUInteger kPSWashersCount = 20;
+const static NSUInteger kPSWashersCount = 5;
 
 @interface PSCarWashEnterprise ()
-@property (nonatomic, readwrite, retain)    NSMutableArray    *mutableWorkers;
+@property (nonatomic, readwrite, retain)    NSMutableArray  *mutableWorkers;
+@property (nonatomic, retain)               PSQueue         *cars;
 
 - (void)hireWorker;
 - (void)fireWorker;
@@ -39,6 +38,7 @@ const static NSUInteger kPSWashersCount = 20;
 
 - (void)dealloc {
     self.mutableWorkers = nil;
+    self.cars = nil;
     
     [super dealloc];
 }
@@ -48,6 +48,7 @@ const static NSUInteger kPSWashersCount = 20;
     
     if (self) {
         self.mutableWorkers = [NSMutableArray array];
+        self.cars = [PSQueue queue];
         [self hireWorker];
     }
     
@@ -71,6 +72,18 @@ const static NSUInteger kPSWashersCount = 20;
     }
 }
 
+- (void)washCars:(NSArray *)cars {
+    PSQueue *carsQueue = self.cars;
+    
+    for (PSCar *car in cars) {
+        [carsQueue enqueueObject:car];
+    }
+    
+    while (!carsQueue.isEmpty) {
+        [self washCar:[carsQueue dequeueObject]];
+    }
+}
+
 #pragma mark -
 #pragma mark Privat Methods
 
@@ -79,6 +92,7 @@ const static NSUInteger kPSWashersCount = 20;
     PSAccountant *accountant = [PSAccountant object];
     
     [self addWorkers:[PSWasher objectsWithCount:kPSWashersCount] withObservers:@[accountant, self]];
+    
     [self addWorker:accountant withObservers:@[director, self]];
     [self addWorker:director withObservers:nil];
 }

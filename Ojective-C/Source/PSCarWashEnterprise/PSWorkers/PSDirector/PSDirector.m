@@ -16,7 +16,6 @@
 
 - (void)workWithObject:(PSAccountant *)accountant {
     [self takeMoney:accountant.money fromMoneyKeeper:accountant];
-    NSLog(@"Accountant money = %lu", accountant.money);
     [self profit];
 }
 

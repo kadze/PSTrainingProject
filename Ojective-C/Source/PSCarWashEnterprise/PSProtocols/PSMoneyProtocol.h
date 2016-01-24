@@ -15,4 +15,7 @@
 - (void)takeMoney:(NSUInteger)money fromMoneyKeeper:(id)moneyKeeper;
 - (void)giveMoney:(NSUInteger)money toMoneyKeeper:(id)moneyKeeper;
 
+- (void)takeMoney:(NSUInteger)money;
+- (void)giveMoney:(NSUInteger)money;
+
 @end

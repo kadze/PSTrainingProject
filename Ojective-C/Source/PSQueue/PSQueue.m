@@ -7,7 +7,6 @@
 //
 
 #import "PSQueue.h"
-#import "NSObject+PSObjectExtensions.h"
 
 @interface PSQueue ()
 @property (nonatomic, retain)   NSMutableArray  *queue;
@@ -86,6 +85,5 @@
         return [_queue count];
     }
 }
-
 
 @end

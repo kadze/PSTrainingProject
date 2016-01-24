@@ -9,7 +9,6 @@
 #import <Foundation/Foundation.h>
 #import "PSMoneyProtocol.h"
 #import "PSObserverProtocol.h"
-#import "PSObservableObject.h"
 
 typedef NS_ENUM (NSUInteger, PSWorkersState) {
     kPSWorkerDidBecomeFree,

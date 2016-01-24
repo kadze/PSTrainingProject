@@ -162,11 +162,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Ojective-C/Source/PSCarWashEnterprise/PSCarWashEnterprise.m"
-            timestampString = "475180819.437161"
+            timestampString = "475365647.168948"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "84"
-            endingLineNumber = "84"
+            startingLineNumber = "94"
+            endingLineNumber = "94"
             landmarkName = "-hireWorker"
             landmarkType = "5">
          </BreakpointContent>
@@ -177,13 +177,29 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Ojective-C/Source/PSCarWashEnterprise/PSCarWashEnterprise.m"
-            timestampString = "475180665.447472"
+            filePath = "Ojective-C/Source/PSCarWashEnterprise/PSCar/PSCar.m"
+            timestampString = "475348314.312315"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "81"
-            endingLineNumber = "81"
-            landmarkName = "-hireWorker"
+            startingLineNumber = "35"
+            endingLineNumber = "35"
+            landmarkName = "-takeMoney:fromMoneyKeeper:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Ojective-C/Test/PSCarWashTest/PSCarWashTest.m"
+            timestampString = "475363869.096364"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "26"
+            endingLineNumber = "26"
+            landmarkName = "+carWashEnterpriseTest"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

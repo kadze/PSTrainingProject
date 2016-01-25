@@ -32,22 +32,12 @@
 #pragma mark -
 #pragma mark Money Protocol
 
-- (void)takeMoney:(NSUInteger)money fromMoneyKeeper:(id <PSMoneyProtocol>)moneyKeeper {
-    [self takeMoney:money];
-    [moneyKeeper giveMoney:money];
-}
-
-- (void)giveMoney:(NSUInteger)money toMoneyKeeper:(id <PSMoneyProtocol>)moneyKeeper {
-    [self giveMoney:money];
-    [moneyKeeper takeMoney:money];
-}
-
 - (void)takeMoney:(NSUInteger)money {
-    self.money += _money;
+    self.money += money;
 }
 
 - (void)giveMoney:(NSUInteger)money {
-    self.money -= _money;
+   self.money -= money;
 }
 
 @end

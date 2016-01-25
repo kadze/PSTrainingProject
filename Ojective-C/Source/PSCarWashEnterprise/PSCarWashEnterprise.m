@@ -15,7 +15,7 @@
 #import "PSWasher.h"
 #import "PSWorker.h"
 
-const static NSUInteger kPSWashersCount = 5;
+const static NSUInteger kPSWashersCount = 20;
 
 @interface PSCarWashEnterprise ()
 @property (nonatomic, readwrite, retain)    NSMutableArray  *mutableWorkers;

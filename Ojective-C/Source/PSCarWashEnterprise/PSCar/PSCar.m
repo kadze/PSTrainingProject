@@ -40,4 +40,9 @@
    self.money -= money;
 }
 
+- (void)giveMoney:(NSUInteger)money toMoneyKeeper:(id <PSMoneyProtocol>)moneyKeeper {
+    [self giveMoney:money];
+    [moneyKeeper takeMoney:money];
+}
+
 @end

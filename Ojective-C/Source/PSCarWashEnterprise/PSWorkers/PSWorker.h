@@ -17,9 +17,8 @@ typedef NS_ENUM (NSUInteger, PSWorkersState) {
 };
 
 @interface PSWorker : PSObservableObject <PSMoneyProtocol, PSObserverProtocol>
-@property (nonatomic, assign)           NSUInteger      salary;
-@property (nonatomic, assign)           NSUInteger      experience;
-@property (nonatomic, assign, readonly) PSWorkersState  state;
+@property (nonatomic, assign)   NSUInteger      salary;
+@property (nonatomic, assign)   NSUInteger      experience;
 
 + (instancetype)worker;
 + (instancetype)workerWithSalary:(NSUInteger)salary experience:(NSUInteger)experience;

@@ -15,11 +15,11 @@
 #import "PSWasher.h"
 #import "PSWorker.h"
 
-const static NSUInteger kPSWashersCount = 20;
+const static NSUInteger kPSWashersCount = 2;
 
 @interface PSCarWashEnterprise ()
-@property (nonatomic, readwrite, retain)    NSMutableArray  *mutableWorkers;
-@property (nonatomic, retain)               PSQueue         *cars;
+@property (nonatomic, retain)    NSMutableArray  *mutableWorkers;
+@property (nonatomic, retain)    PSQueue         *cars;
 
 - (void)hireWorker;
 - (void)fireWorker;
@@ -37,6 +37,7 @@ const static NSUInteger kPSWashersCount = 20;
 #pragma mark Initializations and Deallocations
 
 - (void)dealloc {
+    [self fireWorker];
     self.mutableWorkers = nil;
     self.cars = nil;
     
@@ -66,7 +67,7 @@ const static NSUInteger kPSWashersCount = 20;
 #pragma mark Public Methods
 
 - (void)washCar:(PSCar *)car {
-    PSWasher *washer = [self freeWorkerOfClass:[PSWorker class]];
+    PSWasher *washer = [self freeWorkerOfClass:[PSWasher class]];
     if (washer) {
         [washer performWorkWithObject:(id<PSMoneyProtocol>)car];
     }
@@ -114,17 +115,14 @@ const static NSUInteger kPSWashersCount = 20;
 - (void)fireWorker {
     id workers = self.mutableWorkers;
     for (PSWorker *worker in workers) {
-        for (id observer in worker.observersSet) {
-            [worker removeObserver:observer];
-        }
-        
-        [workers removeObject:worker];
+        [worker removeObserver:self];
     }
+    [workers removeAllObjects];
 }
 
-- (id)freeWorkerOfClass:(Class)Class {
+- (id)freeWorkerOfClass:(Class)class {
     for (PSWorker *worker in self.mutableWorkers) {
-        if (worker.state == kPSWorkerDidBecomeFree) {
+        if (worker.state == kPSWorkerDidBecomeFree && [worker isMemberOfClass:class]) {
             return worker;
         }
     }

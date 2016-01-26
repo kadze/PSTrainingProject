@@ -15,7 +15,7 @@
 
 @implementation PSObservableObject
 
-@dynamic observersSet;
+@dynamic observers;
 
 #pragma mark -
 #pragma mark Initializations and Deallocations
@@ -39,12 +39,28 @@
 #pragma mark -
 #pragma mark Accessors
 
-- (NSSet *)observersSet {
+- (NSSet *)observers {
     return self.observersHashTable.setRepresentation;
+}
+
+- (void)setState:(NSUInteger)state {
+    [self setState:state withObject:nil];
+}
+
+- (void)setState:(NSUInteger)state withObject:(id)object {
+    if (state != _state) {
+        _state = state;
+        
+        [self notifyObserversWithSelector:[self selectorForState:state] withObject:object];
+    }
 }
 
 #pragma mark -
 #pragma mark Public Methods
+
+- (SEL)selectorForState:(NSUInteger)state {
+    return NULL;
+}
 
 - (void)addObserver:(id)observer {
     [self.observersHashTable addObject:observer];
@@ -63,13 +79,13 @@
 }
 
 - (void)notifyObserversWithSelector:(SEL)selector {
-    [self notifyObserversWithSelector:selector withObject:self];
+    [self notifyObserversWithSelector:selector withObject:nil];
 }
 
 - (void)notifyObserversWithSelector:(SEL)selector withObject:(id)object {
-    for (id observer in self.observersHashTable) {
+    for (id observer in self.observers) {
         if ([observer respondsToSelector:selector]) {
-            [observer performSelector:selector withObject:object];
+            [observer performSelector:selector withObject:object withObject:self];
         }
     }
 }

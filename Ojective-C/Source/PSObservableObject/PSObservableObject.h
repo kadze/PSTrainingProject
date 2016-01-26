@@ -9,11 +9,14 @@
 #import <Foundation/Foundation.h>
 
 @interface PSObservableObject : NSObject
-@property (nonatomic, retain, readonly) NSSet   *observersSet;
+@property (nonatomic, readonly) NSSet       *observers;
+@property (nonatomic, assign)   NSUInteger  state;
+
+- (void)setState:(NSUInteger)state withObject:(id)object;
+- (SEL)selectorForState:(NSUInteger)state;
 
 - (void)addObserver:(id)observer;
 - (void)removeObserver:(id)observer;
-- (void)removeObservers;
 - (BOOL)containsObserver:(id)observer;
 
 - (void)notifyObserversWithSelector:(SEL)selector;

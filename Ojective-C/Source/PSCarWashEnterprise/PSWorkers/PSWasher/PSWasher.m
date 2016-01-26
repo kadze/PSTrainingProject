@@ -9,7 +9,7 @@
 #import "PSWasher.h"
 #import "PSCar.h"
 
-const static NSUInteger kPSPrice = 10;
+//const static NSUInteger kPSPrice = 10;
 
 @implementation PSWasher
 
@@ -17,7 +17,7 @@ const static NSUInteger kPSPrice = 10;
 #pragma mark Public
 
 - (void)workWithObject:(PSCar *)car {
-    [self takeMoney:kPSPrice fromMoneyKeeper:car];
+    [self takeMoney:car.money fromMoneyKeeper:car];
     [self washCar:car];
 }
 

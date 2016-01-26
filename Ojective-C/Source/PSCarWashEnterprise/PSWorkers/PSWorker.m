@@ -9,7 +9,6 @@
 #import "PSWorker.h"
 
 @interface PSWorker ()
-@property (nonatomic, assign)   PSWorkersState  state;
 
 @end
 
@@ -43,17 +42,6 @@
 }
 
 #pragma mark -
-#pragma mark Accessors
-
-- (void)setState:(PSWorkersState)state {
-    if (_state != state) {
-        _state = state;
-        
-        [self notifyObserversWithSelector:[self selectorForState:state] withObject:self];
-    }
-}
-
-#pragma mark -
 #pragma mark Public Methods
 
 - (void)workWithObject:(id)object {
@@ -72,24 +60,30 @@
 }
 
 - (void)finishPerformWork {
-    [self setState:kPSWorkerDidBecomeFree];
+    self.state = kPSWorkerDidBecomeFree;
 }
 
-- (SEL)selectorForState:(PSWorkersState)state {
-    NSDictionary *selectors = @{@(kPSWorkerDidBecomeFree) : NSStringFromSelector(@selector(PSWorkerDidBecomeFree:)),
-                                @(kPSWorkerDidBecomeBusy) : NSStringFromSelector(@selector(PSWorkerDidBecomeBusy:)),
-                                @(kPSWorkerDidPerformWorkWithObject) : NSStringFromSelector(@selector(PSWorkerDidPerformWorkWithObject:))};
-    
-    return NSSelectorFromString(selectors[@(state)]);
+#pragma mark -
+#pragma mark PSObsevableObject
+
+- (SEL)selectorForState:(NSUInteger)state {
+    switch (state) {
+        case kPSWorkerDidBecomeFree:
+            return @selector(workerDidBecomeFree:);
+            
+        case kPSWorkerDidBecomeBusy:
+            return @selector(workerDidBecomeBusy:);
+            
+        case kPSWorkerDidPerformWorkWithObject:
+            return @selector(workerDidPerformWorkWithObject:);
+            
+        default:
+            return NULL;
+    }
 }
 
 #pragma mark -
 #pragma mark Money Protocol
-
-- (void)takeMoney:(NSUInteger)money fromMoneyKeeper:(id <PSMoneyProtocol>)moneyKeeper {
-    [self takeMoney:money];
-    [moneyKeeper giveMoney:money];
-}
 
 - (void)takeMoney:(NSUInteger)money {
     self.money += money;
@@ -97,6 +91,16 @@
 
 - (void)giveMoney:(NSUInteger)money {
     self.money -= money;
+}
+
+- (void)takeMoney:(NSUInteger)money fromMoneyKeeper:(id <PSMoneyProtocol>)moneyKeeper {
+    [self takeMoney:money];
+    [moneyKeeper giveMoney:money];
+}
+
+- (void)giveMoney:(NSUInteger)money toMoneyKeeper:(id <PSMoneyProtocol>)moneyKeeper {
+    [self giveMoney:money];
+    [moneyKeeper takeMoney:money];
 }
 
 #pragma mark -

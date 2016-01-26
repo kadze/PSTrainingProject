@@ -14,9 +14,9 @@
 @protocol PSObserverProtocol <NSObject>
 
 @optional
-- (void)workerDidBecomeFree:(PSWorker *)worker;
-- (void)workerDidBecomeBusy:(PSWorker *)worker;
+- (void)workerDidBecomeFree:(id)worker;
+- (void)workerDidBecomeBusy:(id)worker;
 
-- (void)workerDidPerformWorkWithObject:(id<PSMoneyProtocol>)object;
+- (void)workerDidPerformWorkWithObject:(id)worker;
 
 @end

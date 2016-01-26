@@ -78,7 +78,7 @@
             return @selector(workerDidPerformWorkWithObject:);
             
         default:
-            return NULL;
+            return [super selectorForState:state];
     }
 }
 
@@ -106,8 +106,8 @@
 #pragma mark -
 #pragma mark PSObserverProtocol
 
-- (void)PSWorkerDidPerformWorkWithObject:(id<PSMoneyProtocol>)object {
-    [self performWorkWithObject:object];
+- (void)workerDidPerformWorkWithObject:(id)worker {
+    [self performWorkWithObject:worker];
 }
 
 @end

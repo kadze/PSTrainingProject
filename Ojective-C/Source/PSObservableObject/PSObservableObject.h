@@ -17,6 +17,7 @@
 
 - (void)addObserver:(id)observer;
 - (void)removeObserver:(id)observer;
+- (void)removeObservers;
 - (BOOL)containsObserver:(id)observer;
 
 - (void)notifyObserversWithSelector:(SEL)selector;

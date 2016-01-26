@@ -27,7 +27,7 @@ const static NSUInteger kPSWashersCount = 2;
 - (void)addWorkers:(NSArray *)worker withObservers:(NSArray *)observers;
 - (void)addWorker:(PSWorker *)worker withObservers:(NSArray *)observers;
 
-- (id)freeWorkerOfClass:(Class)Class;
+- (id)freeWorkerOfClass:(Class)class;
 
 @end
 
@@ -38,6 +38,7 @@ const static NSUInteger kPSWashersCount = 2;
 
 - (void)dealloc {
     [self fireWorker];
+    
     self.mutableWorkers = nil;
     self.cars = nil;
     
@@ -50,6 +51,7 @@ const static NSUInteger kPSWashersCount = 2;
     if (self) {
         self.mutableWorkers = [NSMutableArray array];
         self.cars = [PSQueue queue];
+        
         [self hireWorker];
     }
     
@@ -69,7 +71,7 @@ const static NSUInteger kPSWashersCount = 2;
 - (void)washCar:(PSCar *)car {
     PSWasher *washer = [self freeWorkerOfClass:[PSWasher class]];
     if (washer) {
-        [washer performWorkWithObject:(id<PSMoneyProtocol>)car];
+        [washer performWorkWithObject:car];
     }
 }
 
@@ -92,9 +94,9 @@ const static NSUInteger kPSWashersCount = 2;
     PSDirector *director = [PSDirector object];
     PSAccountant *accountant = [PSAccountant object];
     
-    [self addWorkers:[PSWasher objectsWithCount:kPSWashersCount] withObservers:@[accountant, self]];
+    [self addWorkers:[PSWasher objectsWithCount:kPSWashersCount] withObservers:@[self, accountant]];
     
-    [self addWorker:accountant withObservers:@[director, self]];
+    [self addWorker:accountant withObservers:@[self, director]];
     [self addWorker:director withObservers:nil];
 }
 

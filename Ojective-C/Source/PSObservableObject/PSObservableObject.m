@@ -85,7 +85,7 @@
 - (void)notifyObserversWithSelector:(SEL)selector withObject:(id)object {
     for (id observer in self.observers) {
         if ([observer respondsToSelector:selector]) {
-            [observer performSelector:selector withObject:object withObject:self];
+            [observer performSelector:selector withObject:self withObject:object];
         }
     }
 }

@@ -49,10 +49,26 @@
 }
 
 - (void)performWorkWithObject:(id<PSMoneyProtocol>)object {
-    self.state = kPSWorkerDidBecomeBusy;
+    @synchronized(self) {
+        self.state = kPSWorkerDidBecomeBusy;
+        [self performSelectorInBackground:@selector(performWorkWithObjectInBackground:) withObject:object];
+    }
+}
+
+- (void)performWorkWithObjectInBackground:(id)object {
     [self workWithObject:object];
-    [self finishProcessing];
-    [self finishPerformWork];
+    [self performSelectorOnMainThread:@selector(performWorkWithObjectOnMainThread:) withObject:object waitUntilDone:NO];
+}
+
+- (void)performWorkWithObjectOnMainThread:(id)object {
+    @synchronized(self) {
+        [self finishProcessing];
+        if (object) {
+            [self performSelectorInBackground:@selector(performWorkWithObjectInBackground:) withObject:object];
+        } else {
+            [self finishPerformWork];
+        }
+    }
 }
 
 - (void)finishProcessing {
@@ -86,21 +102,29 @@
 #pragma mark Money Protocol
 
 - (void)takeMoney:(NSUInteger)money {
-    self.money += money;
+    @synchronized(self) {
+        self.money += money;
+    }
 }
 
 - (void)giveMoney:(NSUInteger)money {
-    self.money -= money;
+    @synchronized(self) {
+        self.money -= money;
+    }
 }
 
 - (void)takeMoney:(NSUInteger)money fromMoneyKeeper:(id <PSMoneyProtocol>)moneyKeeper {
-    [self takeMoney:money];
-    [moneyKeeper giveMoney:money];
+    @synchronized(self) {
+        [self takeMoney:money];
+        [moneyKeeper giveMoney:money];
+    }
 }
 
 - (void)giveMoney:(NSUInteger)money toMoneyKeeper:(id <PSMoneyProtocol>)moneyKeeper {
-    [self giveMoney:money];
-    [moneyKeeper takeMoney:money];
+    @synchronized(self) {
+        [self giveMoney:money];
+        [moneyKeeper takeMoney:money];
+    }
 }
 
 #pragma mark -

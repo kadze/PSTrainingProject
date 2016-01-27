@@ -162,28 +162,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Ojective-C/Source/PSCarWashEnterprise/PSWorkers/PSWorker.m"
-            timestampString = "475520461.84386"
+            timestampString = "475606233.093032"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "52"
-            endingLineNumber = "52"
-            landmarkName = "-performWorkWithObject:"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Ojective-C/Source/PSCarWashEnterprise/PSWorkers/PSWorker.m"
-            timestampString = "475527409.220621"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "53"
-            endingLineNumber = "53"
-            landmarkName = "-performWorkWithObject:"
+            startingLineNumber = "58"
+            endingLineNumber = "58"
+            landmarkName = "-performWorkWithObjectInBackground:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

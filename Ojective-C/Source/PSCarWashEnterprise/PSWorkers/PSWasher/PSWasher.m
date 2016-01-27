@@ -17,10 +17,10 @@
 #pragma mark Public
 
 - (void)workWithObject:(PSCar *)car {
-//    if (car.money >= kPSPrice) {
-        [self takeMoney:car.money fromMoneyKeeper:car];
-        [self washCar:car];
-//    }
+    //    if (car.money >= kPSPrice) {
+    [self takeMoney:car.money fromMoneyKeeper:car];
+    [self washCar:car];
+    //    }
 }
 
 #pragma mark -

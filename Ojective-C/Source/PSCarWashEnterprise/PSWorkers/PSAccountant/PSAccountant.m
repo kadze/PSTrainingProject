@@ -25,8 +25,8 @@
 #pragma mark Private
 
 - (void)count {
-    NSLog(@"Accountant money = %lu", self.money);
     sleep(1);
+    NSLog(@"Accountant money = %lu", self.money);
 }
 
 @end

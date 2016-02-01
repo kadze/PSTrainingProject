@@ -64,16 +64,16 @@
 #pragma mark Public Methods
 
 - (void)enqueueObject:(id)object {
-    @synchronized(_queue) {
-        [_queue addObject:object];
+    @synchronized(self) {
+        [self.queue addObject:object];
     }
 }
 
 - (id)dequeueObject {
-    @synchronized (_queue) {
-        id object = [[[_queue firstObject] retain] autorelease];
+    @synchronized (self) {
+        id object = [[[self.queue firstObject] retain] autorelease];
         if (object) {
-            [_queue removeObjectAtIndex:0];
+            [self.queue removeObjectAtIndex:0];
         }
         
         return object;
@@ -81,8 +81,8 @@
 }
 
 - (NSUInteger)count {
-    @synchronized(_queue) {
-        return [_queue count];
+    @synchronized(self) {
+        return [self.queue count];
     }
 }
 

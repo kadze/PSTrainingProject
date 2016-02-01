@@ -25,7 +25,7 @@ typedef NS_ENUM (NSUInteger, PSWorkersState) {
 
 - (instancetype)initWithSalary:(NSUInteger)salary experience:(NSUInteger)experience;
 
-- (void)workWithObject:(id)object;
 - (void)performWorkWithObject:(id<PSMoneyProtocol>)object;
+- (void)performWorkWithObjectInBackground:(id)object;
 
 @end

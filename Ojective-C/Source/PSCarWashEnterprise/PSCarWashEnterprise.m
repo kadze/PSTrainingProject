@@ -94,9 +94,9 @@ const static NSUInteger kPSWashersCount = 5;
     PSDirector *director = [PSDirector object];
     PSAccountant *accountant = [PSAccountant object];
     
-    [self addWorkers:[PSWasher objectsWithCount:kPSWashersCount] withObservers:@[self, accountant]];
+    [self addWorkers:[PSWasher objectsWithCount:kPSWashersCount] withObservers:@[accountant,self]];
     
-    [self addWorker:accountant withObservers:@[self, director]];
+    [self addWorker:accountant withObservers:@[director]];
     [self addWorker:director withObservers:nil];
 }
 
@@ -130,6 +130,17 @@ const static NSUInteger kPSWashersCount = 5;
     }
     
     return nil;
+}
+
+#pragma mark -
+#pragma mark PSObserverProtocol
+
+- (void)workerDidBecomeFree:(PSWorker *)worker {
+    PSQueue *carsQueue = self.cars;
+    
+    while (!carsQueue.isEmpty) {
+        [worker performWorkWithObject:[carsQueue dequeueObject]];
+    }
 }
 
 @end

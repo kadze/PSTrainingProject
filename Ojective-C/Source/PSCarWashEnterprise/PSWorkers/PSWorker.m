@@ -10,6 +10,12 @@
 
 @interface PSWorker ()
 
+- (void)workWithObject:(id)object;
+- (void)performWorkWithObjectOnMainThread:(id)object;
+
+- (void)finishProcessing;
+- (void)finishPerformWork:(PSWorker *)object;
+
 @end
 
 @implementation PSWorker
@@ -42,11 +48,7 @@
 }
 
 #pragma mark -
-#pragma mark Public Methods
-
-- (void)workWithObject:(id)object {
-     [self doesNotRecognizeSelector:_cmd];
-}
+#pragma mark Public Method
 
 - (void)performWorkWithObject:(id<PSMoneyProtocol>)object {
     @synchronized(self) {
@@ -60,13 +62,20 @@
     [self performSelectorOnMainThread:@selector(performWorkWithObjectOnMainThread:) withObject:object waitUntilDone:NO];
 }
 
+#pragma mark -
+#pragma mark Private Methods
+
+- (void)workWithObject:(id)object {
+    [self doesNotRecognizeSelector:_cmd];
+}
+
 - (void)performWorkWithObjectOnMainThread:(id)object {
     @synchronized(self) {
-        [self finishProcessing];
         if (object) {
             [self performSelectorInBackground:@selector(performWorkWithObjectInBackground:) withObject:object];
         } else {
-            [self finishPerformWork];
+            [self finishProcessing];
+            [self finishPerformWork:object];
         }
     }
 }
@@ -75,8 +84,8 @@
     self.state = kPSWorkerDidPerformWorkWithObject;
 }
 
-- (void)finishPerformWork {
-    self.state = kPSWorkerDidBecomeFree;
+- (void)finishPerformWork:(PSWorker *)object {
+    object.state = kPSWorkerDidBecomeFree;
 }
 
 #pragma mark -

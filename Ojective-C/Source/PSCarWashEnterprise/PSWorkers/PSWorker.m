@@ -7,8 +7,10 @@
 //
 
 #import "PSWorker.h"
+#import "PSQueue.h"
 
 @interface PSWorker ()
+@property (nonatomic, retain)   PSQueue *workersQueue;
 
 - (void)workWithObject:(id)object;
 - (void)performWorkWithObjectOnMainThread:(id)object;
@@ -42,6 +44,7 @@
         self.salary = salary;
         self.experience = experience;
         self.state = kPSWorkerDidBecomeFree;
+        self.workersQueue = [PSQueue object];
     }
     
     return self;
@@ -52,12 +55,16 @@
 
 - (void)performWorkWithObject:(id<PSMoneyProtocol>)object {
     @synchronized(self) {
-        self.state = kPSWorkerDidBecomeBusy;
-        [self performSelectorInBackground:@selector(performWorkWithObjectInBackground:) withObject:object];
+        if (self.state == kPSWorkerDidBecomeFree) {
+            self.state = kPSWorkerDidBecomeBusy;
+            [self performSelectorInBackground:@selector(performWorkWithObjectInBackground:) withObject:object];
+        } else {
+            [self.workersQueue enqueueObject:object];
+        }
     }
 }
 
-- (void)performWorkWithObjectInBackground:(id)object {
+- (void)performWorkWithObjectInBackground:(id<PSMoneyProtocol>)object {
     [self workWithObject:object];
     [self performSelectorOnMainThread:@selector(performWorkWithObjectOnMainThread:) withObject:object waitUntilDone:NO];
 }
@@ -71,6 +78,7 @@
 
 - (void)performWorkWithObjectOnMainThread:(id)object {
     @synchronized(self) {
+        id object = [self.workersQueue dequeueObject];
         if (object) {
             [self performSelectorInBackground:@selector(performWorkWithObjectInBackground:) withObject:object];
         } else {

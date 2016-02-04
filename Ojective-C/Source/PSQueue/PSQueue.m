@@ -71,9 +71,10 @@
 
 - (id)dequeueObject {
     @synchronized (self) {
-        id object = [[[self.queue firstObject] retain] autorelease];
+        id queue = self.queue;
+        id object = [[[queue firstObject] retain] autorelease];
         if (object) {
-            [self.queue removeObjectAtIndex:0];
+            [queue removeObjectAtIndex:0];
         }
         
         return object;

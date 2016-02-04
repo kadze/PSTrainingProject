@@ -24,6 +24,8 @@
     }
     
     [carwash washCars:cars];
+    
+    [[NSRunLoop currentRunLoop] run];
 }
 
 @end

@@ -136,10 +136,10 @@ const static NSUInteger kPSWashersCount = 5;
 #pragma mark PSObserverProtocol
 
 - (void)workerDidBecomeFree:(PSWorker *)worker {
-    PSQueue *carsQueue = self.cars;
+    PSCar *car = [self.cars dequeueObject];
     
-    while (!carsQueue.isEmpty) {
-        [worker performWorkWithObject:[carsQueue dequeueObject]];
+    if (car) {
+        [worker performWorkWithObject:car];
     }
 }
 

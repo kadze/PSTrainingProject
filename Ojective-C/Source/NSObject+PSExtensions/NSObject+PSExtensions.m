@@ -1,14 +1,14 @@
 //
-//  PSObjectExtensions.m
+//  NSObject+PSExtensions.m
 //  PSTrainingProject
 //
 //  Created by Сергей on 28.12.15.
 //  Copyright © 2015 Сергей. All rights reserved.
 //
 
-#import "NSObject+PSObjectExtensions.h"
+#import "NSObject+PSExtensions.h"
 
-@implementation NSObject (PSObjectExtensions)
+@implementation NSObject (PSExtensions)
 
 + (instancetype)object {
     return [[[self alloc] init] autorelease];

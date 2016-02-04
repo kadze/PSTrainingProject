@@ -10,13 +10,13 @@
 #import "PSQueue.h"
 
 @interface PSWorker ()
-@property (nonatomic, retain)   PSQueue *workersQueue;
+@property (nonatomic, retain)   PSQueue *queue;
 
 - (void)workWithObject:(id)object;
 - (void)performWorkWithObjectOnMainThread:(id)object;
 
 - (void)finishProcessing;
-- (void)finishPerformWork:(PSWorker *)object;
+- (void)finishPerformWork:(id)object;
 
 @end
 
@@ -37,14 +37,23 @@
 #pragma mark -
 #pragma mark Initializations and Deallocations
 
-- (instancetype)initWithSalary:(NSUInteger)salary experience:(NSUInteger)experience {
+- (instancetype)init {
     self = [super init];
+    
+    if (self) {
+        self.state = kPSWorkerDidBecomeFree;
+        self.queue = [PSQueue object];
+    }
+    
+    return self;
+}
+
+- (instancetype)initWithSalary:(NSUInteger)salary experience:(NSUInteger)experience {
+    self = [self init];
     
     if (self) {
         self.salary = salary;
         self.experience = experience;
-        self.state = kPSWorkerDidBecomeFree;
-        self.workersQueue = [PSQueue object];
     }
     
     return self;
@@ -59,12 +68,12 @@
             self.state = kPSWorkerDidBecomeBusy;
             [self performSelectorInBackground:@selector(performWorkWithObjectInBackground:) withObject:object];
         } else {
-            [self.workersQueue enqueueObject:object];
+            [self.queue enqueueObject:object];
         }
     }
 }
 
-- (void)performWorkWithObjectInBackground:(id<PSMoneyProtocol>)object {
+- (void)performWorkWithObjectInBackground:(id)object {
     [self workWithObject:object];
     [self performSelectorOnMainThread:@selector(performWorkWithObjectOnMainThread:) withObject:object waitUntilDone:NO];
 }
@@ -77,13 +86,14 @@
 }
 
 - (void)performWorkWithObjectOnMainThread:(id)object {
+    [self finishPerformWork:object];
     @synchronized(self) {
-        id object = [self.workersQueue dequeueObject];
+        id object = [self.queue dequeueObject];
         if (object) {
             [self performSelectorInBackground:@selector(performWorkWithObjectInBackground:) withObject:object];
         } else {
             [self finishProcessing];
-            [self finishPerformWork:object];
+
         }
     }
 }
@@ -93,7 +103,9 @@
 }
 
 - (void)finishPerformWork:(PSWorker *)object {
-    object.state = kPSWorkerDidBecomeFree;
+    @synchronized(object) {
+        object.state = kPSWorkerDidBecomeFree;
+    }
 }
 
 #pragma mark -

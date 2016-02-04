@@ -1,5 +1,5 @@
 //
-//  PSWosher.h
+//  PSWasher.h
 //  PSTrainingProject
 //
 //  Created by Сергей on 07.12.15.

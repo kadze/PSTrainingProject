@@ -72,18 +72,14 @@ const static NSUInteger kPSWashersCount = 5;
     PSWasher *washer = [self freeWorkerOfClass:[PSWasher class]];
     if (washer) {
         [washer performWorkWithObject:car];
+    } else {
+        [self.cars enqueueObject:car];
     }
 }
 
 - (void)washCars:(NSArray *)cars {
-    PSQueue *carsQueue = self.cars;
-    
     for (PSCar *car in cars) {
-        [carsQueue enqueueObject:car];
-    }
-    
-    while (!carsQueue.isEmpty) {
-        [self washCar:[carsQueue dequeueObject]];
+        [self washCar:car];
     }
 }
 
@@ -94,7 +90,7 @@ const static NSUInteger kPSWashersCount = 5;
     PSDirector *director = [PSDirector object];
     PSAccountant *accountant = [PSAccountant object];
     
-    [self addWorkers:[PSWasher objectsWithCount:kPSWashersCount] withObservers:@[accountant,self]];
+    [self addWorkers:[PSWasher objectsWithCount:kPSWashersCount] withObservers:@[accountant, self]];
     
     [self addWorker:accountant withObservers:@[director]];
     [self addWorker:director withObservers:nil];
@@ -119,6 +115,7 @@ const static NSUInteger kPSWashersCount = 5;
     for (PSWorker *worker in workers) {
         [worker removeObserver:self];
     }
+    
     [workers removeAllObjects];
 }
 
@@ -137,7 +134,6 @@ const static NSUInteger kPSWashersCount = 5;
 
 - (void)workerDidBecomeFree:(PSWorker *)worker {
     PSCar *car = [self.cars dequeueObject];
-    
     if (car) {
         [worker performWorkWithObject:car];
     }

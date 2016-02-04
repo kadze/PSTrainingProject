@@ -31,7 +31,7 @@
 		ADCE03DC1C16756F00555686 /* PSCreatureTest.m in Sources */ = {isa = PBXBuildFile; fileRef = ADCE03DB1C16756F00555686 /* PSCreatureTest.m */; };
 		ADCE03E01C16787A00555686 /* PSCarWashTest.m in Sources */ = {isa = PBXBuildFile; fileRef = ADCE03DF1C16787A00555686 /* PSCarWashTest.m */; };
 		ADE3ABDD1BEA954900910782 /* PSString.c in Sources */ = {isa = PBXBuildFile; fileRef = ADE3ABDB1BEA954900910782 /* PSString.c */; };
-		ADFA42221C3167B9000430D7 /* NSObject+PSObjectExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = ADFA42211C3167B9000430D7 /* NSObject+PSObjectExtensions.m */; };
+		ADEAEC111C63F258003A812C /* NSObject+PSExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = ADEAEC101C63F258003A812C /* NSObject+PSExtensions.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -110,9 +110,9 @@
 		ADCE03DF1C16787A00555686 /* PSCarWashTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSCarWashTest.m; sourceTree = "<group>"; };
 		ADE3ABDB1BEA954900910782 /* PSString.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = PSString.c; path = "Language C/Source/PSSreing/PSString.c"; sourceTree = "<group>"; };
 		ADE3ABDC1BEA954900910782 /* PSString.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = PSString.c; path = "Language C/Source/PSSreing/PSString.c"; sourceTree = "<group>"; };
+		ADEAEC0F1C63F258003A812C /* NSObject+PSExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+PSExtensions.h"; sourceTree = "<group>"; };
+		ADEAEC101C63F258003A812C /* NSObject+PSExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+PSExtensions.m"; sourceTree = "<group>"; };
 		ADECB22F1C2C69EA00B1A869 /* PrefixHeader.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
-		ADFA42201C3167B9000430D7 /* NSObject+PSObjectExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+PSObjectExtensions.h"; sourceTree = "<group>"; };
-		ADFA42211C3167B9000430D7 /* NSObject+PSObjectExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+PSObjectExtensions.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -387,7 +387,7 @@
 		AD9CFD2E1C2B1D6B00DA5E58 /* Source */ = {
 			isa = PBXGroup;
 			children = (
-				ADFA421F1C31638C000430D7 /* NSObject+PSObjectExtensions */,
+				ADEAEC0E1C63F258003A812C /* NSObject+PSExtensions */,
 				AD8A7AEE1C2B83BE0047CEF2 /* PSQueue */,
 				AD9CFD2A1C2ADF8D00DA5E58 /* PSObservableObject */,
 				AD188A761C15F44D003C8E9C /* PSCarWashEnterprise */,
@@ -461,13 +461,13 @@
 			path = PSString;
 			sourceTree = "<group>";
 		};
-		ADFA421F1C31638C000430D7 /* NSObject+PSObjectExtensions */ = {
+		ADEAEC0E1C63F258003A812C /* NSObject+PSExtensions */ = {
 			isa = PBXGroup;
 			children = (
-				ADFA42201C3167B9000430D7 /* NSObject+PSObjectExtensions.h */,
-				ADFA42211C3167B9000430D7 /* NSObject+PSObjectExtensions.m */,
+				ADEAEC0F1C63F258003A812C /* NSObject+PSExtensions.h */,
+				ADEAEC101C63F258003A812C /* NSObject+PSExtensions.m */,
 			);
-			path = "NSObject+PSObjectExtensions";
+			path = "NSObject+PSExtensions";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -549,9 +549,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				ADAA6CD61BFF5050002A4A27 /* PSCreature.m in Sources */,
-				ADFA42221C3167B9000430D7 /* NSObject+PSObjectExtensions.m in Sources */,
 				AD188A9C1C15FF0F003C8E9C /* PSWasher.m in Sources */,
 				AD188A991C15FEF6003C8E9C /* PSAccountant.m in Sources */,
+				ADEAEC111C63F258003A812C /* NSObject+PSExtensions.m in Sources */,
 				AD188A871C15FD75003C8E9C /* PSCarWashEnterprise.m in Sources */,
 				AD8A7AF11C2B83F20047CEF2 /* PSQueue.m in Sources */,
 				ADCE03E01C16787A00555686 /* PSCarWashTest.m in Sources */,

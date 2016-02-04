@@ -1,5 +1,5 @@
 //
-//  PSObjectExtensions.h
+//  NSObject+PSExtensions.h
 //  PSTrainingProject
 //
 //  Created by Сергей on 28.12.15.
@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface NSObject (PSObjectExtensions)
+@interface NSObject (PSExtensions)
 
 + (instancetype)object;
 

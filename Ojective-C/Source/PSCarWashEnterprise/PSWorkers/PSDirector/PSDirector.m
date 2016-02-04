@@ -15,9 +15,13 @@
 #pragma mark Public
 
 - (void)workWithObject:(PSAccountant *)accountant {
-    @synchronized(self) {
         [self takeMoney:accountant.money fromMoneyKeeper:accountant];
         [self profit];
+}
+
+- (void)finishProcessing {
+    @synchronized(self) {
+        self.state = kPSWorkerDidBecomeFree;
     }
 }
 
@@ -25,7 +29,7 @@
 #pragma mark Private
 
 - (void)profit {
-    sleep(1);
+//    sleep(1);
     NSLog(@"Directors money = %lu", self.money);
 }
 

@@ -1,5 +1,5 @@
 //
-//  PSWosher.m
+//  PSWasher.m
 //  PSTrainingProject
 //
 //  Created by Сергей on 07.12.15.
@@ -9,18 +9,14 @@
 #import "PSWasher.h"
 #import "PSCar.h"
 
-//const static NSUInteger kPSPrice = 10;
-
 @implementation PSWasher
 
 #pragma mark -
 #pragma mark Public
 
 - (void)workWithObject:(PSCar *)car {
-    //    if (car.money >= kPSPrice) {
     [self takeMoney:car.money fromMoneyKeeper:car];
     [self washCar:car];
-    //    }
 }
 
 #pragma mark -
@@ -29,6 +25,10 @@
 - (void)washCar:(PSCar *)car {
     car.clean = YES;
     NSLog(@"Is car clean: %@ Money is: %lu", (car.isClean) ? @"YES" : @"NO", car.money);
+}
+
+- (void)finishPerformWork:(PSCar *)car {
+
 }
 
 @end

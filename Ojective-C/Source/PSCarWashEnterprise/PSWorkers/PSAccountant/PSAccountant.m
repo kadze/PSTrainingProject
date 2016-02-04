@@ -15,17 +15,16 @@
 #pragma mark Public
 
 - (void)workWithObject:(PSWasher *)washer {
-    @synchronized(self) {
-        [self takeMoney:washer.money fromMoneyKeeper:washer];
-        [self count];
-    }
+    NSLog(@"Washer money = %lu", washer.money);
+    [self takeMoney:washer.money fromMoneyKeeper:washer];
+    [self count];
 }
 
 #pragma mark -
 #pragma mark Private
 
 - (void)count {
-    sleep(1);
+//    sleep(1);
     NSLog(@"Accountant money = %lu", self.money);
 }
 

@@ -10,12 +10,9 @@
 
 #import "PSObserverProtocol.h"
 
-@class PSWorkers;
-
 @interface PSDispatcher : NSObject <PSObserverProtocol>
 
-- (void)addProcessingObject:(id)object;
-- (void)addHandler:(PSWorkers *)handler;
-- (void)removeHandler:(PSWorkers *)handler;
+- (void)addHandler:(id)handler;
+- (void)removeHandler:(id)handler;
 
 @end

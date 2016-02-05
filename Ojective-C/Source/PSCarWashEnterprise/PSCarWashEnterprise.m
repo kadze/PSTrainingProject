@@ -10,16 +10,21 @@
 #import "PSAccountant.h"
 #import "PSCar.h"
 #import "PSDirector.h"
+#import "PSDispatcher.h"
 #import "PSMoneyProtocol.h"
 #import "PSObserverProtocol.h"
 #import "PSWasher.h"
 #import "PSWorker.h"
 
 const static NSUInteger kPSWashersCount = 5;
+const static NSUInteger kPSAccountantsCount = 5;
 
 @interface PSCarWashEnterprise ()
-@property (nonatomic, retain)    NSMutableArray  *mutableWorkers;
-@property (nonatomic, retain)    PSQueue         *cars;
+@property (nonatomic, retain)   NSMutableArray  *mutableWorkers;
+@property (nonatomic, retain)   PSQueue         *cars;
+@property (nonatomic, retain)   PSDispatcher    *washersDispatcher;
+@property (nonatomic, retain)   PSDispatcher    *accountantsDispatcher;
+@property (nonatomic, retain)   PSDispatcher    *directorsDispatcher;
 
 - (void)hireWorker;
 - (void)fireWorker;
@@ -41,6 +46,9 @@ const static NSUInteger kPSWashersCount = 5;
     
     self.mutableWorkers = nil;
     self.cars = nil;
+    self.washersDispatcher = nil;
+    self.accountantsDispatcher = nil;
+    self.directorsDispatcher = nil;
     
     [super dealloc];
 }
@@ -51,6 +59,9 @@ const static NSUInteger kPSWashersCount = 5;
     if (self) {
         self.mutableWorkers = [NSMutableArray array];
         self.cars = [PSQueue queue];
+        self.washersDispatcher = [PSDispatcher object];
+        self.accountantsDispatcher = [PSDispatcher object];
+        self.directorsDispatcher = [PSDispatcher object];
         
         [self hireWorker];
     }

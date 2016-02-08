@@ -73,13 +73,13 @@
 #pragma mark -
 #pragma mark Private Methods
 
-- (void)workWithObject:(id)object {
+- (void)workWithObject:(id<PSMoneyProtocol>)object {
     [self doesNotRecognizeSelector:_cmd];
 }
 
 - (void)performWorkWithObjectOnMainThread:(id)object {
-    [self finishPerformWork:object];
     @synchronized(self) {
+        [self finishPerformWork:object];
         [self finishProcessing];
     }
 }
@@ -88,7 +88,7 @@
     self.state = kPSWorkerDidPerformWorkWithObject;
 }
 
-- (void)finishPerformWork:(PSWorker *)object {
+- (void)finishPerformWork:(PSObservableObject *)object {
     @synchronized(object) {
         object.state = kPSWorkerDidBecomeFree;
     }
@@ -145,8 +145,8 @@
 #pragma mark -
 #pragma mark PSObserverProtocol
 
-- (void)workerDidPerformWorkWithObject:(id)object {
-    [self performWorkWithObject:object];
+- (void)workerDidPerformWorkWithObject:(PSWorker *)worker {
+    [self performWorkWithObject:worker];
 }
 
 @end

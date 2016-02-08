@@ -16,8 +16,8 @@
 #import "PSWasher.h"
 #import "PSWorker.h"
 
-const static NSUInteger kPSWashersCount = 5;
-const static NSUInteger kPSAccountantsCount = 2;
+const static NSUInteger kPSWashersCount = 50;
+const static NSUInteger kPSAccountantsCount = 10;
 const static NSUInteger kPSDirectorsCount = 1;
 
 @interface PSCarWashEnterprise ()
@@ -30,7 +30,7 @@ const static NSUInteger kPSDirectorsCount = 1;
 - (void)hireWorker;
 - (void)fireWorker;
 
-- (void)addWorkers:(NSArray *)worker withDispatcher:(PSDispatcher *)dispatcher withObservers:(NSArray *)observers;
+- (void)addWorkers:(NSArray *)worker withDispatcher:(PSDispatcher *)dispatcher;
 
 @end
 
@@ -77,15 +77,6 @@ const static NSUInteger kPSDirectorsCount = 1;
 #pragma mark -
 #pragma mark Public Methods
 
-//- (void)washCar:(PSCar *)car {
-//    PSWasher *washer = [self freeWorkerOfClass:[PSWasher class]];
-//    if (washer) {
-//        [washer performWorkWithObject:car];
-//    } else {
-//        [self.cars enqueueObject:car];
-//    }
-//}
-
 - (void)washCars:(NSArray *)cars {
     for (PSCar *car in cars) {
         [self.washersDispatcher performWorkWithObject:car];
@@ -100,16 +91,16 @@ const static NSUInteger kPSDirectorsCount = 1;
     NSArray *accountants = [PSAccountant objectsWithCount:kPSAccountantsCount];
     NSArray *washers = [PSWasher objectsWithCount:kPSWashersCount];
     
-    [self addWorkers:washers withDispatcher:self.washersDispatcher withObservers:accountants];
-    [self addWorkers:accountants withDispatcher:self.accountantsDispatcher withObservers:directors];
-    [self addWorkers:directors withDispatcher:self.directorsDispatcher withObservers:nil];
+    [self addWorkers:washers withDispatcher:self.washersDispatcher];
+    [self addWorkers:accountants withDispatcher:self.accountantsDispatcher];
+    [self addWorkers:directors withDispatcher:self.directorsDispatcher];
 }
 
-- (void)addWorkers:(NSArray *)workers withDispatcher:(PSDispatcher *)dispatcher withObservers:(NSArray *)observers {
+- (void)addWorkers:(NSArray *)workers withDispatcher:(PSDispatcher *)dispatcher {
     for (PSWorker *worker in workers) {
         [dispatcher addHandler:worker];
         [self.mutableWorkers addObject:worker];
-        [worker addObservers:observers];
+        [worker addObserver:self];
     }
 }
 
@@ -125,7 +116,7 @@ const static NSUInteger kPSDirectorsCount = 1;
 #pragma mark -
 #pragma mark PSObserverProtocol
 
-- (void)workerDidBecomeFree:(id)object {
+- (void)workerDidPerformWorkWithObject:(id)object {
     if ([self.washersDispatcher containsHandler:object]) {
         [self.accountantsDispatcher performWorkWithObject:object];
     } else if ([self.accountantsDispatcher containsHandler:object]) {

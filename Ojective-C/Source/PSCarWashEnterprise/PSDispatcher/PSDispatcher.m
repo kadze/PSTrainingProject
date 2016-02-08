@@ -44,7 +44,7 @@
 #pragma mark -
 #pragma mark Public
 
-- (void)addHandler:(id)handler {
+- (void)addHandler:(PSObservableObject *)handler {
     @synchronized(handler) {
         [self.mutableHandlers addObject:handler];
         [handler addObserver:self];

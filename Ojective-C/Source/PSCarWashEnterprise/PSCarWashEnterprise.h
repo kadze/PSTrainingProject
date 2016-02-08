@@ -7,8 +7,9 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "PSObserverProtocol.h"
 
-@interface PSCarWashEnterprise : NSObject
+@interface PSCarWashEnterprise : NSObject <PSObserverProtocol>
 
 - (void)washCars:(NSArray *)car;
 

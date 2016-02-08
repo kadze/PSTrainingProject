@@ -15,8 +15,8 @@
 #pragma mark Public
 
 - (void)workWithObject:(PSAccountant *)accountant {
-        [self takeMoney:accountant.money fromMoneyKeeper:accountant];
-        [self profit];
+    [self takeMoney:accountant.money fromMoneyKeeper:accountant];
+    [self profit];
 }
 
 - (void)finishProcessing {
@@ -30,7 +30,7 @@
 
 - (void)profit {
 //    sleep(1);
-    NSLog(@"Directors money = %lu", self.money);
+    NSLog(@"Directors %@ money = %lu", self, self.money);
 }
 
 @end

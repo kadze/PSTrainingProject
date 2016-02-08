@@ -8,6 +8,7 @@
 
 #import "PSCarWashTest.h"
 #import "PSCarWashEnterprise.h"
+#import "PSCar.h"
 
 @implementation PSCarWashTest
 
@@ -17,7 +18,7 @@
     
     NSLog(@"Enterprise created: %@", (carwash) ? @"YES" : @"NO");
     
-    for (NSUInteger index = 0; index < 100; index++) {
+    for (NSUInteger index = 0; index < 50; index++) {
         PSCar *car = [[[PSCar alloc] initWithMoney:10] autorelease];
         [cars addObject:car];
         NSLog(@"Is car number %lu clean: %@ Money is: %lu", index, (car.isClean) ? @"YES" : @"NO", car.money);

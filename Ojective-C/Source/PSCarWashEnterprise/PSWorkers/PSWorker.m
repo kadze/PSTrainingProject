@@ -15,9 +15,6 @@
 - (void)workWithObject:(id)object;
 - (void)performWorkWithObjectOnMainThread:(id)object;
 
-- (void)finishProcessing;
-- (void)finishPerformWork:(id)object;
-
 @end
 
 @implementation PSWorker
@@ -64,12 +61,7 @@
 
 - (void)performWorkWithObject:(id<PSMoneyProtocol>)object {
     @synchronized(self) {
-        if (self.state == kPSWorkerDidBecomeFree) {
-            self.state = kPSWorkerDidBecomeBusy;
-            [self performSelectorInBackground:@selector(performWorkWithObjectInBackground:) withObject:object];
-        } else {
-            [self.queue enqueueObject:object];
-        }
+        [self performSelectorInBackground:@selector(performWorkWithObjectInBackground:) withObject:object];
     }
 }
 
@@ -88,13 +80,7 @@
 - (void)performWorkWithObjectOnMainThread:(id)object {
     [self finishPerformWork:object];
     @synchronized(self) {
-        id object = [self.queue dequeueObject];
-        if (object) {
-            [self performSelectorInBackground:@selector(performWorkWithObjectInBackground:) withObject:object];
-        } else {
-            [self finishProcessing];
-
-        }
+        [self finishProcessing];
     }
 }
 
@@ -159,8 +145,8 @@
 #pragma mark -
 #pragma mark PSObserverProtocol
 
-- (void)workerDidPerformWorkWithObject:(id)worker {
-    [self performWorkWithObject:worker];
+- (void)workerDidPerformWorkWithObject:(id)object {
+    [self performWorkWithObject:object];
 }
 
 @end

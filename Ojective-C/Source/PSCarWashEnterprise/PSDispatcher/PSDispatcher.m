@@ -11,10 +11,10 @@
 #import "PSWorker.h"
 
 @interface PSDispatcher ()
-@property (nonatomic, retain)   PSQueue         *processingObjects;
+@property (nonatomic, retain)   PSQueue         *queue;
 @property (nonatomic, retain)   NSMutableArray  *mutableHandlers;
 
-- (void)processTheObject:(id)object withHandler:(PSWorker *)handler;
+- (void)processObject;
 
 @end
 
@@ -24,7 +24,7 @@
 #pragma mark Initializations and Deallocations
 
 - (void)dealloc {
-    self.processingObjects = nil;
+    self.queue = nil;
     self.mutableHandlers = nil;
     
     [super dealloc];
@@ -34,7 +34,7 @@
     self = [super init];
     
     if (self) {
-        self.processingObjects = [PSQueue queue];
+        self.queue = [PSQueue queue];
         self.mutableHandlers = [NSMutableArray array];
     }
     
@@ -43,18 +43,6 @@
 
 #pragma mark -
 #pragma mark Public
-
-- (void)addProcessingObject:(id)object {
-    PSWorker *freeHandler = [self.mutableHandlers firstObject];
-    
-    @synchronized(freeHandler) {
-        if (nil != freeHandler && kPSWorkerDidBecomeFree == freeHandler.state) {
-            [self processTheObject:object withHandler:freeHandler];
-        } else {
-            [self.processingObjects enqueueObject:object];
-        }
-    }
-}
 
 - (void)addHandler:(id)handler {
     @synchronized(handler) {
@@ -70,26 +58,49 @@
     }
 }
 
+- (void)performWorkWithObject:(id)object {
+    [self.queue enqueueObject:object];
+    [self processObject];
+}
+
+- (BOOL)containsHandler:(id)handler {
+    return [self.mutableHandlers containsObject:handler];
+}
+
 #pragma mark -
 #pragma mark Private
 
-- (void)processTheObject:(id)object withHandler:(PSWorker *)handler {
-    @synchronized(handler) {
-        if (kPSWorkerDidBecomeFree == handler.state) {
+- (void)processObject {
+    id object = [self.queue dequeueObject];
+    if (object) {
+        id handler = [self reserveHandler];
+        if (handler) {
             [handler performWorkWithObject:object];
+        } else {
+            [self.queue enqueueObject:object];
         }
     }
+}
+
+- (id)reserveHandler {
+    for (PSWorker *handler in self.mutableHandlers) {
+        @synchronized(handler) {
+            if (handler.state == kPSWorkerDidBecomeFree) {
+                handler.state = kPSWorkerDidBecomeBusy;
+                
+                return handler;
+            }
+        }
+    }
+    
+    return nil;
 }
 
 #pragma mark -
 #pragma mark PSObserverProtocol
 
-- (void)PSWorkerDidBecomeFree:(id)worker {
-    PSQueue *processingObjects = self.processingObjects;
-    
-    if (![processingObjects isEmpty]) {
-        [self processTheObject:[processingObjects dequeueObject] withHandler:worker];
-    }
+- (void)workerDidBecomeFree:(id)object {
+    [self processObject];
 }
 
 @end

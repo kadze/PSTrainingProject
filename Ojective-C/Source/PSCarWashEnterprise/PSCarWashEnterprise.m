@@ -17,7 +17,8 @@
 #import "PSWorker.h"
 
 const static NSUInteger kPSWashersCount = 5;
-const static NSUInteger kPSAccountantsCount = 5;
+const static NSUInteger kPSAccountantsCount = 2;
+const static NSUInteger kPSDirectorsCount = 1;
 
 @interface PSCarWashEnterprise ()
 @property (nonatomic, retain)   NSMutableArray  *mutableWorkers;
@@ -29,10 +30,7 @@ const static NSUInteger kPSAccountantsCount = 5;
 - (void)hireWorker;
 - (void)fireWorker;
 
-- (void)addWorkers:(NSArray *)worker withObservers:(NSArray *)observers;
-- (void)addWorker:(PSWorker *)worker withObservers:(NSArray *)observers;
-
-- (id)freeWorkerOfClass:(Class)class;
+- (void)addWorkers:(NSArray *)worker withDispatcher:(PSDispatcher *)dispatcher withObservers:(NSArray *)observers;
 
 @end
 
@@ -79,18 +77,18 @@ const static NSUInteger kPSAccountantsCount = 5;
 #pragma mark -
 #pragma mark Public Methods
 
-- (void)washCar:(PSCar *)car {
-    PSWasher *washer = [self freeWorkerOfClass:[PSWasher class]];
-    if (washer) {
-        [washer performWorkWithObject:car];
-    } else {
-        [self.cars enqueueObject:car];
-    }
-}
+//- (void)washCar:(PSCar *)car {
+//    PSWasher *washer = [self freeWorkerOfClass:[PSWasher class]];
+//    if (washer) {
+//        [washer performWorkWithObject:car];
+//    } else {
+//        [self.cars enqueueObject:car];
+//    }
+//}
 
 - (void)washCars:(NSArray *)cars {
     for (PSCar *car in cars) {
-        [self washCar:car];
+        [self.washersDispatcher performWorkWithObject:car];
     }
 }
 
@@ -98,27 +96,21 @@ const static NSUInteger kPSAccountantsCount = 5;
 #pragma mark Privat Methods
 
 - (void)hireWorker {
-    PSDirector *director = [PSDirector object];
-    PSAccountant *accountant = [PSAccountant object];
+    NSArray *directors = [PSDirector objectsWithCount:kPSDirectorsCount];
+    NSArray *accountants = [PSAccountant objectsWithCount:kPSAccountantsCount];
+    NSArray *washers = [PSWasher objectsWithCount:kPSWashersCount];
     
-    [self addWorkers:[PSWasher objectsWithCount:kPSWashersCount] withObservers:@[accountant, self]];
-    
-    [self addWorker:accountant withObservers:@[director]];
-    [self addWorker:director withObservers:nil];
+    [self addWorkers:washers withDispatcher:self.washersDispatcher withObservers:accountants];
+    [self addWorkers:accountants withDispatcher:self.accountantsDispatcher withObservers:directors];
+    [self addWorkers:directors withDispatcher:self.directorsDispatcher withObservers:nil];
 }
 
-- (void)addWorkers:(NSArray *)workers withObservers:(NSArray *)observers {
+- (void)addWorkers:(NSArray *)workers withDispatcher:(PSDispatcher *)dispatcher withObservers:(NSArray *)observers {
     for (PSWorker *worker in workers) {
-        [self addWorker:worker withObservers:observers];
+        [dispatcher addHandler:worker];
+        [self.mutableWorkers addObject:worker];
+        [worker addObservers:observers];
     }
-}
-
-- (void)addWorker:(PSWorker *)worker withObservers:(NSArray *)observers {
-    for (id observer in observers) {
-        [worker addObserver:observer];
-    }
-    
-    [self.mutableWorkers addObject:worker];
 }
 
 - (void)fireWorker {
@@ -130,23 +122,14 @@ const static NSUInteger kPSAccountantsCount = 5;
     [workers removeAllObjects];
 }
 
-- (id)freeWorkerOfClass:(Class)class {
-    for (PSWorker *worker in self.mutableWorkers) {
-        if (worker.state == kPSWorkerDidBecomeFree && [worker isMemberOfClass:class]) {
-            return worker;
-        }
-    }
-    
-    return nil;
-}
-
 #pragma mark -
 #pragma mark PSObserverProtocol
 
-- (void)workerDidBecomeFree:(PSWorker *)worker {
-    PSCar *car = [self.cars dequeueObject];
-    if (car) {
-        [worker performWorkWithObject:car];
+- (void)workerDidBecomeFree:(id)object {
+    if ([self.washersDispatcher containsHandler:object]) {
+        [self.accountantsDispatcher performWorkWithObject:object];
+    } else if ([self.accountantsDispatcher containsHandler:object]) {
+        [self.directorsDispatcher performWorkWithObject:object];
     }
 }
 

@@ -11,6 +11,8 @@
 @interface PSObservableObject ()
 @property (nonatomic, retain)   NSHashTable *observersHashTable;
 
+- (void)removeObserver:(id)observer;
+
 @end
 
 @implementation PSObservableObject
@@ -64,6 +66,12 @@
 
 - (void)addObserver:(id)observer {
     [self.observersHashTable addObject:observer];
+}
+
+- (void)addObservers:(NSArray *)array {
+    for (id observer in array) {
+        [self addObserver:observer];
+    }
 }
 
 - (void)removeObserver:(id)observer {

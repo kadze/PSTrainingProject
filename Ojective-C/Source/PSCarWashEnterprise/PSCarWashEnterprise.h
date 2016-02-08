@@ -7,8 +7,6 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "PSWorker.h"
-#import "PSCar.h"
 
 @interface PSCarWashEnterprise : NSObject
 

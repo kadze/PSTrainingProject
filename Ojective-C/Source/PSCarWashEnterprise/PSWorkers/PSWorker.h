@@ -28,4 +28,7 @@ typedef NS_ENUM (NSUInteger, PSWorkersState) {
 - (void)performWorkWithObject:(id<PSMoneyProtocol>)object;
 - (void)performWorkWithObjectInBackground:(id)object;
 
+- (void)finishProcessing;
+- (void)finishPerformWork:(id)object;
+
 @end

@@ -11,8 +11,13 @@
 #import "PSObserverProtocol.h"
 
 @interface PSDispatcher : NSObject <PSObserverProtocol>
+@property (nonatomic, retain)   NSArray *handlers;
 
 - (void)addHandler:(id)handler;
 - (void)removeHandler:(id)handler;
+
+- (BOOL)containsHandler:(id)handler;
+
+- (void)performWorkWithObject:(id)object;
 
 @end

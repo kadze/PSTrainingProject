@@ -31,21 +31,21 @@ struct PSHuman {
 };
 
 extern
-void PSHunanMerry(PSHuman *object);
+void PSHunanMerry(PSHuman *human);
 
 extern
 void PSHumanDivorce(PSHuman *human, PSHuman *partner);
 
 #pragma mark -
-#pragma mark Initialization & Deallocation
+#pragma mark Initialization & Deallocations
 
-void PSHumanDeallocate(void *object) {
-    PSHumanSetName(object, NULL);
-    PSHumanSetPartner(object, NULL);
-    PSHumanSetFather(object, NULL);
-    PSHumanSetMother(object, NULL);
+void __PSHumanDeallocate(void *human) {
+    PSHumanSetName(human, NULL);
+    PSHumanSetPartner(human, NULL);
+    PSHumanSetFather(human, NULL);
+    PSHumanSetMother(human, NULL);
     
-    __PSObjectDeallocate(object);
+    __PSObjectDeallocate(human);
 };
 
 PSHuman *PSHumanCreate(void) {
@@ -57,32 +57,32 @@ PSHuman *PSHumanCreate(void) {
 #pragma mark -
 #pragma mark Accessors
 
-PSString *PSHumanName(PSHuman *object) {
-    return NULL != object ? object->_name : NULL;
+PSString *PSHumanName(PSHuman *human) {
+    return NULL != human ? human->_name : NULL;
 }
 
-void PSHumanSetName(PSHuman *object, PSString *string) {
-    if (NULL != object && object->_name != string) {
-        PSObjectRelease(object->_name);
-        object->_name = PSObjectRetain(string);
+void PSHumanSetName(PSHuman *human, PSString *string) {
+    if (NULL != human && human->_name != string) {
+        PSObjectRelease(human->_name);
+        human->_name = PSObjectRetain(string);
     }
 }
 
-int PSHumanAge(PSHuman *object) {
-    return NULL != object ? object->_age : 0;
+int PSHumanAge(PSHuman *human) {
+    return NULL != human ? human->_age : 0;
 }
 
-void PSHumanSetAge(PSHuman *object, uint8_t age) {
-    if (NULL != object) {
-        object->_age = age;
+void PSHumanSetAge(PSHuman *human, uint8_t age) {
+    if (NULL != human) {
+        human->_age = age;
     }
 }
 
-int PSHumanChildrenCount(PSHuman *object) {
+int PSHumanChildrenCount(PSHuman *human) {
     uint8_t childrenCount = 0;
-    if (NULL != object) {
+    if (NULL != human) {
         for (int index = 0; index < kPSChildrenCount; index++) {
-            if (object->_children[index] != NULL) {
+            if (human->_children[index] != NULL) {
                 childrenCount++;
             }
         }
@@ -91,57 +91,57 @@ int PSHumanChildrenCount(PSHuman *object) {
     return childrenCount;
 }
 
-PSHuman *PSHumanPartner(PSHuman *object) {
-    return NULL != object ? object->_partner : NULL;
+PSHuman *PSHumanPartner(PSHuman *human) {
+    return NULL != human ? human->_partner : NULL;
 }
 
-void PSHumanSetPartner(PSHuman *object, PSHuman *partner) {
-    if (NULL != object && object->_partner != partner) {
-        PSObjectRelease(object->_partner);
-        object->_partner = PSObjectRetain(partner);
+void PSHumanSetPartner(PSHuman *human, PSHuman *partner) {
+    if (NULL != human && human->_partner != partner) {
+        PSObjectRelease(human->_partner);
+        human->_partner = PSObjectRetain(partner);
     }
 }
 
-PSHuman *PSHumanFather(PSHuman *object) {
-    return NULL != object ? object->_father : NULL;
+PSHuman *PSHumanFather(PSHuman *human) {
+    return NULL != human ? human->_father : NULL;
 }
 
-void PSHumanSetFather(PSHuman *object, PSHuman *father) {
-    if (NULL != object) {
-        object->_father = father;
+void PSHumanSetFather(PSHuman *human, PSHuman *father) {
+    if (NULL != human) {
+        human->_father = father;
     }
 }
 
-PSHuman *PSHumanMother(PSHuman *object) {
-    return NULL != object ? object->_mother : NULL;
+PSHuman *PSHumanMother(PSHuman *human) {
+    return NULL != human ? human->_mother : NULL;
 }
 
-void PSHumanSetMother(PSHuman *object, PSHuman *mother) {
-    if (NULL != object) {
-        object->_mother = mother;
+void PSHumanSetMother(PSHuman *human, PSHuman *mother) {
+    if (NULL != human) {
+        human->_mother = mother;
     }
 }
 
-PSHumanGenderType PSHumanGender(PSHuman *object) {
-    return NULL != object ? object->_gender : 0;
+PSHumanGenderType PSHumanGender(PSHuman *human) {
+    return NULL != human ? human->_gender : 0;
 }
 
-void PSHumanSetGender(PSHuman *object, PSHumanGenderType gender) {
-    if (NULL != object) {
-        object->_gender = gender;
+void PSHumanSetGender(PSHuman *human, PSHumanGenderType gender) {
+    if (NULL != human) {
+        human->_gender = gender;
     }
 }
 
 #pragma mark -
 #pragma mark Public Implementation
 
-void PSHumanDivorce(PSHuman *object, PSHuman *partner) {
-    if (NULL != object && NULL != partner
-                        && PSHumanGender(object) != PSHumanGender(partner)
-                        && partner != PSHumanPartner(object)) {
-        PSObjectRetain(object);
+void PSHumanDivorce(PSHuman *human, PSHuman *partner) {
+    if (NULL != human && NULL != partner
+                        && PSHumanGender(human) != PSHumanGender(partner)
+                        && partner != PSHumanPartner(human)) {
+        PSObjectRetain(human);
         
     }
 };
 
-void PSHunanMerry(PSHuman *object);
+void PSHunanMerry(PSHuman *human);

@@ -15,7 +15,7 @@
 #pragma mark Public
 
 - (void)workWithObject:(PSWasher *)washer {
-    NSLog(@"Washer %@ money = %lu", washer, washer.money);
+//    NSLog(@"Washer %@ money = %lu", washer, washer.money);
     [self takeMoney:washer.money fromMoneyKeeper:washer];
     [self count];
 }
@@ -24,8 +24,8 @@
 #pragma mark Private
 
 - (void)count {
-//    sleep(1);
-    NSLog(@"Accountant %@ money = %lu", self, self.money);
+    usleep(10);
+//    NSLog(@"Accountant %@ money = %lu", self, self.money);
 }
 
 @end

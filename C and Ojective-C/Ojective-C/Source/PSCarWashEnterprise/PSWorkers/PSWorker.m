@@ -13,7 +13,6 @@
 @property (nonatomic, retain)   PSQueue *queue;
 
 - (void)workWithObject:(id)object;
-- (void)performWorkWithObjectOnMainThread:(id)object;
 
 @end
 
@@ -60,16 +59,15 @@
 #pragma mark Public Method
 
 - (void)performWorkWithObject:(id<PSMoneyProtocol>)object {
-    @synchronized(self) {
-        [self performSelectorInBackground:@selector(performWorkWithObjectInBackground:) withObject:object];
-    }
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        [self workWithObject:object];
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self finishPerformWork:object];
+            [self finishProcessing];
+        });
+    });
 }
-
-- (void)performWorkWithObjectInBackground:(id)object {
-    [self workWithObject:object];
-    [self performSelectorOnMainThread:@selector(performWorkWithObjectOnMainThread:) withObject:object waitUntilDone:NO];
-}
-
+    
 #pragma mark -
 #pragma mark Private Methods
 
@@ -79,8 +77,7 @@
 
 - (void)performWorkWithObjectOnMainThread:(id)object {
     @synchronized(self) {
-        [self finishPerformWork:object];
-        [self finishProcessing];
+
     }
 }
 

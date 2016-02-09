@@ -15,13 +15,10 @@
 + (void)carWashEnterpriseTest {
     NSMutableArray *cars = [NSMutableArray array];
     PSCarWashEnterprise *carwash = [PSCarWashEnterprise object];
-    
-    NSLog(@"Enterprise created: %@", (carwash) ? @"YES" : @"NO");
-    
-    for (NSUInteger index = 0; index < 5000; index++) {
+
+    for (NSUInteger index = 0; index < 500000; index++) {
         PSCar *car = [[[PSCar alloc] initWithMoney:10] autorelease];
         [cars addObject:car];
-//        NSLog(@"Is car number %lu clean: %@ Money is: %lu", index, (car.isClean) ? @"YES" : @"NO", car.money);
     }
     
     [carwash washCars:cars];

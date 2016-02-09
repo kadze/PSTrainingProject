@@ -29,8 +29,8 @@
 #pragma mark Private
 
 - (void)profit {
-//    sleep(1);
-    NSLog(@"Directors %@ money = %lu", self, self.money);
+//    sleep(2);
+    NSLog(@"Directors money = %lu", self.money);
 }
 
 @end

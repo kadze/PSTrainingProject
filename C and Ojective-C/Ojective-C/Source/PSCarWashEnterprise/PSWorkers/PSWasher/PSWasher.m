@@ -24,7 +24,7 @@
 
 - (void)washCar:(PSCar *)car {
     car.clean = YES;
-    NSLog(@"Is car clean: %@ Money is: %lu", (car.isClean) ? @"YES" : @"NO", car.money);
+//    NSLog(@"Is car clean: %@ Money is: %lu", (car.isClean) ? @"YES" : @"NO", car.money);
 }
 
 - (void)finishPerformWork:(PSCar *)car {

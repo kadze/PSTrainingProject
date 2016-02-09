@@ -65,21 +65,21 @@
 }
 
 - (void)addObserver:(id)observer {
-    [self.observersHashTable addObject:observer];
-}
-
-- (void)addObservers:(NSArray *)array {
-    for (id observer in array) {
-        [self addObserver:observer];
+    @synchronized(self) {
+        [self.observersHashTable addObject:observer];
     }
 }
 
 - (void)removeObserver:(id)observer {
-    [self.observersHashTable removeObject:observer];
+    @synchronized(self) {
+        [self.observersHashTable removeObject:observer];
+    }
 }
 
 - (void)removeObservers {
-    [self.observersHashTable removeAllObjects];
+    @synchronized(self) {
+        [self.observersHashTable removeAllObjects];
+    }
 }
 
 - (BOOL)containsObserver:(id)observer {

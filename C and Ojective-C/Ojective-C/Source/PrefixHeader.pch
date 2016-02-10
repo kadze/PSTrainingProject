@@ -15,5 +15,6 @@
 #import "NSObject+PSExtensions.h"
 #import "PSObservableObject.h"
 #import "PSQueue.h"
+#import "PSDispatch.h"
 
 #endif /* PrefixHeader_pch */

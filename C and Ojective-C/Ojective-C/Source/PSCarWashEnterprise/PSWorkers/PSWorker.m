@@ -75,12 +75,6 @@
     [self doesNotRecognizeSelector:_cmd];
 }
 
-- (void)performWorkWithObjectOnMainThread:(id)object {
-    @synchronized(self) {
-
-    }
-}
-
 - (void)finishProcessing {
     self.state = kPSWorkerDidPerformWorkWithObject;
 }

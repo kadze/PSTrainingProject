@@ -9,5 +9,6 @@
 #import <Foundation/Foundation.h>
 
 @interface PSController : NSObject
+@property (nonatomic, assign, getter=isWorking) BOOL    working;
 
 @end

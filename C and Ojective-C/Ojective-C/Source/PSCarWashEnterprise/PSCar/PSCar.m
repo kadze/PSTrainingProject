@@ -8,6 +8,8 @@
 
 #import "PSCar.h"
 
+static const NSUInteger kPSCarMoneyCount = 10;
+
 @implementation PSCar
 
 @synthesize money = _money;
@@ -16,7 +18,7 @@
 #pragma mark Initializations and Deallocations
 
 - (instancetype)init {
-    return [self initWithMoney:0];
+    return [self initWithMoney:kPSCarMoneyCount];
 }
 
 - (instancetype)initWithMoney:(NSUInteger)money {

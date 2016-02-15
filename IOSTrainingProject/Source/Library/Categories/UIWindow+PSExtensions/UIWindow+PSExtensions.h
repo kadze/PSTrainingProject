@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface UIWindow_PSExtensions : UIWindow
+@interface UIWindow (PSExtensions)
+
++ (instancetype)window;
 
 @end

@@ -8,6 +8,27 @@
 
 #import <UIKit/UIKit.h>
 
+typedef NS_ENUM(NSUInteger, PSSquarePositionType) {
+    PSSquarePositionTopLeft,
+    PSSquarePositionTopRight,
+    PSSquarePositionBottomLeft,
+    PSSquarePositionBottomRight,
+    PSSquarePositionCount
+};
+
 @interface PSSquareView : UIView
+@property (nonatomic, strong)   IBOutlet    UIView      *squareView;
+@property (nonatomic, strong)   IBOutlet    UIButton    *animateButton;
+
+@property (nonatomic, assign, getter=isAnimating)   BOOL    animating;
+
+@property (nonatomic, assign)   PSSquarePositionType   squarePosition;
+
+
+- (void)setSquarePosition:(PSSquarePositionType)position animated:(BOOL)animated;
+
+- (void)setSquarePosition:(PSSquarePositionType)position
+                 animated:(BOOL)animated
+        completionHandler:(void(^)(BOOL finished))handler;
 
 @end

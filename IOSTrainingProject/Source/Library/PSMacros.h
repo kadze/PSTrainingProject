@@ -50,4 +50,8 @@
         return value; \
     }
 
+#define PSStrongifyAndReturnIfNil(object) \
+    __PSStrongifyAndReturnValueIfNil(object, PSEmpty)
+
+
 #endif /* Macros_h */

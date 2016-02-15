@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface UIViewController_PSExtensions : UIView
+@interface UIViewController(PSExtensions)
+
+
 
 @end

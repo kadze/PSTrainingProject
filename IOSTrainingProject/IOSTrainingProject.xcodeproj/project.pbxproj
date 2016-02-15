@@ -7,15 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AD1453921C724776002435BB /* PSSquareView.m in Sources */ = {isa = PBXBuildFile; fileRef = AD1453911C724776002435BB /* PSSquareView.m */; };
 		AD3017DC1C623DD3000344A3 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = AD3017DB1C623DD3000344A3 /* main.m */; };
 		AD3017DF1C623DD3000344A3 /* PSAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = AD3017DE1C623DD3000344A3 /* PSAppDelegate.m */; };
 		AD3017E51C623DD4000344A3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AD3017E31C623DD4000344A3 /* Main.storyboard */; };
 		AD3017E71C623DD4000344A3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AD3017E61C623DD4000344A3 /* Assets.xcassets */; };
 		AD3017EA1C623DD4000344A3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AD3017E81C623DD4000344A3 /* LaunchScreen.storyboard */; };
-		AD3017F51C623DD4000344A3 /* IOSTrainingProjectTests.m in Sources */ = {isa = PBXBuildFile; fileRef = AD3017F41C623DD4000344A3 /* IOSTrainingProjectTests.m */; };
-		AD3018001C623DD4000344A3 /* IOSTrainingProjectUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = AD3017FF1C623DD4000344A3 /* IOSTrainingProjectUITests.m */; };
-		AD3018131C624DB1000344A3 /* PSViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD3018111C624DB1000344A3 /* PSViewController.m */; };
-		AD3018141C624DB1000344A3 /* PSViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AD3018121C624DB1000344A3 /* PSViewController.xib */; };
+		ADD69ECE1C6CFD6600B50A0F /* PSSquareViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ADD69ECC1C6CFD6600B50A0F /* PSSquareViewController.m */; };
+		ADD69ECF1C6CFD6600B50A0F /* PSSquareViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = ADD69ECD1C6CFD6600B50A0F /* PSSquareViewController.xib */; };
+		ADD69ED91C6D001D00B50A0F /* UIWindow+PSExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = ADD69ED81C6D001D00B50A0F /* UIWindow+PSExtensions.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +36,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		AD14538F1C723D20002435BB /* PrefixHeader.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
+		AD1453901C724776002435BB /* PSSquareView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSSquareView.h; sourceTree = "<group>"; };
+		AD1453911C724776002435BB /* PSSquareView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSSquareView.m; sourceTree = "<group>"; };
+		AD1453931C724A97002435BB /* PSMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSMacros.h; sourceTree = "<group>"; };
 		AD3017D71C623DD3000344A3 /* IOSTrainingProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IOSTrainingProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AD3017DB1C623DD3000344A3 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		AD3017DD1C623DD3000344A3 /* PSAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PSAppDelegate.h; sourceTree = "<group>"; };
@@ -45,14 +49,12 @@
 		AD3017E91C623DD4000344A3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AD3017EB1C623DD4000344A3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AD3017F01C623DD4000344A3 /* IOSTrainingProjectTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = IOSTrainingProjectTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		AD3017F41C623DD4000344A3 /* IOSTrainingProjectTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IOSTrainingProjectTests.m; sourceTree = "<group>"; };
-		AD3017F61C623DD4000344A3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AD3017FB1C623DD4000344A3 /* IOSTrainingProjectUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = IOSTrainingProjectUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		AD3017FF1C623DD4000344A3 /* IOSTrainingProjectUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IOSTrainingProjectUITests.m; sourceTree = "<group>"; };
-		AD3018011C623DD4000344A3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		AD3018101C624DB1000344A3 /* PSViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSViewController.h; sourceTree = "<group>"; };
-		AD3018111C624DB1000344A3 /* PSViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSViewController.m; sourceTree = "<group>"; };
-		AD3018121C624DB1000344A3 /* PSViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PSViewController.xib; sourceTree = "<group>"; };
+		ADD69ECB1C6CFD6600B50A0F /* PSSquareViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSSquareViewController.h; sourceTree = "<group>"; };
+		ADD69ECC1C6CFD6600B50A0F /* PSSquareViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSSquareViewController.m; sourceTree = "<group>"; };
+		ADD69ECD1C6CFD6600B50A0F /* PSSquareViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PSSquareViewController.xib; sourceTree = "<group>"; };
+		ADD69ED71C6D001D00B50A0F /* UIWindow+PSExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIWindow+PSExtensions.h"; sourceTree = "<group>"; };
+		ADD69ED81C6D001D00B50A0F /* UIWindow+PSExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIWindow+PSExtensions.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,11 +86,9 @@
 			isa = PBXGroup;
 			children = (
 				AD30180E1C62426E000344A3 /* Source */,
-				AD30180D1C623FE3000344A3 /* Resouces */,
 				AD3017D91C623DD3000344A3 /* IOSTrainingProject */,
-				AD3017F31C623DD4000344A3 /* IOSTrainingProjectTests */,
-				AD3017FE1C623DD4000344A3 /* IOSTrainingProjectUITests */,
 				AD3017D81C623DD3000344A3 /* Products */,
+				AD30180D1C623FE3000344A3 /* Resouces */,
 			);
 			sourceTree = "<group>";
 		};
@@ -109,26 +109,9 @@
 				AD3017DE1C623DD3000344A3 /* PSAppDelegate.m */,
 				AD3017EB1C623DD4000344A3 /* Info.plist */,
 				AD3017DB1C623DD3000344A3 /* main.m */,
+				AD14538F1C723D20002435BB /* PrefixHeader.pch */,
 			);
 			path = IOSTrainingProject;
-			sourceTree = "<group>";
-		};
-		AD3017F31C623DD4000344A3 /* IOSTrainingProjectTests */ = {
-			isa = PBXGroup;
-			children = (
-				AD3017F41C623DD4000344A3 /* IOSTrainingProjectTests.m */,
-				AD3017F61C623DD4000344A3 /* Info.plist */,
-			);
-			path = IOSTrainingProjectTests;
-			sourceTree = "<group>";
-		};
-		AD3017FE1C623DD4000344A3 /* IOSTrainingProjectUITests */ = {
-			isa = PBXGroup;
-			children = (
-				AD3017FF1C623DD4000344A3 /* IOSTrainingProjectUITests.m */,
-				AD3018011C623DD4000344A3 /* Info.plist */,
-			);
-			path = IOSTrainingProjectUITests;
 			sourceTree = "<group>";
 		};
 		AD30180D1C623FE3000344A3 /* Resouces */ = {
@@ -144,19 +127,64 @@
 		AD30180E1C62426E000344A3 /* Source */ = {
 			isa = PBXGroup;
 			children = (
-				AD30180F1C624292000344A3 /* PSViewController */,
+				ADD69EBE1C6CFCB000B50A0F /* Library */,
+				ADD69EC31C6CFCB000B50A0F /* UI */,
 			);
 			path = Source;
 			sourceTree = "<group>";
 		};
-		AD30180F1C624292000344A3 /* PSViewController */ = {
+		ADD69EBE1C6CFCB000B50A0F /* Library */ = {
 			isa = PBXGroup;
 			children = (
-				AD3018101C624DB1000344A3 /* PSViewController.h */,
-				AD3018111C624DB1000344A3 /* PSViewController.m */,
-				AD3018121C624DB1000344A3 /* PSViewController.xib */,
+				ADD69EBF1C6CFCB000B50A0F /* Categories */,
+				AD1453931C724A97002435BB /* PSMacros.h */,
 			);
-			path = PSViewController;
+			path = Library;
+			sourceTree = "<group>";
+		};
+		ADD69EBF1C6CFCB000B50A0F /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				ADD69EC11C6CFCB000B50A0F /* UIWindow+PSExtensions */,
+			);
+			path = Categories;
+			sourceTree = "<group>";
+		};
+		ADD69EC11C6CFCB000B50A0F /* UIWindow+PSExtensions */ = {
+			isa = PBXGroup;
+			children = (
+				ADD69ED71C6D001D00B50A0F /* UIWindow+PSExtensions.h */,
+				ADD69ED81C6D001D00B50A0F /* UIWindow+PSExtensions.m */,
+			);
+			path = "UIWindow+PSExtensions";
+			sourceTree = "<group>";
+		};
+		ADD69EC31C6CFCB000B50A0F /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				ADD69EC41C6CFCB000B50A0F /* Controllers */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		ADD69EC41C6CFCB000B50A0F /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				ADD69EC51C6CFCB000B50A0F /* PSSquareViewController */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		ADD69EC51C6CFCB000B50A0F /* PSSquareViewController */ = {
+			isa = PBXGroup;
+			children = (
+				ADD69ECB1C6CFD6600B50A0F /* PSSquareViewController.h */,
+				ADD69ECC1C6CFD6600B50A0F /* PSSquareViewController.m */,
+				ADD69ECD1C6CFD6600B50A0F /* PSSquareViewController.xib */,
+				AD1453901C724776002435BB /* PSSquareView.h */,
+				AD1453911C724776002435BB /* PSSquareView.m */,
+			);
+			path = PSSquareViewController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -267,8 +295,8 @@
 			files = (
 				AD3017EA1C623DD4000344A3 /* LaunchScreen.storyboard in Resources */,
 				AD3017E71C623DD4000344A3 /* Assets.xcassets in Resources */,
+				ADD69ECF1C6CFD6600B50A0F /* PSSquareViewController.xib in Resources */,
 				AD3017E51C623DD4000344A3 /* Main.storyboard in Resources */,
-				AD3018141C624DB1000344A3 /* PSViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -293,9 +321,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AD1453921C724776002435BB /* PSSquareView.m in Sources */,
 				AD3017DF1C623DD3000344A3 /* PSAppDelegate.m in Sources */,
-				AD3018131C624DB1000344A3 /* PSViewController.m in Sources */,
 				AD3017DC1C623DD3000344A3 /* main.m in Sources */,
+				ADD69ED91C6D001D00B50A0F /* UIWindow+PSExtensions.m in Sources */,
+				ADD69ECE1C6CFD6600B50A0F /* PSSquareViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -303,7 +333,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AD3017F51C623DD4000344A3 /* IOSTrainingProjectTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -311,7 +340,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AD3018001C623DD4000344A3 /* IOSTrainingProjectUITests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -434,6 +462,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				GCC_PREFIX_HEADER = "";
 				INFOPLIST_FILE = IOSTrainingProject/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = PS.IOSTrainingProject;
@@ -445,6 +474,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				GCC_PREFIX_HEADER = "";
 				INFOPLIST_FILE = IOSTrainingProject/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = PS.IOSTrainingProject;
@@ -519,6 +549,7 @@
 				AD3018061C623DD4000344A3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		AD3018071C623DD4000344A3 /* Build configuration list for PBXNativeTarget "IOSTrainingProjectTests" */ = {
 			isa = XCConfigurationList;
@@ -527,6 +558,7 @@
 				AD3018091C623DD4000344A3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		AD30180A1C623DD4000344A3 /* Build configuration list for PBXNativeTarget "IOSTrainingProjectUITests" */ = {
 			isa = XCConfigurationList;
@@ -535,6 +567,7 @@
 				AD30180C1C623DD4000344A3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

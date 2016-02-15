@@ -1,28 +1,32 @@
 //
-//  PSViewController.m
+//  PSSquareViewController.m
 //  IOSTrainingProject
 //
 //  Created by Сергей on 03.02.16.
 //  Copyright © 2016 Сергей. All rights reserved.
 //
 
-#import "PSViewController.h"
+#import "PSSquareViewController.h"
+#import "PSSquareView.h"
+#import "PSMacros.h"
 
-@interface PSViewController ()
+PSViewControllerBaseViewProperty(PSSquareViewController, squareView, PSSquareView)
 
-@end
+@implementation PSSquareViewController
 
-@implementation PSViewController
+#pragma mark -
+#pragma mark Public
+
+- (IBAction)onAnimateButton:(id)sender {
+    PSSquareView *squareView = self.squareView;
+    squareView.animating = !squareView.animating;
+}
+
+#pragma mark -
+#pragma mark View Lifecycle
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 100, 100)];
-    label.text = @"PS";
-    
-    
-    [self.view addSubview:label];
-
 }
 
 - (void)didReceiveMemoryWarning {

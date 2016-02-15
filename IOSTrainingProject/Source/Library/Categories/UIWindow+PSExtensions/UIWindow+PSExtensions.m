@@ -8,14 +8,10 @@
 
 #import "UIWindow+PSExtensions.h"
 
-@implementation UIWindow_PSExtensions
+@implementation UIWindow (PSExtensions)
 
-/*
-// Only override drawRect: if you perform custom drawing.
-// An empty implementation adversely affects performance during animation.
-- (void)drawRect:(CGRect)rect {
-    // Drawing code
++ (instancetype)window {
+    return [[self alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
 }
-*/
 
 @end

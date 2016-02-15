@@ -1,5 +1,5 @@
 //
-//  PSViewController.h
+//  PSSquareViewController.h
 //  IOSTrainingProject
 //
 //  Created by Сергей on 03.02.16.
@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface PSViewController : UIViewController
+@interface PSSquareViewController : UIViewController
+
+- (IBAction)onAnimateButton:(id)sender;
 
 @end

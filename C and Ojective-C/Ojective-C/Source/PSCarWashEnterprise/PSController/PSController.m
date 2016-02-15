@@ -15,11 +15,10 @@ static const NSTimeInterval kPSTimerInterval        = 0.1;
 static const NSUInteger kPSCarsCount                = 1000;
 static const NSUInteger kPSFinishIterationsCount    = 99;
 
-static NSUInteger PSStartIterationsCount            = 0;
-
 @interface PSController ()
 @property (nonatomic, retain)   PSCarWashEnterprise *enterprise;
 @property (nonatomic, retain)   NSTimer             *timer;
+@property (nonatomic, assign)   NSUInteger          startIterationsCount;
 
 - (void)startWork:(NSTimer *)timer;
 - (void)performWorkWithObjects:(id)object;
@@ -27,6 +26,8 @@ static NSUInteger PSStartIterationsCount            = 0;
 @end
 
 @implementation PSController
+
+@synthesize startIterationsCount;
 
 #pragma mark -
 #pragma mark Initiallization and Dealocation
@@ -69,6 +70,7 @@ static NSUInteger PSStartIterationsCount            = 0;
     if (timer != _timer) {
         [_timer invalidate];
         [_timer release];
+        
         _timer = [timer retain];
     }
 }
@@ -77,20 +79,19 @@ static NSUInteger PSStartIterationsCount            = 0;
 #pragma mark Private Methods
 
 - (void)startWork:(NSTimer *)timer {
-    if (PSStartIterationsCount > kPSFinishIterationsCount) {
-        [self setWorking:NO];
-        
-        return;
-    } else {
-        PSStartIterationsCount++;
+    if (startIterationsCount > kPSFinishIterationsCount) {
+        self.working = NO;
     }
+    
+    startIterationsCount++;
+
     PSDispatchSyncOnDefaultQueue(^{
         [self performWorkWithObjects:[PSCar objectsWithCount:kPSCarsCount]];
     });
 }
 
-- (void)performWorkWithObjects:(id)object {
-    [self.enterprise washCars:object];
+- (void)performWorkWithObjects:(id)objects {
+    [self.enterprise washCars:objects];
 }
 
 @end

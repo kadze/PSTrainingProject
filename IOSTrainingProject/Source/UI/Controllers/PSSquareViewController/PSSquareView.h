@@ -20,9 +20,9 @@ typedef NS_ENUM(NSUInteger, PSSquarePositionType) {
 @property (nonatomic, strong)   IBOutlet    UIView      *squareView;
 @property (nonatomic, strong)   IBOutlet    UIButton    *animateButton;
 
-@property (nonatomic, assign, getter=isAnimating)   BOOL    animating;
+@property (nonatomic, assign)   PSSquarePositionType    squarePosition;
 
-@property (nonatomic, assign)   PSSquarePositionType   squarePosition;
+@property (nonatomic, assign, getter=isAnimating)   BOOL    animating;
 
 
 - (void)setSquarePosition:(PSSquarePositionType)position animated:(BOOL)animated;

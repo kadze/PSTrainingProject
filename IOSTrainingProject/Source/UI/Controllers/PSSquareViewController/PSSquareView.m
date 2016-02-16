@@ -9,8 +9,9 @@
 #import "PSSquareView.h"
 #import "PSMacros.h"
 
-static NSString * const kPSAnimateButtonNotMovedTitle      = @"Start";
-static NSString * const kPSAnimateButtonMovedTitle         = @"Stop";
+static const NSTimeInterval kPSDuration                 = 0.5;
+static NSString * const kPSAnimateButtonNotMovedTitle   = @"Start";
+static NSString * const kPSAnimateButtonMovedTitle      = @"Stop";
 
 @interface PSSquareView ()
 @property (nonatomic, assign)   BOOL    animationInProgress;
@@ -54,7 +55,7 @@ static NSString * const kPSAnimateButtonMovedTitle         = @"Stop";
                  animated:(BOOL)animated
         completionHandler:(void(^)(BOOL finished))handler
 {
-    NSTimeInterval duration = animated ? 0.5 : 0;
+    NSTimeInterval duration = animated ? kPSDuration : 0;
     
     [UIView animateWithDuration:duration
                           delay:0

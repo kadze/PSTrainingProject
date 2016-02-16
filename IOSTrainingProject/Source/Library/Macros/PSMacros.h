@@ -53,5 +53,7 @@
 #define PSStrongifyAndReturnIfNil(object) \
     __PSStrongifyAndReturnValueIfNil(object, PSEmpty)
 
+#define PSStrongifyAndReturnNilIfNil(object) \
+    __PSStrongifyAndReturnValueIfNil(object, nil)
 
 #endif /* Macros_h */

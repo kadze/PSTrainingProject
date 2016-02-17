@@ -15,10 +15,10 @@ static NSString * const kPSAnimateButtonNotMovedTitle   = @"Start";
 static NSString * const kPSAnimateButtonMovedTitle      = @"Stop";
 
 @interface PSSquareView ()
-@property (nonatomic, assign, getter=isAnimating)   BOOL    animationInProgress;
+@property (nonatomic, assign)   BOOL    animationInProgress;
 
 - (PSSquarePositionType)nextPositionForSquare;
-- (void)changeTitleForAnimateButton;
+- (void)changeTitleStartStopButton;
 - (CGRect)frameForSquarePosition:(PSSquarePositionType)squarePosition;
 
 @end
@@ -28,9 +28,9 @@ static NSString * const kPSAnimateButtonMovedTitle      = @"Stop";
 #pragma mark -
 #pragma mark Accessors
 
-- (void)setAnimating:(BOOL)animating {
-    if (_animating != animating) {
-        _animating = animating;
+- (void)setValueOfButton:(BOOL)valueOfButton {
+    if (_valueOfButton != valueOfButton) {
+        _valueOfButton = valueOfButton;
         
         [self animateSquare];
     }
@@ -40,7 +40,7 @@ static NSString * const kPSAnimateButtonMovedTitle      = @"Stop";
     if (_animationInProgress != animationInProgress) {
         _animationInProgress = animationInProgress;
         
-        [self changeTitleForAnimateButton];
+        [self changeTitleStartStopButton];
     }
 }
 
@@ -77,7 +77,7 @@ static NSString * const kPSAnimateButtonMovedTitle      = @"Stop";
 #pragma mark Public
 
 - (void)moveSquareToNextPosition {
-    if (!self.animationInProgress) {
+    if (!self.valueOfButton && !self.animationInProgress) {
         [self setSquarePosition:[self nextPositionForSquare]
                        animated:YES
               completionHandler:nil];
@@ -92,7 +92,7 @@ static NSString * const kPSAnimateButtonMovedTitle      = @"Stop";
 }
 
 - (void)animateSquare {
-    if (self.animating && !self.animationInProgress) {
+    if (self.valueOfButton && !self.animationInProgress) {
         PSSquarePositionType position = [self nextPositionForSquare];
         self.animationInProgress = YES;
         PSWeakify(self);
@@ -107,8 +107,8 @@ static NSString * const kPSAnimateButtonMovedTitle      = @"Stop";
     }
 }
 
-- (void)changeTitleForAnimateButton {
-    NSString *title = self.animating ? kPSAnimateButtonMovedTitle : kPSAnimateButtonNotMovedTitle;
+- (void)changeTitleStartStopButton {
+    NSString *title = self.valueOfButton ? kPSAnimateButtonMovedTitle : kPSAnimateButtonNotMovedTitle;
     
     [self.startStopButton setTitle:title forState:UIControlStateNormal];
 }

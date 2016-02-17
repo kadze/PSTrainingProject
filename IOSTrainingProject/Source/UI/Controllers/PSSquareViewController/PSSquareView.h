@@ -24,7 +24,7 @@ typedef NS_ENUM(NSUInteger, PSSquarePositionType) {
 
 @property (nonatomic, assign)   PSSquarePositionType    squarePosition;
 
-@property (nonatomic, assign, getter=isa)   BOOL    animating;
+@property (nonatomic, assign)   BOOL    valueOfButton;
 
 
 - (void)setSquarePosition:(PSSquarePositionType)position animated:(BOOL)animated;

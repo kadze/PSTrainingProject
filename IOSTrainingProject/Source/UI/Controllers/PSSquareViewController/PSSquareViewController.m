@@ -19,7 +19,7 @@ PSViewControllerBaseViewProperty(PSSquareViewController, areaView, PSSquareView)
 
 - (IBAction)onStartStopButton:(id)sender {
     PSSquareView *areaView = self.areaView;
-    areaView.animating = !areaView.animating;
+    areaView.valueOfButton = !areaView.valueOfButton;
 }
 
 - (IBAction)onMoveButton:(id)sender {

@@ -11,17 +11,45 @@
 
 #define PSEmpty
 
+#define PSClangDiagnosticPush    _Pragma ("clang diagnostic push")
+#define PSClangDiagnosticPop     _Pragma ("clang diagnostic pop")
+
+#define PSClangDiagnosticPushOption(option) \
+    PSClangDiagnosticPush \
+    _Pragma(option) \
+
+#define PSClangDiagnosticPopOption PSClangDiagnosticPop
+
+#define PSWeakify(object) \
+    __weak __typeof(object) __weak_##object = object
+
+#define PSStrongify(object) \
+    __strong __typeof(object) object = __weak_##object; \
+    PSClangDiagnosticPopOption
+
+#define __PSStrongifyAndReturnValueIfNil(object, value) \
+    PSStrongify(object); \
+    if (!object) { \
+        return value; \
+    }
+
+#define PSStrongifyAndReturnIfNil(object) \
+    __PSStrongifyAndReturnValueIfNil(object, PSEmpty)
+
+#define PSStrongifyAndReturnNilIfNil(object) \
+    __PSStrongifyAndReturnValueIfNil(object, nil)
+
 #define PSDefineBaseViewProperty(propertyName, viewClass) \
     @property (nonatomic, readonly) viewClass *propertyName;
 
 #define PSBaseViewGetterSynthesize(selector, viewClass) \
     - (viewClass *)selector { \
-    if ([self isViewLoaded] && [self.view isKindOfClass:[viewClass class]]) { \
-        return (viewClass *)self.view; \
-    } \
-    \
-    return nil; \
-}
+        if ([self isViewLoaded] && [self.view isKindOfClass:[viewClass class]]) { \
+            return (viewClass *)self.view; \
+        } \
+        \
+        return nil; \
+    }
 
 #define PSViewControllerBaseViewProperty(viewControllerClass, propertyName, baseViewClass) \
     @interface viewControllerClass (__##baseViewClass##__##propertyName) \
@@ -36,24 +64,5 @@
     PSBaseViewGetterSynthesize(propertyName, baseViewClass) \
     \
     @end
-
-
-#define PSWeakify(object) \
-    __weak __typeof(object) __PSWeak_##object = object
-
-#define PSStrongify(object) \
-    __strong __typeof(object) object = __PSWeak_##object
-
-#define __PSStrongifyAndReturnValueIfNil(object, value) \
-    PSStrongify(object); \
-    if (!object) { \
-        return value; \
-    }
-
-#define PSStrongifyAndReturnIfNil(object) \
-    __PSStrongifyAndReturnValueIfNil(object, PSEmpty)
-
-#define PSStrongifyAndReturnNilIfNil(object) \
-    __PSStrongifyAndReturnValueIfNil(object, nil)
 
 #endif /* Macros_h */

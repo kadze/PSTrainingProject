@@ -10,6 +10,7 @@
 
 @interface PSSquareViewController : UIViewController
 
-- (IBAction)onAnimateButton:(id)sender;
+- (IBAction)onStartStopButton:(id)sender;
+- (IBAction)onMoveButton:(id)sender;
 
 @end

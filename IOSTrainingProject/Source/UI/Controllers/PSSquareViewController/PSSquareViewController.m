@@ -10,16 +10,20 @@
 #import "PSSquareView.h"
 #import "PSMacros.h"
 
-PSViewControllerBaseViewProperty(PSSquareViewController, squareView, PSSquareView)
+PSViewControllerBaseViewProperty(PSSquareViewController, areaView, PSSquareView)
 
 @implementation PSSquareViewController
 
 #pragma mark -
 #pragma mark Public
 
-- (IBAction)onAnimateButton:(id)sender {
-    PSSquareView *squareView = self.squareView;
-    squareView.animating = !squareView.animating;
+- (IBAction)onStartStopButton:(id)sender {
+    PSSquareView *areaView = self.areaView;
+    areaView.animating = !areaView.animating;
+}
+
+- (IBAction)onMoveButton:(id)sender {
+    [self.areaView moveSquareToNextPosition];
 }
 
 #pragma mark -

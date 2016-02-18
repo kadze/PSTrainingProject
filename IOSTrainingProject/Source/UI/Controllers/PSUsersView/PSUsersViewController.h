@@ -1,5 +1,5 @@
 //
-//  PSTableViewController.h
+//  PSUsersViewController.h
 //  IOSTrainingProject
 //
 //  Created by Сергей on 18.02.16.
@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface PSTableViewController : UIViewController
+@interface PSUsersViewController : UIViewController
 
 @end

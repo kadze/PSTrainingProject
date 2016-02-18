@@ -1,18 +1,18 @@
 //
-//  PSTableViewController.m
+//  PSUsersViewController.m
 //  IOSTrainingProject
 //
 //  Created by Сергей on 18.02.16.
 //  Copyright © 2016 Сергей. All rights reserved.
 //
 
-#import "PSTableViewController.h"
+#import "PSUsersViewController.h"
 
-@interface PSTableViewController ()
+@interface PSUsersViewController ()
 
 @end
 
-@implementation PSTableViewController
+@implementation PSUsersViewController
 
 #pragma mark -
 #pragma mark View Lifecycle

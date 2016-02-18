@@ -1,5 +1,5 @@
 //
-//  PSTableView.h
+//  PSUsersView.h
 //  IOSTrainingProject
 //
 //  Created by Сергей on 18.02.16.
@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface PSTableView : UIView
+@interface PSUsersView : UIView
 
 @property (nonatomic, strong)   IBOutlet    UITableView     *tableView;
 @property (nonatomic, strong)   IBOutlet    UIButton        *editButton;

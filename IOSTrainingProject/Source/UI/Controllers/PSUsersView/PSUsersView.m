@@ -1,14 +1,14 @@
 //
-//  PSTableView.m
+//  PSUsersView.m
 //  IOSTrainingProject
 //
 //  Created by Сергей on 18.02.16.
 //  Copyright © 2016 Сергей. All rights reserved.
 //
 
-#import "PSTableView.h"
+#import "PSUsersView.h"
 
-@implementation PSTableView
+@implementation PSUsersView
 
 @dynamic editing;
 

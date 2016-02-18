@@ -24,6 +24,7 @@
     __weak __typeof(object) __weak_##object = object
 
 #define PSStrongify(object) \
+    PSClangDiagnosticPushOption("clang diagnostic ignored \"-Wshadow\"") \
     __strong __typeof(object) object = __weak_##object; \
     PSClangDiagnosticPopOption
 
@@ -38,31 +39,5 @@
 
 #define PSStrongifyAndReturnNilIfNil(object) \
     __PSStrongifyAndReturnValueIfNil(object, nil)
-
-#define PSDefineBaseViewProperty(propertyName, viewClass) \
-    @property (nonatomic, readonly) viewClass *propertyName;
-
-#define PSBaseViewGetterSynthesize(selector, viewClass) \
-    - (viewClass *)selector { \
-        if ([self isViewLoaded] && [self.view isKindOfClass:[viewClass class]]) { \
-            return (viewClass *)self.view; \
-        } \
-        \
-        return nil; \
-    }
-
-#define PSViewControllerBaseViewProperty(viewControllerClass, propertyName, baseViewClass) \
-    @interface viewControllerClass (__##baseViewClass##__##propertyName) \
-    PSDefineBaseViewProperty(propertyName, baseViewClass) \
-    \
-    @end \
-    \
-    @implementation viewControllerClass (__##baseViewClass##__##propertyName) \
-    \
-    @dynamic propertyName; \
-    \
-    PSBaseViewGetterSynthesize(propertyName, baseViewClass) \
-    \
-    @end
 
 #endif /* Macros_h */

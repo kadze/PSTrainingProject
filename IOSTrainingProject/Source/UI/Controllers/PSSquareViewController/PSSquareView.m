@@ -7,7 +7,8 @@
 //
 
 #import "PSSquareView.h"
-#import "PSMacros.h"
+#import "CGGeometry+PSExtensions.h"
+#import "PSWeakifyMacros.h"
 
 static const NSTimeInterval kPSDuration                 = 0.5;
 
@@ -77,7 +78,9 @@ static NSString * const kPSAnimateButtonMovedTitle      = @"Stop";
 #pragma mark Public
 
 - (void)moveSquareToNextPosition {
-    [self nextPositionForSquare];
+    if (!self.positionStartStopButton) {
+        [self setSquarePosition:[self nextPositionForSquare] animated:YES];
+    }
 }
 
 #pragma mark -
@@ -113,8 +116,7 @@ static NSString * const kPSAnimateButtonMovedTitle      = @"Stop";
     CGRect result = self.squareLabel.frame;
     CGRect superviewBounds = self.areaView.bounds;
     CGPoint point = CGPointZero;
-    CGPoint max = CGPointMake(CGRectGetWidth(superviewBounds) - CGRectGetWidth(result),
-                              CGRectGetHeight(superviewBounds) - CGRectGetHeight(result));
+    CGPoint max = PSPointBySubtractingRects(superviewBounds, result);
     
     switch (squarePosition) {
         case PSSquarePositionTopRight:

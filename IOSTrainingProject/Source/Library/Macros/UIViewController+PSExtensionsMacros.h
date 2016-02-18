@@ -22,12 +22,12 @@
     }
 
 #define PSViewControllerBaseViewProperty(viewControllerClass, propertyName, baseViewClass) \
-    @interface viewControllerClass (__##baseViewClass##__##propertyName) \
+    @interface viewControllerClass (__##viewControllerClass##__##propertyName__##baseViewClass##) \
     PSDefineBaseViewProperty(propertyName, baseViewClass) \
     \
     @end \
     \
-    @implementation viewControllerClass (__##baseViewClass##__##propertyName) \
+    @implementation viewControllerClass (__##viewControllerClass##__##propertyName__##baseViewClass##) \
     \
     @dynamic propertyName; \
     \

@@ -7,10 +7,10 @@
 //
 
 #import "PSUsersViewController.h"
+#import "UIViewController+PSExtensionsMacros.h"
+#import "PSUsersView.h"
 
-@interface PSUsersViewController ()
-
-@end
+PSViewControllerBaseViewProperty(PSUsersViewController, userView, PSUsersView)
 
 @implementation PSUsersViewController
 
@@ -25,6 +25,13 @@
     [super didReceiveMemoryWarning];
 }
 
+#pragma mark -
+#pragma mark Interface Handling
 
+- (IBAction)onEditButton:(id)sender {
+    PSUsersView *view = self.userView;
+    
+    view.editing = !view.editing;
+}
 
 @end

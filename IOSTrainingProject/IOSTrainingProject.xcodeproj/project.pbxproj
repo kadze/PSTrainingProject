@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AD0501591C7B8E6500EF3116 /* PSUser.m in Sources */ = {isa = PBXBuildFile; fileRef = AD0501581C7B8E6500EF3116 /* PSUser.m */; };
+		AD05015D1C7B907B00EF3116 /* NSString+PSExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = AD05015C1C7B907B00EF3116 /* NSString+PSExtensions.m */; };
 		AD1453921C724776002435BB /* PSSquareView.m in Sources */ = {isa = PBXBuildFile; fileRef = AD1453911C724776002435BB /* PSSquareView.m */; };
 		AD3017DC1C623DD3000344A3 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = AD3017DB1C623DD3000344A3 /* main.m */; };
 		AD3017DF1C623DD3000344A3 /* PSAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = AD3017DE1C623DD3000344A3 /* PSAppDelegate.m */; };
@@ -20,9 +22,14 @@
 		AD5526D11C76337E00D6404B /* PSUsersViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AD5526CE1C76337E00D6404B /* PSUsersViewController.xib */; };
 		ADD69ECE1C6CFD6600B50A0F /* PSSquareViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ADD69ECC1C6CFD6600B50A0F /* PSSquareViewController.m */; };
 		ADD69ECF1C6CFD6600B50A0F /* PSSquareViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = ADD69ECD1C6CFD6600B50A0F /* PSSquareViewController.xib */; };
+		ADD97B781C7CAB2800E4914B /* Apple_core.png in Resources */ = {isa = PBXBuildFile; fileRef = ADD97B771C7CAB2800E4914B /* Apple_core.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		AD0501571C7B8E6500EF3116 /* PSUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSUser.h; sourceTree = "<group>"; };
+		AD0501581C7B8E6500EF3116 /* PSUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSUser.m; sourceTree = "<group>"; };
+		AD05015B1C7B907B00EF3116 /* NSString+PSExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+PSExtensions.h"; sourceTree = "<group>"; };
+		AD05015C1C7B907B00EF3116 /* NSString+PSExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+PSExtensions.m"; sourceTree = "<group>"; };
 		AD14538F1C723D20002435BB /* PrefixHeader.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		AD1453901C724776002435BB /* PSSquareView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSSquareView.h; sourceTree = "<group>"; };
 		AD1453911C724776002435BB /* PSSquareView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSSquareView.m; sourceTree = "<group>"; };
@@ -46,9 +53,11 @@
 		AD5526CC1C76337E00D6404B /* PSUsersViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSUsersViewController.h; sourceTree = "<group>"; };
 		AD5526CD1C76337E00D6404B /* PSUsersViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSUsersViewController.m; sourceTree = "<group>"; };
 		AD5526CE1C76337E00D6404B /* PSUsersViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PSUsersViewController.xib; sourceTree = "<group>"; };
+		AD5526D21C7637A300D6404B /* PSReturnMacros.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PSReturnMacros.h; sourceTree = "<group>"; };
 		ADD69ECB1C6CFD6600B50A0F /* PSSquareViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSSquareViewController.h; sourceTree = "<group>"; };
 		ADD69ECC1C6CFD6600B50A0F /* PSSquareViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSSquareViewController.m; sourceTree = "<group>"; };
 		ADD69ECD1C6CFD6600B50A0F /* PSSquareViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PSSquareViewController.xib; sourceTree = "<group>"; };
+		ADD97B771C7CAB2800E4914B /* Apple_core.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Apple_core.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +71,32 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		AD0501551C7B8E0D00EF3116 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				AD0501561C7B8E3800EF3116 /* PSUser */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		AD0501561C7B8E3800EF3116 /* PSUser */ = {
+			isa = PBXGroup;
+			children = (
+				AD0501571C7B8E6500EF3116 /* PSUser.h */,
+				AD0501581C7B8E6500EF3116 /* PSUser.m */,
+			);
+			path = PSUser;
+			sourceTree = "<group>";
+		};
+		AD05015A1C7B8FF700EF3116 /* NSString */ = {
+			isa = PBXGroup;
+			children = (
+				AD05015B1C7B907B00EF3116 /* NSString+PSExtensions.h */,
+				AD05015C1C7B907B00EF3116 /* NSString+PSExtensions.m */,
+			);
+			path = NSString;
+			sourceTree = "<group>";
+		};
 		AD3017CE1C623DD3000344A3 = {
 			isa = PBXGroup;
 			children = (
@@ -96,6 +131,7 @@
 		AD30180D1C623FE3000344A3 /* Resouces */ = {
 			isa = PBXGroup;
 			children = (
+				ADD97B701C7CA80300E4914B /* Images */,
 				AD3017E61C623DD4000344A3 /* Assets.xcassets */,
 				AD3017E81C623DD4000344A3 /* LaunchScreen.storyboard */,
 				AD3017E31C623DD4000344A3 /* Main.storyboard */,
@@ -106,6 +142,7 @@
 		AD30180E1C62426E000344A3 /* Source */ = {
 			isa = PBXGroup;
 			children = (
+				AD0501551C7B8E0D00EF3116 /* Models */,
 				ADD69EBE1C6CFCB000B50A0F /* Library */,
 				ADD69EC31C6CFCB000B50A0F /* UI */,
 			);
@@ -115,6 +152,7 @@
 		AD3918761C734E930077C246 /* Categories */ = {
 			isa = PBXGroup;
 			children = (
+				AD05015A1C7B8FF700EF3116 /* NSString */,
 				AD5526B11C75FD1B00D6404B /* CGGeometry */,
 				AD3918771C734E930077C246 /* UIWindow */,
 			);
@@ -135,6 +173,7 @@
 			children = (
 				AD39187B1C734E930077C246 /* PSWeakifyMacros.h */,
 				AD5526B01C75F92100D6404B /* UIViewController+PSExtensionsMacros.h */,
+				AD5526D21C7637A300D6404B /* PSReturnMacros.h */,
 			);
 			path = Macros;
 			sourceTree = "<group>";
@@ -198,6 +237,14 @@
 			path = PSSquareViewController;
 			sourceTree = "<group>";
 		};
+		ADD97B701C7CA80300E4914B /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				ADD97B771C7CAB2800E4914B /* Apple_core.png */,
+			);
+			path = Images;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -257,6 +304,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AD5526D11C76337E00D6404B /* PSUsersViewController.xib in Resources */,
+				ADD97B781C7CAB2800E4914B /* Apple_core.png in Resources */,
 				AD3017EA1C623DD4000344A3 /* LaunchScreen.storyboard in Resources */,
 				AD3017E71C623DD4000344A3 /* Assets.xcassets in Resources */,
 				ADD69ECF1C6CFD6600B50A0F /* PSSquareViewController.xib in Resources */,
@@ -277,7 +325,9 @@
 				AD3017DC1C623DD3000344A3 /* main.m in Sources */,
 				AD39187C1C734E930077C246 /* UIWindow+PSExtensions.m in Sources */,
 				AD5526B71C7600FE00D6404B /* CGGeometry+PSExtensions.m in Sources */,
+				AD05015D1C7B907B00EF3116 /* NSString+PSExtensions.m in Sources */,
 				AD5526D01C76337E00D6404B /* PSUsersViewController.m in Sources */,
+				AD0501591C7B8E6500EF3116 /* PSUser.m in Sources */,
 				ADD69ECE1C6CFD6600B50A0F /* PSSquareViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

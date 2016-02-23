@@ -13,6 +13,6 @@
 @property (nonatomic, strong)   IBOutlet    UITableView     *tableView;
 @property (nonatomic, strong)   IBOutlet    UIButton        *editButton;
 
-@property (nonatomic, assign, getter=isEditing)   BOOL    editing;
+@property (nonatomic, assign, getter=isEditing) BOOL    editing;
 
 @end

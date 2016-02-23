@@ -9,7 +9,7 @@
 #ifndef Macros_h
 #define Macros_h
 
-#define PSEmpty
+#import "PSReturnMacros.h"
 
 #define PSClangDiagnosticPush    _Pragma ("clang diagnostic push")
 #define PSClangDiagnosticPop     _Pragma ("clang diagnostic pop")
@@ -20,8 +20,9 @@
 
 #define PSClangDiagnosticPopOption PSClangDiagnosticPop
 
-#define PSWeakify(object) \
-    __weak __typeof(object) __weak_##object = object
+#define PSWeakify(object) __weak typeof(object) __weak_##object = object
+
+#define KSWeakify(obj) __weak typeof(obj) __weak_##obj = obj
 
 #define PSStrongify(object) \
     PSClangDiagnosticPushOption("clang diagnostic ignored \"-Wshadow\"") \
@@ -30,14 +31,10 @@
 
 #define __PSStrongifyAndReturnValueIfNil(object, value) \
     PSStrongify(object); \
-    if (!object) { \
-        return value; \
-    }
+    PSReturnValueIfNil(object, value)
 
-#define PSStrongifyAndReturnIfNil(object) \
-    __PSStrongifyAndReturnValueIfNil(object, PSEmpty)
+#define PSStrongifyAndReturnIfNil(object) __PSStrongifyAndReturnValueIfNil(object, PSEmpty)
 
-#define PSStrongifyAndReturnNilIfNil(object) \
-    __PSStrongifyAndReturnValueIfNil(object, nil)
+#define PSStrongifyAndReturnNilIfNil(object) __PSStrongifyAndReturnValueIfNil(object, nil)
 
 #endif /* Macros_h */

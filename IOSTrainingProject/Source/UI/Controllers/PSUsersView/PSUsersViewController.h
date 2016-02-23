@@ -10,4 +10,6 @@
 
 @interface PSUsersViewController : UIViewController
 
+- (IBAction)onEditButton:(id)sender;
+
 @end

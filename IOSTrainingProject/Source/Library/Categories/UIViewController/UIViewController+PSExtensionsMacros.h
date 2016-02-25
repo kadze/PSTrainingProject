@@ -9,10 +9,10 @@
 #ifndef UIViewController_PSExtensionsMacros_h
 #define UIViewController_PSExtensionsMacros_h
 
-#define PSDefineBaseViewProperty(propertyName, viewClass) \
+#define PSDefineBaseViewProperty(viewClass, propertyName) \
     @property (nonatomic, readonly) viewClass *propertyName;
 
-#define PSBaseViewGetterSynthesize(selector, viewClass) \
+#define PSBaseViewGetterSynthesize(viewClass, selector) \
     - (viewClass *)selector { \
         if ([self isViewLoaded] && [self.view isKindOfClass:[viewClass class]]) { \
             return (viewClass *)self.view; \
@@ -23,7 +23,7 @@
 
 #define PSViewControllerBaseViewProperty(viewControllerClass, baseViewClass, propertyName) \
     @interface viewControllerClass (__##viewControllerClass__##baseViewClass__##propertyName) \
-    PSDefineBaseViewProperty(propertyName, baseViewClass) \
+    PSDefineBaseViewProperty(baseViewClass, propertyName) \
     \
     @end \
     \
@@ -31,7 +31,7 @@
     \
     @dynamic propertyName; \
     \
-    PSBaseViewGetterSynthesize(propertyName, baseViewClass) \
+    PSBaseViewGetterSynthesize(baseViewClass, propertyName) \
     \
     @end
 

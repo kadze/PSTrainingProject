@@ -20,12 +20,4 @@
 
 #define PSReturnNilIfNil(satement) PSReturnValueIfNil(satement, 0)
 
-#define PSBlockCall(block, ...) \
-    do { \
-        typeof(block) var = block; \
-        if (var) { \
-            var(__VA_ARGS__); \
-        } \
-    } while(0)
-
 #endif /* PSMacros_h */

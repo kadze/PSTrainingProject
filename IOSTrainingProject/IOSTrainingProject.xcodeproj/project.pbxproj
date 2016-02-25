@@ -60,6 +60,8 @@
 		AD5526D21C7637A300D6404B /* PSReturnMacros.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PSReturnMacros.h; sourceTree = "<group>"; };
 		ADA5832D1C7F687200A53DDD /* PSArray.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSArray.h; sourceTree = "<group>"; };
 		ADA5832E1C7F687200A53DDD /* PSArray.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSArray.m; sourceTree = "<group>"; };
+		ADA583301C7F717200A53DDD /* PSPragmaMacros.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PSPragmaMacros.h; sourceTree = "<group>"; };
+		ADA583311C7F71D100A53DDD /* PSBlockCallMacros.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PSBlockCallMacros.h; sourceTree = "<group>"; };
 		ADD69ECB1C6CFD6600B50A0F /* PSSquareViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSSquareViewController.h; sourceTree = "<group>"; };
 		ADD69ECC1C6CFD6600B50A0F /* PSSquareViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSSquareViewController.m; sourceTree = "<group>"; };
 		ADD69ECD1C6CFD6600B50A0F /* PSSquareViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PSSquareViewController.xib; sourceTree = "<group>"; };
@@ -166,6 +168,7 @@
 		AD3918761C734E930077C246 /* Categories */ = {
 			isa = PBXGroup;
 			children = (
+				ADA583321C7F72B800A53DDD /* UIViewController */,
 				AD05015A1C7B8FF700EF3116 /* NSString */,
 				AD5526B11C75FD1B00D6404B /* CGGeometry */,
 				AD3918771C734E930077C246 /* UIWindow */,
@@ -186,8 +189,9 @@
 			isa = PBXGroup;
 			children = (
 				AD39187B1C734E930077C246 /* PSWeakifyMacros.h */,
-				AD5526B01C75F92100D6404B /* UIViewController+PSExtensionsMacros.h */,
 				AD5526D21C7637A300D6404B /* PSReturnMacros.h */,
+				ADA583301C7F717200A53DDD /* PSPragmaMacros.h */,
+				ADA583311C7F71D100A53DDD /* PSBlockCallMacros.h */,
 			);
 			path = Macros;
 			sourceTree = "<group>";
@@ -212,6 +216,14 @@
 				AD5526CE1C76337E00D6404B /* PSUsersViewController.xib */,
 			);
 			path = PSUsersView;
+			sourceTree = "<group>";
+		};
+		ADA583321C7F72B800A53DDD /* UIViewController */ = {
+			isa = PBXGroup;
+			children = (
+				AD5526B01C75F92100D6404B /* UIViewController+PSExtensionsMacros.h */,
+			);
+			path = UIViewController;
 			sourceTree = "<group>";
 		};
 		ADD69EBE1C6CFCB000B50A0F /* Library */ = {

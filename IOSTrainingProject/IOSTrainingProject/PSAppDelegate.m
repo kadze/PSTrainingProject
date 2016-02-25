@@ -7,6 +7,7 @@
 //
 
 #import "PSAppDelegate.h"
+
 #import "UIWindow+PSExtensions.h"
 #import "PSSquareViewController.h"
 #import "PSUsersViewController.h"
@@ -23,7 +24,6 @@
     self.window = window;
         
 //    PSSquareViewController *controller = [PSSquareViewController new];
-//    window.rootViewController = controller;
     
     PSUsersViewController *controller = [PSUsersViewController new];
     PSUser *user = [PSUser new];

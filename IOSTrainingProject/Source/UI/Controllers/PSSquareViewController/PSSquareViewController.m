@@ -10,7 +10,7 @@
 #import "PSSquareView.h"
 #import "UIViewController+PSExtensionsMacros.h"
 
-PSViewControllerBaseViewProperty(PSSquareViewController, areaView, PSSquareView)
+PSViewControllerBaseViewProperty(PSSquareViewController, PSSquareView, areaView)
 
 @implementation PSSquareViewController
 

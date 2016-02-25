@@ -9,17 +9,6 @@
 #ifndef Macros_h
 #define Macros_h
 
-#import "PSReturnMacros.h"
-
-#define PSClangDiagnosticPush    _Pragma ("clang diagnostic push")
-#define PSClangDiagnosticPop     _Pragma ("clang diagnostic pop")
-
-#define PSClangDiagnosticPushOption(option) \
-    PSClangDiagnosticPush \
-    _Pragma(option) \
-
-#define PSClangDiagnosticPopOption PSClangDiagnosticPop
-
 #define PSWeakify(object) __weak typeof(object) __weak_##object = object
 
 #define KSWeakify(obj) __weak typeof(obj) __weak_##obj = obj

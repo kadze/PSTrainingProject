@@ -11,6 +11,7 @@
 #import "CGGeometry+PSExtensions.h"
 #import "PSWeakifyMacros.h"
 #import "PSReturnMacros.h"
+#import "PSPragmaMacros.h"
 
 static const NSTimeInterval kPSDuration                 = 0.5;
 

@@ -10,7 +10,7 @@
 #import "UIViewController+PSExtensionsMacros.h"
 #import "PSUsersView.h"
 
-PSViewControllerBaseViewProperty(PSUsersViewController, userView, PSUsersView)
+PSViewControllerBaseViewProperty(PSUsersViewController, PSUsersView, userView)
 
 @implementation PSUsersViewController
 

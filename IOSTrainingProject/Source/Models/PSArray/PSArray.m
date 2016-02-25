@@ -1,0 +1,103 @@
+//
+//  PSArray.m
+//  IOSTrainingProject
+//
+//  Created by Сергей on 2/25/16.
+//  Copyright © 2016 Сергей. All rights reserved.
+//
+
+#import "PSArray.h"
+
+@interface PSArray ()
+@property (nonatomic, strong)   NSMutableArray  *mutableObjects;
+
+@end
+
+@implementation PSArray
+
+@dynamic count;
+@dynamic objects;
+
+#pragma mark -
+#pragma mark Initializations and Deallocations
+
+- (instancetype)init {
+    self = [super init];
+    if (self) {
+        self.mutableObjects = [NSMutableArray new];
+    }
+    
+    return self;
+}
+
+#pragma mark -
+#pragma mark Accessors
+
+- (NSArray *)objects {
+    @synchronized(self) {
+        return [self.mutableObjects copy];
+    }
+}
+
+- (NSUInteger)count {
+    @synchronized(self) {
+        return self.mutableObjects.count;
+    }
+}
+
+#pragma mark -
+#pragma mark Public
+
+- (id)objectAtIndex:(NSUInteger) index {
+    @synchronized(self) {
+        return [self.mutableObjects objectAtIndex:index];
+    }
+}
+
+
+- (void)addObject:(id)object {
+    @synchronized(self) {
+        [self.mutableObjects addObject:object];
+    }
+}
+
+- (void)insertObject:(id)object atIndex:(NSUInteger)index {
+    @synchronized(self) {
+        [self.mutableObjects insertObject:object atIndex:index];
+    }
+}
+
+- (void)removeLastObject {
+    @synchronized(self) {
+        [self.mutableObjects removeLastObject];
+    }
+}
+
+- (void)removeObjectAtIndex:(NSUInteger)index {
+    @synchronized(self) {
+        [self.mutableObjects removeObjectAtIndex:index];
+    }
+}
+
+- (void)replaceObjectAtIndex:(NSUInteger)index withObject:(id)anObject {
+    @synchronized(self) {
+        [self.mutableObjects replaceObjectAtIndex:index withObject:anObject];
+    }
+}
+
+- (void)exchangeObjectAtIndex:(NSUInteger)index1 withObjectAtIndex:(NSUInteger)index2 {
+    @synchronized(self) {
+        [self.mutableObjects exchangeObjectAtIndex:index1 withObjectAtIndex:index2];
+    }
+}
+
+- (void)moveObjectFromIndex:(NSUInteger)index1 toIndex:(NSUInteger)index2 {
+    NSMutableArray *mutableObjects = self.mutableObjects;
+    @synchronized(self) {
+        id object = [self objectAtIndex:index1];
+        [mutableObjects removeObjectAtIndex:index2];
+        [mutableObjects insertObject:object atIndex:index2];
+    }
+}
+
+@end

@@ -20,9 +20,13 @@
 		AD5526CF1C76337E00D6404B /* PSUsersView.m in Sources */ = {isa = PBXBuildFile; fileRef = AD5526CB1C76337E00D6404B /* PSUsersView.m */; };
 		AD5526D01C76337E00D6404B /* PSUsersViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD5526CD1C76337E00D6404B /* PSUsersViewController.m */; };
 		AD5526D11C76337E00D6404B /* PSUsersViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AD5526CE1C76337E00D6404B /* PSUsersViewController.xib */; };
+		ADA5832F1C7F687200A53DDD /* PSArray.m in Sources */ = {isa = PBXBuildFile; fileRef = ADA5832E1C7F687200A53DDD /* PSArray.m */; };
 		ADD69ECE1C6CFD6600B50A0F /* PSSquareViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ADD69ECC1C6CFD6600B50A0F /* PSSquareViewController.m */; };
 		ADD69ECF1C6CFD6600B50A0F /* PSSquareViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = ADD69ECD1C6CFD6600B50A0F /* PSSquareViewController.xib */; };
 		ADD97B781C7CAB2800E4914B /* Apple_core.png in Resources */ = {isa = PBXBuildFile; fileRef = ADD97B771C7CAB2800E4914B /* Apple_core.png */; };
+		ADD97B7B1C7CD65E00E4914B /* PSUsers.m in Sources */ = {isa = PBXBuildFile; fileRef = ADD97B7A1C7CD65E00E4914B /* PSUsers.m */; };
+		ADD97B811C7CDCB900E4914B /* PSTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = ADD97B7F1C7CDCB900E4914B /* PSTableCell.m */; };
+		ADD97B821C7CDCB900E4914B /* PSTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = ADD97B801C7CDCB900E4914B /* PSTableCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -54,10 +58,17 @@
 		AD5526CD1C76337E00D6404B /* PSUsersViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSUsersViewController.m; sourceTree = "<group>"; };
 		AD5526CE1C76337E00D6404B /* PSUsersViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PSUsersViewController.xib; sourceTree = "<group>"; };
 		AD5526D21C7637A300D6404B /* PSReturnMacros.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PSReturnMacros.h; sourceTree = "<group>"; };
+		ADA5832D1C7F687200A53DDD /* PSArray.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSArray.h; sourceTree = "<group>"; };
+		ADA5832E1C7F687200A53DDD /* PSArray.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSArray.m; sourceTree = "<group>"; };
 		ADD69ECB1C6CFD6600B50A0F /* PSSquareViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSSquareViewController.h; sourceTree = "<group>"; };
 		ADD69ECC1C6CFD6600B50A0F /* PSSquareViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSSquareViewController.m; sourceTree = "<group>"; };
 		ADD69ECD1C6CFD6600B50A0F /* PSSquareViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PSSquareViewController.xib; sourceTree = "<group>"; };
 		ADD97B771C7CAB2800E4914B /* Apple_core.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Apple_core.png; sourceTree = "<group>"; };
+		ADD97B791C7CD65E00E4914B /* PSUsers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSUsers.h; sourceTree = "<group>"; };
+		ADD97B7A1C7CD65E00E4914B /* PSUsers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSUsers.m; sourceTree = "<group>"; };
+		ADD97B7E1C7CDCB900E4914B /* PSTableCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSTableCell.h; sourceTree = "<group>"; };
+		ADD97B7F1C7CDCB900E4914B /* PSTableCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSTableCell.m; sourceTree = "<group>"; };
+		ADD97B801C7CDCB900E4914B /* PSTableCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PSTableCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +85,7 @@
 		AD0501551C7B8E0D00EF3116 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				ADD97B7C1C7CD6BD00E4914B /* PSArray */,
 				AD0501561C7B8E3800EF3116 /* PSUser */,
 			);
 			path = Models;
@@ -84,6 +96,8 @@
 			children = (
 				AD0501571C7B8E6500EF3116 /* PSUser.h */,
 				AD0501581C7B8E6500EF3116 /* PSUser.m */,
+				ADD97B791C7CD65E00E4914B /* PSUsers.h */,
+				ADD97B7A1C7CD65E00E4914B /* PSUsers.m */,
 			);
 			path = PSUser;
 			sourceTree = "<group>";
@@ -190,6 +204,7 @@
 		AD5526C91C76337E00D6404B /* PSUsersView */ = {
 			isa = PBXGroup;
 			children = (
+				ADD97B7D1C7CDC6400E4914B /* PSTableCell */,
 				AD5526CA1C76337E00D6404B /* PSUsersView.h */,
 				AD5526CB1C76337E00D6404B /* PSUsersView.m */,
 				AD5526CC1C76337E00D6404B /* PSUsersViewController.h */,
@@ -243,6 +258,25 @@
 				ADD97B771C7CAB2800E4914B /* Apple_core.png */,
 			);
 			path = Images;
+			sourceTree = "<group>";
+		};
+		ADD97B7C1C7CD6BD00E4914B /* PSArray */ = {
+			isa = PBXGroup;
+			children = (
+				ADA5832D1C7F687200A53DDD /* PSArray.h */,
+				ADA5832E1C7F687200A53DDD /* PSArray.m */,
+			);
+			path = PSArray;
+			sourceTree = "<group>";
+		};
+		ADD97B7D1C7CDC6400E4914B /* PSTableCell */ = {
+			isa = PBXGroup;
+			children = (
+				ADD97B7E1C7CDCB900E4914B /* PSTableCell.h */,
+				ADD97B7F1C7CDCB900E4914B /* PSTableCell.m */,
+				ADD97B801C7CDCB900E4914B /* PSTableCell.xib */,
+			);
+			path = PSTableCell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -309,6 +343,7 @@
 				AD3017E71C623DD4000344A3 /* Assets.xcassets in Resources */,
 				ADD69ECF1C6CFD6600B50A0F /* PSSquareViewController.xib in Resources */,
 				AD3017E51C623DD4000344A3 /* Main.storyboard in Resources */,
+				ADD97B821C7CDCB900E4914B /* PSTableCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -325,10 +360,13 @@
 				AD3017DC1C623DD3000344A3 /* main.m in Sources */,
 				AD39187C1C734E930077C246 /* UIWindow+PSExtensions.m in Sources */,
 				AD5526B71C7600FE00D6404B /* CGGeometry+PSExtensions.m in Sources */,
+				ADD97B7B1C7CD65E00E4914B /* PSUsers.m in Sources */,
 				AD05015D1C7B907B00EF3116 /* NSString+PSExtensions.m in Sources */,
 				AD5526D01C76337E00D6404B /* PSUsersViewController.m in Sources */,
 				AD0501591C7B8E6500EF3116 /* PSUser.m in Sources */,
+				ADA5832F1C7F687200A53DDD /* PSArray.m in Sources */,
 				ADD69ECE1C6CFD6600B50A0F /* PSSquareViewController.m in Sources */,
+				ADD97B811C7CDCB900E4914B /* PSTableCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

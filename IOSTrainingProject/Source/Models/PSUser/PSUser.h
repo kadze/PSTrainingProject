@@ -10,7 +10,6 @@
 #import <UIKit/UIKit.h>
 
 @interface PSUser : NSObject
-
 @property (nonatomic, copy)     NSString  *name;
 @property (nonatomic, readonly) UIImage   *image;
 

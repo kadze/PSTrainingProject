@@ -21,13 +21,13 @@
         return nil; \
     }
 
-#define PSViewControllerBaseViewProperty(viewControllerClass, propertyName, baseViewClass) \
-    @interface viewControllerClass (__##viewControllerClass__##propertyName__##baseViewClass) \
+#define PSViewControllerBaseViewProperty(viewControllerClass, baseViewClass, propertyName) \
+    @interface viewControllerClass (__##viewControllerClass__##baseViewClass__##propertyName) \
     PSDefineBaseViewProperty(propertyName, baseViewClass) \
     \
     @end \
     \
-    @implementation viewControllerClass (__##viewControllerClass__##propertyName__##baseViewClass) \
+    @implementation viewControllerClass (__##viewControllerClass__##baseViewClass__##propertyName) \
     \
     @dynamic propertyName; \
     \

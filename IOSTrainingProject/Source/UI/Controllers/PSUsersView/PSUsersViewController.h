@@ -7,8 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "PSUser.h"
 
-@interface PSUsersViewController : UIViewController
+@interface PSUsersViewController : UIViewController //<UITableViewDelegate, UITableViewDataSource>
 
 - (IBAction)onEditButton:(id)sender;
 

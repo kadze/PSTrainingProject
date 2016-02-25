@@ -9,7 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface PSUsersView : UIView
-
 @property (nonatomic, strong)   IBOutlet    UITableView     *tableView;
 @property (nonatomic, strong)   IBOutlet    UIButton        *editButton;
 

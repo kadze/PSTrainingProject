@@ -10,16 +10,32 @@
 
 #import "UIViewController+PSExtensionsMacros.h"
 #import "PSUsersView.h"
+#import "PSUserCell.h"
+#import "PSUsers.h"
+#import "PSUser.h"
 
-PSViewControllerBaseViewProperty(PSUsersViewController, PSUsersView, userView)
+PSViewControllerBaseViewProperty(PSUsersViewController, PSUsersView, usersView)
 
 @implementation PSUsersViewController
+
+#pragma mark -
+#pragma mark Accessors
+
+- (void)setUsers:(PSUsers *)users {
+    if (_users != users) {
+        _users = users;
+    }
+    
+    self.usersView.users = users;
+}
 
 #pragma mark -
 #pragma mark View Lifecycle
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    self.users = self.users;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -30,9 +46,10 @@ PSViewControllerBaseViewProperty(PSUsersViewController, PSUsersView, userView)
 #pragma mark Interface Handling
 
 - (IBAction)onEditButton:(id)sender {
-    PSUsersView *view = self.userView;
+    PSUsersView *view = self.usersView;
     
     view.editing = !view.editing;
 }
+
 
 @end

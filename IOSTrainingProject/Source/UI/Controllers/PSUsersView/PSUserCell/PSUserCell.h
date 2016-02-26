@@ -1,5 +1,5 @@
 //
-//  PSTableCell.h
+//  PSUserCell.h
 //  IOSTrainingProject
 //
 //  Created by Сергей on 23.02.16.
@@ -10,7 +10,7 @@
 
 @class PSUser;
 
-@interface PSTableCell : UITableViewCell
+@interface PSUserCell : UITableViewCell
 @property (nonatomic, strong)   IBOutlet    UILabel         *label;
 @property (nonatomic, strong)   IBOutlet    UIImageView     *userImageView;
 

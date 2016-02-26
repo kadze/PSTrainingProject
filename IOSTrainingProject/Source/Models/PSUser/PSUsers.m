@@ -9,9 +9,35 @@
 #import "PSUsers.h"
 
 #import "PSUser.h"
+#import "PSWeakifyMacros.h"
+
+static const NSUInteger kPSUsersCount = 50;
 
 @implementation PSUsers
 
+#pragma mark -
+#pragma mark Initializations and Deallocations
 
+- (instancetype)init {
+    self = [super init];
+    if (self) {
+        [self fillWithUsers];
+    }
+    
+    return self;
+}
+
+#pragma mark -
+#pragma mark Private
+
+- (void)fillWithUsers {
+    PSWeakify(self);
+    [self performBlockWithoutNotification:^{
+        PSStrongify(self);
+        for (NSUInteger index = 0; index < kPSUsersCount; index++) {
+            [self addObject:[PSUser new]];
+        }
+    }];
+}
 
 @end

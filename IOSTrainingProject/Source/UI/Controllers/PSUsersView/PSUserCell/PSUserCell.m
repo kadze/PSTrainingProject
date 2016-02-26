@@ -1,20 +1,16 @@
 //
-//  PSTableCell.m
+//  PSUserCell.m
 //  IOSTrainingProject
 //
 //  Created by Сергей on 23.02.16.
 //  Copyright © 2016 Сергей. All rights reserved.
 //
 
-#import "PSTableCell.h"
+#import "PSUserCell.h"
 
 #import "PSUser.h"
 
-@implementation PSTableCell
-
-- (void)awakeFromNib {
-    // Initialization code
-}
+@implementation PSUserCell
 
 #pragma mark -
 #pragma mark Accessors
@@ -25,12 +21,6 @@
         
         [self fillWithModel:user];
     }
-}
-
-- (void)setSelected:(BOOL)selected animated:(BOOL)animated {
-    [super setSelected:selected animated:animated];
-    
-    // Configure the view for the selected state
 }
 
 #pragma mark -

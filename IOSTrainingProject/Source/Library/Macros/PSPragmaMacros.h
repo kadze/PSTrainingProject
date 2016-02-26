@@ -1,5 +1,5 @@
 //
-//  PragmaMacros.h
+//  PSPragmaMacros.h
 //  IOSTrainingProject
 //
 //  Created by Сергей on 2/25/16.

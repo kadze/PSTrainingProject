@@ -8,10 +8,14 @@
 
 #import <UIKit/UIKit.h>
 
+@class PSUsers;
+
 @interface PSUsersView : UIView
 @property (nonatomic, strong)   IBOutlet    UITableView     *tableView;
 @property (nonatomic, strong)   IBOutlet    UIButton        *editButton;
 
 @property (nonatomic, assign, getter=isEditing) BOOL    editing;
+
+@property (nonatomic, strong)   PSUsers *users;
 
 @end

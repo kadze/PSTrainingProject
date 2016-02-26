@@ -21,12 +21,15 @@
 		AD5526D01C76337E00D6404B /* PSUsersViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD5526CD1C76337E00D6404B /* PSUsersViewController.m */; };
 		AD5526D11C76337E00D6404B /* PSUsersViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AD5526CE1C76337E00D6404B /* PSUsersViewController.xib */; };
 		ADA5832F1C7F687200A53DDD /* PSArray.m in Sources */ = {isa = PBXBuildFile; fileRef = ADA5832E1C7F687200A53DDD /* PSArray.m */; };
+		ADA583361C7FDBB000A53DDD /* PSUserCell.m in Sources */ = {isa = PBXBuildFile; fileRef = ADA583341C7FDBB000A53DDD /* PSUserCell.m */; };
+		ADA583371C7FDBB000A53DDD /* PSUserCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = ADA583351C7FDBB000A53DDD /* PSUserCell.xib */; };
+		ADA5833C1C7FE0C700A53DDD /* PSObservableObject.m in Sources */ = {isa = PBXBuildFile; fileRef = ADA5833B1C7FE0C700A53DDD /* PSObservableObject.m */; };
+		ADA583411C7FE49C00A53DDD /* PSReference.m in Sources */ = {isa = PBXBuildFile; fileRef = ADA583401C7FE49C00A53DDD /* PSReference.m */; };
+		ADA583451C7FE4BD00A53DDD /* PSAssignReference.m in Sources */ = {isa = PBXBuildFile; fileRef = ADA583441C7FE4BD00A53DDD /* PSAssignReference.m */; };
 		ADD69ECE1C6CFD6600B50A0F /* PSSquareViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ADD69ECC1C6CFD6600B50A0F /* PSSquareViewController.m */; };
 		ADD69ECF1C6CFD6600B50A0F /* PSSquareViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = ADD69ECD1C6CFD6600B50A0F /* PSSquareViewController.xib */; };
 		ADD97B781C7CAB2800E4914B /* Apple_core.png in Resources */ = {isa = PBXBuildFile; fileRef = ADD97B771C7CAB2800E4914B /* Apple_core.png */; };
 		ADD97B7B1C7CD65E00E4914B /* PSUsers.m in Sources */ = {isa = PBXBuildFile; fileRef = ADD97B7A1C7CD65E00E4914B /* PSUsers.m */; };
-		ADD97B811C7CDCB900E4914B /* PSTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = ADD97B7F1C7CDCB900E4914B /* PSTableCell.m */; };
-		ADD97B821C7CDCB900E4914B /* PSTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = ADD97B801C7CDCB900E4914B /* PSTableCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -62,15 +65,21 @@
 		ADA5832E1C7F687200A53DDD /* PSArray.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSArray.m; sourceTree = "<group>"; };
 		ADA583301C7F717200A53DDD /* PSPragmaMacros.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PSPragmaMacros.h; sourceTree = "<group>"; };
 		ADA583311C7F71D100A53DDD /* PSBlockCallMacros.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PSBlockCallMacros.h; sourceTree = "<group>"; };
+		ADA583331C7FDBB000A53DDD /* PSUserCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PSUserCell.h; path = Source/UI/Controllers/PSUsersView/PSUserCell/PSUserCell.h; sourceTree = SOURCE_ROOT; };
+		ADA583341C7FDBB000A53DDD /* PSUserCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PSUserCell.m; path = Source/UI/Controllers/PSUsersView/PSUserCell/PSUserCell.m; sourceTree = SOURCE_ROOT; };
+		ADA583351C7FDBB000A53DDD /* PSUserCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = PSUserCell.xib; path = Source/UI/Controllers/PSUsersView/PSUserCell/PSUserCell.xib; sourceTree = SOURCE_ROOT; };
+		ADA5833A1C7FE0C700A53DDD /* PSObservableObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSObservableObject.h; sourceTree = "<group>"; };
+		ADA5833B1C7FE0C700A53DDD /* PSObservableObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSObservableObject.m; sourceTree = "<group>"; };
+		ADA5833F1C7FE49C00A53DDD /* PSReference.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSReference.h; sourceTree = "<group>"; };
+		ADA583401C7FE49C00A53DDD /* PSReference.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSReference.m; sourceTree = "<group>"; };
+		ADA583431C7FE4BD00A53DDD /* PSAssignReference.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSAssignReference.h; sourceTree = "<group>"; };
+		ADA583441C7FE4BD00A53DDD /* PSAssignReference.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSAssignReference.m; sourceTree = "<group>"; };
 		ADD69ECB1C6CFD6600B50A0F /* PSSquareViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSSquareViewController.h; sourceTree = "<group>"; };
 		ADD69ECC1C6CFD6600B50A0F /* PSSquareViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSSquareViewController.m; sourceTree = "<group>"; };
 		ADD69ECD1C6CFD6600B50A0F /* PSSquareViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PSSquareViewController.xib; sourceTree = "<group>"; };
 		ADD97B771C7CAB2800E4914B /* Apple_core.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Apple_core.png; sourceTree = "<group>"; };
 		ADD97B791C7CD65E00E4914B /* PSUsers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSUsers.h; sourceTree = "<group>"; };
 		ADD97B7A1C7CD65E00E4914B /* PSUsers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSUsers.m; sourceTree = "<group>"; };
-		ADD97B7E1C7CDCB900E4914B /* PSTableCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSTableCell.h; sourceTree = "<group>"; };
-		ADD97B7F1C7CDCB900E4914B /* PSTableCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSTableCell.m; sourceTree = "<group>"; };
-		ADD97B801C7CDCB900E4914B /* PSTableCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PSTableCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -208,7 +217,7 @@
 		AD5526C91C76337E00D6404B /* PSUsersView */ = {
 			isa = PBXGroup;
 			children = (
-				ADD97B7D1C7CDC6400E4914B /* PSTableCell */,
+				ADD97B7D1C7CDC6400E4914B /* PSUserCell */,
 				AD5526CA1C76337E00D6404B /* PSUsersView.h */,
 				AD5526CB1C76337E00D6404B /* PSUsersView.m */,
 				AD5526CC1C76337E00D6404B /* PSUsersViewController.h */,
@@ -226,9 +235,47 @@
 			path = UIViewController;
 			sourceTree = "<group>";
 		};
+		ADA583381C7FE01D00A53DDD /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				ADA5833D1C7FE43900A53DDD /* PSReference */,
+				ADA583391C7FE09200A53DDD /* PSObservableObject */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		ADA583391C7FE09200A53DDD /* PSObservableObject */ = {
+			isa = PBXGroup;
+			children = (
+				ADA5833A1C7FE0C700A53DDD /* PSObservableObject.h */,
+				ADA5833B1C7FE0C700A53DDD /* PSObservableObject.m */,
+			);
+			path = PSObservableObject;
+			sourceTree = "<group>";
+		};
+		ADA5833D1C7FE43900A53DDD /* PSReference */ = {
+			isa = PBXGroup;
+			children = (
+				ADA5833E1C7FE47C00A53DDD /* PSAssignReference */,
+				ADA5833F1C7FE49C00A53DDD /* PSReference.h */,
+				ADA583401C7FE49C00A53DDD /* PSReference.m */,
+			);
+			path = PSReference;
+			sourceTree = "<group>";
+		};
+		ADA5833E1C7FE47C00A53DDD /* PSAssignReference */ = {
+			isa = PBXGroup;
+			children = (
+				ADA583431C7FE4BD00A53DDD /* PSAssignReference.h */,
+				ADA583441C7FE4BD00A53DDD /* PSAssignReference.m */,
+			);
+			path = PSAssignReference;
+			sourceTree = "<group>";
+		};
 		ADD69EBE1C6CFCB000B50A0F /* Library */ = {
 			isa = PBXGroup;
 			children = (
+				ADA583381C7FE01D00A53DDD /* Classes */,
 				AD3918761C734E930077C246 /* Categories */,
 				AD39187A1C734E930077C246 /* Macros */,
 			);
@@ -281,13 +328,14 @@
 			path = PSArray;
 			sourceTree = "<group>";
 		};
-		ADD97B7D1C7CDC6400E4914B /* PSTableCell */ = {
+		ADD97B7D1C7CDC6400E4914B /* PSUserCell */ = {
 			isa = PBXGroup;
 			children = (
-				ADD97B7E1C7CDCB900E4914B /* PSTableCell.h */,
-				ADD97B7F1C7CDCB900E4914B /* PSTableCell.m */,
-				ADD97B801C7CDCB900E4914B /* PSTableCell.xib */,
+				ADA583331C7FDBB000A53DDD /* PSUserCell.h */,
+				ADA583341C7FDBB000A53DDD /* PSUserCell.m */,
+				ADA583351C7FDBB000A53DDD /* PSUserCell.xib */,
 			);
+			name = PSUserCell;
 			path = PSTableCell;
 			sourceTree = "<group>";
 		};
@@ -353,9 +401,9 @@
 				ADD97B781C7CAB2800E4914B /* Apple_core.png in Resources */,
 				AD3017EA1C623DD4000344A3 /* LaunchScreen.storyboard in Resources */,
 				AD3017E71C623DD4000344A3 /* Assets.xcassets in Resources */,
+				ADA583371C7FDBB000A53DDD /* PSUserCell.xib in Resources */,
 				ADD69ECF1C6CFD6600B50A0F /* PSSquareViewController.xib in Resources */,
 				AD3017E51C623DD4000344A3 /* Main.storyboard in Resources */,
-				ADD97B821C7CDCB900E4914B /* PSTableCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -371,14 +419,17 @@
 				AD3017DF1C623DD3000344A3 /* PSAppDelegate.m in Sources */,
 				AD3017DC1C623DD3000344A3 /* main.m in Sources */,
 				AD39187C1C734E930077C246 /* UIWindow+PSExtensions.m in Sources */,
+				ADA583451C7FE4BD00A53DDD /* PSAssignReference.m in Sources */,
 				AD5526B71C7600FE00D6404B /* CGGeometry+PSExtensions.m in Sources */,
 				ADD97B7B1C7CD65E00E4914B /* PSUsers.m in Sources */,
 				AD05015D1C7B907B00EF3116 /* NSString+PSExtensions.m in Sources */,
 				AD5526D01C76337E00D6404B /* PSUsersViewController.m in Sources */,
 				AD0501591C7B8E6500EF3116 /* PSUser.m in Sources */,
 				ADA5832F1C7F687200A53DDD /* PSArray.m in Sources */,
+				ADA583411C7FE49C00A53DDD /* PSReference.m in Sources */,
+				ADA583361C7FDBB000A53DDD /* PSUserCell.m in Sources */,
+				ADA5833C1C7FE0C700A53DDD /* PSObservableObject.m in Sources */,
 				ADD69ECE1C6CFD6600B50A0F /* PSSquareViewController.m in Sources */,
-				ADD97B811C7CDCB900E4914B /* PSTableCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

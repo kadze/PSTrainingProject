@@ -8,9 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
-#import "PSUser.h"
+@class PSUsers;
 
-@interface PSUsersViewController : UIViewController //<UITableViewDelegate, UITableViewDataSource>
+@interface PSUsersViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
+@property (nonatomic, strong)   PSUsers *users;
 
 - (IBAction)onEditButton:(id)sender;
 

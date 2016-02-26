@@ -9,9 +9,10 @@
 #ifndef Macros_h
 #define Macros_h
 
-#define PSWeakify(object) __weak typeof(object) __weak_##object = object
+#import "PSPragmaMacros.h"
+#import "PSReturnMacros.h"
 
-#define KSWeakify(obj) __weak typeof(obj) __weak_##obj = obj
+#define PSWeakify(object) __weak typeof(object) __weak_##object = object
 
 #define PSStrongify(object) \
     PSClangDiagnosticPushOption("clang diagnostic ignored \"-Wshadow\"") \

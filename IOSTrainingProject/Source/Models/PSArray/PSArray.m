@@ -95,7 +95,7 @@
     NSMutableArray *mutableObjects = self.mutableObjects;
     @synchronized(self) {
         id object = [self objectAtIndex:index1];
-        [mutableObjects removeObjectAtIndex:index2];
+        [mutableObjects removeObjectAtIndex:index1];
         [mutableObjects insertObject:object atIndex:index2];
     }
 }

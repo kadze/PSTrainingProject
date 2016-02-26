@@ -8,7 +8,9 @@
 
 #import <Foundation/Foundation.h>
 
-@interface PSArray : NSObject 
+#import "PSObservableObject.h"
+
+@interface PSArray : PSObservableObject
 @property (nonatomic, readonly) NSUInteger  count;
 @property (nonatomic, readonly) NSArray     *objects;
 
@@ -19,6 +21,6 @@
 - (void)removeObjectAtIndex:(NSUInteger)index;
 - (void)replaceObjectAtIndex:(NSUInteger)index withObject:(id)anObject;
 - (void)exchangeObjectAtIndex:(NSUInteger)index1 withObjectAtIndex:(NSUInteger)index2;
-- (void)moveObjectFromIndex:(NSUInteger)fromIndex toIndex:(NSUInteger)toIndex;
+- (void)moveObjectFromIndex:(NSUInteger)index1 toIndex:(NSUInteger)index2;
 
 @end

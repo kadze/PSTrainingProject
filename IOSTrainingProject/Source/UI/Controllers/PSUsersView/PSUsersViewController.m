@@ -26,7 +26,9 @@ PSViewControllerBaseViewProperty(PSUsersViewController, PSUsersView, usersView)
 
 - (void)setUsers:(PSUsers *)users {
     if (_users != users) {
+        [_users removeObserver:self];
         _users = users;
+        [_users addObserver:self];
     }
     
     self.usersView.users = users;

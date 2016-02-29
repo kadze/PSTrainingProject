@@ -25,13 +25,4 @@
     return self.tableView.editing;
 }
 
-- (void)setUsers:(PSUsers *)users {
-    if (_users != users) {
-        [_users removeObserver:self];
-        _users = users;
-        [_users addObserver:self];
-        [self.tableView reloadData];
-    }
-}
-
 @end

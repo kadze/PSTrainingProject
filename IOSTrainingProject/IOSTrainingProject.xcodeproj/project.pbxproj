@@ -135,7 +135,7 @@
 				AD30180E1C62426E000344A3 /* Source */,
 				AD3017D91C623DD3000344A3 /* IOSTrainingProject */,
 				AD3017D81C623DD3000344A3 /* Products */,
-				AD30180D1C623FE3000344A3 /* Resouces */,
+				AD30180D1C623FE3000344A3 /* Resources */,
 			);
 			sourceTree = "<group>";
 		};
@@ -159,7 +159,7 @@
 			path = IOSTrainingProject;
 			sourceTree = "<group>";
 		};
-		AD30180D1C623FE3000344A3 /* Resouces */ = {
+		AD30180D1C623FE3000344A3 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
 				ADD97B701C7CA80300E4914B /* Images */,
@@ -167,6 +167,7 @@
 				AD3017E81C623DD4000344A3 /* LaunchScreen.storyboard */,
 				AD3017E31C623DD4000344A3 /* Main.storyboard */,
 			);
+			name = Resources;
 			path = Resouces;
 			sourceTree = "<group>";
 		};

@@ -30,6 +30,8 @@
 		ADD69ECF1C6CFD6600B50A0F /* PSSquareViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = ADD69ECD1C6CFD6600B50A0F /* PSSquareViewController.xib */; };
 		ADD97B781C7CAB2800E4914B /* Apple_core.png in Resources */ = {isa = PBXBuildFile; fileRef = ADD97B771C7CAB2800E4914B /* Apple_core.png */; };
 		ADD97B7B1C7CD65E00E4914B /* PSUsers.m in Sources */ = {isa = PBXBuildFile; fileRef = ADD97B7A1C7CD65E00E4914B /* PSUsers.m */; };
+		ADEEF6D31C8493D2007188B9 /* UINib+PSExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = ADEEF6D21C8493D2007188B9 /* UINib+PSExtensions.m */; };
+		ADEEF6D81C849440007188B9 /* UITableView+PSExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = ADEEF6D71C849440007188B9 /* UITableView+PSExtensions.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -80,6 +82,10 @@
 		ADD97B771C7CAB2800E4914B /* Apple_core.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Apple_core.png; sourceTree = "<group>"; };
 		ADD97B791C7CD65E00E4914B /* PSUsers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSUsers.h; sourceTree = "<group>"; };
 		ADD97B7A1C7CD65E00E4914B /* PSUsers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSUsers.m; sourceTree = "<group>"; };
+		ADEEF6D11C8493D2007188B9 /* UINib+PSExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UINib+PSExtensions.h"; path = "Source/Library/Categories/UINib/UINib+PSExtensions.h"; sourceTree = SOURCE_ROOT; };
+		ADEEF6D21C8493D2007188B9 /* UINib+PSExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UINib+PSExtensions.m"; path = "Source/Library/Categories/UINib/UINib+PSExtensions.m"; sourceTree = SOURCE_ROOT; };
+		ADEEF6D61C849440007188B9 /* UITableView+PSExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITableView+PSExtensions.h"; sourceTree = "<group>"; };
+		ADEEF6D71C849440007188B9 /* UITableView+PSExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableView+PSExtensions.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -177,6 +183,8 @@
 		AD3918761C734E930077C246 /* Categories */ = {
 			isa = PBXGroup;
 			children = (
+				ADEEF6D41C849403007188B9 /* UITableView */,
+				ADEEF6CD1C8490C6007188B9 /* UINib */,
 				ADA583321C7F72B800A53DDD /* UIViewController */,
 				AD05015A1C7B8FF700EF3116 /* NSString */,
 				AD5526B11C75FD1B00D6404B /* CGGeometry */,
@@ -339,6 +347,25 @@
 			path = PSTableCell;
 			sourceTree = "<group>";
 		};
+		ADEEF6CD1C8490C6007188B9 /* UINib */ = {
+			isa = PBXGroup;
+			children = (
+				ADEEF6D11C8493D2007188B9 /* UINib+PSExtensions.h */,
+				ADEEF6D21C8493D2007188B9 /* UINib+PSExtensions.m */,
+			);
+			name = UINib;
+			path = "UINib+PSExtensions";
+			sourceTree = "<group>";
+		};
+		ADEEF6D41C849403007188B9 /* UITableView */ = {
+			isa = PBXGroup;
+			children = (
+				ADEEF6D61C849440007188B9 /* UITableView+PSExtensions.h */,
+				ADEEF6D71C849440007188B9 /* UITableView+PSExtensions.m */,
+			);
+			path = UITableView;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -424,8 +451,10 @@
 				ADD97B7B1C7CD65E00E4914B /* PSUsers.m in Sources */,
 				AD05015D1C7B907B00EF3116 /* NSString+PSExtensions.m in Sources */,
 				AD5526D01C76337E00D6404B /* PSUsersViewController.m in Sources */,
+				ADEEF6D81C849440007188B9 /* UITableView+PSExtensions.m in Sources */,
 				AD0501591C7B8E6500EF3116 /* PSUser.m in Sources */,
 				ADA5832F1C7F687200A53DDD /* PSArray.m in Sources */,
+				ADEEF6D31C8493D2007188B9 /* UINib+PSExtensions.m in Sources */,
 				ADA583411C7FE49C00A53DDD /* PSReference.m in Sources */,
 				ADA583361C7FDBB000A53DDD /* PSUserCell.m in Sources */,
 				ADA5833C1C7FE0C700A53DDD /* PSObservableObject.m in Sources */,

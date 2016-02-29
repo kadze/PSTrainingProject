@@ -9,6 +9,7 @@
 #import "PSObservableObject.h"
 
 #import "PSAssignReference.h"
+
 #import "PSPragmaMacros.h"
 
 @interface PSObservableObject ()
@@ -32,7 +33,7 @@
         self.mutableObservers = [NSMutableSet set];
         self.notificationEnabled = YES;
     }
-    
+
     return self;
 }
 
@@ -52,12 +53,14 @@
 }
 
 - (void)setState:(NSUInteger)state {
-    if (_state != state) {
+    [self setState:state withObject:nil];
+}
+
+- (void)setState:(NSUInteger)state withObject:(id)object {
+    if (state != _state) {
         _state = state;
-        SEL selector = [self selectorForState:state];
-        if (selector) {
-            [self notifyObserversWithSelector:selector withObject:self];
-        }
+        
+        [self notifyObserversWithSelector:[self selectorForState:state] withObject:object];
     }
 }
 
@@ -93,7 +96,7 @@
 }
 
 - (void)notifyObserversWithSelector:(SEL)selector {
-    [self notifyObserversWithSelector:(SEL)selector withObject:(id)nil];
+    [self notifyObserversWithSelector:selector withObject:nil];
 }
 
 - (void)notifyObserversWithSelector:(SEL)selector withObject:(id)object {
@@ -139,6 +142,5 @@
         self.notificationEnabled = notificationEnabled;
     }
 }
-
 
 @end

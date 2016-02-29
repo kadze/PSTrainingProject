@@ -8,11 +8,14 @@
 
 #import "PSUsersViewController.h"
 
-#import "UIViewController+PSExtensionsMacros.h"
 #import "PSUsersView.h"
 #import "PSUserCell.h"
 #import "PSUsers.h"
 #import "PSUser.h"
+#import "PSArray.h"
+
+#import "UIViewController+PSExtensionsMacros.h"
+#import "UITableView+PSExtensions.h"
 
 PSViewControllerBaseViewProperty(PSUsersViewController, PSUsersView, usersView)
 
@@ -51,5 +54,46 @@ PSViewControllerBaseViewProperty(PSUsersViewController, PSUsersView, usersView)
     view.editing = !view.editing;
 }
 
+#pragma mark -
+#pragma mark UITableViewDataSource
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return self.users.count;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    PSUserCell *cell = [tableView cellWithClass:[PSUserCell class]];
+    cell.user = [self.users objectAtIndex:indexPath.row];
+    
+    return cell;
+}
+
+- (UITableViewCellEditingStyle)tableView:(UITableView *)tableView
+           editingStyleForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    BOOL result = indexPath.row == self.users.count - 1;
+    
+    return result ? UITableViewCellEditingStyleInsert : UITableViewCellEditingStyleDelete;
+}
+
+- (void)    tableView:(UITableView *)tableView
+   commitEditingStyle:(UITableViewCellEditingStyle)editingStyle
+    forRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    PSArray *users = self.users;
+    
+    if (UITableViewCellEditingStyleDelete == editingStyle) {
+        [users removeObjectAtIndex:indexPath.row];
+    } else if (UITableViewCellEditingStyleInsert == editingStyle) {
+        [users addObject:[PSUser new]];
+    }
+}
+
+- (void)    tableView:(UITableView *)tableView
+   moveRowAtIndexPath:(NSIndexPath *)sourceIndexPath
+          toIndexPath:(NSIndexPath *)destinationIndexPath
+{
+    [self.users moveObjectFromIndex:sourceIndexPath.row toIndex:destinationIndexPath.row];
+}
 
 @end

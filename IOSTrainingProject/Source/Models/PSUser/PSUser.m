@@ -7,6 +7,7 @@
 //
 
 #import "PSUser.h"
+
 #import "NSString+PSExtensions.h"
 
 static NSUInteger const kPSRandomNameSize = 5;

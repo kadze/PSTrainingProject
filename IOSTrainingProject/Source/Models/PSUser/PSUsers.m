@@ -9,9 +9,10 @@
 #import "PSUsers.h"
 
 #import "PSUser.h"
+
 #import "PSWeakifyMacros.h"
 
-static const NSUInteger kPSUsersCount = 50;
+static const NSUInteger kPSUsersCount = 200;
 
 @implementation PSUsers
 

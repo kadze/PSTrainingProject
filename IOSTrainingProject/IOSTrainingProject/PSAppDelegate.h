@@ -8,7 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
+#import "PSUsers.h"
+
 @interface PSAppDelegate : UIResponder <UIApplicationDelegate>
 @property (nonatomic, strong)   UIWindow    *window;
+@property (nonatomic, strong)   PSUsers     *users;
 
 @end

@@ -8,10 +8,10 @@
 
 #import "PSAppDelegate.h"
 
-#import "UIWindow+PSExtensions.h"
 #import "PSSquareViewController.h"
 #import "PSUsersViewController.h"
-#import "PSUsers.h"
+
+#import "UIWindow+PSExtensions.h"
 
 @interface PSAppDelegate ()
 
@@ -28,7 +28,7 @@
     PSUsersViewController *controller = [PSUsersViewController new];
     
     PSUsers *users = [PSUsers new];
-//    self.users = users;
+    self.users = users;
     
     controller.users = users;
     

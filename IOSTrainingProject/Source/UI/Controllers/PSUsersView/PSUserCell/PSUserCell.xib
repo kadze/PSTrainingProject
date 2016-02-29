@@ -15,13 +15,13 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ACY-FT-JUC">
-                        <rect key="frame" x="39" y="0.0" width="281" height="43"/>
+                        <rect key="frame" x="8" y="0.0" width="265" height="43"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Apple_core.png" translatesAutoresizingMaskIntoConstraints="NO" id="O0Z-Fk-QBa">
-                        <rect key="frame" x="0.0" y="4" width="31" height="36"/>
+                        <rect key="frame" x="281" y="4" width="31" height="36"/>
                     </imageView>
                 </subviews>
             </tableViewCellContentView>

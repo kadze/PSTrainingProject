@@ -167,8 +167,7 @@
 				AD3017E81C623DD4000344A3 /* LaunchScreen.storyboard */,
 				AD3017E31C623DD4000344A3 /* Main.storyboard */,
 			);
-			name = Resources;
-			path = Resouces;
+			path = Resources;
 			sourceTree = "<group>";
 		};
 		AD30180E1C62426E000344A3 /* Source */ = {

@@ -82,7 +82,7 @@ PSViewControllerBaseViewProperty(PSUsersViewController, PSUsersView, usersView)
    commitEditingStyle:(UITableViewCellEditingStyle)editingStyle
     forRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    PSArray *users = self.users;
+    PSUsers *users = self.users;
     
     if (UITableViewCellEditingStyleDelete == editingStyle) {
         [users removeObjectAtIndex:indexPath.row];

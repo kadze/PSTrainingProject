@@ -85,18 +85,18 @@
     }
 }
 
-- (void)exchangeObjectAtIndex:(NSUInteger)index1 withObjectAtIndex:(NSUInteger)index2 {
+- (void)exchangeObjectAtIndex:(NSUInteger)firstIndex withObjectAtIndex:(NSUInteger)secondIndex {
     @synchronized(self) {
-        [self.mutableObjects exchangeObjectAtIndex:index1 withObjectAtIndex:index2];
+        [self.mutableObjects exchangeObjectAtIndex:firstIndex withObjectAtIndex:secondIndex];
     }
 }
 
-- (void)moveObjectFromIndex:(NSUInteger)index1 toIndex:(NSUInteger)index2 {
+- (void)moveObjectFromIndex:(NSUInteger)firstIndex toIndex:(NSUInteger)secondIndex {
     NSMutableArray *mutableObjects = self.mutableObjects;
     @synchronized(self) {
-        id object = [self objectAtIndex:index1];
-        [mutableObjects removeObjectAtIndex:index1];
-        [mutableObjects insertObject:object atIndex:index2];
+        id object = [self objectAtIndex:firstIndex];
+        [mutableObjects removeObjectAtIndex:firstIndex];
+        [mutableObjects insertObject:object atIndex:secondIndex];
     }
 }
 

@@ -9,7 +9,9 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 
-@interface PSUser : NSObject
+#import "PSObservableObject.h"
+
+@interface PSUser : PSObservableObject
 @property (nonatomic, copy)     NSString  *name;
 @property (nonatomic, readonly) UIImage   *image;
 

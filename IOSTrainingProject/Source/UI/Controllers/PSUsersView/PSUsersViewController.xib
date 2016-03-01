@@ -25,7 +25,7 @@
                         <outlet property="delegate" destination="-1" id="gba-Ak-l4y"/>
                     </connections>
                 </tableView>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="ZKB-MM-dne">
+                <button autoresizesSubviews="NO" opaque="NO" multipleTouchEnabled="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="ZKB-MM-dne">
                     <rect key="frame" x="107" y="515" width="106" height="45"/>
                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <color key="backgroundColor" red="0.21023002930000001" green="0.96312099360000003" blue="0.021200230850000001" alpha="1" colorSpace="calibratedRGB"/>

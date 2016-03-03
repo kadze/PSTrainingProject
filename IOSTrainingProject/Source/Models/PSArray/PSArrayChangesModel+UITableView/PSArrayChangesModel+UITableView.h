@@ -11,7 +11,6 @@
 #import "PSArrayChangesModel.h"
 
 @interface PSArrayChangesModel (UITableView)
-@property (nonatomic, readonly) NSIndexPath *indexPath;
 
 - (void)updateTableView:(UITableView *)tableView;
 

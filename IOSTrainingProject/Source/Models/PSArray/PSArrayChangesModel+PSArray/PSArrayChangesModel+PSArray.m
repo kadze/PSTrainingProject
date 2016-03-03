@@ -8,30 +8,33 @@
 
 #import "PSArrayChangesModel+PSArray.h"
 
+#import "PSArrayIndexChangesModel.h"
+#import "PSArrayDoubleIndexChangesModel.h"
+
 @implementation PSArrayChangesModel (PSArray)
 
-+ (instancetype)addModelWithIndex:(NSUInteger)index {
-    return [PSArrayChangesModel modelWithChangeType:kPSArrayModelAddChanges index:index];
++ (instancetype)addModelWithIndex:(NSUInteger)fromIndex {
+    return [PSArrayIndexChangesModel modelWithChangeType:kPSArrayModelAddChanges fromIndex:fromIndex];
 }
 
-+ (instancetype)removeModelWithIndex:(NSUInteger)index {
-    return [PSArrayChangesModel modelWithChangeType:kPSArrayModelRemoveChanges index:index];
++ (instancetype)removeModelWithIndex:(NSUInteger)fromIndex {
+    return [PSArrayIndexChangesModel modelWithChangeType:kPSArrayModelRemoveChanges fromIndex:fromIndex];
 }
 
-+ (instancetype)insertModelWithIndex:(NSUInteger)index {
-    return [PSArrayChangesModel modelWithChangeType:kPSArrayModelInsertChanges index:index];
++ (instancetype)insertModelWithIndex:(NSUInteger)fromIndex {
+    return [PSArrayIndexChangesModel modelWithChangeType:kPSArrayModelInsertChanges fromIndex:fromIndex];
 }
 
-+ (instancetype)replaceModelWithIndex:(NSUInteger)index {
-    return [PSArrayChangesModel modelWithChangeType:kPSArrayModelReplaceChanges index:index];
++ (instancetype)replaceModelWithIndex:(NSUInteger)fromIndex {
+    return [PSArrayIndexChangesModel modelWithChangeType:kPSArrayModelReplaceChanges fromIndex:fromIndex];
 }
 
-+ (instancetype)exchangeModelWithIndex:(NSUInteger)index toIndex:(NSUInteger)toIndex {
-    return [PSArrayChangesModel modelWithChangeType:kPSArrayModelExchangeChanges index:index toIndex:toIndex];
++ (instancetype)exchangeModelWithIndex:(NSUInteger)fromIndex toIndex:(NSUInteger)toIndex {
+    return [PSArrayDoubleIndexChangesModel modelWithChangeType:kPSArrayModelExchangeChanges fromIndex:fromIndex toIndex:toIndex];
 }
 
-+ (instancetype)moveModelWithIndex:(NSUInteger)index toIndex:(NSUInteger)toIndex {
-    return [PSArrayChangesModel modelWithChangeType:kPSArrayModelMoveChanges index:index toIndex:toIndex];
++ (instancetype)moveModelWithIndex:(NSUInteger)fromIndex toIndex:(NSUInteger)toIndex {
+    return [PSArrayDoubleIndexChangesModel modelWithChangeType:kPSArrayModelMoveChanges fromIndex:fromIndex toIndex:toIndex];
 }
 
 @end

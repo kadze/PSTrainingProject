@@ -10,7 +10,6 @@
 
 @interface PSArrayChangesModel ()
 @property (nonatomic, assign)   NSUInteger  changeType;
-@property (nonatomic, assign)   NSUInteger  index;
 
 @end
 
@@ -19,20 +18,6 @@
 + (instancetype)modelWithChangeType:(NSUInteger)changeType {
     PSArrayChangesModel *object = [self new];
     object.changeType = changeType;
-    
-    return object;
-}
-
-+ (instancetype)modelWithChangeType:(NSUInteger)changeType index:(NSUInteger)index {
-    PSArrayChangesModel *object = [self modelWithChangeType:changeType];
-    object.index = index;
-    
-    return object;
-}
-
-+ (instancetype)modelWithChangeType:(NSUInteger)changeType index:(NSUInteger)fromIndex toIndex:(NSUInteger)index {
-    PSArrayChangesModel *object = [self modelWithChangeType:changeType index:fromIndex];
-    object.index = index;
     
     return object;
 }

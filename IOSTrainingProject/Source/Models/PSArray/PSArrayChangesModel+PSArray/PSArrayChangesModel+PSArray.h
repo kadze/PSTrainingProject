@@ -10,12 +10,12 @@
 
 @interface PSArrayChangesModel (PSArray)
 
-+ (instancetype)addModelWithIndex:(NSUInteger)index;
-+ (instancetype)insertModelWithIndex:(NSUInteger)index;
-+ (instancetype)removeModelWithIndex:(NSUInteger)index;
-+ (instancetype)replaceModelWithIndex:(NSUInteger)index;
++ (instancetype)addModelWithIndex:(NSUInteger)fromIndex;
++ (instancetype)insertModelWithIndex:(NSUInteger)fromIndex;
++ (instancetype)removeModelWithIndex:(NSUInteger)fromIndex;
++ (instancetype)replaceModelWithIndex:(NSUInteger)fromIndex;
 
-+ (instancetype)exchangeModelWithIndex:(NSUInteger)index toIndex:(NSUInteger)toIndex;
-+ (instancetype)moveModelWithIndex:(NSUInteger)index toIndex:(NSUInteger)toIndex;
++ (instancetype)exchangeModelWithIndex:(NSUInteger)fromIndex toIndex:(NSUInteger)toIndex;
++ (instancetype)moveModelWithIndex:(NSUInteger)fromIndex toIndex:(NSUInteger)toIndex;
 
 @end

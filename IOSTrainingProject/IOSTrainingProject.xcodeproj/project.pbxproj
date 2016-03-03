@@ -24,6 +24,10 @@
 		AD7233FB1C8875AA005FABD1 /* PSArrayChangesModel+UITableView.m in Sources */ = {isa = PBXBuildFile; fileRef = AD7233FA1C8875AA005FABD1 /* PSArrayChangesModel+UITableView.m */; };
 		AD7233FF1C887743005FABD1 /* NSIndexPath+PSExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = AD7233FE1C887743005FABD1 /* NSIndexPath+PSExtensions.m */; };
 		AD7234041C887E25005FABD1 /* UITableView+PSArrayChangesModel.m in Sources */ = {isa = PBXBuildFile; fileRef = AD7234031C887E25005FABD1 /* UITableView+PSArrayChangesModel.m */; };
+		AD7234081C88BC30005FABD1 /* PSArrayIndexChangesModel.m in Sources */ = {isa = PBXBuildFile; fileRef = AD7234071C88BC30005FABD1 /* PSArrayIndexChangesModel.m */; };
+		AD72340C1C88C1A4005FABD1 /* PSArrayDoubleIndexChangesModel.m in Sources */ = {isa = PBXBuildFile; fileRef = AD72340B1C88C1A4005FABD1 /* PSArrayDoubleIndexChangesModel.m */; };
+		AD7234101C88F3B1005FABD1 /* PSArrayIndexChangesModel+UITableView.m in Sources */ = {isa = PBXBuildFile; fileRef = AD72340F1C88F3B1005FABD1 /* PSArrayIndexChangesModel+UITableView.m */; };
+		AD7234141C88F63F005FABD1 /* PSArrayDoubleIndexChangesModel+UITableView.m in Sources */ = {isa = PBXBuildFile; fileRef = AD7234131C88F63F005FABD1 /* PSArrayDoubleIndexChangesModel+UITableView.m */; };
 		ADA5832F1C7F687200A53DDD /* PSArray.m in Sources */ = {isa = PBXBuildFile; fileRef = ADA5832E1C7F687200A53DDD /* PSArray.m */; };
 		ADA583361C7FDBB000A53DDD /* PSUserCell.m in Sources */ = {isa = PBXBuildFile; fileRef = ADA583341C7FDBB000A53DDD /* PSUserCell.m */; };
 		ADA583371C7FDBB000A53DDD /* PSUserCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = ADA583351C7FDBB000A53DDD /* PSUserCell.xib */; };
@@ -77,6 +81,14 @@
 		AD7233FE1C887743005FABD1 /* NSIndexPath+PSExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSIndexPath+PSExtensions.m"; sourceTree = "<group>"; };
 		AD7234021C887E25005FABD1 /* UITableView+PSArrayChangesModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITableView+PSArrayChangesModel.h"; sourceTree = "<group>"; };
 		AD7234031C887E25005FABD1 /* UITableView+PSArrayChangesModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableView+PSArrayChangesModel.m"; sourceTree = "<group>"; };
+		AD7234061C88BC30005FABD1 /* PSArrayIndexChangesModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSArrayIndexChangesModel.h; sourceTree = "<group>"; };
+		AD7234071C88BC30005FABD1 /* PSArrayIndexChangesModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSArrayIndexChangesModel.m; sourceTree = "<group>"; };
+		AD72340A1C88C1A4005FABD1 /* PSArrayDoubleIndexChangesModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSArrayDoubleIndexChangesModel.h; sourceTree = "<group>"; };
+		AD72340B1C88C1A4005FABD1 /* PSArrayDoubleIndexChangesModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSArrayDoubleIndexChangesModel.m; sourceTree = "<group>"; };
+		AD72340E1C88F3B1005FABD1 /* PSArrayIndexChangesModel+UITableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "PSArrayIndexChangesModel+UITableView.h"; sourceTree = "<group>"; };
+		AD72340F1C88F3B1005FABD1 /* PSArrayIndexChangesModel+UITableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "PSArrayIndexChangesModel+UITableView.m"; sourceTree = "<group>"; };
+		AD7234121C88F63F005FABD1 /* PSArrayDoubleIndexChangesModel+UITableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "PSArrayDoubleIndexChangesModel+UITableView.h"; sourceTree = "<group>"; };
+		AD7234131C88F63F005FABD1 /* PSArrayDoubleIndexChangesModel+UITableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "PSArrayDoubleIndexChangesModel+UITableView.m"; sourceTree = "<group>"; };
 		ADA5832D1C7F687200A53DDD /* PSArray.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSArray.h; sourceTree = "<group>"; };
 		ADA5832E1C7F687200A53DDD /* PSArray.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSArray.m; sourceTree = "<group>"; };
 		ADA583301C7F717200A53DDD /* PSPragmaMacros.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PSPragmaMacros.h; sourceTree = "<group>"; };
@@ -285,7 +297,46 @@
 				AD7234021C887E25005FABD1 /* UITableView+PSArrayChangesModel.h */,
 				AD7234031C887E25005FABD1 /* UITableView+PSArrayChangesModel.m */,
 			);
-			path = "UITableView+PSArrayChangesModel";
+			name = "UITableView+PSArrayChangesModel";
+			path = "../../../Models/PSArray/UITableView+PSArrayChangesModel";
+			sourceTree = "<group>";
+		};
+		AD7234051C88BBDB005FABD1 /* PSArrayIndexChangesModel */ = {
+			isa = PBXGroup;
+			children = (
+				AD72340D1C88F36A005FABD1 /* PSArrayIndexChangesModel+UITableView */,
+				AD7234061C88BC30005FABD1 /* PSArrayIndexChangesModel.h */,
+				AD7234071C88BC30005FABD1 /* PSArrayIndexChangesModel.m */,
+			);
+			path = PSArrayIndexChangesModel;
+			sourceTree = "<group>";
+		};
+		AD7234091C88C176005FABD1 /* PSArrayDoubleIndexChangesModel */ = {
+			isa = PBXGroup;
+			children = (
+				AD7234111C88F5DD005FABD1 /* PSArrayDoubleIndexChangesModel+UITableView */,
+				AD72340A1C88C1A4005FABD1 /* PSArrayDoubleIndexChangesModel.h */,
+				AD72340B1C88C1A4005FABD1 /* PSArrayDoubleIndexChangesModel.m */,
+			);
+			path = PSArrayDoubleIndexChangesModel;
+			sourceTree = "<group>";
+		};
+		AD72340D1C88F36A005FABD1 /* PSArrayIndexChangesModel+UITableView */ = {
+			isa = PBXGroup;
+			children = (
+				AD72340E1C88F3B1005FABD1 /* PSArrayIndexChangesModel+UITableView.h */,
+				AD72340F1C88F3B1005FABD1 /* PSArrayIndexChangesModel+UITableView.m */,
+			);
+			path = "PSArrayIndexChangesModel+UITableView";
+			sourceTree = "<group>";
+		};
+		AD7234111C88F5DD005FABD1 /* PSArrayDoubleIndexChangesModel+UITableView */ = {
+			isa = PBXGroup;
+			children = (
+				AD7234121C88F63F005FABD1 /* PSArrayDoubleIndexChangesModel+UITableView.h */,
+				AD7234131C88F63F005FABD1 /* PSArrayDoubleIndexChangesModel+UITableView.m */,
+			);
+			path = "PSArrayDoubleIndexChangesModel+UITableView";
 			sourceTree = "<group>";
 		};
 		ADA583321C7F72B800A53DDD /* UIViewController */ = {
@@ -336,6 +387,8 @@
 		ADAC99811C860E0100D689D6 /* PSArrayChangesModel */ = {
 			isa = PBXGroup;
 			children = (
+				AD7234091C88C176005FABD1 /* PSArrayDoubleIndexChangesModel */,
+				AD7234051C88BBDB005FABD1 /* PSArrayIndexChangesModel */,
 				ADAC99821C8614D100D689D6 /* PSArrayChangesModel.h */,
 				ADAC99831C8614D100D689D6 /* PSArrayChangesModel.m */,
 			);
@@ -392,7 +445,6 @@
 		ADD97B7C1C7CD6BD00E4914B /* PSArray */ = {
 			isa = PBXGroup;
 			children = (
-				AD7234011C887DD9005FABD1 /* UITableView+PSArrayChangesModel */,
 				AD7233F71C88755E005FABD1 /* PSArrayChangesModel+UITableView */,
 				AD7233F21C886293005FABD1 /* PSArrayChangesModel+PSArray */,
 				ADAC99811C860E0100D689D6 /* PSArrayChangesModel */,
@@ -429,6 +481,7 @@
 			children = (
 				ADEEF6D61C849440007188B9 /* UITableView+PSExtensions.h */,
 				ADEEF6D71C849440007188B9 /* UITableView+PSExtensions.m */,
+				AD7234011C887DD9005FABD1 /* UITableView+PSArrayChangesModel */,
 			);
 			path = UITableView;
 			sourceTree = "<group>";
@@ -516,6 +569,7 @@
 				AD3017DC1C623DD3000344A3 /* main.m in Sources */,
 				AD39187C1C734E930077C246 /* UIWindow+PSExtensions.m in Sources */,
 				AD7233F51C8862E6005FABD1 /* PSArrayChangesModel+PSArray.m in Sources */,
+				AD7234141C88F63F005FABD1 /* PSArrayDoubleIndexChangesModel+UITableView.m in Sources */,
 				ADA583451C7FE4BD00A53DDD /* PSAssignReference.m in Sources */,
 				AD5526B71C7600FE00D6404B /* CGGeometry+PSExtensions.m in Sources */,
 				ADD97B7B1C7CD65E00E4914B /* PSUsers.m in Sources */,
@@ -525,6 +579,9 @@
 				ADEEF6D81C849440007188B9 /* UITableView+PSExtensions.m in Sources */,
 				ADAC99841C8614D100D689D6 /* PSArrayChangesModel.m in Sources */,
 				AD0501591C7B8E6500EF3116 /* PSUser.m in Sources */,
+				AD7234101C88F3B1005FABD1 /* PSArrayIndexChangesModel+UITableView.m in Sources */,
+				AD72340C1C88C1A4005FABD1 /* PSArrayDoubleIndexChangesModel.m in Sources */,
+				AD7234081C88BC30005FABD1 /* PSArrayIndexChangesModel.m in Sources */,
 				ADA5832F1C7F687200A53DDD /* PSArray.m in Sources */,
 				ADEEF6D31C8493D2007188B9 /* UINib+PSExtensions.m in Sources */,
 				ADA583411C7FE49C00A53DDD /* PSReference.m in Sources */,

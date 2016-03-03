@@ -12,7 +12,7 @@
 
 #import "PSWeakifyMacros.h"
 
-static const NSUInteger kPSUsersCount = 5;
+static const NSUInteger kPSUsersCount = 15;
 
 @implementation PSUsers
 

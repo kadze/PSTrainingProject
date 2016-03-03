@@ -16,6 +16,8 @@
 
 #import "UIViewController+PSExtensionsMacros.h"
 #import "UITableView+PSExtensions.h"
+#import "PSArrayChangesModel+UITableView.h"
+#import "UITableView+PSArrayChangesModel.h"
 
 PSViewControllerBaseViewProperty(PSUsersViewController, PSUsersView, usersView)
 
@@ -96,6 +98,14 @@ PSViewControllerBaseViewProperty(PSUsersViewController, PSUsersView, usersView)
           toIndexPath:(NSIndexPath *)destinationIndexPath
 {
     [self.users moveObjectFromIndex:sourceIndexPath.row toIndex:destinationIndexPath.row];
+}
+
+#pragma mark -
+#pragma mark PSArrayObserver
+
+- (void)collection:(id)collection changeWithModel:(id)changeModel {
+    UITableView *tableView = self.usersView.tableView;
+    [tableView updateWithArrayChangeModel:changeModel];
 }
 
 @end

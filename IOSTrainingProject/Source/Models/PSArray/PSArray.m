@@ -8,6 +8,9 @@
 
 #import "PSArray.h"
 
+#import "PSArrayChangesModel+PSArray.h"
+#import "PSArrayModelObserver.h"
+
 @interface PSArray ()
 @property (nonatomic, strong)   NSMutableArray  *mutableObjects;
 
@@ -54,40 +57,52 @@
     }
 }
 
-
 - (void)addObject:(id)object {
     @synchronized(self) {
         [self.mutableObjects addObject:object];
+        
+        [self notifyObserversWithChangeModel:[PSArrayChangesModel addModelWithIndex:self.count - 1]];
     }
 }
 
 - (void)insertObject:(id)object atIndex:(NSUInteger)index {
     @synchronized(self) {
         [self.mutableObjects insertObject:object atIndex:index];
+        
+        [self notifyObserversWithChangeModel:[PSArrayChangesModel insertModelWithIndex:index]];
     }
 }
 
 - (void)removeLastObject {
     @synchronized(self) {
         [self.mutableObjects removeLastObject];
+        
+        [self notifyObserversWithChangeModel:[PSArrayChangesModel removeModelWithIndex:self.count - 1]];
     }
 }
 
 - (void)removeObjectAtIndex:(NSUInteger)index {
     @synchronized(self) {
         [self.mutableObjects removeObjectAtIndex:index];
+        
+        [self notifyObserversWithChangeModel:[PSArrayChangesModel removeModelWithIndex:index]];
     }
 }
 
 - (void)replaceObjectAtIndex:(NSUInteger)index withObject:(id)anObject {
     @synchronized(self) {
         [self.mutableObjects replaceObjectAtIndex:index withObject:anObject];
+        
+        [self notifyObserversWithChangeModel:[PSArrayChangesModel replaceModelWithIndex:index]];
     }
 }
 
 - (void)exchangeObjectAtIndex:(NSUInteger)firstIndex withObjectAtIndex:(NSUInteger)secondIndex {
     @synchronized(self) {
         [self.mutableObjects exchangeObjectAtIndex:firstIndex withObjectAtIndex:secondIndex];
+        
+        [self notifyObserversWithChangeModel:[PSArrayChangesModel exchangeModelWithIndex:firstIndex
+                                                                                 toIndex:secondIndex]];
     }
 }
 
@@ -97,7 +112,17 @@
         id object = [self objectAtIndex:firstIndex];
         [mutableObjects removeObjectAtIndex:firstIndex];
         [mutableObjects insertObject:object atIndex:secondIndex];
+        
+        [self notifyObserversWithChangeModel:[PSArrayChangesModel moveModelWithIndex:firstIndex
+                                                                             toIndex:secondIndex]];
     }
+}
+
+#pragma mark -
+#pragma mark Private
+
+- (void)notifyObserversWithChangeModel:(PSArrayChangesModel *)model {
+    [self notifyObserversWithSelector:@selector(collection:changeWithModel:) withObject:model];
 }
 
 @end

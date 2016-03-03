@@ -10,7 +10,7 @@
 
 #import "NSString+PSExtensions.h"
 
-static NSUInteger const kPSRandomNameSize = 5;
+static NSUInteger const kPSRandomNameSize = 10;
 static NSString * const kPSImageName = @"Apple_core";
 static NSString * const kPSImageType = @"png";
 

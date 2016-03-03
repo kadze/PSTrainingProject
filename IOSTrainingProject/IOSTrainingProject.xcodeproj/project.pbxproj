@@ -20,12 +20,17 @@
 		AD5526CF1C76337E00D6404B /* PSUsersView.m in Sources */ = {isa = PBXBuildFile; fileRef = AD5526CB1C76337E00D6404B /* PSUsersView.m */; };
 		AD5526D01C76337E00D6404B /* PSUsersViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD5526CD1C76337E00D6404B /* PSUsersViewController.m */; };
 		AD5526D11C76337E00D6404B /* PSUsersViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AD5526CE1C76337E00D6404B /* PSUsersViewController.xib */; };
+		AD7233F51C8862E6005FABD1 /* PSArrayChangesModel+PSArray.m in Sources */ = {isa = PBXBuildFile; fileRef = AD7233F41C8862E6005FABD1 /* PSArrayChangesModel+PSArray.m */; };
+		AD7233FB1C8875AA005FABD1 /* PSArrayChangesModel+UITableView.m in Sources */ = {isa = PBXBuildFile; fileRef = AD7233FA1C8875AA005FABD1 /* PSArrayChangesModel+UITableView.m */; };
+		AD7233FF1C887743005FABD1 /* NSIndexPath+PSExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = AD7233FE1C887743005FABD1 /* NSIndexPath+PSExtensions.m */; };
+		AD7234041C887E25005FABD1 /* UITableView+PSArrayChangesModel.m in Sources */ = {isa = PBXBuildFile; fileRef = AD7234031C887E25005FABD1 /* UITableView+PSArrayChangesModel.m */; };
 		ADA5832F1C7F687200A53DDD /* PSArray.m in Sources */ = {isa = PBXBuildFile; fileRef = ADA5832E1C7F687200A53DDD /* PSArray.m */; };
 		ADA583361C7FDBB000A53DDD /* PSUserCell.m in Sources */ = {isa = PBXBuildFile; fileRef = ADA583341C7FDBB000A53DDD /* PSUserCell.m */; };
 		ADA583371C7FDBB000A53DDD /* PSUserCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = ADA583351C7FDBB000A53DDD /* PSUserCell.xib */; };
 		ADA5833C1C7FE0C700A53DDD /* PSObservableObject.m in Sources */ = {isa = PBXBuildFile; fileRef = ADA5833B1C7FE0C700A53DDD /* PSObservableObject.m */; };
 		ADA583411C7FE49C00A53DDD /* PSReference.m in Sources */ = {isa = PBXBuildFile; fileRef = ADA583401C7FE49C00A53DDD /* PSReference.m */; };
 		ADA583451C7FE4BD00A53DDD /* PSAssignReference.m in Sources */ = {isa = PBXBuildFile; fileRef = ADA583441C7FE4BD00A53DDD /* PSAssignReference.m */; };
+		ADAC99841C8614D100D689D6 /* PSArrayChangesModel.m in Sources */ = {isa = PBXBuildFile; fileRef = ADAC99831C8614D100D689D6 /* PSArrayChangesModel.m */; };
 		ADD69ECE1C6CFD6600B50A0F /* PSSquareViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ADD69ECC1C6CFD6600B50A0F /* PSSquareViewController.m */; };
 		ADD69ECF1C6CFD6600B50A0F /* PSSquareViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = ADD69ECD1C6CFD6600B50A0F /* PSSquareViewController.xib */; };
 		ADD97B781C7CAB2800E4914B /* Apple_core.png in Resources */ = {isa = PBXBuildFile; fileRef = ADD97B771C7CAB2800E4914B /* Apple_core.png */; };
@@ -63,6 +68,15 @@
 		AD5526CD1C76337E00D6404B /* PSUsersViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSUsersViewController.m; sourceTree = "<group>"; };
 		AD5526CE1C76337E00D6404B /* PSUsersViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PSUsersViewController.xib; sourceTree = "<group>"; };
 		AD5526D21C7637A300D6404B /* PSReturnMacros.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PSReturnMacros.h; sourceTree = "<group>"; };
+		AD7233F31C8862E6005FABD1 /* PSArrayChangesModel+PSArray.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "PSArrayChangesModel+PSArray.h"; sourceTree = "<group>"; };
+		AD7233F41C8862E6005FABD1 /* PSArrayChangesModel+PSArray.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "PSArrayChangesModel+PSArray.m"; sourceTree = "<group>"; };
+		AD7233F61C886768005FABD1 /* PSArrayModelObserver.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PSArrayModelObserver.h; sourceTree = "<group>"; };
+		AD7233F91C8875AA005FABD1 /* PSArrayChangesModel+UITableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "PSArrayChangesModel+UITableView.h"; sourceTree = "<group>"; };
+		AD7233FA1C8875AA005FABD1 /* PSArrayChangesModel+UITableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "PSArrayChangesModel+UITableView.m"; sourceTree = "<group>"; };
+		AD7233FD1C887743005FABD1 /* NSIndexPath+PSExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSIndexPath+PSExtensions.h"; sourceTree = "<group>"; };
+		AD7233FE1C887743005FABD1 /* NSIndexPath+PSExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSIndexPath+PSExtensions.m"; sourceTree = "<group>"; };
+		AD7234021C887E25005FABD1 /* UITableView+PSArrayChangesModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITableView+PSArrayChangesModel.h"; sourceTree = "<group>"; };
+		AD7234031C887E25005FABD1 /* UITableView+PSArrayChangesModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableView+PSArrayChangesModel.m"; sourceTree = "<group>"; };
 		ADA5832D1C7F687200A53DDD /* PSArray.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSArray.h; sourceTree = "<group>"; };
 		ADA5832E1C7F687200A53DDD /* PSArray.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSArray.m; sourceTree = "<group>"; };
 		ADA583301C7F717200A53DDD /* PSPragmaMacros.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PSPragmaMacros.h; sourceTree = "<group>"; };
@@ -76,6 +90,8 @@
 		ADA583401C7FE49C00A53DDD /* PSReference.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSReference.m; sourceTree = "<group>"; };
 		ADA583431C7FE4BD00A53DDD /* PSAssignReference.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSAssignReference.h; sourceTree = "<group>"; };
 		ADA583441C7FE4BD00A53DDD /* PSAssignReference.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSAssignReference.m; sourceTree = "<group>"; };
+		ADAC99821C8614D100D689D6 /* PSArrayChangesModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSArrayChangesModel.h; sourceTree = "<group>"; };
+		ADAC99831C8614D100D689D6 /* PSArrayChangesModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSArrayChangesModel.m; sourceTree = "<group>"; };
 		ADD69ECB1C6CFD6600B50A0F /* PSSquareViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSSquareViewController.h; sourceTree = "<group>"; };
 		ADD69ECC1C6CFD6600B50A0F /* PSSquareViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSSquareViewController.m; sourceTree = "<group>"; };
 		ADD69ECD1C6CFD6600B50A0F /* PSSquareViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PSSquareViewController.xib; sourceTree = "<group>"; };
@@ -183,6 +199,7 @@
 		AD3918761C734E930077C246 /* Categories */ = {
 			isa = PBXGroup;
 			children = (
+				AD7233FC1C8876BA005FABD1 /* NSIndexPath */,
 				ADEEF6D41C849403007188B9 /* UITableView */,
 				ADEEF6CD1C8490C6007188B9 /* UINib */,
 				ADA583321C7F72B800A53DDD /* UIViewController */,
@@ -235,6 +252,42 @@
 			path = PSUsersView;
 			sourceTree = "<group>";
 		};
+		AD7233F21C886293005FABD1 /* PSArrayChangesModel+PSArray */ = {
+			isa = PBXGroup;
+			children = (
+				AD7233F31C8862E6005FABD1 /* PSArrayChangesModel+PSArray.h */,
+				AD7233F41C8862E6005FABD1 /* PSArrayChangesModel+PSArray.m */,
+			);
+			path = "PSArrayChangesModel+PSArray";
+			sourceTree = "<group>";
+		};
+		AD7233F71C88755E005FABD1 /* PSArrayChangesModel+UITableView */ = {
+			isa = PBXGroup;
+			children = (
+				AD7233F91C8875AA005FABD1 /* PSArrayChangesModel+UITableView.h */,
+				AD7233FA1C8875AA005FABD1 /* PSArrayChangesModel+UITableView.m */,
+			);
+			path = "PSArrayChangesModel+UITableView";
+			sourceTree = "<group>";
+		};
+		AD7233FC1C8876BA005FABD1 /* NSIndexPath */ = {
+			isa = PBXGroup;
+			children = (
+				AD7233FD1C887743005FABD1 /* NSIndexPath+PSExtensions.h */,
+				AD7233FE1C887743005FABD1 /* NSIndexPath+PSExtensions.m */,
+			);
+			path = NSIndexPath;
+			sourceTree = "<group>";
+		};
+		AD7234011C887DD9005FABD1 /* UITableView+PSArrayChangesModel */ = {
+			isa = PBXGroup;
+			children = (
+				AD7234021C887E25005FABD1 /* UITableView+PSArrayChangesModel.h */,
+				AD7234031C887E25005FABD1 /* UITableView+PSArrayChangesModel.m */,
+			);
+			path = "UITableView+PSArrayChangesModel";
+			sourceTree = "<group>";
+		};
 		ADA583321C7F72B800A53DDD /* UIViewController */ = {
 			isa = PBXGroup;
 			children = (
@@ -278,6 +331,15 @@
 				ADA583441C7FE4BD00A53DDD /* PSAssignReference.m */,
 			);
 			path = PSAssignReference;
+			sourceTree = "<group>";
+		};
+		ADAC99811C860E0100D689D6 /* PSArrayChangesModel */ = {
+			isa = PBXGroup;
+			children = (
+				ADAC99821C8614D100D689D6 /* PSArrayChangesModel.h */,
+				ADAC99831C8614D100D689D6 /* PSArrayChangesModel.m */,
+			);
+			path = PSArrayChangesModel;
 			sourceTree = "<group>";
 		};
 		ADD69EBE1C6CFCB000B50A0F /* Library */ = {
@@ -330,8 +392,13 @@
 		ADD97B7C1C7CD6BD00E4914B /* PSArray */ = {
 			isa = PBXGroup;
 			children = (
+				AD7234011C887DD9005FABD1 /* UITableView+PSArrayChangesModel */,
+				AD7233F71C88755E005FABD1 /* PSArrayChangesModel+UITableView */,
+				AD7233F21C886293005FABD1 /* PSArrayChangesModel+PSArray */,
+				ADAC99811C860E0100D689D6 /* PSArrayChangesModel */,
 				ADA5832D1C7F687200A53DDD /* PSArray.h */,
 				ADA5832E1C7F687200A53DDD /* PSArray.m */,
+				AD7233F61C886768005FABD1 /* PSArrayModelObserver.h */,
 			);
 			path = PSArray;
 			sourceTree = "<group>";
@@ -442,16 +509,21 @@
 			buildActionMask = 2147483647;
 			files = (
 				AD1453921C724776002435BB /* PSSquareView.m in Sources */,
+				AD7233FF1C887743005FABD1 /* NSIndexPath+PSExtensions.m in Sources */,
+				AD7234041C887E25005FABD1 /* UITableView+PSArrayChangesModel.m in Sources */,
 				AD5526CF1C76337E00D6404B /* PSUsersView.m in Sources */,
 				AD3017DF1C623DD3000344A3 /* PSAppDelegate.m in Sources */,
 				AD3017DC1C623DD3000344A3 /* main.m in Sources */,
 				AD39187C1C734E930077C246 /* UIWindow+PSExtensions.m in Sources */,
+				AD7233F51C8862E6005FABD1 /* PSArrayChangesModel+PSArray.m in Sources */,
 				ADA583451C7FE4BD00A53DDD /* PSAssignReference.m in Sources */,
 				AD5526B71C7600FE00D6404B /* CGGeometry+PSExtensions.m in Sources */,
 				ADD97B7B1C7CD65E00E4914B /* PSUsers.m in Sources */,
+				AD7233FB1C8875AA005FABD1 /* PSArrayChangesModel+UITableView.m in Sources */,
 				AD05015D1C7B907B00EF3116 /* NSString+PSExtensions.m in Sources */,
 				AD5526D01C76337E00D6404B /* PSUsersViewController.m in Sources */,
 				ADEEF6D81C849440007188B9 /* UITableView+PSExtensions.m in Sources */,
+				ADAC99841C8614D100D689D6 /* PSArrayChangesModel.m in Sources */,
 				AD0501591C7B8E6500EF3116 /* PSUser.m in Sources */,
 				ADA5832F1C7F687200A53DDD /* PSArray.m in Sources */,
 				ADEEF6D31C8493D2007188B9 /* UINib+PSExtensions.m in Sources */,

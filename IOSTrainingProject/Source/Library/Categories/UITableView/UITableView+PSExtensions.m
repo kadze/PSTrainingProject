@@ -10,6 +10,8 @@
 
 #import "UINib+PSExtensions.h"
 
+#import "PSReturnMacros.h"
+
 @implementation UITableView (PSExtensions)
 
 - (id)cellWithClass:(Class)cls {
@@ -20,6 +22,14 @@
     }
     
     return cell;
+}
+
+- (void)updateTableView:(void(^)(UITableView *))block {
+    PSReturnIfNil(block);
+    
+    [self beginUpdates];
+    block(self);
+    [self endUpdates];
 }
 
 @end

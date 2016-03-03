@@ -12,4 +12,6 @@
 
 - (id)cellWithClass:(Class)cls;
 
+- (void)updateTableView:(void(^)(UITableView *))block;
+
 @end

@@ -11,6 +11,8 @@
 #import "NSIndexPath+PSExtensions.h"
 #import "UITableView+PSExtensions.h"
 
+#import "PSWeakifyMacros.h"
+
 @implementation PSArrayIndexChangesModel (UITableView)
 
 @dynamic indexPath;
@@ -22,7 +24,9 @@
 - (void)updateTableView:(UITableView *)tableView {
     NSIndexPath *indexPath = self.indexPath;
     NSArray *indexPathes = @[indexPath];
+    PSWeakify(self);
     [tableView updateTableView:^(UITableView *object) {
+        PSStrongify(self);
         switch (self.changeType) {
             case kPSArrayModelAddChanges:
                 [tableView insertRowsAtIndexPaths:indexPathes
@@ -49,6 +53,5 @@
         }
     }];
 }
-
 
 @end

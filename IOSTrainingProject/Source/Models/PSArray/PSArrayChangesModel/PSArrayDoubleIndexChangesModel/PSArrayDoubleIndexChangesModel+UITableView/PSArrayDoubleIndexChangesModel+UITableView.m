@@ -13,6 +13,8 @@
 
 #import "PSArrayIndexChangesModel+UITableView.h"
 
+#import "PSWeakifyMacros.h"
+
 @implementation PSArrayDoubleIndexChangesModel (UITableView)
 
 @dynamic toIndexPath;
@@ -26,7 +28,9 @@
     NSIndexPath *toIndexPath = self.toIndexPath;
     NSArray *indexPathes = @[indexPath];
     NSArray *toIndexPathes = @[toIndexPath];
+    PSWeakify(self);
     [tableView updateTableView:^(UITableView *object) {
+        PSStrongify(self);
         switch (self.changeType) {
             case kPSArrayModelExchangeChanges:
                 [tableView deleteRowsAtIndexPaths:indexPathes

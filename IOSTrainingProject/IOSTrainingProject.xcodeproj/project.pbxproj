@@ -10,6 +10,7 @@
 		AD0501591C7B8E6500EF3116 /* PSUser.m in Sources */ = {isa = PBXBuildFile; fileRef = AD0501581C7B8E6500EF3116 /* PSUser.m */; };
 		AD05015D1C7B907B00EF3116 /* NSString+PSExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = AD05015C1C7B907B00EF3116 /* NSString+PSExtensions.m */; };
 		AD1453921C724776002435BB /* PSSquareView.m in Sources */ = {isa = PBXBuildFile; fileRef = AD1453911C724776002435BB /* PSSquareView.m */; };
+		AD1EBB3E1C89D82F0059AB30 /* PSModel.m in Sources */ = {isa = PBXBuildFile; fileRef = AD1EBB3D1C89D82F0059AB30 /* PSModel.m */; };
 		AD3017DC1C623DD3000344A3 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = AD3017DB1C623DD3000344A3 /* main.m */; };
 		AD3017DF1C623DD3000344A3 /* PSAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = AD3017DE1C623DD3000344A3 /* PSAppDelegate.m */; };
 		AD3017E51C623DD4000344A3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AD3017E31C623DD4000344A3 /* Main.storyboard */; };
@@ -51,6 +52,9 @@
 		AD14538F1C723D20002435BB /* PrefixHeader.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		AD1453901C724776002435BB /* PSSquareView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSSquareView.h; sourceTree = "<group>"; };
 		AD1453911C724776002435BB /* PSSquareView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSSquareView.m; sourceTree = "<group>"; };
+		AD1EBB3C1C89D82F0059AB30 /* PSModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSModel.h; sourceTree = "<group>"; };
+		AD1EBB3D1C89D82F0059AB30 /* PSModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSModel.m; sourceTree = "<group>"; };
+		AD1EBB401C89E0780059AB30 /* PSModelProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PSModelProtocol.h; sourceTree = "<group>"; };
 		AD3017D71C623DD3000344A3 /* IOSTrainingProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IOSTrainingProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AD3017DB1C623DD3000344A3 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		AD3017DD1C623DD3000344A3 /* PSAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PSAppDelegate.h; sourceTree = "<group>"; };
@@ -130,6 +134,7 @@
 		AD0501551C7B8E0D00EF3116 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				AD1EBB381C89D7C70059AB30 /* PSModel */,
 				ADD97B7C1C7CD6BD00E4914B /* PSArray */,
 				AD0501561C7B8E3800EF3116 /* PSUser */,
 			);
@@ -154,6 +159,16 @@
 				AD05015C1C7B907B00EF3116 /* NSString+PSExtensions.m */,
 			);
 			path = NSString;
+			sourceTree = "<group>";
+		};
+		AD1EBB381C89D7C70059AB30 /* PSModel */ = {
+			isa = PBXGroup;
+			children = (
+				AD1EBB3C1C89D82F0059AB30 /* PSModel.h */,
+				AD1EBB3D1C89D82F0059AB30 /* PSModel.m */,
+				AD1EBB401C89E0780059AB30 /* PSModelProtocol.h */,
+			);
+			path = PSModel;
 			sourceTree = "<group>";
 		};
 		AD3017CE1C623DD3000344A3 = {
@@ -585,6 +600,7 @@
 				ADA5832F1C7F687200A53DDD /* PSArray.m in Sources */,
 				ADEEF6D31C8493D2007188B9 /* UINib+PSExtensions.m in Sources */,
 				ADA583411C7FE49C00A53DDD /* PSReference.m in Sources */,
+				AD1EBB3E1C89D82F0059AB30 /* PSModel.m in Sources */,
 				ADA583361C7FDBB000A53DDD /* PSUserCell.m in Sources */,
 				ADA5833C1C7FE0C700A53DDD /* PSObservableObject.m in Sources */,
 				ADD69ECE1C6CFD6600B50A0F /* PSSquareViewController.m in Sources */,

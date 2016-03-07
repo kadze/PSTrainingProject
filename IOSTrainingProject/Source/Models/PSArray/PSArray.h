@@ -9,8 +9,9 @@
 #import <Foundation/Foundation.h>
 
 #import "PSObservableObject.h"
+#import "PSModel.h"
 
-@interface PSArray : PSObservableObject
+@interface PSArray : PSModel <NSCoding>
 @property (nonatomic, readonly) NSUInteger  count;
 @property (nonatomic, readonly) NSArray     *objects;
 

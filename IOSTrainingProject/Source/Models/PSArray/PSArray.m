@@ -11,6 +11,8 @@
 #import "PSArrayChangesModel+PSArray.h"
 #import "PSArrayModelObserver.h"
 
+static NSString * const kPSMutableObjects = @"mutableObjects";
+
 @interface PSArray ()
 @property (nonatomic, strong)   NSMutableArray  *mutableObjects;
 
@@ -61,7 +63,7 @@
     @synchronized(self) {
         [self.mutableObjects addObject:object];
         
-        [self notifyObserversWithChangeModel:[PSArrayChangesModel addModelWithIndex:self.count - 1]];
+        [self setState:kPSModelDidChange withObject:[PSArrayChangesModel addModelWithIndex:self.count - 1]];
     }
 }
 
@@ -69,7 +71,7 @@
     @synchronized(self) {
         [self.mutableObjects insertObject:object atIndex:index];
         
-        [self notifyObserversWithChangeModel:[PSArrayChangesModel insertModelWithIndex:index]];
+        [self setState:kPSModelDidChange withObject:[PSArrayChangesModel insertModelWithIndex:index]];
     }
 }
 
@@ -77,7 +79,7 @@
     @synchronized(self) {
         [self.mutableObjects removeLastObject];
         
-        [self notifyObserversWithChangeModel:[PSArrayChangesModel removeModelWithIndex:self.count - 1]];
+        [self setState:kPSModelDidChange withObject:[PSArrayChangesModel removeModelWithIndex:self.count - 1]];
     }
 }
 
@@ -85,7 +87,7 @@
     @synchronized(self) {
         [self.mutableObjects removeObjectAtIndex:index];
         
-        [self notifyObserversWithChangeModel:[PSArrayChangesModel removeModelWithIndex:index]];
+        [self setState:kPSModelDidChange withObject:[PSArrayChangesModel removeModelWithIndex:index]];
     }
 }
 
@@ -93,7 +95,7 @@
     @synchronized(self) {
         [self.mutableObjects replaceObjectAtIndex:index withObject:anObject];
         
-        [self notifyObserversWithChangeModel:[PSArrayChangesModel replaceModelWithIndex:index]];
+        [self setState:kPSModelDidChange withObject:[PSArrayChangesModel replaceModelWithIndex:index]];
     }
 }
 
@@ -101,7 +103,7 @@
     @synchronized(self) {
         [self.mutableObjects exchangeObjectAtIndex:firstIndex withObjectAtIndex:secondIndex];
         
-        [self notifyObserversWithChangeModel:[PSArrayChangesModel exchangeModelWithIndex:firstIndex
+        [self setState:kPSModelDidChange withObject:[PSArrayChangesModel exchangeModelWithIndex:firstIndex
                                                                                  toIndex:secondIndex]];
     }
 }
@@ -113,16 +115,33 @@
         [mutableObjects removeObjectAtIndex:firstIndex];
         [mutableObjects insertObject:object atIndex:secondIndex];
         
-        [self notifyObserversWithChangeModel:[PSArrayChangesModel moveModelWithIndex:firstIndex
+        [self setState:kPSModelDidChange withObject:[PSArrayChangesModel moveModelWithIndex:firstIndex
                                                                              toIndex:secondIndex]];
     }
 }
 
-#pragma mark -
-#pragma mark Private
+//#pragma mark -
+//#pragma mark Private
+//
+//- (void)notifyObserversWithChangeModel:(PSArrayChangesModel *)model {
+//    [self notifyObserversWithSelector:@selector(collection:changeWithModel:) withObject:model];
+//}
 
-- (void)notifyObserversWithChangeModel:(PSArrayChangesModel *)model {
-    [self notifyObserversWithSelector:@selector(collection:changeWithModel:) withObject:model];
+#pragma mark -
+#pragma mark NSCoding
+
+- (void)encodeWithCoder:(NSCoder *)aCoder {
+    [aCoder encodeObject:self.mutableObjects forKey:kPSMutableObjects];
+}
+
+- (id)initWithCoder:(NSCoder *)aDecoder {
+    self = [super init];
+    
+    if (self) {
+        self.mutableObjects = [aDecoder decodeObjectForKey:kPSMutableObjects];
+    }
+    
+    return self;
 }
 
 @end

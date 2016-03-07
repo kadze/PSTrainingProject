@@ -103,9 +103,9 @@ PSViewControllerBaseViewProperty(PSUsersViewController, PSUsersView, usersView)
 #pragma mark -
 #pragma mark PSArrayObserver
 
-- (void)collection:(id)collection changeWithModel:(id)changeModel {
+- (void)model:(id)model didchangeWithObject:(id)object {
     UITableView *tableView = self.usersView.tableView;
-    [tableView updateWithArrayChangeModel:changeModel];
+    [tableView updateWithArrayChangeModel:object];
 }
 
 @end

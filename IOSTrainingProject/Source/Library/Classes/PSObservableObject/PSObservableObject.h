@@ -24,5 +24,6 @@
 - (void)performBlockWithoutNotification:(void(^)(void))block;
 
 - (SEL)selectorForState:(NSUInteger)state;
+- (void)setState:(NSUInteger)state withObject:(id)object;
 
 @end

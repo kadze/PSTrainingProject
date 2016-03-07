@@ -9,7 +9,7 @@
 #import "PSObservableObject.h"
 
 typedef NS_ENUM(NSUInteger, PSModelState) {
-    kPSModelNotLoaded,
+    kPSModelUnloaded,
     kPSModelWillLoad,
     kPSModelDidFailLoading,
     kPSModelDidLoad,

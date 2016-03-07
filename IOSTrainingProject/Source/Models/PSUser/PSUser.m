@@ -10,9 +10,10 @@
 
 #import "NSString+PSExtensions.h"
 
-static NSUInteger const kPSRandomNameSize = 10;
-static NSString * const kPSImageName = @"Apple_core";
-static NSString * const kPSImageType = @"png";
+static NSUInteger const kPSRandomNameSize   = 10;
+static NSString * const kPSImageName        = @"Apple_core";
+static NSString * const kPSImageType        = @"png";
+static NSString * const kPSName             = @"name";
 
 @implementation PSUser
 
@@ -42,6 +43,21 @@ static NSString * const kPSImageType = @"png";
     });
     
     return __image;
+}
+
+#pragma mark -
+#pragma mark NSCoding
+
+- (void)encodeWithCoder:(NSCoder *)aCoder {
+    [aCoder encodeObject:self.name forKey:kPSName];
+}
+
+- (id)initWithCoder:(NSCoder *)aDecoder {
+    if (self) {
+        self.name = [aDecoder decodeObjectForKey:kPSName];
+    }
+    
+    return self;
 }
 
 @end

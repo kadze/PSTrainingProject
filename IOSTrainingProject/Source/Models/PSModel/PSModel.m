@@ -13,7 +13,7 @@
 @implementation PSModel
 
 #pragma mark -
-#pragma mark - Public
+#pragma mark Public
 
 - (void)load {
     @synchronized(self) {
@@ -55,7 +55,7 @@
             break;
             
         case kPSModelDidChange:
-            selector = @selector(model:changeWithObject:);
+            selector = @selector(model:didchangeWithObject:);
             break;
             
         default:

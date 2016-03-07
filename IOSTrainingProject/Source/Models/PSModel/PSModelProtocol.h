@@ -14,7 +14,7 @@
 - (void)modelWillLoad:(id)model;
 - (void)modelDidFailLoading:(id)model;
 - (void)modelDidLoad:(id)model;
-- (void)model:(id)model changeWithObject:(id)object;
+- (void)model:(id)model didchangeWithObject:(id)object;
 
 @end
 

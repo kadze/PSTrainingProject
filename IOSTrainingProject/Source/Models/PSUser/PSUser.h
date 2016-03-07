@@ -10,8 +10,9 @@
 #import <UIKit/UIKit.h>
 
 #import "PSObservableObject.h"
+#import "PSModel.h"
 
-@interface PSUser : PSObservableObject
+@interface PSUser : PSModel <NSCoding>
 @property (nonatomic, copy)     NSString  *name;
 @property (nonatomic, readonly) UIImage   *image;
 

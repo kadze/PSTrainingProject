@@ -11,8 +11,6 @@
 #import "PSArrayChangesModel+PSArray.h"
 #import "PSArrayModelObserver.h"
 
-static NSString * const kPSMutableObjects = @"mutableObjects";
-
 @interface PSArray ()
 @property (nonatomic, strong)   NSMutableArray  *mutableObjects;
 
@@ -63,7 +61,7 @@ static NSString * const kPSMutableObjects = @"mutableObjects";
     @synchronized(self) {
         [self.mutableObjects addObject:object];
         
-        [self setState:kPSModelDidChange withObject:[PSArrayChangesModel addModelWithIndex:self.count - 1]];
+        [self notifyObserversWithChangeModel:[PSArrayChangesModel addModelWithIndex:self.count - 1]];
     }
 }
 
@@ -71,7 +69,7 @@ static NSString * const kPSMutableObjects = @"mutableObjects";
     @synchronized(self) {
         [self.mutableObjects insertObject:object atIndex:index];
         
-        [self setState:kPSModelDidChange withObject:[PSArrayChangesModel insertModelWithIndex:index]];
+        [self notifyObserversWithChangeModel:[PSArrayChangesModel insertModelWithIndex:index]];
     }
 }
 
@@ -79,7 +77,7 @@ static NSString * const kPSMutableObjects = @"mutableObjects";
     @synchronized(self) {
         [self.mutableObjects removeLastObject];
         
-        [self setState:kPSModelDidChange withObject:[PSArrayChangesModel removeModelWithIndex:self.count - 1]];
+        [self notifyObserversWithChangeModel:[PSArrayChangesModel removeModelWithIndex:self.count - 1]];
     }
 }
 
@@ -87,7 +85,7 @@ static NSString * const kPSMutableObjects = @"mutableObjects";
     @synchronized(self) {
         [self.mutableObjects removeObjectAtIndex:index];
         
-        [self setState:kPSModelDidChange withObject:[PSArrayChangesModel removeModelWithIndex:index]];
+        [self notifyObserversWithChangeModel:[PSArrayChangesModel removeModelWithIndex:index]];
     }
 }
 
@@ -95,7 +93,7 @@ static NSString * const kPSMutableObjects = @"mutableObjects";
     @synchronized(self) {
         [self.mutableObjects replaceObjectAtIndex:index withObject:anObject];
         
-        [self setState:kPSModelDidChange withObject:[PSArrayChangesModel replaceModelWithIndex:index]];
+        [self notifyObserversWithChangeModel:[PSArrayChangesModel replaceModelWithIndex:index]];
     }
 }
 
@@ -103,7 +101,7 @@ static NSString * const kPSMutableObjects = @"mutableObjects";
     @synchronized(self) {
         [self.mutableObjects exchangeObjectAtIndex:firstIndex withObjectAtIndex:secondIndex];
         
-        [self setState:kPSModelDidChange withObject:[PSArrayChangesModel exchangeModelWithIndex:firstIndex
+        [self notifyObserversWithChangeModel:[PSArrayChangesModel exchangeModelWithIndex:firstIndex
                                                                                  toIndex:secondIndex]];
     }
 }
@@ -115,33 +113,16 @@ static NSString * const kPSMutableObjects = @"mutableObjects";
         [mutableObjects removeObjectAtIndex:firstIndex];
         [mutableObjects insertObject:object atIndex:secondIndex];
         
-        [self setState:kPSModelDidChange withObject:[PSArrayChangesModel moveModelWithIndex:firstIndex
+        [self notifyObserversWithChangeModel:[PSArrayChangesModel moveModelWithIndex:firstIndex
                                                                              toIndex:secondIndex]];
     }
 }
 
-//#pragma mark -
-//#pragma mark Private
-//
-//- (void)notifyObserversWithChangeModel:(PSArrayChangesModel *)model {
-//    [self notifyObserversWithSelector:@selector(collection:changeWithModel:) withObject:model];
-//}
-
 #pragma mark -
-#pragma mark NSCoding
+#pragma mark Private
 
-- (void)encodeWithCoder:(NSCoder *)aCoder {
-    [aCoder encodeObject:self.mutableObjects forKey:kPSMutableObjects];
-}
-
-- (id)initWithCoder:(NSCoder *)aDecoder {
-    self = [super init];
-    
-    if (self) {
-        self.mutableObjects = [aDecoder decodeObjectForKey:kPSMutableObjects];
-    }
-    
-    return self;
+- (void)notifyObserversWithChangeModel:(PSArrayChangesModel *)model {
+    [self notifyObserversWithSelector:[self selectorForState:kPSModelDidChange] withObject:model];
 }
 
 @end

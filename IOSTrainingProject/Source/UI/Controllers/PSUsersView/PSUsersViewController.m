@@ -13,6 +13,7 @@
 #import "PSUsers.h"
 #import "PSUser.h"
 #import "PSArray.h"
+#import "PSView.h"
 
 #import "UIViewController+PSExtensionsMacros.h"
 #import "UITableView+PSExtensions.h"
@@ -31,6 +32,7 @@ PSViewControllerBaseViewProperty(PSUsersViewController, PSUsersView, usersView)
         [_users removeObserver:self];
         _users = users;
         [_users addObserver:self];
+        [_users load];
     }
     
     self.usersView.users = users;
@@ -42,7 +44,7 @@ PSViewControllerBaseViewProperty(PSUsersViewController, PSUsersView, usersView)
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.users = self.users;
+    [self.users load];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -101,9 +103,20 @@ PSViewControllerBaseViewProperty(PSUsersViewController, PSUsersView, usersView)
 }
 
 #pragma mark -
-#pragma mark PSArrayObserver
+#pragma mark PSModelObserver
 
-- (void)model:(id)model didchangeWithObject:(id)object {
+- (void)modelWillLoad:(id)model {
+    [self.usersView showLoadingView];
+}
+
+- (void)modelDidLoad:(id)model {
+    PSUsersView *usersView = self.usersView;
+    
+    [usersView.tableView reloadData];
+    [usersView hideLoadingView];
+}
+
+- (void)model:(id)model didChangeWithObject:(id)object {
     UITableView *tableView = self.usersView.tableView;
     [tableView updateWithArrayChangeModel:object];
 }

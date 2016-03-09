@@ -14,6 +14,12 @@
 
 static const NSUInteger kPSUsersCount = 15;
 
+@interface PSUsers ()
+
+- (void)fillWithUsers;
+
+@end
+
 @implementation PSUsers
 
 #pragma mark -
@@ -39,6 +45,16 @@ static const NSUInteger kPSUsersCount = 15;
             [self addObject:[PSUser new]];
         }
     }];
+}
+
+- (void)performLoading {
+    sleep(3);
+    
+    [self fillWithUsers];
+    
+    @synchronized(self) {
+        self.state = kPSModelDidLoad;
+    }
 }
 
 @end

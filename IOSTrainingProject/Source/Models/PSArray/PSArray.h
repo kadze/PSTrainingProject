@@ -11,7 +11,7 @@
 #import "PSObservableObject.h"
 #import "PSModel.h"
 
-@interface PSArray : PSModel <NSCoding>
+@interface PSArray : PSModel
 @property (nonatomic, readonly) NSUInteger  count;
 @property (nonatomic, readonly) NSArray     *objects;
 

@@ -59,9 +59,9 @@
 - (void)setState:(NSUInteger)state withObject:(id)object {
     if (state != _state) {
         _state = state;
+        
+        [self notifyObserversWithSelector:[self selectorForState:state] withObject:object];
     }
-    
-    [self notifyObserversWithSelector:[self selectorForState:state] withObject:object];
 }
 
 #pragma mark -

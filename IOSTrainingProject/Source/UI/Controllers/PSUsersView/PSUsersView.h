@@ -8,9 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
+#import "PSView.h"
+
 @class PSUsers;
 
-@interface PSUsersView : UIView
+@interface PSUsersView : PSView
 @property (nonatomic, strong)   IBOutlet    UITableView     *tableView;
 @property (nonatomic, strong)   IBOutlet    UIButton        *editButton;
 

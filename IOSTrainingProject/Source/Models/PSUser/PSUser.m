@@ -15,9 +15,12 @@ static NSString * const kPSImageName        = @"Apple_core";
 static NSString * const kPSImageType        = @"png";
 static NSString * const kPSName             = @"name";
 
-@implementation PSUser
+@interface PSUser ()
+@property (nonatomic, strong)   UIImage *image;
 
-@dynamic image;
+@end
+
+@implementation PSUser
 
 #pragma mark -
 #pragma mark Initializations and Deallocations
@@ -32,9 +35,10 @@ static NSString * const kPSName             = @"name";
 }
 
 #pragma mark -
-#pragma mark Accessors
+#pragma mark PSModel
 
-- (UIImage *)image {
+- (void)performLoading {
+    sleep(3);
     static UIImage *__image = nil;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
@@ -42,7 +46,10 @@ static NSString * const kPSName             = @"name";
         __image = [UIImage imageWithContentsOfFile:path];
     });
     
-    return __image;
+    self.image = __image;
+    @synchronized(self) {
+        self.state = kPSModelDidLoad;
+    }
 }
 
 #pragma mark -

@@ -8,7 +8,7 @@
 
 #import "PSModel.h"
 
-#import "PSModelProtocol.h"
+#import "PSModelObserver.h"
 
 @implementation PSModel
 
@@ -55,7 +55,7 @@
             break;
             
         case kPSModelDidChange:
-            selector = @selector(model:didchangeWithObject:);
+            selector = @selector(model:didChangeWithObject:);
             break;
             
         default:

@@ -8,13 +8,13 @@
 
 #import <Foundation/Foundation.h>
 
-@protocol PSModelProtocol <NSObject>
+@protocol PSModelObserver <NSObject>
 
 @optional
 - (void)modelWillLoad:(id)model;
 - (void)modelDidFailLoading:(id)model;
 - (void)modelDidLoad:(id)model;
-- (void)model:(id)model didchangeWithObject:(id)object;
+- (void)model:(id)model didChangeWithObject:(id)object;
 
 @end
 

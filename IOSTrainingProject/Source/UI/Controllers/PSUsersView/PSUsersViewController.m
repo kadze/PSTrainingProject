@@ -14,6 +14,7 @@
 #import "PSUser.h"
 #import "PSArray.h"
 #import "PSView.h"
+#import "PSDispatch.h"
 
 #import "UIViewController+PSExtensionsMacros.h"
 #import "UITableView+PSExtensions.h"
@@ -106,19 +107,22 @@ PSViewControllerBaseViewProperty(PSUsersViewController, PSUsersView, usersView)
 #pragma mark PSModelObserver
 
 - (void)modelWillLoad:(id)model {
-    [self.usersView showLoadingView];
+    PSDispatchAsyncOnMainThread(^{
+        [self.usersView showLoadingView];
+    });
 }
 
 - (void)modelDidLoad:(id)model {
     PSUsersView *usersView = self.usersView;
-    
-    [usersView.tableView reloadData];
-    [usersView hideLoadingView];
+    PSDispatchAsyncOnMainThread(^{
+        [usersView.tableView reloadData];
+        [usersView hideLoadingView];
+    });
 }
 
-- (void)model:(id)model didChangeWithObject:(id)object {
+- (void)collection:(id)collection didChangeWithModel:(id)changeModel {
     UITableView *tableView = self.usersView.tableView;
-    [tableView updateWithArrayChangeModel:object];
+    [tableView updateWithArrayChangeModel:changeModel];
 }
 
 @end

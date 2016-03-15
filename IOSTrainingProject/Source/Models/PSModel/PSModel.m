@@ -9,6 +9,7 @@
 #import "PSModel.h"
 
 #import "PSModelObserver.h"
+#import "PSDispatch.h"
 
 @implementation PSModel
 
@@ -28,7 +29,9 @@
         self.state = kPSModelWillLoad;
     }
     
-    [self performLoading];
+    PSDispatchAsyncOnBackgroundThread(^{
+        [self performLoading];
+    });
 }
 
 - (void)performLoading {
@@ -55,7 +58,7 @@
             break;
             
         case kPSModelDidChange:
-            selector = @selector(model:didChangeWithObject:);
+            selector = @selector(collection:didChangeWithModel:);
             break;
             
         default:

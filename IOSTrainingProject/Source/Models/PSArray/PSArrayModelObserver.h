@@ -11,6 +11,6 @@
 @protocol PSArrayModelObserver <NSObject>
 
 @optional
-- (void)collection:(id)collection changeWithModel:(id)changeModel;
+- (void)collection:(id)collection didChangeWithModel:(id)changeModel;
 
 @end

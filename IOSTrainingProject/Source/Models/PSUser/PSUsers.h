@@ -13,5 +13,9 @@
 @class PSUser;
 
 @interface PSUsers : PSArray
+@property (nonatomic, readonly)                     NSString    *filePath;
+@property (nonatomic, readonly, getter=isCached)    BOOL        cached;
+
+- (void)save;
 
 @end

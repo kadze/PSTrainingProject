@@ -38,6 +38,7 @@
 		ADA5833C1C7FE0C700A53DDD /* PSObservableObject.m in Sources */ = {isa = PBXBuildFile; fileRef = ADA5833B1C7FE0C700A53DDD /* PSObservableObject.m */; };
 		ADA583411C7FE49C00A53DDD /* PSReference.m in Sources */ = {isa = PBXBuildFile; fileRef = ADA583401C7FE49C00A53DDD /* PSReference.m */; };
 		ADA583451C7FE4BD00A53DDD /* PSAssignReference.m in Sources */ = {isa = PBXBuildFile; fileRef = ADA583441C7FE4BD00A53DDD /* PSAssignReference.m */; };
+		ADAB37AC1C98552400CECAEE /* PSDispatch.m in Sources */ = {isa = PBXBuildFile; fileRef = ADAB37AB1C98552400CECAEE /* PSDispatch.m */; };
 		ADAC99841C8614D100D689D6 /* PSArrayChangesModel.m in Sources */ = {isa = PBXBuildFile; fileRef = ADAC99831C8614D100D689D6 /* PSArrayChangesModel.m */; };
 		ADD69ECE1C6CFD6600B50A0F /* PSSquareViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ADD69ECC1C6CFD6600B50A0F /* PSSquareViewController.m */; };
 		ADD69ECF1C6CFD6600B50A0F /* PSSquareViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = ADD69ECD1C6CFD6600B50A0F /* PSSquareViewController.xib */; };
@@ -114,6 +115,8 @@
 		ADA583401C7FE49C00A53DDD /* PSReference.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSReference.m; sourceTree = "<group>"; };
 		ADA583431C7FE4BD00A53DDD /* PSAssignReference.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSAssignReference.h; sourceTree = "<group>"; };
 		ADA583441C7FE4BD00A53DDD /* PSAssignReference.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSAssignReference.m; sourceTree = "<group>"; };
+		ADAB37AA1C98552400CECAEE /* PSDispatch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSDispatch.h; sourceTree = "<group>"; };
+		ADAB37AB1C98552400CECAEE /* PSDispatch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSDispatch.m; sourceTree = "<group>"; };
 		ADAC99821C8614D100D689D6 /* PSArrayChangesModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSArrayChangesModel.h; sourceTree = "<group>"; };
 		ADAC99831C8614D100D689D6 /* PSArrayChangesModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSArrayChangesModel.m; sourceTree = "<group>"; };
 		ADD69ECB1C6CFD6600B50A0F /* PSSquareViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSSquareViewController.h; sourceTree = "<group>"; };
@@ -401,6 +404,7 @@
 		ADA583381C7FE01D00A53DDD /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				ADAB37A91C9854BE00CECAEE /* PSDispatch */,
 				ADA5833D1C7FE43900A53DDD /* PSReference */,
 				ADA583391C7FE09200A53DDD /* PSObservableObject */,
 			);
@@ -433,6 +437,15 @@
 				ADA583441C7FE4BD00A53DDD /* PSAssignReference.m */,
 			);
 			path = PSAssignReference;
+			sourceTree = "<group>";
+		};
+		ADAB37A91C9854BE00CECAEE /* PSDispatch */ = {
+			isa = PBXGroup;
+			children = (
+				ADAB37AA1C98552400CECAEE /* PSDispatch.h */,
+				ADAB37AB1C98552400CECAEE /* PSDispatch.m */,
+			);
+			path = PSDispatch;
 			sourceTree = "<group>";
 		};
 		ADAC99811C860E0100D689D6 /* PSArrayChangesModel */ = {
@@ -614,6 +627,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AD1453921C724776002435BB /* PSSquareView.m in Sources */,
+				ADAB37AC1C98552400CECAEE /* PSDispatch.m in Sources */,
 				AD7E00D41C903C8100B62417 /* PSUserCell.m in Sources */,
 				AD7233FF1C887743005FABD1 /* NSIndexPath+PSExtensions.m in Sources */,
 				AD7E00D81C903D3900B62417 /* PSLoadingView.m in Sources */,

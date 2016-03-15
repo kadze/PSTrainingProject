@@ -10,7 +10,7 @@
 
 #import "UINib+PSExtensions.h"
 
-static const NSTimeInterval kPSAnimateDuration    = 1;
+static const NSTimeInterval kPSAnimateDuration    = 0.5;
 static const CGFloat        kPSVisibleAlpha       = 1.0;
 
 @interface PSLoadingView ()
@@ -60,15 +60,22 @@ static const CGFloat        kPSVisibleAlpha       = 1.0;
                        duration:(NSUInteger)duration
               completionHandler:(void(^)(void))handler
 {
-    [UIView animateWithDuration:duration animations:^{
+    [UIView animateWithDuration:duration
+                     animations:^{
         self.alpha = state ? kPSVisibleAlpha : 0;
-    } completion:^(BOOL finished) {
-        _visible = state;
+    }
+                     completion:^(BOOL finished)
+    {
+        if (_visible) {
+            _visible = state;
+        }
         
         if (handler) {
             handler();
         }
     }];
 }
+
+
 
 @end

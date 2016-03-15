@@ -8,13 +8,14 @@
 
 #import <Foundation/Foundation.h>
 
-@protocol PSModelObserver <NSObject>
+#import "PSArrayModelObserver.h"
+
+@protocol PSModelObserver <PSArrayModelObserver>
 
 @optional
 - (void)modelWillLoad:(id)model;
 - (void)modelDidFailLoading:(id)model;
 - (void)modelDidLoad:(id)model;
-- (void)model:(id)model didChangeWithObject:(id)object;
 
 @end
 

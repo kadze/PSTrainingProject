@@ -8,9 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-#import "PSArrayModelObserver.h"
-
-@protocol PSModelObserver <PSArrayModelObserver>
+@protocol PSModelObserver
 
 @optional
 - (void)modelWillLoad:(id)model;

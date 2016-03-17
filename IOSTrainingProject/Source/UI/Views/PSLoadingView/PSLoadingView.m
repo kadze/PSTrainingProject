@@ -62,20 +62,19 @@ static const CGFloat        kPSVisibleAlpha       = 1.0;
 {
     [UIView animateWithDuration:duration
                      animations:^{
-        self.alpha = state ? kPSVisibleAlpha : 0;
-    }
+                         self.alpha = state ? kPSVisibleAlpha : 0;
+                     }
                      completion:^(BOOL finished)
-    {
-        if (_visible) {
-            _visible = state;
-        }
-        
-        if (handler) {
-            handler();
-        }
-    }];
+     {
+         if (_visible) {
+             _visible = state;
+             if (handler) {
+                 handler();
+             }
+         }
+         
+         
+     }];
 }
-
-
 
 @end

@@ -8,8 +8,10 @@
 
 #import "PSModel.h"
 
-#import "PSModelObserver.h"
+#import "PSArrayModelObserver.h"
 #import "PSDispatch.h"
+
+#import "PSWeakifyMacros.h"
 
 @implementation PSModel
 
@@ -29,7 +31,9 @@
         self.state = kPSModelWillLoad;
     }
     
+    PSWeakify(self);
     PSDispatchAsyncOnBackgroundThread(^{
+        PSStrongify(self);
         [self performLoading];
     });
 }
@@ -42,31 +46,22 @@
 #pragma mark PSObservableObject
 
 - (SEL)selectorForState:(NSUInteger)state {
-    SEL selector = nil;
-    
     switch (state) {
         case kPSModelWillLoad:
-            selector = @selector(modelWillLoad:);
-            break;
+            return @selector(modelWillLoad:);
             
         case kPSModelDidFailLoading:
-            selector = @selector(modelDidFailLoading:);
-            break;
+            return @selector(modelDidFailLoading:);
             
         case kPSModelDidLoad:
-            selector = @selector(modelDidLoad:);
-            break;
+            return @selector(modelDidLoad:);
             
         case kPSModelDidChange:
-            selector = @selector(collection:didChangeWithModel:);
-            break;
+            return @selector(collection:didChangeWithModel:);
             
         default:
-            selector = [super selectorForState:state];
-            break;
+            return [super selectorForState:state];
     }
-    
-    return selector;
 }
 
 @end

@@ -120,9 +120,14 @@ PSViewControllerBaseViewProperty(PSUsersViewController, PSUsersView, usersView)
     });
 }
 
+#pragma mark -
+#pragma mark PSArrayModelObserver
+
 - (void)collection:(id)collection didChangeWithModel:(id)changeModel {
-    UITableView *tableView = self.usersView.tableView;
-    [tableView updateWithArrayChangeModel:changeModel];
+//    PSDispatchAsyncOnMainThread(^{
+        UITableView *tableView = self.usersView.tableView;
+        [tableView updateWithArrayChangeModel:changeModel];
+//    });
 }
 
 @end

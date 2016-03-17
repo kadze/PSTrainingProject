@@ -8,7 +8,9 @@
 
 #import <Foundation/Foundation.h>
 
-@protocol PSArrayModelObserver <NSObject>
+#import "PSModelObserver.h"
+
+@protocol PSArrayModelObserver <NSObject, PSModelObserver>
 
 @optional
 - (void)collection:(id)collection didChangeWithModel:(id)changeModel;

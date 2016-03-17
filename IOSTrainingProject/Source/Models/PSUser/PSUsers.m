@@ -66,7 +66,7 @@ static const NSUInteger kPSUsersCount = 15;
 }
 
 - (void)performLoading {
-    sleep(3);
+//    sleep(3);
     [self fillWithUsers];
 
     @synchronized(self) {

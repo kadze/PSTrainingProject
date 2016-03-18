@@ -10,6 +10,9 @@
 
 #import "PSUsers.h"
 
+static NSString * const kPSButtonTitleEdit = @"Edit";
+static NSString * const kPSButtonTitleDone = @"Done";
+
 @implementation PSUsersView
 
 @dynamic editing;
@@ -19,6 +22,9 @@
 
 - (void)setEditing:(BOOL)editing {
     [self.tableView setEditing:editing animated:YES];
+    self.editButton.backgroundColor = editing ? [UIColor redColor] : [UIColor greenColor];
+    [self.editButton setTitle:(editing ? kPSButtonTitleDone : kPSButtonTitleEdit)
+                     forState:UIControlStateNormal];
 }
 
 - (BOOL)isEditing {

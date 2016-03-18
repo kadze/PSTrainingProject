@@ -8,14 +8,25 @@
 
 #import "PSImageView.h"
 
+#import "PSUser.h"
+#import "PSModel.h"
+
 @implementation PSImageView
 
-/*
-// Only override drawRect: if you perform custom drawing.
-// An empty implementation adversely affects performance during animation.
-- (void)drawRect:(CGRect)rect {
-    // Drawing code
+#pragma mark -
+#pragma mark Initializations and Deallocations
+
+- (void)dealloc {
+    self.imageModel = nil;
 }
-*/
+
+#pragma mark -
+#pragma mark Public
+
+- (void)fillWithModel:(PSUser *)user {
+    self.imageModel.image = user.image;
+}
+
+
 
 @end

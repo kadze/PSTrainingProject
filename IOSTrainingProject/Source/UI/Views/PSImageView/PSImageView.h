@@ -11,6 +11,6 @@
 #import "PSModelObserver.h"
 
 @interface PSImageView : UIView <PSModelObserver>
-
+@property (nonatomic, strong)   IBOutlet    UIImageView *imageModel;
 
 @end

@@ -28,6 +28,13 @@ PSViewControllerBaseViewProperty(PSUsersViewController, PSUsersView, usersView)
 @implementation PSUsersViewController
 
 #pragma mark -
+#pragma mark Initializations and Deallocations
+
+- (void)dealloc {
+    self.users = nil;
+}
+
+#pragma mark -
 #pragma mark Accessors
 
 - (void)setUsers:(PSUsers *)users {

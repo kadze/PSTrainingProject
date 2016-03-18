@@ -10,6 +10,8 @@
 
 #import "PSView.h"
 
+#import "PSImageView.h"
+
 #import "PSModelObserver.h"
 
 @class PSUser;

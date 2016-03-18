@@ -16,6 +16,22 @@
 @implementation PSModel
 
 #pragma mark -
+#pragma mark Initializations and Deallocations
+
+- (instancetype)init {
+    self = [super init];
+    if (self) {
+        PSWeakify(self);
+        [self performBlockWithoutNotification:^{
+            PSStrongify(self);
+            self.state = kPSModelUnloaded;
+        }];
+    }
+    
+    return self;
+}
+
+#pragma mark -
 #pragma mark Public
 
 - (void)load {

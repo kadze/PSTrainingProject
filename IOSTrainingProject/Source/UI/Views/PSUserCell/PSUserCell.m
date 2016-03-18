@@ -17,6 +17,13 @@
 @implementation PSUserCell
 
 #pragma mark -
+#pragma mark Initializations and Deallocations
+
+- (void)dealloc {
+    self.user = nil;
+}
+
+#pragma mark -
 #pragma mark Accessors
 
 - (void)setUser:(PSUser *)user {

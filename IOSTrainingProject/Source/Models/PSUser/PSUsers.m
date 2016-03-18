@@ -29,6 +29,10 @@ static const NSUInteger kPSUsersCount = 150;
 #pragma mark -
 #pragma mark Initializations and Deallocations
 
+- (void)dealloc {
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+}
+
 - (instancetype)init {
     self = [super init];
     if (self) {

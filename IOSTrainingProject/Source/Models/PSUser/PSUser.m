@@ -38,7 +38,7 @@ static NSString * const kPSName             = @"name";
 #pragma mark PSModel
 
 - (void)performLoading {
-//    sleep(3);
+    sleep(2);
     static UIImage *__image = nil;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{

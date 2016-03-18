@@ -28,6 +28,13 @@
     return self.loadingView.visible;
 }
 
+- (void)setLoadingView:(PSLoadingView *)loadingView {
+    if (_loadingView != loadingView) {
+        [_loadingView removeFromSuperview];
+        _loadingView = loadingView;
+    }
+}
+
 #pragma mark -
 #pragma mark Public
 
@@ -54,7 +61,9 @@
 #pragma mark Private
 
 - (void)connectLoadingView {
-    self.loadingView = [self newLoadingView];
+    if (!self.loadingView) {
+        self.loadingView = [self newLoadingView];
+    }
 }
 
 @end

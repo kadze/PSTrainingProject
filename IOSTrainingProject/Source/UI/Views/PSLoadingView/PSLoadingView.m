@@ -10,7 +10,7 @@
 
 #import "UINib+PSExtensions.h"
 
-static const NSTimeInterval kPSAnimateDuration    = 0.5;
+static const NSTimeInterval kPSAnimateDuration    = 1.0;
 static const CGFloat        kPSVisibleAlpha       = 1.0;
 
 @interface PSLoadingView ()
@@ -28,6 +28,7 @@ static const CGFloat        kPSVisibleAlpha       = 1.0;
 
 + (instancetype)loadingViewWithSuperview:(UIView *)superview {
     PSLoadingView *view = [UINib objectWithClass:[self class]];
+    view.alpha = 0;
     
     [superview addSubview:view];
     
@@ -66,14 +67,10 @@ static const CGFloat        kPSVisibleAlpha       = 1.0;
                      }
                      completion:^(BOOL finished)
      {
-         if (_visible) {
-             _visible = state;
-             if (handler) {
-                 handler();
-             }
+         _visible = state;
+         if (handler) {
+             handler();
          }
-         
-         
      }];
 }
 

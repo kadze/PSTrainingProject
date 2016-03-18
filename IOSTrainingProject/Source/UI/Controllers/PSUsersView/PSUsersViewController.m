@@ -21,6 +21,8 @@
 #import "PSArrayChangesModel+UITableView.h"
 #import "UITableView+PSArrayChangesModel.h"
 
+#import "PSWeakifyMacros.h"
+
 PSViewControllerBaseViewProperty(PSUsersViewController, PSUsersView, usersView)
 
 @implementation PSUsersViewController
@@ -124,10 +126,10 @@ PSViewControllerBaseViewProperty(PSUsersViewController, PSUsersView, usersView)
 #pragma mark PSArrayModelObserver
 
 - (void)collection:(id)collection didChangeWithModel:(id)changeModel {
-//    PSDispatchAsyncOnMainThread(^{
+    PSDispatchSyncOnMainThread(^{
         UITableView *tableView = self.usersView.tableView;
         [tableView updateWithArrayChangeModel:changeModel];
-//    });
+    });
 }
 
 @end

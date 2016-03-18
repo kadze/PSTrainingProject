@@ -12,7 +12,8 @@
 #import "PSPragmaMacros.h"
 #import "PSReturnMacros.h"
 
-#define PSWeakify(object) __weak typeof(object) __weak_##object = object
+#define PSWeakify(object) \
+    __weak typeof(object) __weak_##object = object
 
 #define PSStrongify(object) \
     PSClangDiagnosticPushOption("clang diagnostic ignored \"-Wshadow\"") \

@@ -8,11 +8,16 @@
 
 #import <UIKit/UIKit.h>
 
+#import "PSView.h"
+
+#import "PSModelObserver.h"
+
 @class PSUser;
 
-@interface PSUserCell : UITableViewCell
+@interface PSUserCell : UITableViewCell <PSModelObserver>
 @property (nonatomic, strong)   IBOutlet    UILabel         *label;
 @property (nonatomic, strong)   IBOutlet    UIImageView     *userImageView;
+@property (nonatomic, strong)   IBOutlet    PSView          *loadingView;
 
 @property (nonatomic, strong)   PSUser    *user;
 

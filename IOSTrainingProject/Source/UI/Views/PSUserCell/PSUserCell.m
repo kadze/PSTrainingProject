@@ -9,6 +9,10 @@
 #import "PSUserCell.h"
 
 #import "PSUser.h"
+#import "PSView.h"
+#import "PSModel.h"
+
+#import "PSDispatch.h"
 
 @implementation PSUserCell
 
@@ -17,9 +21,11 @@
 
 - (void)setUser:(PSUser *)user {
     if (_user != user) {
+        [_user removeObserver:self];
         _user = user;
-        
+        [_user addObserver:self];
         [self fillWithModel:user];
+        [_user load];
     }
 }
 
@@ -29,6 +35,26 @@
 - (void)fillWithModel:(PSUser *)user {
     self.label.text = user.name;
     self.userImageView.image = user.image;
+}
+
+#pragma mark -
+#pragma mark PSModelObserver
+
+- (void)modelWillLoad:(id)model {
+    PSDispatchAsyncOnMainThread(^{
+        [self.loadingView showLoadingView];
+    });
+}
+
+- (void)modelDidFailLoading:(id)model {
+    
+}
+
+- (void)modelDidLoad:(id)model {
+    PSDispatchAsyncOnMainThread(^{
+        [self fillWithModel:model];
+        [self.loadingView hideLoadingView];
+    });
 }
 
 @end

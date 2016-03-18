@@ -21,15 +21,23 @@
                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Apple_core.png" id="O0Z-Fk-QBa">
-                        <rect key="frame" x="281" y="4" width="31" height="36"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES"/>
-                    </imageView>
+                    <view contentMode="scaleToFill" id="Rzg-Yu-ipB" customClass="PSView">
+                        <rect key="frame" x="281" y="4" width="31" height="31"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Apple_core.png" id="O0Z-Fk-QBa">
+                                <rect key="frame" x="0.0" y="0.0" width="31" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
                 </subviews>
             </tableViewCellContentView>
             <connections>
                 <outlet property="label" destination="ACY-FT-JUC" id="ewo-Tv-s4g"/>
-                <outlet property="userImageView" destination="O0Z-Fk-QBa" id="lOi-hk-hhJ"/>
+                <outlet property="loadingView" destination="Rzg-Yu-ipB" id="nOp-Av-EFY"/>
+                <outlet property="userImageView" destination="O0Z-Fk-QBa" id="lJl-NA-Nds"/>
             </connections>
             <point key="canvasLocation" x="280" y="312"/>
         </tableViewCell>

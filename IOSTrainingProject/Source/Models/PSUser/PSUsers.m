@@ -12,7 +12,7 @@
 
 #import "PSWeakifyMacros.h"
 
-static const NSUInteger kPSUsersCount = 15;
+static const NSUInteger kPSUsersCount = 150;
 
 @interface PSUsers ()
 
@@ -66,7 +66,7 @@ static const NSUInteger kPSUsersCount = 15;
 }
 
 - (void)performLoading {
-//    sleep(3);
+    sleep(3);
     [self fillWithUsers];
 
     @synchronized(self) {

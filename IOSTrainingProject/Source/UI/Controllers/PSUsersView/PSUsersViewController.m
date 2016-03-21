@@ -109,7 +109,8 @@ PSViewControllerBaseViewProperty(PSUsersViewController, PSUsersView, usersView)
    moveRowAtIndexPath:(NSIndexPath *)sourceIndexPath
           toIndexPath:(NSIndexPath *)destinationIndexPath
 {
-    [self.users moveObjectFromIndex:sourceIndexPath.row toIndex:destinationIndexPath.row];
+    PSUsers *users = self.users;
+    [users moveObjectFromIndex:sourceIndexPath.row toIndex:destinationIndexPath.row];
 }
 
 #pragma mark -

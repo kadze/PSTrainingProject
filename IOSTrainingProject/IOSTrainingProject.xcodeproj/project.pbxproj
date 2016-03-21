@@ -47,6 +47,7 @@
 		ADD97B7B1C7CD65E00E4914B /* PSUsers.m in Sources */ = {isa = PBXBuildFile; fileRef = ADD97B7A1C7CD65E00E4914B /* PSUsers.m */; };
 		ADEEF6D31C8493D2007188B9 /* UINib+PSExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = ADEEF6D21C8493D2007188B9 /* UINib+PSExtensions.m */; };
 		ADEEF6D81C849440007188B9 /* UITableView+PSExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = ADEEF6D71C849440007188B9 /* UITableView+PSExtensions.m */; };
+		ADF89CC11CA00FD900993F33 /* PSImageModel.m in Sources */ = {isa = PBXBuildFile; fileRef = ADF89CC01CA00FD900993F33 /* PSImageModel.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -132,6 +133,8 @@
 		ADEEF6D21C8493D2007188B9 /* UINib+PSExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UINib+PSExtensions.m"; path = "Source/Library/Categories/UINib/UINib+PSExtensions.m"; sourceTree = SOURCE_ROOT; };
 		ADEEF6D61C849440007188B9 /* UITableView+PSExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITableView+PSExtensions.h"; sourceTree = "<group>"; };
 		ADEEF6D71C849440007188B9 /* UITableView+PSExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableView+PSExtensions.m"; sourceTree = "<group>"; };
+		ADF89CBF1CA00FD900993F33 /* PSImageModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSImageModel.h; sourceTree = "<group>"; };
+		ADF89CC01CA00FD900993F33 /* PSImageModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSImageModel.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -148,6 +151,7 @@
 		AD0501551C7B8E0D00EF3116 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				ADF89CBE1CA00F9E00993F33 /* PSImageModel */,
 				AD1EBB381C89D7C70059AB30 /* PSModel */,
 				ADD97B7C1C7CD6BD00E4914B /* PSArray */,
 				AD0501561C7B8E3800EF3116 /* PSUser */,
@@ -563,6 +567,15 @@
 			path = UITableView;
 			sourceTree = "<group>";
 		};
+		ADF89CBE1CA00F9E00993F33 /* PSImageModel */ = {
+			isa = PBXGroup;
+			children = (
+				ADF89CBF1CA00FD900993F33 /* PSImageModel.h */,
+				ADF89CC01CA00FD900993F33 /* PSImageModel.m */,
+			);
+			path = PSImageModel;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -641,6 +654,7 @@
 			files = (
 				AD1453921C724776002435BB /* PSSquareView.m in Sources */,
 				ADAB37AC1C98552400CECAEE /* PSDispatch.m in Sources */,
+				ADF89CC11CA00FD900993F33 /* PSImageModel.m in Sources */,
 				AD7E00D41C903C8100B62417 /* PSUserCell.m in Sources */,
 				AD7233FF1C887743005FABD1 /* NSIndexPath+PSExtensions.m in Sources */,
 				AD7E00D81C903D3900B62417 /* PSLoadingView.m in Sources */,

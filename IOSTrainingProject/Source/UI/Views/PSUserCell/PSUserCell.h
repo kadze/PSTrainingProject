@@ -18,7 +18,7 @@
 
 @interface PSUserCell : UITableViewCell <PSModelObserver>
 @property (nonatomic, strong)   IBOutlet    UILabel         *label;
-@property (nonatomic, strong)   IBOutlet    UIImageView     *userImageView;
+@property (nonatomic, strong)   IBOutlet    PSImageView     *userImageView;
 @property (nonatomic, strong)   IBOutlet    PSView          *loadingView;
 
 @property (nonatomic, strong)   PSUser    *user;

@@ -41,7 +41,7 @@
 
 - (void)fillWithModel:(PSUser *)user {
     self.label.text = user.name;
-    self.userImageView.image = user.image;
+    self.userImageView.imageModel = user.image;
 }
 
 #pragma mark -
@@ -54,7 +54,7 @@
 }
 
 - (void)modelDidFailLoading:(id)model {
-    
+    [self.loadingView hideLoadingView];
 }
 
 - (void)modelDidLoad:(id)model {

@@ -8,9 +8,14 @@
 
 #import <UIKit/UIKit.h>
 
+#import "PSView.h"
+#import "PSImageModel.h"
+
 #import "PSModelObserver.h"
 
-@interface PSImageView : UIView <PSModelObserver>
-@property (nonatomic, strong)   IBOutlet    UIImageView *imageModel;
+@interface PSImageView : PSView <PSModelObserver>
+@property (nonatomic, strong)   PSImageModel    *imageModel;
+
+- (void)fillWithModel:(id)user;
 
 @end

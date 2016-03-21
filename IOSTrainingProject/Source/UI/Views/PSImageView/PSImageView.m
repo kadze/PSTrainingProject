@@ -8,8 +8,6 @@
 
 #import "PSImageView.h"
 
-#import "PSUser.h"
-#import "PSModel.h"
 
 @implementation PSImageView
 
@@ -21,12 +19,23 @@
 }
 
 #pragma mark -
-#pragma mark Public
+#pragma mark Accessors
 
-- (void)fillWithModel:(PSUser *)user {
-    self.imageModel.image = user.image;
+- (void)setImageModel:(PSImageModel *)imageModel {
+    if (_imageModel != imageModel) {
+        [_imageModel removeObserver:self];
+        _imageModel = imageModel;
+        [_imageModel addObserver:self];
+        [self fillWithModel:imageModel];
+        [_imageModel load];
+    }
 }
 
+#pragma mark -
+#pragma mark Public
 
+- (void)fillWithModel:(PSImageModel *)model {
+    self.imageModel.image = model.image;
+}
 
 @end

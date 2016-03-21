@@ -11,6 +11,7 @@
 
 #import "PSObservableObject.h"
 #import "PSModel.h"
+#import "PSImageModel.h"
 
 @interface PSUser : PSModel <NSCoding>
 @property (nonatomic, copy)     NSString  *name;

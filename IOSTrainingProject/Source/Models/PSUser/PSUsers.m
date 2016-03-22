@@ -10,9 +10,13 @@
 
 #import "PSUser.h"
 
+#include "NSFileManager+PSExtensions.h"
+
 #import "PSWeakifyMacros.h"
 
-static const NSUInteger kPSUsersCount = 150;
+static const NSUInteger kPSUsersCount = 5;
+
+static NSString * const kPSFileName = @"users.plist";
 
 @interface PSUsers ()
 
@@ -23,6 +27,8 @@ static const NSUInteger kPSUsersCount = 150;
 
 @implementation PSUsers
 
+@dynamic fileName;
+@dynamic fileFolder;
 @dynamic filePath;
 @dynamic cached;
 
@@ -30,19 +36,35 @@ static const NSUInteger kPSUsersCount = 150;
 #pragma mark Initializations and Deallocations
 
 - (void)dealloc {
-    [[NSNotificationCenter defaultCenter] removeObserver:self];
+    [self stopObserving];
 }
 
 - (instancetype)init {
     self = [super init];
     if (self) {
-        [[NSNotificationCenter defaultCenter] addObserver:self
-                                                 selector:@selector(saveNotification:)
-                                                     name:UIApplicationDidEnterBackgroundNotification
-                                                   object:nil];
+        [self startObserving];
     }
     
     return self;
+}
+
+#pragma mark -
+#pragma mark Accessors
+
+- (NSString *)filePath {
+    return [self.fileFolder stringByAppendingPathComponent:self.fileName];
+}
+
+- (NSString *)fileName {
+    return kPSFileName;
+}
+
+- (NSString *)fileFolder {
+    return [NSFileManager userDocumentPath];
+}
+
+- (BOOL)isCached {
+    return [[NSFileManager defaultManager] fileExistsAtPath:self.filePath];
 }
 
 #pragma mark -
@@ -71,11 +93,27 @@ static const NSUInteger kPSUsersCount = 150;
 
 - (void)performLoading {
     sleep(3);
+    NSArray *objects = nil;
+    if (self.cached) {
+        objects = [NSKeyedUnarchiver unarchiveObjectWithFile:self.filePath];
+    }
+    
     [self fillWithUsers];
 
     @synchronized(self) {
         self.state = kPSModelDidLoad;
     }
+}
+
+- (void)startObserving {
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(saveNotification:)
+                                                 name:UIApplicationDidEnterBackgroundNotification
+                                               object:nil];
+}
+
+- (void)stopObserving {
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
 @end

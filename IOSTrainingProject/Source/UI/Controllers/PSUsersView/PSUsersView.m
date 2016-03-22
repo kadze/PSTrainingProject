@@ -21,13 +21,12 @@ static NSString * const kPSButtonTitleDone = @"Done";
 #pragma mark Accessors
 
 - (void)setEditing:(BOOL)editing {
+    [self.tableView setEditing:editing animated:YES];
+    
     UIButton *editButton = self.editButton;
-    @synchronized(self) {
-        [self.tableView setEditing:editing animated:YES];
-        editButton.backgroundColor = editing ? [UIColor redColor] : [UIColor greenColor];
-        [editButton setTitle:(editing ? kPSButtonTitleDone : kPSButtonTitleEdit)
-                    forState:UIControlStateNormal];
-    }
+    editButton.backgroundColor = editing ? [UIColor redColor] : [UIColor greenColor];
+    [editButton setTitle:(editing ? kPSButtonTitleDone : kPSButtonTitleEdit)
+                forState:UIControlStateNormal];
 }
 
 - (BOOL)isEditing {

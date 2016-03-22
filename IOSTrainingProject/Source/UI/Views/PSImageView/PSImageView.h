@@ -16,6 +16,4 @@
 @interface PSImageView : PSView <PSModelObserver>
 @property (nonatomic, strong)   PSImageModel    *imageModel;
 
-- (void)fillWithModel:(id)user;
-
 @end

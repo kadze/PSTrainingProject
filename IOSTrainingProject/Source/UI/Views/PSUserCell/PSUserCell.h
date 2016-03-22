@@ -10,16 +10,14 @@
 
 #import "PSView.h"
 
-#import "PSImageView.h"
-
-#import "PSModelObserver.h"
+@class PSImageView;
 
 @class PSUser;
 
-@interface PSUserCell : UITableViewCell <PSModelObserver>
+@interface PSUserCell : UITableViewCell
 @property (nonatomic, strong)   IBOutlet    UILabel         *label;
 @property (nonatomic, strong)   IBOutlet    PSImageView     *userImageView;
-@property (nonatomic, strong)   IBOutlet    PSView          *loadingView;
+//@property (nonatomic, strong)   IBOutlet    PSView          *loadingView;
 
 @property (nonatomic, strong)   PSUser    *user;
 

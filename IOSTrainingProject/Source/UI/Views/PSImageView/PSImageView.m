@@ -8,6 +8,14 @@
 
 #import "PSImageView.h"
 
+#import "PSDispatch.h"
+
+@interface PSImageView ()
+@property (nonatomic, strong)   UIImageView *imageView;
+
+- (void)fillWithModel:(PSImageModel *)model;
+
+@end
 
 @implementation PSImageView
 
@@ -32,10 +40,30 @@
 }
 
 #pragma mark -
-#pragma mark Public
+#pragma mark PSModelObserver
+
+- (void)modelWillLoad:(id)model {
+    PSDispatchAsyncOnMainThread(^{
+        [self showLoadingView];
+    });
+}
+
+- (void)modelDidFailLoading:(id)model {
+    [self hideLoadingView];
+}
+
+- (void)modelDidLoad:(id)model {
+    PSDispatchAsyncOnMainThread(^{
+        [self fillWithModel:model];
+        [self hideLoadingView];
+    });
+}
+
+#pragma mark -
+#pragma mark Privat
 
 - (void)fillWithModel:(PSImageModel *)model {
-    self.imageModel.image = model.image;
+    self.imageView.image = model.image;
 }
 
 @end

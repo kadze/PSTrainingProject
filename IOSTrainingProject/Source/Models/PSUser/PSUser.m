@@ -11,12 +11,11 @@
 #import "NSString+PSExtensions.h"
 
 static NSUInteger const kPSRandomNameSize   = 10;
-static NSString * const kPSImageName        = @"Apple_core";
-static NSString * const kPSImageType        = @"png";
 static NSString * const kPSName             = @"name";
+static NSString * const kPSImageURL         = @"http://s015.radikal.ru/i331/1603/f6/fa350a72997b.jpg";
 
 @interface PSUser ()
-@property (nonatomic, strong)   UIImage *image;
+@property (nonatomic, strong)   PSImageModel    *imageModel;
 
 @end
 
@@ -35,21 +34,10 @@ static NSString * const kPSName             = @"name";
 }
 
 #pragma mark -
-#pragma mark PSModel
+#pragma mark Accessors
 
-- (void)performLoading {
-    sleep(2);
-    static UIImage *__image = nil;
-    static dispatch_once_t onceToken;
-    dispatch_once(&onceToken, ^{
-        NSString *path = [[NSBundle mainBundle] pathForResource:kPSImageName ofType:kPSImageType];
-        __image = [UIImage imageWithContentsOfFile:path];
-    });
-    
-    self.image = __image;
-    @synchronized(self) {
-        self.state = kPSModelDidLoad;
-    }
+- (PSImageModel *)imageModel {
+    return [PSImageModel imageModelWithUrl:[NSURL URLWithString:kPSImageURL]];
 }
 
 #pragma mark -

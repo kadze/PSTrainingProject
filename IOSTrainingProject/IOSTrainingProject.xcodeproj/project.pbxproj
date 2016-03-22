@@ -48,6 +48,8 @@
 		ADEEF6D31C8493D2007188B9 /* UINib+PSExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = ADEEF6D21C8493D2007188B9 /* UINib+PSExtensions.m */; };
 		ADEEF6D81C849440007188B9 /* UITableView+PSExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = ADEEF6D71C849440007188B9 /* UITableView+PSExtensions.m */; };
 		ADF89CC11CA00FD900993F33 /* PSImageModel.m in Sources */ = {isa = PBXBuildFile; fileRef = ADF89CC01CA00FD900993F33 /* PSImageModel.m */; };
+		ADF89CC51CA0744C00993F33 /* PSCache.m in Sources */ = {isa = PBXBuildFile; fileRef = ADF89CC41CA0744C00993F33 /* PSCache.m */; };
+		ADF89CC91CA0DAEE00993F33 /* NSFileManager+PSExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = ADF89CC81CA0DAEE00993F33 /* NSFileManager+PSExtensions.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -135,6 +137,10 @@
 		ADEEF6D71C849440007188B9 /* UITableView+PSExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableView+PSExtensions.m"; sourceTree = "<group>"; };
 		ADF89CBF1CA00FD900993F33 /* PSImageModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSImageModel.h; sourceTree = "<group>"; };
 		ADF89CC01CA00FD900993F33 /* PSImageModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSImageModel.m; sourceTree = "<group>"; };
+		ADF89CC31CA0744C00993F33 /* PSCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSCache.h; sourceTree = "<group>"; };
+		ADF89CC41CA0744C00993F33 /* PSCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSCache.m; sourceTree = "<group>"; };
+		ADF89CC71CA0DAEE00993F33 /* NSFileManager+PSExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSFileManager+PSExtensions.h"; sourceTree = "<group>"; };
+		ADF89CC81CA0DAEE00993F33 /* NSFileManager+PSExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSFileManager+PSExtensions.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -253,6 +259,7 @@
 		AD3918761C734E930077C246 /* Categories */ = {
 			isa = PBXGroup;
 			children = (
+				ADF89CC61CA0DA9800993F33 /* NSFileManager */,
 				AD7233FC1C8876BA005FABD1 /* NSIndexPath */,
 				ADEEF6D41C849403007188B9 /* UITableView */,
 				ADEEF6CD1C8490C6007188B9 /* UINib */,
@@ -421,6 +428,7 @@
 		ADA583381C7FE01D00A53DDD /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				ADF89CC21CA0740D00993F33 /* PSCache */,
 				ADAB37A91C9854BE00CECAEE /* PSDispatch */,
 				ADA5833D1C7FE43900A53DDD /* PSReference */,
 				ADA583391C7FE09200A53DDD /* PSObservableObject */,
@@ -576,6 +584,24 @@
 			path = PSImageModel;
 			sourceTree = "<group>";
 		};
+		ADF89CC21CA0740D00993F33 /* PSCache */ = {
+			isa = PBXGroup;
+			children = (
+				ADF89CC31CA0744C00993F33 /* PSCache.h */,
+				ADF89CC41CA0744C00993F33 /* PSCache.m */,
+			);
+			path = PSCache;
+			sourceTree = "<group>";
+		};
+		ADF89CC61CA0DA9800993F33 /* NSFileManager */ = {
+			isa = PBXGroup;
+			children = (
+				ADF89CC71CA0DAEE00993F33 /* NSFileManager+PSExtensions.h */,
+				ADF89CC81CA0DAEE00993F33 /* NSFileManager+PSExtensions.m */,
+			);
+			path = NSFileManager;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -661,10 +687,12 @@
 				AD7234041C887E25005FABD1 /* UITableView+PSArrayChangesModel.m in Sources */,
 				AD5526CF1C76337E00D6404B /* PSUsersView.m in Sources */,
 				AD3017DF1C623DD3000344A3 /* PSAppDelegate.m in Sources */,
+				ADF89CC91CA0DAEE00993F33 /* NSFileManager+PSExtensions.m in Sources */,
 				AD3017DC1C623DD3000344A3 /* main.m in Sources */,
 				AD1F42C31C9C524000965B88 /* PSImageView.m in Sources */,
 				AD39187C1C734E930077C246 /* UIWindow+PSExtensions.m in Sources */,
 				AD7233F51C8862E6005FABD1 /* PSArrayChangesModel+PSArray.m in Sources */,
+				ADF89CC51CA0744C00993F33 /* PSCache.m in Sources */,
 				AD7234141C88F63F005FABD1 /* PSArrayDoubleIndexChangesModel+UITableView.m in Sources */,
 				ADA583451C7FE4BD00A53DDD /* PSAssignReference.m in Sources */,
 				AD5526B71C7600FE00D6404B /* CGGeometry+PSExtensions.m in Sources */,

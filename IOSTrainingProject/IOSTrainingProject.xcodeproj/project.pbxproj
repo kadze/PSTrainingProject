@@ -634,6 +634,11 @@
 					AD3017D61C623DD3000344A3 = {
 						CreatedOnToolsVersion = 7.2;
 						DevelopmentTeam = HJPY5Z9H4Q;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 0;
+							};
+						};
 					};
 				};
 			};

@@ -29,7 +29,7 @@ static NSString * const kPSFileName = @"users.plist";
 
 @dynamic fileName;
 @dynamic fileFolder;
-@dynamic filePath;
+@dynamic filePath; 
 @dynamic cached;
 
 #pragma mark -

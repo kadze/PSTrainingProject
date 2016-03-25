@@ -10,7 +10,7 @@
 
 @interface NSFileManager (PSExtensions)
 
-+ (NSString *)userDocumentPath;
++ (NSString *)userDocumentsPath;
 
 + (NSString *)pathWithSearchPathDirectory:(NSSearchPathDirectory)directory;
 

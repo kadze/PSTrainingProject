@@ -14,7 +14,7 @@
 
 #import "PSWeakifyMacros.h"
 
-static const NSUInteger kPSUsersCount = 5;
+static const NSUInteger kPSUsersCount = 50;
 
 static NSString * const kPSFileName = @"users.plist";
 
@@ -49,7 +49,7 @@ static NSString * const kPSFileName = @"users.plist";
 }
 
 #pragma mark -
-#pragma mark Accessors
+#pragma mark PSCachedModel
 
 - (NSString *)filePath {
     return [self.fileFolder stringByAppendingPathComponent:self.fileName];
@@ -60,7 +60,7 @@ static NSString * const kPSFileName = @"users.plist";
 }
 
 - (NSString *)fileFolder {
-    return [NSFileManager userDocumentPath];
+    return [NSFileManager userDocumentsPath];
 }
 
 - (BOOL)isCached {

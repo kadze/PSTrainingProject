@@ -10,14 +10,14 @@
 
 #import "PSModel.h"
 
-@interface PSImageModel : PSModel
+#import "PSCachedModel.h"
+
+@interface PSImageModel : PSModel <PSCachedModel>
 @property (nonatomic, readonly) UIImage *image;
 @property (nonatomic, readonly) NSURL   *url;
 
 + (instancetype)imageModelWithUrl:(NSURL *)url;
 
 - (instancetype)initWithUrl:(NSURL *)url;
-
-- (void)dump;
 
 @end

@@ -10,7 +10,7 @@
 
 @implementation NSFileManager (PSExtensions)
 
-+ (NSString *)userDocumentPath {
++ (NSString *)userDocumentsPath {
     return [self pathWithSearchPathDirectory:NSDocumentDirectory];
 }
 

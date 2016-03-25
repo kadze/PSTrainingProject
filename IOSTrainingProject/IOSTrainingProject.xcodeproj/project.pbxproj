@@ -135,6 +135,7 @@
 		ADEEF6D21C8493D2007188B9 /* UINib+PSExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UINib+PSExtensions.m"; path = "Source/Library/Categories/UINib/UINib+PSExtensions.m"; sourceTree = SOURCE_ROOT; };
 		ADEEF6D61C849440007188B9 /* UITableView+PSExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITableView+PSExtensions.h"; sourceTree = "<group>"; };
 		ADEEF6D71C849440007188B9 /* UITableView+PSExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableView+PSExtensions.m"; sourceTree = "<group>"; };
+		ADF6E05C1CA46F5300F01AA1 /* PSCachedModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PSCachedModel.h; sourceTree = "<group>"; };
 		ADF89CBF1CA00FD900993F33 /* PSImageModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSImageModel.h; sourceTree = "<group>"; };
 		ADF89CC01CA00FD900993F33 /* PSImageModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSImageModel.m; sourceTree = "<group>"; };
 		ADF89CC31CA0744C00993F33 /* PSCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSCache.h; sourceTree = "<group>"; };
@@ -191,6 +192,7 @@
 				AD1EBB3C1C89D82F0059AB30 /* PSModel.h */,
 				AD1EBB3D1C89D82F0059AB30 /* PSModel.m */,
 				AD1EBB401C89E0780059AB30 /* PSModelObserver.h */,
+				ADF6E05C1CA46F5300F01AA1 /* PSCachedModel.h */,
 			);
 			path = PSModel;
 			sourceTree = "<group>";

@@ -9,20 +9,18 @@
 #import "PSImageModel.h"
 
 #import "PSCache.h"
-#import "PSUsers.h"
-
 #import "PSDispatch.h"
 
+#import "NSFileManager+PSExtensions.h"
+
 #import "PSWeakifyMacros.h"
+#import "PSReturnMacros.h"
 
 @interface PSImageModel ()
 @property (nonatomic, strong)   NSURL                       *url;
 @property (nonatomic, strong)   UIImage                     *image;
 @property (nonatomic, strong)   NSURLSession                *session;
 @property (nonatomic, strong)   NSURLSessionDownloadTask    *task;
-@property (nonatomic, readonly) NSString                    *filePath;
-
-@property (nonatomic, readonly, getter=isCached)    BOOL    cached;
 
 @end
 
@@ -30,6 +28,9 @@
 
 @dynamic session;
 @dynamic filePath;
+@dynamic fileName;
+@dynamic fileFolder;
+@dynamic cached;
 
 #pragma mark -
 #pragma mark Class Methods
@@ -46,15 +47,13 @@
 #pragma mark Initializations and Deallocations
 
 - (void)dealloc {
-    [self unsubcribeFromAplicationNotifications:self.notificationNames];
+    self.task = nil;
 }
 
 - (instancetype)initWithUrl:(NSURL *)url {
-    if (!url) {
-        return nil;
-    }
+    PSReturnNilIfNil(url);
     
-    PSCache *imageCache = [PSImageModel cache];
+    PSCache *imageCache = [[self class] cache];
     id imageModel = [imageCache objectForKey:url];
     
     if (imageModel) {
@@ -62,21 +61,14 @@
     }
     
     self = [super init];
-    if (self) {
-        self.url = url;
-        [imageCache addObject:self forKey:url];
-        [self subscribeToAplicationNotifications:self.notificationNames];
-    }
+    self.url = url;
+    [imageCache addObject:self forKey:url];
     
     return self;
 }
 
 #pragma mark -
 #pragma mark Accessors
-
-- (NSArray *)notificationNames {
-    return @[UIApplicationDidReceiveMemoryWarningNotification];
-}
 
 - (NSURLSession *)session {
     static NSURLSession *__session = nil;
@@ -98,17 +90,27 @@
     }
 }
 
-- (NSURLRequest *)request {
-    return [NSURLRequest requestWithURL:self.url];
+#pragma mark -
+#pragma mark PSCachedModel
+
+- (BOOL)isCached {
+    return [[NSFileManager defaultManager] fileExistsAtPath:self.filePath];
+}
+
+- (NSString *)filePath {
+    return [self.fileFolder stringByAppendingPathComponent:self.fileName];
+}
+
+- (NSString *)fileFolder {
+    return [NSFileManager userDocumentsPath];
+}
+
+- (NSString *)fileName {
+    return self.url.lastPathComponent;
 }
 
 #pragma mark -
 #pragma mark Public
-
-- (void)dump {
-    self.image = nil;
-    self.state = kPSModelUnloaded;
-}
 
 - (void)finalizeLoadingWithImage:(UIImage *)image error:(id)error {
     self.image = image;
@@ -116,39 +118,16 @@
 
 - (void)notifyOfLoadingStateWithImage:(UIImage *)image error:(id)error {
     PSWeakify(self);
-    PSDispatchAsyncOnMainThread(^{
+    PSDispatchSyncOnMainThread(^{
         PSStrongify(self);
-        
-        self.state = self.image ? kPSModelDidLoad : kPSModelDidFailLoading;
+        @synchronized(self) {
+            self.state = self.image ? kPSModelDidLoad : kPSModelDidFailLoading;
+        }
     });
 }
 
 #pragma mark -
 #pragma mark Private
-
-- (void)subscribeToAplicationNotifications:(NSArray *)notifications {
-    NSNotificationCenter *noticationCenter = [NSNotificationCenter defaultCenter];
-    
-    for (id notification in notifications) {
-        [noticationCenter addObserver:self
-                             selector:@selector(dumpWithNotification:)
-                                 name:notification
-                               object:nil];
-    }
-}
-
-- (void)unsubcribeFromAplicationNotifications:(NSArray *)notifications {
-    NSNotificationCenter *noticationCenter = [NSNotificationCenter defaultCenter];
-    
-    for (id notification in notifications) {
-        [noticationCenter removeObserver:self name:notification object:nil];
-    }
-    
-}
-
-- (void)dumpWithNotification:(id)notification {
-    [self dump];
-}
 
 - (void)performLoadingWithCompletion:(void(^)(UIImage *image, id error))completion {
     if (self.cached) {
@@ -166,21 +145,24 @@
         NSError *error = nil;
         
         [fileManager removeItemAtPath:self.filePath error:&error];
+        [self loadImageFromInternet:completion];
     }
-    
-    completion(image, nil);
 }
 
 - (void)loadImageFromInternet:(void (^)(UIImage *image, id error))completion {
     PSWeakify(self);
     id block = ^(NSURL *location, NSURLResponse *response, NSError *error) {
         PSStrongifyAndReturnIfNil(self);
+        UIImage *image = nil;
         if (!error) {
             NSURL *fileURL = [NSURL fileURLWithPath:self.filePath];
-            
-            [[NSFileManager defaultManager] copyItemAtURL:location toURL:fileURL error:nil];
-            [self performLoadingWithCompletion:completion];
+            image = [UIImage imageWithContentsOfFile:location.absoluteString];
+            if (image) {
+                [[NSFileManager defaultManager] copyItemAtURL:location toURL:fileURL error:&error];
+            }
         }
+        
+        completion(image, error);
     };
     
     self.task = [self.session downloadTaskWithURL:self.url completionHandler:block];
